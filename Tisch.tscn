@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvkhlvy7ssp4k"]
+
+[ext_resource type="ArrayMesh" uid="uid://des768qtaptd0" path="res://Assets/Tisch.obj" id="1_6rttv"]
+[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Materials/Tischbein Grün.tres" id="2_f7q48"]
+[ext_resource type="Material" uid="uid://cmyr0vqn8fmur" path="res://Materials/Tischplatte.tres" id="3_apoyt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dec1c"]
+size = Vector3(1.45154, 0.597511, 0.530029)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000781655, 0, -0.00993133)
+mesh = ExtResource("1_6rttv")
+surface_material_override/0 = ExtResource("2_f7q48")
+surface_material_override/1 = ExtResource("3_apoyt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, 0.294758, 0.0115967)
+shape = SubResource("BoxShape3D_dec1c")
