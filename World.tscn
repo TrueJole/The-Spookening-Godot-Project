@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://did6uqnw114lc"]
 
-[ext_resource type="Script" path="res://CharacterController.gd" id="1_qsfrb"]
-[ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Tisch.tscn" id="2_1jp01"]
+[ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
+[ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Tisch.tscn" id="2_1jp01"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8thy6"]
 albedo_color = Color(0.168627, 0.639216, 0.298039, 1)
