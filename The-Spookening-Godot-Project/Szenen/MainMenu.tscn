@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccdcruw7mockq"]
+
+[ext_resource type="Texture2D" uid="uid://le45t6vap2xc" path="res://Assets/Materials/Textures/icon.svg" id="1_k0fv6"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_na64g"]
+[ext_resource type="Theme" uid="uid://3o2l8b5bj0uv" path="res://MenuTheme.tres" id="3_6ydeu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_na64g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 896.0
+offset_top = 482.0
+offset_right = 1024.0
+offset_bottom = 610.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+texture = ExtResource("1_k0fv6")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6ydeu")
+text = "Spiel starten"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6ydeu")
+text = "Optionen"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6ydeu")
+text = "Spiel beenden"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="AspectRatioContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

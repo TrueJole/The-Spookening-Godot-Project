@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cmyr0vqn8fmur"]
+
+[ext_resource type="Texture2D" uid="uid://gni1t6djwo3a" path="res://Assets/Materials/Textures/Holztextur.jpeg" id="1_wuut5"]
+
+[resource]
+albedo_texture = ExtResource("1_wuut5")
+roughness = 0.82
+uv1_scale = Vector3(0.67, 0.67, 0.67)
+uv1_offset = Vector3(-0.505, 0, 0)

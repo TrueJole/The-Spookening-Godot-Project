@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo2fcaed2jk31"]
+
+[ext_resource type="Theme" uid="uid://3o2l8b5bj0uv" path="res://MenuTheme.tres" id="1_o8mxa"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu.gd" id="1_syltm"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syltm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -20.0
+offset_right = 31.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ssaoToggleButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "SSAO"
+
+[node name="volFogToggleButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "Volumetrischer Nebel"
+
+[node name="SSIL" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "SSIL"
+
+[node name="GIToggleButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "Global Illumination: "
+
+[node name="backButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "Zurück"
+
+[connection signal="toggled" from="VBoxContainer/ssaoToggleButton" to="." method="_on_ssao_toggle_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/volFogToggleButton" to="." method="_on_vol_fog_toggle_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/SSIL" to="." method="_on_ssil_toggled"]
+[connection signal="pressed" from="VBoxContainer/GIToggleButton" to="." method="_on_sdfgi_toggle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
