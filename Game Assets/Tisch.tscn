@@ -19,7 +19,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_83glk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lofsp"]
 resource_name = "Tisch_Cube_009"
 lightmap_size_hint = Vector2i(70, 70)
 _surfaces = [{
@@ -50,7 +50,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jddx7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hhpx0"]
 resource_name = "Tisch_Cube_001"
 lightmap_size_hint = Vector2i(62, 58)
 _surfaces = [{
@@ -68,7 +68,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_obvf2")
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="Tisch" type="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 input_ray_pickable = false
 
@@ -77,7 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00177002, -0.0339339, 0.05
 shape = SubResource("BoxShape3D_dec1c")
 
 [node name="TischCube009" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_83glk")
+mesh = SubResource("ArrayMesh_lofsp")
 
 [node name="TischCube001" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_jddx7")
+mesh = SubResource("ArrayMesh_hhpx0")

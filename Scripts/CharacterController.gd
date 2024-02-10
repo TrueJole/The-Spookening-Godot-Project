@@ -8,6 +8,8 @@ const SENSITIVITY = 0.005
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var lamp = $Head/Camera3D/SpotLight3D
+var lampOn := true
 var testX = 0
 
 func _ready():
@@ -32,6 +34,13 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("toggleLamp"):
+		lampOn = !lampOn
+		if lampOn:
+			lamp.show()
+		else:
+			lamp.hide()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
