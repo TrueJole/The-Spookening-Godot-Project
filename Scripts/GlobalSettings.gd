@@ -6,6 +6,6 @@ extends Resource
 @export var GI: String
 @export var ssil: bool
 
-@export var sdfgi: bool
-@export var voxelGI: bool
+#@export var sdfgi: bool
+#@export var voxelGI: bool
 

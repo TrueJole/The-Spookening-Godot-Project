@@ -4,9 +4,7 @@
 
 [resource]
 script = ExtResource("1_4j7up")
-ssao = false
+ssao = true
 volumetricFog = false
 GI = "sdfgi"
 ssil = false
-sdfgi = false
-voxelGI = false

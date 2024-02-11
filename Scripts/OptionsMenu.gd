@@ -7,6 +7,7 @@ func _ready():
 	Settings = preload('res://globalSettings.tres')
 	get_node("VBoxContainer/ssaoToggleButton").button_pressed = Settings.ssao
 	get_node("VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
+	get_node("VBoxContainer/SSIL").button_pressed = Settings.ssil
 	get_node("VBoxContainer/GIToggleButton").text = 'Global Illumination: ' + Settings.GI
 
 
