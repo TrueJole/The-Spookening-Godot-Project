@@ -6,7 +6,6 @@ metallic_specular = 1.0
 roughness = 0.0
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 3.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pf48m"]
 material = SubResource("StandardMaterial3D_0l7k6")
