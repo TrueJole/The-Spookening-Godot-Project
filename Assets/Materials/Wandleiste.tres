@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxu34ky5g7l1e"]
+
+[resource]
+resource_name = "Graue Leiste"
+albedo_color = Color(0.448854, 0.448854, 0.448854, 1)
+roughness = 0.65
