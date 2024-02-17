@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ox2a78su6wes"
-path="res://.godot/imported/TürrahmenMitLeiste1_4.glb-fef9a3595c1008fa706c747edcc05c20.scn"
+path="res://.godot/imported/TürrahmenMitLeiste1_3.glb-d32ba50a6bc3d89a448ba24ba325898a.scn"
 
 [deps]
 
-source_file="res://Assets/TürrahmenMitLeiste1_4.glb"
-dest_files=["res://.godot/imported/TürrahmenMitLeiste1_4.glb-fef9a3595c1008fa706c747edcc05c20.scn"]
+source_file="res://Assets/TürrahmenMitLeiste1_3.glb"
+dest_files=["res://.godot/imported/TürrahmenMitLeiste1_3.glb-d32ba50a6bc3d89a448ba24ba325898a.scn"]
 
 [params]
 

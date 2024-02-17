@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://17wp8c0n5c2t"
-path="res://.godot/imported/WandMitLeiste1_4.glb-3f53de8cdb5f9f8fda7f6da518447be7.scn"
+path="res://.godot/imported/WandMitLeiste1_3.glb-7d77085ec56f14ae1caf880bf6e370e6.scn"
 
 [deps]
 
-source_file="res://Assets/WandMitLeiste1_4.glb"
-dest_files=["res://.godot/imported/WandMitLeiste1_4.glb-3f53de8cdb5f9f8fda7f6da518447be7.scn"]
+source_file="res://Assets/WandMitLeiste1_3.glb"
+dest_files=["res://.godot/imported/WandMitLeiste1_3.glb-7d77085ec56f14ae1caf880bf6e370e6.scn"]
 
 [params]
 
