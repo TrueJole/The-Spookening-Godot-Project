@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=9 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/wand_mit_leiste_1_4.tscn" id="2_l50d7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dkj4hwgcmkmnk" path="res://Game Assets/Fenster2_3.tscn" id="4_afmtp"]
 [ext_resource type="PackedScene" uid="uid://cyo3r0igdh106" path="res://Game Assets/Lamp.tscn" id="4_odi0w"]
 [ext_resource type="PackedScene" uid="uid://c00jxqktxgflj" path="res://Game Assets/TürrahmenMitLeiste1_3.tscn" id="6_pxm0s"]
+[ext_resource type="PackedScene" uid="uid://d4kahl48axhq" path="res://Game Assets/KreideTafel.tscn" id="7_4tfbf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ote4r"]
 
@@ -16,9 +17,6 @@ transform = Transform3D(9.68527, 0, 0, 0, 0.000671625, 0, 0, 0, 9.34238, 1, 0, 3
 material_override = ExtResource("1_virf3")
 use_collision = true
 mesh = SubResource("BoxMesh_ote4r")
-
-[node name="Lamp" parent="." instance=ExtResource("4_odi0w")]
-transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.56075, 2.41624, 0.287661)
 
 [node name="Tisch" parent="." instance=ExtResource("3_nitg4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14287, 0, 1.47336)
@@ -133,3 +131,18 @@ transform = Transform3D(-1, -6.03524e-16, -1.12228e-07, 2.98023e-08, 1, 5.34927e
 
 [node name="Tisch13" parent="." instance=ExtResource("3_nitg4")]
 transform = Transform3D(-0.0975322, 0.0662065, 0.993028, -0.275864, 0.95689, -0.0908916, -0.956236, -0.282805, -0.0750635, -6.5048, 2.70361, -1.47957)
+
+[node name="KreideTafel" parent="." instance=ExtResource("7_4tfbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Lamp" parent="." instance=ExtResource("4_odi0w")]
+transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 0.35223)
+
+[node name="Lamp2" parent="." instance=ExtResource("4_odi0w")]
+transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 2.35223)
+
+[node name="Lamp3" parent="." instance=ExtResource("4_odi0w")]
+transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 4.35223)
+
+[node name="Lamp4" parent="." instance=ExtResource("4_odi0w")]
+transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 6.35223)
