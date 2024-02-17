@@ -3,7 +3,7 @@ extends Node3D
 @onready var WEnvironment =  $WorldEnvironment.environment
 @onready var bakedVoxelGI = $VoxelGI
 @onready var volFog = $FogVolume
-@onready var Settings = preload('res://globalSettings.tres')
+@onready var Settings = preload('res://Resources/globalSettings.tres')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

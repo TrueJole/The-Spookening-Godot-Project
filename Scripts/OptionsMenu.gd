@@ -4,7 +4,7 @@ var Settings: Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Settings = preload('res://globalSettings.tres')
+	Settings = preload('res://Resources/globalSettings.tres')
 	get_node("VBoxContainer/ssaoToggleButton").button_pressed = Settings.ssao
 	get_node("VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
 	get_node("VBoxContainer/SSIL").button_pressed = Settings.ssil

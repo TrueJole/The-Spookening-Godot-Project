@@ -137,12 +137,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="Lamp" parent="." instance=ExtResource("4_odi0w")]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 0.35223)
+visible = false
 
 [node name="Lamp2" parent="." instance=ExtResource("4_odi0w")]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 2.35223)
+visible = false
 
 [node name="Lamp3" parent="." instance=ExtResource("4_odi0w")]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 4.35223)
+visible = false
 
 [node name="Lamp4" parent="." instance=ExtResource("4_odi0w")]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 2.52141, 2.47043, 6.35223)
+visible = false
