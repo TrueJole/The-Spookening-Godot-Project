@@ -56,8 +56,16 @@ shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 50.0
 
+[node name="Test" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
+visible = false
+shadow_enabled = true
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 50.0
+
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4064, 0.983286, -7.65383)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.983286, -7.65383)
+collision_priority = 1100.0
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -88,19 +96,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
 shape = SubResource("CapsuleShape3D_a570a")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.1915, 0, 0, 0, 0.443842, 0, 0, 0, -16.1695, -17.0682, 5.17546, -4.74411)
+transform = Transform3D(5.40265, 0, 0, 0, 0.235287, 0, 0, 0, -8.57167, -19.5709, 2.6108, -7.90782)
 material_override = SubResource("StandardMaterial3D_aafdv")
 mesh = SubResource("BoxMesh_vieg0")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.96725, 0, 0, 0, 0.346975, 0, 0, 0, -6.40478, -22.4671, 5.13078, -8.47655)
+transform = Transform3D(3.87884, 0, 0, 0, 0.346975, 0, 0, 0, -3.69544, -22.4372, 2.66575, -9.98913)
 material_override = SubResource("StandardMaterial3D_aafdv")
 mesh = SubResource("BoxMesh_vieg0")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 3.36731, -8.58519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 2.41827, -9.36537)
 subdiv = 3
-size = Vector3(29.1596, 9.43775, 27.1985)
+size = Vector3(29.1596, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -108,8 +116,8 @@ environment = SubResource("Environment_l2r8m")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0021, -0.116959, -4.87559)
-size = Vector3(16.8717, 2.06177, 23.6292)
+size = Vector3(16.8717, 1.26188, 23.6292)
 material = SubResource("FogMaterial_472m1")
 
 [node name="TestWorld" parent="." instance=ExtResource("7_gs1h0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.2819, 0, -11.2683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
