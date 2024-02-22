@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d4kahl48axhq"]
 
-[ext_resource type="Script" path="res://Game Assets/KreideTafel.gd" id="1_jjpwq"]
+[ext_resource type="Script" path="res://Scripts/KreideTafel.gd" id="1_l8k1g"]
 [ext_resource type="Material" uid="uid://7ntuorva4eei" path="res://Assets/Materials/KreideTafelFläche.tres" id="1_nv4ml"]
 [ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="2_by3jb"]
 
@@ -167,7 +167,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jdv05")
 
 [node name="KreideTafel" type="StaticBody3D"]
-script = ExtResource("1_jjpwq")
+script = ExtResource("1_l8k1g")
 
 [node name="middleFace" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_dasur")
