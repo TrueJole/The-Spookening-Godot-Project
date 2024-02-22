@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=15 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/TürMitLeiste1*3.tscn" id="7_uyb2e"]
 [ext_resource type="PackedScene" uid="uid://bg2gy4st6tkbd" path="res://Szenen/Tür.tscn" id="8_aevd5"]
 [ext_resource type="PackedScene" uid="uid://c00jxqktxgflj" path="res://Game Assets/TürrahmenMitLeiste1_3.tscn" id="9_1dtfs"]
+[ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Schlüssel.tscn" id="10_ijaxw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ote4r"]
 
@@ -22,9 +23,10 @@ points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874,
 [node name="TestWorld2" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(19.9996, 0, 0, 0, 0.000671625, 0, 0, 0, 9.34238, 1, 0, 3.06897)
+transform = Transform3D(18.48, 0, 0, 0, 0.2, 0, 0, 0, 9.9, 2.90838, -0.0976912, 2.78026)
 material_override = ExtResource("1_virf3")
 use_collision = true
+collision_layer = 15
 mesh = SubResource("BoxMesh_ote4r")
 
 [node name="Tisch9" parent="." instance=ExtResource("3_nitg4")]
@@ -167,3 +169,6 @@ shape = SubResource("ConvexPolygonShape3D_suslg")
 
 [node name="StaticBody3D6" parent="." instance=ExtResource("9_1dtfs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 3)
+
+[node name="Schlüssel" parent="." instance=ExtResource("10_ijaxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40637, 0.839498, 5.38226)

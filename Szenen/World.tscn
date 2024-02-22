@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=14 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
+[ext_resource type="Script" path="res://Szenen/Hand.gd" id="3_g2br0"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
 
@@ -64,7 +65,7 @@ directional_shadow_blend_splits = true
 directional_shadow_max_distance = 50.0
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.983286, -7.65383)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.931498, -7.65383)
 collision_priority = 1100.0
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -90,6 +91,9 @@ spot_range = 16.691
 spot_attenuation = 1.23114
 spot_angle = 41.09
 spot_angle_attenuation = 10.556
+
+[node name="Hand" type="Node3D" parent="Player/Head/Camera3D"]
+script = ExtResource("3_g2br0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
