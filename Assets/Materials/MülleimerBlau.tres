@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw5rlgysmyf56"]
+
+[resource]
+resource_name = "Deckel"
+cull_mode = 1
+albedo_color = Color(0, 0.247059, 0.819608, 1)
+metallic = 0.24
