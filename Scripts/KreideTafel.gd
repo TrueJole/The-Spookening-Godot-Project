@@ -8,8 +8,8 @@ extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	leftFace.rotation.y = (leftRotation)
-	rightFace.rotation.y = (rightRotation)
+	leftFace.rotation.y = (3.14 * leftRotation)
+	rightFace.rotation.y = (-3.14 + 3.14 * (1- rightRotation))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
