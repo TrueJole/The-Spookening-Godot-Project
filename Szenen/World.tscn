@@ -51,7 +51,7 @@ script = ExtResource("1_c6mct")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
 light_color = Color(0.803922, 0.831373, 1, 1)
-light_energy = 0.02
+light_energy = 0.05
 light_indirect_energy = 0.05
 shadow_enabled = true
 directional_shadow_blend_splits = true
@@ -60,9 +60,7 @@ directional_shadow_max_distance = 50.0
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
 visible = false
-shadow_enabled = true
-directional_shadow_blend_splits = true
-directional_shadow_max_distance = 50.0
+light_bake_mode = 0
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.931498, -7.65383)
@@ -80,6 +78,7 @@ rotation_edit_mode = 2
 transform = Transform3D(-1.43833, 1.25743e-07, 0, 1.25743e-07, 1.43833, 1.25743e-07, 0, 1.25743e-07, -1.43833, 0, 0.2, -0.219)
 rotation_order = 0
 current = true
+script = ExtResource("3_g2br0")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
@@ -92,8 +91,19 @@ spot_attenuation = 1.23114
 spot_angle = 41.09
 spot_angle_attenuation = 10.556
 
+[node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
+light_color = Color(0.996078, 1, 0.854902, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 16.691
+spot_attenuation = 1.23114
+spot_angle = 41.09
+spot_angle_attenuation = 10.556
+
 [node name="Hand" type="Node3D" parent="Player/Head/Camera3D"]
-script = ExtResource("3_g2br0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)

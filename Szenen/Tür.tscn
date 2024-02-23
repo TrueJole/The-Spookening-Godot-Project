@@ -1,6 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg2gy4st6tkbd"]
+[gd_scene load_steps=12 format=3 uid="uid://bg2gy4st6tkbd"]
 
 [ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="1_assuh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2w20l"]
+rough = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo3fs"]
 resource_name = "Türmain"
@@ -144,6 +147,7 @@ axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_2w20l")
 
 [node name="Cube_002" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_bv0sn")
