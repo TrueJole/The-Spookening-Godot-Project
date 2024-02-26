@@ -147,7 +147,6 @@ visible = false
 
 [node name="Node3d" parent="." instance=ExtResource("7_uyb2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-locked = true
 
 [node name="Tür2" parent="." instance=ExtResource("8_aevd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
@@ -156,13 +155,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17954, 0.951298, 4.60473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43262, 0.951298, 2.71753)
 collision_layer = 2
-collision_mask = 15
+collision_mask = 14
 physics_material_override = SubResource("PhysicsMaterial_aeyxa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.362265, 0)
 mesh = SubResource("SphereMesh_3masx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
