@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_4j7up")
 ssao = true
-volumetricFog = true
+volumetricFog = false
 GI = "voxelGI"
 ssil = false

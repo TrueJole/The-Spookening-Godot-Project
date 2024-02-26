@@ -1,5 +1,7 @@
 extends Camera3D
 
+@onready var hand = $Hand
+@onready var dot = $Dot
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,17 +9,22 @@ func _ready():
 	pass # Replace with function body.
 
 
+func _physics_process(delta):
+	if Input.is_action_pressed("hold"):
+		var bodies = hand.get_overlapping_bodies()
+		if not bodies.is_empty():
+			var vel = bodies[0].position.direction_to(dot.position)
+			#vel = (10,10,10)
+			print_debug(bodies[0])
+			bodies[0].apply_force(vel)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
-	if event == 'hold':
-		#FIXME: .
-		var space_state = get_world_3d().direct_space_state
-		var cam = $Camera3D
-		var mousepos = get_viewport().get_mouse_position()
-
-		var origin = cam.project_ray_origin(mousepos)
-		var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
-		var query = PhysicsRayQueryParameters3D.create(origin, end)
-		query.collide_with_areas = true
-
-		var result = space_state.intersect_ray(query)
+	pass
+	if event.is_action("hold"):
+		var bodies = hand.get_overlapping_bodies()
+		if not bodies.is_empty():
+			var vel = bodies[0].position.direction_to(dot.position)
+			#vel = (10,10,10)
+			print_debug(bodies[0])
+			bodies[0].apply_central_force(vel)

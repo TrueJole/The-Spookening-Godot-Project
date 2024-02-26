@@ -1,10 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=16 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Szenen/Hand.gd" id="3_g2br0"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
+size = Vector3(0.0856628, 0.0544128, 2.07825)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vnpd"]
+render_priority = 1
+shading_mode = 0
+disable_receive_shadows = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.82206
@@ -50,17 +58,19 @@ script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
+visible = false
 light_color = Color(0.803922, 0.831373, 1, 1)
 light_energy = 0.05
 light_indirect_energy = 0.05
+light_cull_mask = 4294966273
 shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 50.0
 
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
-visible = false
 light_bake_mode = 0
+light_cull_mask = 4294966273
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.931498, -7.65383)
@@ -85,6 +95,7 @@ transform = Transform3D(1, 0, 0, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0
 light_color = Color(0.996078, 1, 0.854902, 1)
 light_indirect_energy = 3.397
 light_bake_mode = 0
+light_cull_mask = 4294966273
 shadow_enabled = true
 spot_range = 16.691
 spot_attenuation = 1.23114
@@ -92,18 +103,34 @@ spot_angle = 41.09
 spot_angle_attenuation = 10.556
 
 [node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
+transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
 light_color = Color(0.996078, 1, 0.854902, 1)
 light_energy = 5.0
 light_indirect_energy = 10.0
 light_bake_mode = 0
+light_cull_mask = 4294966273
 shadow_enabled = true
 spot_range = 16.691
 spot_attenuation = 1.23114
 spot_angle = 41.09
 spot_angle_attenuation = 10.556
 
-[node name="Hand" type="Node3D" parent="Player/Head/Camera3D"]
+[node name="Hand" type="Area3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0, -0.0788819, -0.157918)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Head/Camera3D/Hand"]
+transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, -0.00566101, 0.0773439, -1.07184)
+shape = SubResource("BoxShape3D_g7478")
+
+[node name="Dot" type="CSGSphere3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(0.01, -2.01128e-16, 0, -2.01128e-16, 0.01, 0, 0, 0, 0.01, 0, -3.57628e-07, -0.767753)
+layers = 2
+cast_shadow = 0
+gi_mode = 0
+material = SubResource("StandardMaterial3D_4vnpd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
