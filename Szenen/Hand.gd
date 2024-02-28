@@ -1,7 +1,7 @@
 extends Camera3D
 
 @onready var hand = $Hand
-@onready var dot = $Dot
+@onready var dot = $Hand/Dot
 var holding: bool
 var heldObject
 
@@ -34,13 +34,15 @@ func _physics_process(delta):
 	#print_debug('object: ', heldObject)
 	if holding and (heldObject != null):
 		var distance = abs(heldObject.global_position - dot.global_position)
-		if min(distance.x, distance.y, distance.z) > 0.1:
-			var vel = heldObject.global_position.direction_to(dot.global_position)
+		if heldObject.global_position.distance_to(dot.global_position) > 0.1:
+			var vel = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
 			#vel = (10,10,10)
 			print_debug(abs(heldObject.global_position - dot.global_position))
-			heldObject.apply_central_force(vel*10)
+			heldObject.linear_velocity *= 0.5
+			heldObject.apply_central_force(vel*300)
 		else:
-			heldObject.linear_velocity = Vector3(0,0,0)	
+			print_debug(heldObject.global_position.distance_to(dot.global_position))
+			heldObject.linear_velocity = Vector3(0,0,0)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
