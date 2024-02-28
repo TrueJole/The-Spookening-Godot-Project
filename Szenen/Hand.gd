@@ -5,6 +5,7 @@ extends Camera3D
 var holding: bool
 var heldObject
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,6 +22,7 @@ func _physics_process(delta):
 			
 			heldObject = bodies[0]
 			heldObject.gravity_scale = 0
+			
 	
 	elif heldObject != null:
 		holding = false
@@ -33,17 +35,18 @@ func _physics_process(delta):
 	#print_debug('holding: ', holding)
 	#print_debug('object: ', heldObject)
 	if holding and (heldObject != null):
-		var distance = abs(heldObject.global_position - dot.global_position)
+		 
 		if heldObject.global_position.distance_to(dot.global_position) > 0.1:
 			var vel = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
 			#vel = (10,10,10)
-			print_debug(abs(heldObject.global_position - dot.global_position))
+			#print_debug(abs(heldObject.global_position - dot.global_position))
 			heldObject.linear_velocity *= 0.5
-			heldObject.apply_central_force(vel*300)
+			if heldObject.has_meta('door'):
+				vel *= 1000
+			else:
+				vel *= 150
+			
+			heldObject.apply_central_force(vel)
 		else:
-			print_debug(heldObject.global_position.distance_to(dot.global_position))
+			#print_debug(heldObject.global_position.distance_to(dot.global_position))
 			heldObject.linear_velocity = Vector3(0,0,0)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-

@@ -49,6 +49,7 @@ shape = SubResource("ConcavePolygonShape3D_ovyu6")
 
 [node name="Tür" parent="." instance=ExtResource("4_u1mfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0570133, 0, 0.134592)
+metadata/door = true
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0533804, 0.0210888, 0.0823693)
