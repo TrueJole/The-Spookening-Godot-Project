@@ -73,6 +73,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_enm80")
 
 [node name="Tisch" type="StaticBody3D"]
+collision_mask = 0
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -38,6 +38,7 @@ data = PackedVector3Array(1, 2.5, 0, 0, 2.5, 0.2, 0, 2.5, 0, 1, 2.5, 0, 1, 2.5, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxam8"]
 size = Vector3(0.254089, 0.399109, 0.347137)
+
 [node name="Tür" type="Node3D"]
 script = ExtResource("1_n4ggk")
 

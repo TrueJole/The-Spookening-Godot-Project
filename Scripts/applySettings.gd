@@ -17,7 +17,7 @@ func _ready():
 	
 	WEnvironment.sdfgi_enabled = Settings.GI == 'sdfgi'
 	
-		
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

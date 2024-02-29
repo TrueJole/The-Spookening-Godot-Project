@@ -167,6 +167,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jdv05")
 
 [node name="KreideTafel" type="StaticBody3D"]
+collision_mask = 0
 script = ExtResource("1_l8k1g")
 
 [node name="middleFace" type="MeshInstance3D" parent="."]

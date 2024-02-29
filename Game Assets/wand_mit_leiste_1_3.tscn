@@ -49,6 +49,7 @@ _surfaces = [{
 }]
 
 [node name="WandMitLeiste1_4" type="StaticBody3D"]
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_orpql")
