@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=17 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c00jxqktxgflj" path="res://Game Assets/TürrahmenMitLeiste1_3.tscn" id="9_1dtfs"]
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Schlüssel.tscn" id="10_ijaxw"]
 [ext_resource type="PackedScene" uid="uid://bafa7ptmntj0y" path="res://Game Assets/Mülleimer.tscn" id="11_rx2th"]
+[ext_resource type="PackedScene" uid="uid://bvar7yqb8fxjl" path="res://feuerlöscher.tscn" id="12_rn7sk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ote4r"]
 
@@ -176,3 +177,6 @@ metadata/itemid = "key1"
 
 [node name="Mülleimer" parent="." instance=ExtResource("11_rx2th")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="Feuerlöscher" parent="." instance=ExtResource("12_rn7sk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11515, 0.0057475, -1.19732)

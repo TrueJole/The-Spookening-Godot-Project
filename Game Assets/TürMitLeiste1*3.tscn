@@ -77,4 +77,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.863849, 0.935604, 0.108078)
 shape = SubResource("BoxShape3D_cxam8")
 
 [connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]
-[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated" binds= [NodePath("")]]
