@@ -1,4 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvar7yqb8fxjl"]
+[gd_scene load_steps=18 format=3 uid="uid://bvar7yqb8fxjl"]
+
+[ext_resource type="Script" path="res://Scripts/Feuerlöscher.gd" id="1_3vkwc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2h3g"]
 resource_name = "Rotes Metall"
@@ -100,10 +102,52 @@ radius = 0.1105
 radius = 0.109537
 height = 0.425775
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_btm3c"]
+size = Vector3(0.578125, 0.562225, 1.27118)
+
+[sub_resource type="Curve" id="Curve_76uof"]
+_data = [Vector2(0, 0.175824), 0.0, 0.0, 0, 0, Vector2(0.21519, 0.89011), 1.44689, 1.44689, 0, 0, Vector2(0.765823, 0.769231), -0.843328, -0.843328, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_phxap"]
+curve = SubResource("Curve_76uof")
+
+[sub_resource type="Curve" id="Curve_7ywp6"]
+max_value = 3.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.664557, 1.84615), -6.07692, -6.07692, 0, 0, Vector2(1, 1.05494), -1.85201, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dtkd2"]
+curve = SubResource("Curve_7ywp6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6i1yp"]
+direction = Vector3(0, 0, -1)
+spread = 10.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+velocity_limit_curve = SubResource("CurveTexture_dtkd2")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_phxap")
+turbulence_noise_strength = 14.85
+turbulence_noise_scale = 0.82
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vma34"]
+diffuse_mode = 3
+specular_mode = 1
+disable_receive_shadows = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_61ljb"]
+material = SubResource("StandardMaterial3D_vma34")
+radius = 0.05
+height = 0.1
+radial_segments = 10
+rings = 10
+
 [node name="Feuerlöscher" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 7
 mass = 10.0
+script = ExtResource("1_3vkwc")
 metadata/itemid = "feuerlöscher"
 metadata/equipable = true
 
@@ -120,3 +164,24 @@ shape = SubResource("CylinderShape3D_mhnm2")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000962317, 0.315216, 0)
 shape = SubResource("CapsuleShape3D_mik0g")
+
+[node name="FoamArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527717, -0.0325704)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+metadata/itemid = "foam"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FoamArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488281, 0.00679016, -0.679169)
+shape = SubResource("BoxShape3D_btm3c")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197913, 0.526117, -0.0894407)
+amount = 80
+lifetime = 0.7
+explosiveness = 0.1
+randomness = 1.0
+trail_lifetime = 4.85
+process_material = SubResource("ParticleProcessMaterial_6i1yp")
+draw_pass_1 = SubResource("SphereMesh_61ljb")

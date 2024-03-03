@@ -22,5 +22,13 @@ func _physics_process(delta):
 					if get_parent().has_method('activated'):
 						get_parent().activated()
 					activated.emit()
+	if has_overlapping_areas():
+		for area in get_overlapping_areas():
+			if area.has_meta('itemid'):
+				if area.get_meta('itemid') in activators:
+					#print_debug(body)
+					if get_parent().has_method('activated'):
+						get_parent().activated()
+					activated.emit()
 					
 

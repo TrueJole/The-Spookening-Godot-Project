@@ -11,6 +11,10 @@ var originalObject
 
 
 func _physics_process(delta):
+	if Input.is_action_pressed("interact") and equipped:
+		if heldObject.has_method('used'):
+			heldObject.used()
+	
 	if Input.is_action_pressed("hold"):
 		var bodies = hand.get_overlapping_bodies()
 		holding = true
@@ -70,9 +74,8 @@ func _physics_process(delta):
 			vel *= 500
 			heldObject.apply_central_force(vel)
 			
+			heldObject.look_at(Vector3(dot.global_position.x, heldObject.global_position.y, dot.global_position.z))
 			if heldObject.global_position.distance_to(equipHand.global_position) < 0.01:
-				heldObject.look_at(Vector3(dot.global_position.x, heldObject.global_position.y, dot.global_position.z))
+				#heldObject.look_at(Vector3(dot.global_position.x, heldObject.global_position.y, dot.global_position.z))
 				equipReached = true
 				
-			#else:
-			#	pass
