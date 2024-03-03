@@ -10,9 +10,12 @@
 size = Vector3(0.0856628, 0.0544128, 2.07825)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vnpd"]
-render_priority = 1
+no_depth_test = true
 shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
 disable_receive_shadows = true
+fixed_size = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.82206
@@ -88,6 +91,9 @@ script = ExtResource("1_qsfrb")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43804, 0)
 rotation_edit_mode = 2
 
+[node name="EquippedHand" type="Node3D" parent="Player/Head"]
+transform = Transform3D(-2, 1.74846e-07, 1.42109e-14, 1.74846e-07, 2, 1.74846e-07, 1.42109e-14, 1.74846e-07, -2, -0.353451, -1.13628, 0.351559)
+
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(-1.43833, 1.25743e-07, 0, 1.25743e-07, 1.43833, 1.25743e-07, 0, 1.25743e-07, -1.43833, 0, 0.2, -0.219)
 rotation_order = 0
@@ -133,7 +139,9 @@ shape = SubResource("BoxShape3D_g7478")
 [node name="Dot" type="CSGSphere3D" parent="Player/Head/Camera3D/Hand"]
 transform = Transform3D(0.01, -3.67662e-16, 0, -3.67662e-16, 0.01, 0, 0, 0, 0.01, 0, -7.15256e-07, -0.985848)
 layers = 2
+sorting_offset = 9.22337e+18
 cast_shadow = 0
+ignore_occlusion_culling = true
 gi_mode = 0
 material = SubResource("StandardMaterial3D_4vnpd")
 
