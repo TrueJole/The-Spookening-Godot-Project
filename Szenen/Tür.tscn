@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg2gy4st6tkbd"]
+[gd_scene load_steps=13 format=3 uid="uid://bg2gy4st6tkbd"]
 
 [ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="1_assuh"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cuuln3ivht41e" path="res://Szenen/Tür.occ" id="1_w37fu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2w20l"]
 rough = true
@@ -149,18 +150,27 @@ axis_lock_angular_z = true
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_2w20l")
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3252, 2.18387, 0.0279806)
+occluder = ExtResource("1_w37fu")
+bake_mask = 4294966274
+bake_simplification_distance = 0.24
+
 [node name="Cube_002" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("ArrayMesh_bv0sn")
 skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826815, 0.944325, 0.00676887)
+layers = 2
 material_override = ExtResource("1_assuh")
 mesh = SubResource("ArrayMesh_kc3ic")
 skeleton = NodePath("")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826986, 0.944057, -0.0627617)
+layers = 2
 material_override = ExtResource("1_assuh")
 mesh = SubResource("ArrayMesh_rakdx")
 skeleton = NodePath("")

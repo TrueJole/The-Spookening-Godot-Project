@@ -178,6 +178,7 @@ shape = SubResource("BoxShape3D_btm3c")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197913, 0.526117, -0.0894407)
+emitting = false
 amount = 80
 lifetime = 0.7
 explosiveness = 0.1

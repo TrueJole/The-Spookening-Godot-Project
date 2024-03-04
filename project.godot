@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 settings/stdout/print_fps=true
 gdscript/warnings/unassigned_variable_op_assign=0
+shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.501961, 1)
 
 [display]
 
@@ -82,12 +83,12 @@ interact={
 lights_and_shadows/directional_shadow/size=8000
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-global_illumination/voxel_gi/quality=1
 environment/ssao/quality=3
 environment/ssil/quality=3
 environment/ssil/half_size=false
 environment/ssil/blur_passes=6
 global_illumination/sdfgi/probe_ray_count=3
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
+occlusion_culling/use_occlusion_culling=true
 lights_and_shadows/stdout/print_fps=false
 lights_and_shadows/max_fps=60

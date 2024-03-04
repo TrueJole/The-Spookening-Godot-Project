@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=17 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Szenen/Hand.gd" id="3_g2br0"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
+[ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Szenen/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
@@ -161,7 +162,7 @@ mesh = SubResource("BoxMesh_vieg0")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 2.41827, -9.36537)
-subdiv = 3
+subdiv = 0
 size = Vector3(29.1596, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
 
@@ -175,3 +176,7 @@ material = SubResource("FogMaterial_472m1")
 
 [node name="TestWorld" parent="." instance=ExtResource("7_gs1h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("6_v1xdd")
+bake_mask = 4294967293
