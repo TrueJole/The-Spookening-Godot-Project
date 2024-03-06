@@ -158,6 +158,7 @@ bake_simplification_distance = 0.24
 
 [node name="Cube_002" type="MeshInstance3D" parent="."]
 layers = 2
+gi_mode = 2
 mesh = SubResource("ArrayMesh_bv0sn")
 skeleton = NodePath("")
 

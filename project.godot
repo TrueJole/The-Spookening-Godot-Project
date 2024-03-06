@@ -89,6 +89,7 @@ environment/ssil/half_size=false
 environment/ssil/blur_passes=6
 global_illumination/sdfgi/probe_ray_count=3
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
+anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
 lights_and_shadows/stdout/print_fps=false
 lights_and_shadows/max_fps=60
