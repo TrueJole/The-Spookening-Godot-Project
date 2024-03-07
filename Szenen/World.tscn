@@ -116,6 +116,7 @@ spot_angle_attenuation = 7.46422
 
 [node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
 transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
+visible = false
 light_color = Color(0.996078, 1, 0.854902, 1)
 light_energy = 5.0
 light_indirect_energy = 10.0

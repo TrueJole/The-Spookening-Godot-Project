@@ -147,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.505705, 0.876199, 0.108078)
 
 [node name="FireParticles" type="GPUParticles3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
-gi_mode = 2
+cast_shadow = 0
 amount = 50
 explosiveness = 0.17
 visibility_aabb = AABB(1.28171, -0.220713, -0.61157, 0.964894, 1.00002, 1.00002)
@@ -178,7 +178,7 @@ omni_attenuation = 0.5
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FireParticles" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197911, 0.584917, 0.00976014)
-gi_mode = 2
+cast_shadow = 0
 amount = 80
 lifetime = 2.0
 explosiveness = 0.1

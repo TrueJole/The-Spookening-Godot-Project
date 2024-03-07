@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="2_t1lm4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dec1c"]
-size = Vector3(1.43866, 0.603375, 0.552483)
+size = Vector3(1.45383, 0.611518, 0.552483)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_632nv"]
 
@@ -77,7 +77,7 @@ collision_mask = 0
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7185, 0.302583, 0.257313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726084, 0.306654, 0.257313)
 shape = SubResource("BoxShape3D_dec1c")
 
 [node name="Beine" type="MeshInstance3D" parent="."]
