@@ -5,5 +5,5 @@
 [resource]
 albedo_texture = ExtResource("1_wuut5")
 roughness = 0.82
-uv1_scale = Vector3(0.67, 0.67, 0.67)
-uv1_offset = Vector3(-0.505, 0, 0)
+uv1_scale = Vector3(3.855, 3.855, 3.855)
+uv1_offset = Vector3(0.595, -0.685, 0)

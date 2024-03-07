@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbmdvuwrit6gj"]
+[gd_scene load_steps=28 format=3 uid="uid://dbmdvuwrit6gj"]
 
 [ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/TürMitLeiste1*3.tscn" id="1_c2ckh"]
 [ext_resource type="Script" path="res://Scripts/BrennendeTür.gd" id="2_w3vqt"]
 
 [sub_resource type="Curve" id="Curve_7vvxl"]
 bake_resolution = 1000
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.623188, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_gpxci"]
@@ -69,22 +69,71 @@ turbulence_influence_min = 0.005
 turbulence_influence_max = 0.02
 turbulence_influence_over_life = SubResource("CurveTexture_fn62j")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5s2e"]
-transparency = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_552tt"]
 shading_mode = 0
 diffuse_mode = 3
-specular_mode = 1
-disable_ambient_light = true
-disable_fog = true
+specular_mode = 2
 vertex_color_use_as_albedo = true
-grow_amount = 0.01
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_w1iab"]
-material = SubResource("StandardMaterial3D_m5s2e")
-top_radius = 0.0
-bottom_radius = 0.05
-height = 0.5
-cap_top = false
+[sub_resource type="SphereMesh" id="SphereMesh_d280f"]
+material = SubResource("StandardMaterial3D_552tt")
+radius = 0.07
+height = 0.14
+is_hemisphere = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_2w1kv"]
+
+[sub_resource type="Gradient" id="Gradient_n2rg7"]
+offsets = PackedFloat32Array(0, 0.636364)
+colors = PackedColorArray(0.851769, 0.851769, 0.851769, 1, 0.133196, 0.133196, 0.133196, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oulws"]
+gradient = SubResource("Gradient_n2rg7")
+
+[sub_resource type="Curve" id="Curve_vwu4v"]
+_data = [Vector2(0, 0.175824), 0.0, 0.0, 0, 0, Vector2(0.21519, 0.89011), 1.44689, 1.44689, 0, 0, Vector2(0.765823, 0.769231), -0.843328, -0.843328, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_phxap"]
+curve = SubResource("Curve_vwu4v")
+
+[sub_resource type="Curve" id="Curve_38vfv"]
+max_value = 3.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.664557, 1.84615), -6.07692, -6.07692, 0, 0, Vector2(1, 1.05494), -1.85201, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dtkd2"]
+curve = SubResource("Curve_38vfv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qxb1x"]
+emission_shape_scale = Vector3(0.2, 0.2, 0.2)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 25.181
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+velocity_limit_curve = SubResource("CurveTexture_dtkd2")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_phxap")
+color_ramp = SubResource("GradientTexture1D_oulws")
+alpha_curve = SubResource("CurveTexture_2w1kv")
+turbulence_enabled = true
+turbulence_influence_min = 0.005
+turbulence_influence_max = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofwlt"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ajdji"]
+material = SubResource("StandardMaterial3D_ofwlt")
+radius = 0.07
+height = 0.14
+radial_segments = 10
+rings = 10
 
 [node name="Brennende Tür" instance=ExtResource("1_c2ckh")]
 script = ExtResource("2_w3vqt")
@@ -97,14 +146,13 @@ activators = Array[String](["foam"])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.505705, 0.876199, 0.108078)
 
 [node name="FireParticles" type="GPUParticles3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.387597, 0.11156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
 gi_mode = 2
 amount = 50
-lifetime = 1.2
 explosiveness = 0.17
 visibility_aabb = AABB(1.28171, -0.220713, -0.61157, 0.964894, 1.00002, 1.00002)
 process_material = SubResource("ParticleProcessMaterial_c4cuv")
-draw_pass_1 = SubResource("CylinderMesh_w1iab")
+draw_pass_1 = SubResource("SphereMesh_d280f")
 
 [node name="FeuerOmniLight3D" type="OmniLight3D" parent="FireParticles" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569133, -0.133381)
@@ -127,3 +175,14 @@ light_specular = 0.0
 shadow_enabled = true
 omni_range = 2.11834
 omni_attenuation = 0.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="FireParticles" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197911, 0.584917, 0.00976014)
+gi_mode = 2
+amount = 80
+lifetime = 2.0
+explosiveness = 0.1
+randomness = 1.0
+trail_lifetime = 4.85
+process_material = SubResource("ParticleProcessMaterial_qxb1x")
+draw_pass_1 = SubResource("SphereMesh_ajdji")

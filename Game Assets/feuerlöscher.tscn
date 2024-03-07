@@ -109,7 +109,7 @@ size = Vector3(0.578125, 0.562225, 1.27118)
 _data = [Vector2(0, 0.175824), 0.0, 0.0, 0, 0, Vector2(0.21519, 0.89011), 1.44689, 1.44689, 0, 0, Vector2(0.765823, 0.769231), -0.843328, -0.843328, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_phxap"]
+[sub_resource type="CurveTexture" id="CurveTexture_ndnei"]
 curve = SubResource("Curve_76uof")
 
 [sub_resource type="Curve" id="Curve_7ywp6"]
@@ -117,7 +117,7 @@ max_value = 3.0
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.664557, 1.84615), -6.07692, -6.07692, 0, 0, Vector2(1, 1.05494), -1.85201, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_dtkd2"]
+[sub_resource type="CurveTexture" id="CurveTexture_ejl3p"]
 curve = SubResource("Curve_7ywp6")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6i1yp"]
@@ -125,19 +125,19 @@ direction = Vector3(0, 0, -1)
 spread = 10.0
 initial_velocity_min = 1.0
 initial_velocity_max = 3.0
-velocity_limit_curve = SubResource("CurveTexture_dtkd2")
+velocity_limit_curve = SubResource("CurveTexture_ejl3p")
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_phxap")
+scale_curve = SubResource("CurveTexture_ndnei")
 turbulence_noise_strength = 14.85
 turbulence_noise_scale = 0.82
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vma34"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc5w7"]
 diffuse_mode = 3
 specular_mode = 1
 disable_receive_shadows = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_61ljb"]
-material = SubResource("StandardMaterial3D_vma34")
+material = SubResource("StandardMaterial3D_fc5w7")
 radius = 0.05
 height = 0.1
 radial_segments = 10

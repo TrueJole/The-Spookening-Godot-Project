@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Tür.gd" id="1_n4ggk"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="2_c57f2"]
 [ext_resource type="PackedScene" uid="uid://bg2gy4st6tkbd" path="res://Szenen/Tür.tscn" id="4_u1mfx"]
-[ext_resource type="Script" path="res://Game Assets/Activation Module.gd" id="5_yyx5o"]
+[ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="5_yyx5o"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_of7ef"]
 resource_name = "TürrahmenMitLeiste1_4_Cube"

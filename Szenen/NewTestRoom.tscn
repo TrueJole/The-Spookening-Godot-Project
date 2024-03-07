@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=20 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bafa7ptmntj0y" path="res://Game Assets/Mülleimer.tscn" id="11_rx2th"]
 [ext_resource type="PackedScene" uid="uid://cyo3r0igdh106" path="res://Game Assets/Lamp.tscn" id="12_a1ot4"]
 [ext_resource type="PackedScene" uid="uid://bvar7yqb8fxjl" path="res://Game Assets/feuerlöscher.tscn" id="13_72vhf"]
+[ext_resource type="PackedScene" uid="uid://blvxxxj44qb66" path="res://Game Assets/uhr.tscn" id="13_enf0a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
 rough = true
@@ -216,7 +217,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.300
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 3)
 
 [node name="Feuerlöscher" parent="." instance=ExtResource("13_72vhf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41196, 0.930724, 1.1881)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.735602, 0.495328, 1.48776)
 
 [node name="Lamp" parent="." instance=ExtResource("12_a1ot4")]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, -0.235917, 2.29982, 0.2)
+
+[node name="Uhr" parent="." instance=ExtResource("13_enf0a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.0565, 1.86935, 6.8)
