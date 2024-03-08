@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=22 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bvar7yqb8fxjl" path="res://Game Assets/feuerlöscher.tscn" id="13_72vhf"]
 [ext_resource type="PackedScene" uid="uid://blvxxxj44qb66" path="res://Game Assets/uhr.tscn" id="13_enf0a"]
 [ext_resource type="PackedScene" uid="uid://bvipxvc0fsh1l" path="res://Game Assets/Buch.tscn" id="14_be7by"]
+[ext_resource type="PackedScene" uid="uid://oy2xrhos26y7" path="res://Game Assets/Donut.tscn" id="15_prhr6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
 rough = true
@@ -228,3 +229,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.0565
 
 [node name="Buch" parent="." instance=ExtResource("14_be7by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.676157, 5.42874)
+
+[node name="donut" parent="." instance=ExtResource("15_prhr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74277, 0.612413, 5.34107)

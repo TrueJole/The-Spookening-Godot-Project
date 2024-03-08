@@ -81,6 +81,7 @@ input_ray_pickable = false
 mass = 0.47
 
 [node name="Cube" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = SubResource("ArrayMesh_c2o03")
 skeleton = NodePath("")

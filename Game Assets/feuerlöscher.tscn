@@ -114,7 +114,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Boden_001:rotation")
+tracks/0/path = NodePath("Hebel:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -186,14 +186,16 @@ script = ExtResource("1_3vkwc")
 metadata/itemid = "feuerlöscher"
 metadata/equipable = true
 
-[node name="Boden2" type="MeshInstance3D" parent="."]
+[node name="Flasche" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.110293, 0, -9.64212e-09, 0, 0.110293, 0, 9.64212e-09, 0, -0.110293, 0, 0.000717605, 0)
+layers = 2
 gi_mode = 2
 mesh = SubResource("ArrayMesh_hmu1m")
 skeleton = NodePath("")
 
-[node name="Boden_001" type="MeshInstance3D" parent="."]
+[node name="Hebel" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.110293, 0, -9.64212e-09, 0, 0.110293, 0, 9.64212e-09, 0, -0.110293, 0, 0.546555, 0)
+layers = 2
 gi_mode = 2
 mesh = SubResource("ArrayMesh_rlvgn")
 skeleton = NodePath("")
