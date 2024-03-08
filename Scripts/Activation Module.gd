@@ -19,6 +19,8 @@ func _physics_process(delta):
 			if body.has_meta('itemid'):
 				if body.get_meta('itemid') in activators:
 					#print_debug(body)
+					if body.has_method('activated'):
+						body.activated()
 					if get_parent().has_method('activated'):
 						get_parent().activated()
 					activated.emit()
