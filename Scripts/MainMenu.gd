@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if loading:
 		var progress: Array
 		ResourceLoader.load_threaded_get_status(nextScene, progress)

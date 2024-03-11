@@ -13,6 +13,6 @@ func activated():
 	used = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if used and animationPlayer.is_playing() == false:
 		queue_free()

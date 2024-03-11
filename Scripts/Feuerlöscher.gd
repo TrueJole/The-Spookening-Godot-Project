@@ -19,7 +19,7 @@ func used():
 		animation.play("feuerlöscher_an")
 	emitting = true
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if emit:
 		foam.emitting = true
 		emit = false

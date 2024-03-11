@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=26 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://oy2xrhos26y7" path="res://Game Assets/Deco/Donut.tscn" id="15_prhr6"]
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="16_fxbcl"]
 [ext_resource type="PackedScene" uid="uid://df87isk1ee1nq" path="res://Game Assets/Deco/Projektor.tscn" id="18_cv5sa"]
+[ext_resource type="PackedScene" uid="uid://bbtev5l7d38pg" path="res://Game Assets/Items/Cartridge.tscn" id="19_tkeqe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
 rough = true
@@ -269,3 +270,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309934, 1.82478, 0.2)
 
 [node name="Projektor" parent="." instance=ExtResource("18_cv5sa")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.46403, 0.612413, 4.42446)
+
+[node name="Cartridge" parent="." instance=ExtResource("19_tkeqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27754, 0.675619, 5.4464)
+metadata/data = null
+
+[node name="Cartridge2" parent="." instance=ExtResource("19_tkeqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65211, 0.675619, 5.4464)

@@ -10,7 +10,7 @@ var heldObject
 var originalObject
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("interact") and equipped:
 		if heldObject.has_method('used'):
 			heldObject.used()
@@ -34,9 +34,11 @@ func _physics_process(delta):
 			heldObject.angular_damp = 10
 			heldObject.gravity_scale = 0
 			heldObject.set_collision_mask_value(3, false)
+			heldObject.set_meta('held', true)
 			
 	
 	elif heldObject != null:
+		heldObject.set_meta('held', false)
 		holding = false
 		heldObject.gravity_scale = 1
 		heldObject.set_collision_mask_value(3, originalObject.get_collision_mask_value(3))
@@ -50,14 +52,12 @@ func _physics_process(delta):
 		holding = false
 	
 	if holding and (heldObject != null):
+		print_debug(heldObject)
 		if not equipped:
 			if heldObject.global_position.distance_to(dot.global_position) > 0.01:
 				var vel = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
 				heldObject.linear_velocity *= 0.5
 				vel *= heldObject.mass
-				#if heldObject.has_meta('door'):
-				#	vel *= 1000
-				#else:
 				vel *= 150
 				heldObject.apply_central_force(vel)
 				

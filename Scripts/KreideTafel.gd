@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint():
 		leftFace.rotation.y = (3.14 * leftRotation)
 		rightFace.rotation.y = (-3.14 + 3.14 * (1- rightRotation))

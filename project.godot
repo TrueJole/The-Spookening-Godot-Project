@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="The Spookening"
+config/name="The Humboldt Project"
 run/main_scene="res://Szenen/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://Assets/Materials/Textures/ziffernblatt-15cm-zahlen.png"
+config/icon="res://Assets/Materials/Textures/icon.svg"
 
 [debug]
 
@@ -83,5 +84,7 @@ lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
 environment/ssao/quality=3
 global_illumination/sdfgi/probe_ray_count=2
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=3
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true

@@ -14,8 +14,17 @@ func _ready():
 	
 	#WEnvironment.sdfgi_enabled = false
 	#bakedVoxelGI.visible = (Settings.GI == 'voxelGI')
-	
 	#WEnvironment.sdfgi_enabled = (Settings.GI == 'sdfgi')
+	#FIXME Einstellung wird nicht geändert
+	
+	
+	if Settings.msaa == true:
+		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_4X)
+	else:
+		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
+	
+	
+	
 	ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	match Settings.giQuality:
@@ -30,8 +39,3 @@ func _ready():
 			bakedVoxelGI.visible = true
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

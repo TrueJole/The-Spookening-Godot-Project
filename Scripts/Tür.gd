@@ -14,8 +14,7 @@ func activated():
 	print_debug('recieved')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	activated
+func _physics_process(_delta):
 	if locked:
 		door.set_collision_layer_value ( 1, true )
 		door.rotation.y = 0

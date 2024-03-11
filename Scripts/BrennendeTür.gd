@@ -21,7 +21,7 @@ func activated():
 	print_debug('recieved', fireValue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if locked:
 		if fireValue != 200 and fireValue > 0:
 			fireParticles.show()

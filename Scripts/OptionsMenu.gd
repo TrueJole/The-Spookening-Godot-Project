@@ -9,12 +9,13 @@ func _ready():
 	get_node("VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
 	get_node("VBoxContainer/SSIL").button_pressed = Settings.ssil
 	get_node("VBoxContainer/giQualitySlider").value = Settings.giQuality
+	get_node("VBoxContainer/MSAAToggleButton").button_pressed = Settings.msaa
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -62,3 +63,8 @@ func _on_gi_quality_slider_value_changed(value):
 			get_node("VBoxContainer/GILabel").text = 'Voll'
 		3:
 			get_node("VBoxContainer/GILabel").text = 'Extra'
+
+
+func _on_msaa_toggle_button_toggled(toggled_on):
+	Settings.msaa = toggled_on
+
