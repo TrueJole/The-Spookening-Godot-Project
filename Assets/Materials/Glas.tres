@@ -2,6 +2,4 @@
 
 [resource]
 transparency = 1
-blend_mode = 1
-albedo_color = Color(0.254902, 0.254902, 0.254902, 0.941176)
-refraction_enabled = true
+albedo_color = Color(0.862745, 0.862745, 0.862745, 0.211765)

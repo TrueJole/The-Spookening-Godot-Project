@@ -189,14 +189,14 @@ metadata/equipable = true
 [node name="Flasche" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.110293, 0, -9.64212e-09, 0, 0.110293, 0, 9.64212e-09, 0, -0.110293, 0, 0.000717605, 0)
 layers = 2
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("ArrayMesh_hmu1m")
 skeleton = NodePath("")
 
 [node name="Hebel" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.110293, 0, 2.79613e-07, 0, 0.110293, 0, -2.79613e-07, 0, -0.110293, 0, 0.546555, 0)
 layers = 2
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("ArrayMesh_rlvgn")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_36jsv")

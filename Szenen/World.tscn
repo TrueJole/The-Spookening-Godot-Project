@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
-[ext_resource type="Script" path="res://Szenen/Hand.gd" id="3_g2br0"]
+[ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]

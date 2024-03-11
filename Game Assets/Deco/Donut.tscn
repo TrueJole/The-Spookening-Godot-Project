@@ -71,6 +71,7 @@ shape = SubResource("CylinderShape3D_slprj")
 [node name="Torus" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0917978, 0, -0.0161864, 0, 0.0932139, 0, 0.0161864, 0, 0.0917978, 0, 0.0384269, 0)
 layers = 2
+gi_mode = 0
 mesh = SubResource("ArrayMesh_lra0p")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_s86qi")
@@ -79,7 +80,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s86qi")
 transform = Transform3D(0.0953344, 0, -0.01681, 0, 0.0968051, 0, 0.01681, 0, 0.0953344, 0, 0.0520258, 0)
 layers = 2
 cast_shadow = 0
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("ArrayMesh_rexpm")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1c3f8")

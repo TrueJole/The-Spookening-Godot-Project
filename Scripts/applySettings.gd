@@ -15,7 +15,7 @@ func _ready():
 	WEnvironment.sdfgi_enabled = false
 	bakedVoxelGI.visible = Settings.GI == 'voxelGI'
 	
-	WEnvironment.sdfgi_enabled = Settings.GI == 'sdfgi'
+	WEnvironment.sdfgi_enabled = (Settings.GI == 'sdfgi')
 	
 
 
