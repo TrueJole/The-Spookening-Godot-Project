@@ -162,7 +162,6 @@ mesh = SubResource("BoxMesh_vieg0")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 2.41827, -9.36537)
-visible = false
 layers = 1023
 subdiv = 0
 size = Vector3(29.1596, 7.53968, 16.7805)

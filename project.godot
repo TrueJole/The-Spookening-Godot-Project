@@ -13,7 +13,6 @@ config_version=5
 config/name="The Spookening"
 run/main_scene="res://Szenen/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-run/max_fps=60
 config/icon="res://icon.svg"
 
 [debug]
@@ -26,9 +25,7 @@ shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.50196
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/always_on_top=true
-window/size/window_width_override=1152
-window/size/window_height_override=648
+window/size/mode=4
 
 [input]
 
@@ -91,5 +88,3 @@ global_illumination/sdfgi/probe_ray_count=2
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
-lights_and_shadows/stdout/print_fps=false
-lights_and_shadows/max_fps=60

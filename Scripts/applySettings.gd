@@ -12,11 +12,23 @@ func _ready():
 	volFog.visible = Settings.volumetricFog
 	WEnvironment.ssil_enabled = Settings.ssil
 	
-	WEnvironment.sdfgi_enabled = false
-	bakedVoxelGI.visible = Settings.GI == 'voxelGI'
+	#WEnvironment.sdfgi_enabled = false
+	#bakedVoxelGI.visible = (Settings.GI == 'voxelGI')
 	
-	WEnvironment.sdfgi_enabled = (Settings.GI == 'sdfgi')
-	
+	#WEnvironment.sdfgi_enabled = (Settings.GI == 'sdfgi')
+	ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', false)
+	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
+	match Settings.giQuality:
+		0:
+			bakedVoxelGI.visible = false
+		1:
+			bakedVoxelGI.visible = true
+			ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', true)
+		2:
+			bakedVoxelGI.visible = true
+		3:
+			bakedVoxelGI.visible = true
+			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 
 
 

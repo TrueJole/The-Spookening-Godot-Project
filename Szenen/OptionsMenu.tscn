@@ -44,11 +44,20 @@ theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
 text = "SSIL"
 
-[node name="GIToggleButton" type="Button" parent="VBoxContainer"]
+[node name="giQualitySlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Qualität der Global Illumination"
+theme = ExtResource("1_o8mxa")
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="GILabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Die Qualität der VoxelGI"
+mouse_filter = 1
 theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
-text = "Global Illumination: "
 
 [node name="backButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -59,5 +68,5 @@ text = "Zurück"
 [connection signal="toggled" from="VBoxContainer/ssaoToggleButton" to="." method="_on_ssao_toggle_button_toggled"]
 [connection signal="toggled" from="VBoxContainer/volFogToggleButton" to="." method="_on_vol_fog_toggle_button_toggled"]
 [connection signal="toggled" from="VBoxContainer/SSIL" to="." method="_on_ssil_toggled"]
-[connection signal="pressed" from="VBoxContainer/GIToggleButton" to="." method="_on_sdfgi_toggle_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/giQualitySlider" to="." method="_on_gi_quality_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/backButton" to="." method="_on_back_button_pressed"]

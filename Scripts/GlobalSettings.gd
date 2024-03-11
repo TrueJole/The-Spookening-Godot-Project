@@ -5,7 +5,7 @@ extends Resource
 @export var volumetricFog: bool
 @export var GI: String
 @export var ssil: bool
-
+@export var giQuality: int
 #@export var sdfgi: bool
 #@export var voxelGI: bool
 
