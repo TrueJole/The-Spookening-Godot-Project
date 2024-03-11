@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bm8nxou20rc0g"
+path="res://.godot/imported/shrek-animation.gif-9d48e70ddeec39b39a6815f29baee823.tres"
+
+[deps]
+
+source_file="res://Assets/Materials/Textures/shrek-animation.gif"
+dest_files=["res://.godot/imported/shrek-animation.gif-9d48e70ddeec39b39a6815f29baee823.tres"]
+
+[params]
+
+frames_per_second=30
