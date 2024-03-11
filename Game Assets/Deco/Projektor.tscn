@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://df87isk1ee1nq"]
+
+[ext_resource type="PackedScene" uid="uid://8tcknjjs31rh" path="res://Assets/Projektor.glb" id="1_oxmsp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
+albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
+roughness = 0.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv26u"]
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.607843, 0.819608, 0.85098, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cydd4"]
+albedo_color = Color(0.74902, 0.74902, 0.74902, 1)
+metallic = 1.0
+roughness = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6eafa"]
+size = Vector3(0.256823, 0.0784298, 0.25869)
+
+[sub_resource type="Gradient" id="Gradient_3upcb"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4074x"]
+gradient = SubResource("Gradient_3upcb")
+
+[node name="Projektor" instance=ExtResource("1_oxmsp")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xvhiu")
+surface_material_override/1 = SubResource("StandardMaterial3D_xv26u")
+surface_material_override/2 = SubResource("StandardMaterial3D_cydd4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.992776, -0.119981, 0, 0.119981, 0.992776, 0, 0, 0, 1, -0.00765522, 0.0578553, 0.000385284)
+shape = SubResource("BoxShape3D_6eafa")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
+transform = Transform3D(-4.37114e-08, -0.144615, -0.989488, 0, 0.989488, -0.144615, 1, -6.32133e-09, -4.32519e-08, 0.126928, 0.0700883, 0.0753799)
+light_energy = 2.405
+light_volumetric_fog_energy = 3.202
+light_projector = SubResource("GradientTexture1D_4074x")
+shadow_enabled = true
+spot_range = 5.45182
+spot_angle = 31.8447

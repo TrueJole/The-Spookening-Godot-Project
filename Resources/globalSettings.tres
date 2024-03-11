@@ -8,4 +8,4 @@ ssao = true
 volumetricFog = true
 GI = "voxelGI"
 ssil = true
-giQuality = 0
+giQuality = 3

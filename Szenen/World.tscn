@@ -40,9 +40,8 @@ ambient_light_energy = 0.01
 tonemap_mode = 2
 ssao_enabled = true
 ssil_enabled = true
-ssil_radius = 2.0
-ssil_intensity = 0.2
-ssil_sharpness = 1.0
+ssil_radius = 3.32
+ssil_intensity = 0.54
 sdfgi_y_scale = 0
 glow_normalized = true
 glow_blend_mode = 0
@@ -57,7 +56,7 @@ noise = SubResource("FastNoiseLite_v7jx1")
 
 [sub_resource type="FogMaterial" id="FogMaterial_472m1"]
 density = 1.1624
-edge_fade = 1.36604e-05
+edge_fade = 1e-05
 density_texture = SubResource("NoiseTexture3D_mvt8o")
 
 [node name="Schule" type="Node3D"]
@@ -160,23 +159,23 @@ transform = Transform3D(3.87884, 0, 0, 0, 0.346975, 0, 0, 0, -3.69544, -22.4372,
 material_override = SubResource("StandardMaterial3D_aafdv")
 mesh = SubResource("BoxMesh_vieg0")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l2r8m")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0021, -0.116959, -4.87559)
+size = Vector3(16.8717, 1.40905, 23.6292)
+material = SubResource("FogMaterial_472m1")
+
+[node name="TestWorld" parent="." instance=ExtResource("7_gs1h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
+
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 2.41827, -9.36537)
 layers = 1023
 subdiv = 0
 size = Vector3(29.1596, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l2r8m")
-
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0021, -0.116959, -4.87559)
-size = Vector3(16.8717, 1.26188, 23.6292)
-material = SubResource("FogMaterial_472m1")
-
-[node name="TestWorld" parent="." instance=ExtResource("7_gs1h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_v1xdd")

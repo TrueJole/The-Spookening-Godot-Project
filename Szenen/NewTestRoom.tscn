@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=25 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bvipxvc0fsh1l" path="res://Game Assets/Deco/Buch.tscn" id="14_be7by"]
 [ext_resource type="PackedScene" uid="uid://oy2xrhos26y7" path="res://Game Assets/Deco/Donut.tscn" id="15_prhr6"]
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="16_fxbcl"]
+[ext_resource type="PackedScene" uid="uid://df87isk1ee1nq" path="res://Game Assets/Deco/Projektor.tscn" id="18_cv5sa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
 rough = true
@@ -56,7 +57,7 @@ shape = SubResource("BoxShape3D_734yg")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.7471, 0, 2.28302)
 
 [node name="Tisch7" parent="." instance=ExtResource("3_nitg4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14287, 0, 5.1309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14287, 0, 4.25989)
 
 [node name="Tisch8" parent="." instance=ExtResource("3_nitg4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.964747, 0, 5.14865)
@@ -231,7 +232,7 @@ transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.676157, 5.42874)
 
 [node name="donut" parent="." instance=ExtResource("15_prhr6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74277, 0.612413, 5.34107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39287, 0.612413, 4.47006)
 
 [node name="Stuhl" parent="." instance=ExtResource("16_fxbcl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 7.64274e-15, -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 1.20256, 0.995358, 5.58005)
@@ -249,7 +250,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.53833, 0.00793934, 2.06146)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13602, 1.86521, 2.26146)
 
 [node name="Uhr3" parent="." instance=ExtResource("13_enf0a")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.87903, 1.62821, 6.8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.821705, 1.9664, 6.8)
 
 [node name="Bilderrahmen2" parent="." instance=ExtResource("4_t032x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13949, 1.22556, 2.26146)
@@ -265,3 +266,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.6415
 
 [node name="Uhr5" parent="." instance=ExtResource("13_enf0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309934, 1.82478, 0.2)
+
+[node name="Projektor" parent="." instance=ExtResource("18_cv5sa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.46403, 0.612413, 4.42446)

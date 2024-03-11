@@ -18,5 +18,4 @@ noise = SubResource("FastNoiseLite_gjftd")
 
 [resource]
 albedo_color = Color(0.231373, 0.4, 0.34902, 1)
-normal_enabled = true
 normal_texture = SubResource("NoiseTexture2D_5fftc")
