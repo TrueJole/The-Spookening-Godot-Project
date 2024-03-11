@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Szenen/Hand.gd" id="3_g2br0"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
-[ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Szenen/World.occ" id="6_v1xdd"]
+[ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
@@ -115,6 +115,7 @@ spot_angle_attenuation = 7.46422
 
 [node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
 transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
+visible = false
 light_color = Color(0.996078, 1, 0.854902, 1)
 light_energy = 5.0
 light_indirect_energy = 10.0

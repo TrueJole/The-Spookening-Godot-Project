@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://dbmdvuwrit6gj"]
 
-[ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/TürMitLeiste1*3.tscn" id="1_c2ckh"]
-[ext_resource type="Script" path="res://Scripts/BrennendeTür.gd" id="2_w3vqt"]
+[ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/Walls n Stuff/TürMitLeiste1*3.tscn" id="1_n2tti"]
+[ext_resource type="Script" path="res://Scripts/BrennendeTür.gd" id="2_03s2e"]
 
 [sub_resource type="Curve" id="Curve_7vvxl"]
 bake_resolution = 1000
@@ -135,8 +135,8 @@ height = 0.14
 radial_segments = 10
 rings = 10
 
-[node name="Brennende Tür" instance=ExtResource("1_c2ckh")]
-script = ExtResource("2_w3vqt")
+[node name="Brennende Tür" instance=ExtResource("1_n2tti")]
+script = ExtResource("2_03s2e")
 locked = true
 
 [node name="Activation Module" parent="." index="3"]

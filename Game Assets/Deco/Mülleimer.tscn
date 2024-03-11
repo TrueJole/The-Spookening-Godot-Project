@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bafa7ptmntj0y"]
 
-[ext_resource type="Material" uid="uid://bw5rlgysmyf56" path="res://Assets/Materials/MülleimerBlau.tres" id="1_86him"]
-[ext_resource type="Material" uid="uid://d2nsdo2laow2h" path="res://Assets/Materials/MülleimerGelb.tres" id="2_ygdwp"]
-[ext_resource type="Material" uid="uid://bk2kieh5nwfj2" path="res://Assets/Materials/MülleimerGrau.tres" id="3_6ssm5"]
+[ext_resource type="Material" uid="uid://bw5rlgysmyf56" path="res://Assets/Materials/MülleimerBlau.tres" id="1_f014g"]
+[ext_resource type="Material" uid="uid://d2nsdo2laow2h" path="res://Assets/Materials/MülleimerGelb.tres" id="2_d0ka7"]
+[ext_resource type="Material" uid="uid://bk2kieh5nwfj2" path="res://Assets/Materials/MülleimerGrau.tres" id="3_q8qyk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwt5o"]
 resource_name = "Metall"
@@ -53,7 +53,7 @@ _surfaces = [{
 "format": 34359742519,
 "index_count": 30,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0),
-"material": ExtResource("1_86him"),
+"material": ExtResource("1_f014g"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 20,
@@ -75,7 +75,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)
 mesh = SubResource("ArrayMesh_its3f")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("1_86him")
+surface_material_override/0 = ExtResource("1_f014g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.407485)
@@ -90,7 +90,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)
 mesh = SubResource("ArrayMesh_its3f")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("2_ygdwp")
+surface_material_override/0 = ExtResource("2_d0ka7")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00188506)
@@ -109,4 +109,4 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)
 mesh = SubResource("ArrayMesh_its3f")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_6ssm5")
+surface_material_override/0 = ExtResource("3_q8qyk")

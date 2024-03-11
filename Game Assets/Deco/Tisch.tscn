@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dvkhlvy7ssp4k"]
 
-[ext_resource type="Material" uid="uid://cmyr0vqn8fmur" path="res://Assets/Materials/Tischplatte.tres" id="1_rqyig"]
-[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="2_t1lm4"]
+[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="1_gwqov"]
+[ext_resource type="Material" uid="uid://cmyr0vqn8fmur" path="res://Assets/Materials/Tischplatte.tres" id="2_c8tpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dec1c"]
 size = Vector3(1.45383, 0.611518, 0.552483)
@@ -81,11 +81,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726084, 0.306654, 0.257313)
 shape = SubResource("BoxShape3D_dec1c")
 
 [node name="Beine" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_t1lm4")
+material_override = ExtResource("1_gwqov")
 mesh = SubResource("ArrayMesh_nbaj4")
 skeleton = NodePath("")
 
 [node name="Platte" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_rqyig")
+material_override = ExtResource("2_c8tpp")
 mesh = SubResource("ArrayMesh_jwh0x")
 skeleton = NodePath("")

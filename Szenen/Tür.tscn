@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bg2gy4st6tkbd"]
 
 [ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="1_assuh"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cuuln3ivht41e" path="res://Szenen/Tür.occ" id="1_w37fu"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cuuln3ivht41e" path="res://Resources/Tür.occ" id="1_l2yor"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2w20l"]
 rough = true
@@ -152,7 +152,7 @@ physics_material_override = SubResource("PhysicsMaterial_2w20l")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3252, 2.18387, 0.0279806)
-occluder = ExtResource("1_w37fu")
+occluder = ExtResource("1_l2yor")
 bake_mask = 4294966274
 bake_simplification_distance = 0.24
 

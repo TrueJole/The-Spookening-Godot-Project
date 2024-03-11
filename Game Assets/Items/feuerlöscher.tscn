@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bvar7yqb8fxjl"]
 
-[ext_resource type="Script" path="res://Scripts/Feuerlöscher.gd" id="1_3vkwc"]
+[ext_resource type="Script" path="res://Scripts/Feuerlöscher.gd" id="1_k2u5l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2h3g"]
 resource_name = "Rotes Metall"
@@ -138,7 +138,7 @@ radius = 0.109537
 height = 0.425775
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_btm3c"]
-size = Vector3(0.578125, 0.562225, 1.27118)
+size = Vector3(0.578125, 0.562225, 1.50473)
 
 [sub_resource type="Curve" id="Curve_76uof"]
 _data = [Vector2(0, 0.175824), 0.0, 0.0, 0, 0, Vector2(0.21519, 0.89011), 1.44689, 1.44689, 0, 0, Vector2(0.765823, 0.769231), -0.843328, -0.843328, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -182,7 +182,7 @@ rings = 10
 collision_layer = 2
 collision_mask = 7
 mass = 10.0
-script = ExtResource("1_3vkwc")
+script = ExtResource("1_k2u5l")
 metadata/itemid = "feuerlöscher"
 metadata/equipable = true
 
@@ -194,7 +194,7 @@ mesh = SubResource("ArrayMesh_hmu1m")
 skeleton = NodePath("")
 
 [node name="Hebel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.110293, 0, -9.64212e-09, 0, 0.110293, 0, 9.64212e-09, 0, -0.110293, 0, 0.546555, 0)
+transform = Transform3D(-0.110293, 0, 2.79613e-07, 0, 0.110293, 0, -2.79613e-07, 0, -0.110293, 0, 0.546555, 0)
 layers = 2
 gi_mode = 2
 mesh = SubResource("ArrayMesh_rlvgn")
@@ -222,7 +222,7 @@ monitoring = false
 metadata/itemid = "foam"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FoamArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488281, 0.00679016, -0.679169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488281, 0.00679016, -0.795944)
 shape = SubResource("BoxShape3D_btm3c")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]

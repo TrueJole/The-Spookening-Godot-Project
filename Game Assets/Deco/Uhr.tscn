@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://blvxxxj44qb66"]
+
+[ext_resource type="Texture2D" uid="uid://cbx48sij7ya3" path="res://Assets/Materials/Textures/ziffernblatt-15cm-zahlen.png" id="1_oc8ay"]
+[ext_resource type="PackedScene" uid="uid://bib0qmv1ovvug" path="res://Assets/Uhr.glb" id="1_vpki3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coh1e"]
+metallic = 1.0
+roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqkr0"]
+albedo_texture = ExtResource("1_oc8ay")
+roughness = 0.0
+
+[node name="Uhr" instance=ExtResource("1_vpki3")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(-9.54279e-09, 0.208823, -0.0636684, 0, -0.0636684, -0.208823, -0.218314, -9.12795e-09, 2.78303e-09, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_coh1e")
+surface_material_override/1 = SubResource("StandardMaterial3D_tqkr0")
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(-9.54279e-09, 0.202381, 0.08187, 0, 0.08187, -0.202381, -0.218314, -8.84636e-09, -3.57865e-09, 0, 0, 0)
+
+[node name="Cylinder_002" parent="." index="2"]
+transform = Transform3D(-9.54279e-09, 0.217989, -0.0119089, 0, -0.0119089, -0.217989, -0.218314, -9.52858e-09, 5.20553e-10, 0, 0, 0)
