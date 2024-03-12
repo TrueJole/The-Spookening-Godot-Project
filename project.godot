@@ -75,6 +75,13 @@ interact={
 [physics]
 
 3d/default_gravity=9.81
+3d/default_linear_damp=0.2
+3d/default_angular_damp=1.0
+3d/sleep_threshold_linear=0.2
+3d/sleep_threshold_angular=1.0
+3d/time_before_sleep=0.3
+3d/solver/solver_iterations=64
+3d/solver/default_contact_bias=1.0
 
 [rendering]
 
