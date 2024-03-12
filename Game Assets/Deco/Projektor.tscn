@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://df87isk1ee1nq"]
+[gd_scene load_steps=12 format=3 uid="uid://df87isk1ee1nq"]
 
 [ext_resource type="PackedScene" uid="uid://8tcknjjs31rh" path="res://Assets/Projektor.glb" id="1_oxmsp"]
-[ext_resource type="Script" path="res://Game Assets/Deco/Projektor.gd" id="2_dtmd4"]
+[ext_resource type="Script" path="res://Scripts/Projektor.gd" id="2_fj0hs"]
 [ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_origj"]
+[ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="3_v1c7c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
 albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -22,18 +23,15 @@ roughness = 0.4
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eafa"]
 size = Vector3(0.256823, 0.0784298, 0.25869)
 
-[sub_resource type="Gradient" id="Gradient_3upcb"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 0, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jar2"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4074x"]
-gradient = SubResource("Gradient_3upcb")
-use_hdr = true
+[sub_resource type="QuadMesh" id="QuadMesh_gtno3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_of25y"]
 size = Vector3(0.0384175, 0.0566459, 0.173759)
 
 [node name="Projektor" instance=ExtResource("1_oxmsp")]
-script = ExtResource("2_dtmd4")
+script = ExtResource("2_fj0hs")
 
 [node name="Cube" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvhiu")
@@ -47,13 +45,33 @@ transform = Transform3D(0.992776, -0.119981, 0, 0.119981, 0.992776, 0, 0, 0, 1, 
 shape = SubResource("BoxShape3D_6eafa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
-transform = Transform3D(-4.37114e-08, -0.152986, -0.988228, 0, 0.988228, -0.152986, 1, -6.68722e-09, -4.31968e-08, 0.126928, 0.0700883, 0.0753799)
-light_energy = 2.405
+transform = Transform3D(-4.37114e-08, -0.152986, -0.988228, 0, 0.988228, -0.152986, 1, -6.68723e-09, -4.31968e-08, 0.126928, 0.0700883, 0.0753799)
+light_energy = 2.891
 light_volumetric_fog_energy = 1.734
-light_projector = SubResource("GradientTexture1D_4074x")
+light_bake_mode = 0
 shadow_enabled = true
+shadow_bias = 0.1
 spot_range = 5.45182
 spot_angle = 24.5206
+
+[node name="SubViewport" type="SubViewport" parent="SpotLight3D" index="0"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SpotLight3D/SubViewport" index="0"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("3_v1c7c")
+autoplay = true
+loop = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLight3D/SubViewport" index="1"]
+transform = Transform3D(-1.19646e-08, -0.0235547, -0.152154, 3.92951e-15, 0.152154, -0.0235547, 0.273719, -1.02961e-09, -6.65087e-09, 0.319613, 0.0999176, 0.0753799)
+material_override = SubResource("StandardMaterial3D_8jar2")
+transparency = 0.9
+ignore_occlusion_culling = true
+mesh = SubResource("QuadMesh_gtno3")
+skeleton = NodePath("../..")
 
 [node name="Activation Module" type="Area3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0939977, 0.044889, 0)

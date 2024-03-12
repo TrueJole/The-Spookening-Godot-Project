@@ -273,7 +273,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.4640
 
 [node name="Cartridge" parent="." instance=ExtResource("19_tkeqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27754, 0.675619, 5.4464)
-metadata/data = null
 
 [node name="Cartridge2" parent="." instance=ExtResource("19_tkeqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65211, 0.675619, 5.4464)
