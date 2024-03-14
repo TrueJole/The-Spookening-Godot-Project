@@ -75,23 +75,15 @@ interact={
 [physics]
 
 3d/default_gravity=9.81
-3d/default_linear_damp=0.2
-3d/default_angular_damp=1.0
-3d/sleep_threshold_linear=0.2
-3d/sleep_threshold_angular=1.0
-3d/time_before_sleep=0.3
-3d/solver/solver_iterations=64
-3d/solver/default_contact_bias=1.0
+3d/solver/solver_iterations=32
 
 [rendering]
 
 lights_and_shadows/directional_shadow/size=8000
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-environment/ssao/quality=3
 global_illumination/sdfgi/probe_ray_count=2
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
-anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=3
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true

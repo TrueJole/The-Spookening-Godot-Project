@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://dts1pgqy8xlwp"]
+
+[ext_resource type="PackedScene" uid="uid://blhn8kdvd52vw" path="res://Assets/tv.glb" id="1_b1gju"]
+[ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_r6amd"]
+[ext_resource type="Script" path="res://Scripts/TV.gd" id="2_rhws3"]
+[ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="4_4of44"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivi8y"]
+albedo_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o8g47"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iimoe"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o42o"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_o8g47")
+roughness = 0.0
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_iimoe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x5h6"]
+albedo_color = Color(0.470588, 0.470588, 0.470588, 1)
+metallic = 0.71
+roughness = 0.72
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dow1n"]
+size = Vector3(0.342651, 0.119186, 0.469238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfpl1"]
+size = Vector3(0.27832, 0.366455, 0.442383)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btqjp"]
+size = Vector3(0.0671567, 0.0505384, 0.173759)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l33ks"]
+
+[node name="TV" instance=ExtResource("1_b1gju")]
+script = ExtResource("2_rhws3")
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ivi8y")
+surface_material_override/1 = SubResource("StandardMaterial3D_6o42o")
+surface_material_override/2 = SubResource("StandardMaterial3D_4x5h6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00262451, 0.0586853, -0.00561523)
+shape = SubResource("BoxShape3D_dow1n")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00665283, 0.301746, -0.00488281)
+shape = SubResource("BoxShape3D_nfpl1")
+
+[node name="Activation Module" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174749, 0.0581986, 0.105811)
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("2_r6amd")
+activators = Array[String](["videocart"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Activation Module" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291229, 0.0075541, -0.0037498)
+shape = SubResource("BoxShape3D_btqjp")
+
+[node name="SubViewport" type="SubViewport" parent="." index="3"]
+size = Vector2i(1920, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_4of44")
+autoplay = true
+loop = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-9.48095e-09, 0.0135562, -5.33304e-09, 0, -5.9256e-10, -0.122006, -0.216899, -5.9256e-10, 2.33114e-16, 0.116464, 0.300431, -0.00847936)
+material_override = SubResource("StandardMaterial3D_6o42o")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("PlaneMesh_l33ks")
+
+[connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]

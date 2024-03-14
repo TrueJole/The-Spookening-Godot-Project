@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=28 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="16_fxbcl"]
 [ext_resource type="PackedScene" uid="uid://df87isk1ee1nq" path="res://Game Assets/Deco/Projektor.tscn" id="18_cv5sa"]
 [ext_resource type="PackedScene" uid="uid://bbtev5l7d38pg" path="res://Game Assets/Items/Cartridge.tscn" id="19_tkeqe"]
+[ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="20_x3ott"]
+[ext_resource type="PackedScene" uid="uid://dts1pgqy8xlwp" path="res://Game Assets/Deco/TV.tscn" id="20_ycmnq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
 rough = true
@@ -233,7 +235,7 @@ transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.676157, 5.42874)
 
 [node name="donut" parent="." instance=ExtResource("15_prhr6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39287, 0.612413, 4.47006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84313, 0.377803, 5.51953)
 
 [node name="Stuhl" parent="." instance=ExtResource("16_fxbcl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 7.64274e-15, -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 1.20256, 0.995358, 5.58005)
@@ -273,6 +275,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.4640
 
 [node name="Cartridge" parent="." instance=ExtResource("19_tkeqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27754, 0.675619, 5.4464)
+metadata/itemid = "videocart"
+metadata/data = ExtResource("20_x3ott")
 
 [node name="Cartridge2" parent="." instance=ExtResource("19_tkeqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65211, 0.675619, 5.4464)
+
+[node name="TV" parent="." instance=ExtResource("20_ycmnq")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.91766, 0.612413, 4.50494)
