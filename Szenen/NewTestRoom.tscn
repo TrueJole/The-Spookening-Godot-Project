@@ -1,6 +1,5 @@
-[gd_scene load_steps=28 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=25 format=3 uid="uid://ugxjkg78r56m"]
 
-[ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_virf3"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
 [ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Deco/Tisch.tscn" id="3_nitg4"]
 [ext_resource type="PackedScene" uid="uid://dkj4hwgcmkmnk" path="res://Game Assets/Walls n Stuff/Fenster2_3.tscn" id="4_afmtp"]
@@ -21,16 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bbtev5l7d38pg" path="res://Game Assets/Items/Cartridge.tscn" id="19_tkeqe"]
 [ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="20_x3ott"]
 [ext_resource type="PackedScene" uid="uid://dts1pgqy8xlwp" path="res://Game Assets/Deco/TV.tscn" id="20_ycmnq"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mjq6c"]
-rough = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_24ecc"]
-lightmap_size_hint = Vector2i(14, 21)
-add_uv2 = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_734yg"]
-size = Vector3(16.4164, 0.595947, 11.3126)
+[ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/FloorTile.tscn" id="21_jdwer"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeyxa"]
 
@@ -40,21 +30,6 @@ size = Vector3(16.4164, 0.595947, 11.3126)
 radius = 0.25
 
 [node name="TestWorld2" type="Node3D"]
-
-[node name="Boden" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90838, -0.282588, 2.78026)
-top_level = true
-collision_mask = 7
-physics_material_override = SubResource("PhysicsMaterial_mjq6c")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boden"]
-transform = Transform3D(16.4379, 0, 0, 0, 0.597445, 0, 0, 0, 11.2914, -0.526969, -0.0117072, 0.723063)
-material_override = ExtResource("1_virf3")
-mesh = SubResource("BoxMesh_24ecc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boden"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.524719, -0.00744629, 0.722717)
-shape = SubResource("BoxShape3D_734yg")
 
 [node name="Tisch9" parent="." instance=ExtResource("3_nitg4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.7471, 0, 2.28302)
@@ -229,7 +204,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.735602, 0.495328, 1.48776)
 
 [node name="Lamp" parent="." instance=ExtResource("12_a1ot4")]
-transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, -0.235917, 2.29982, 0.2)
+transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, -0.235917, 2.29982, 0.292706)
 
 [node name="Buch" parent="." instance=ExtResource("14_be7by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.676157, 5.42874)
@@ -283,3 +258,153 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65211, 0.675619, 5.4464)
 
 [node name="TV" parent="." instance=ExtResource("20_ycmnq")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.91766, 0.612413, 4.50494)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 7)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 5)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="StaticBody2D30" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 3)
+
+[node name="StaticBody2D31" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="StaticBody2D32" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="StaticBody2D33" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="StaticBody2D34" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="StaticBody2D35" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
+
+[node name="StaticBody2D36" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="StaticBody2D37" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="StaticBody2D38" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+
+[node name="StaticBody2D39" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="StaticBody2D40" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1)
+
+[node name="StaticBody2D41" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="StaticBody2D42" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="StaticBody2D43" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="StaticBody2D44" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="StaticBody2D45" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
+
+[node name="StaticBody2D46" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="StaticBody2D47" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
+
+[node name="StaticBody2D48" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
+
+[node name="StaticBody2D49" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)
+
+[node name="StaticBody2D50" parent="." instance=ExtResource("21_jdwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)

@@ -1,21 +1,10 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bpserrf1dnkpv"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpserrf1dnkpv"]
 
-[sub_resource type="Gradient" id="Gradient_h3nbn"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gjftd"]
-noise_type = 4
-frequency = 0.1883
-fractal_weighted_strength = 1.0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5fftc"]
-width = 2048
-height = 2048
-seamless = true
-as_normal_map = true
-bump_strength = 0.5
-color_ramp = SubResource("Gradient_h3nbn")
-noise = SubResource("FastNoiseLite_gjftd")
+[ext_resource type="Texture2D" uid="uid://dkxsxe1y8teno" path="res://Assets/Materials/Textures/FloorNormalMap.png" id="1_pbxpk"]
 
 [resource]
 albedo_color = Color(0.231373, 0.4, 0.34902, 1)
-normal_texture = SubResource("NoiseTexture2D_5fftc")
+normal_enabled = true
+normal_scale = -3.0
+normal_texture = ExtResource("1_pbxpk")
+uv1_scale = Vector3(2, 2, 2)
