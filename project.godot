@@ -75,7 +75,6 @@ interact={
 [physics]
 
 3d/default_gravity=9.81
-3d/solver/solver_iterations=32
 
 [rendering]
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://df87isk1ee1nq"]
+[gd_scene load_steps=9 format=3 uid="uid://df87isk1ee1nq"]
 
 [ext_resource type="PackedScene" uid="uid://8tcknjjs31rh" path="res://Assets/Projektor.glb" id="1_oxmsp"]
 [ext_resource type="Script" path="res://Scripts/Projektor.gd" id="2_fj0hs"]
 [ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_origj"]
-[ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="3_v1c7c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
 albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -22,10 +21,6 @@ roughness = 0.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eafa"]
 size = Vector3(0.256823, 0.0784298, 0.25869)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jar2"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_gtno3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_of25y"]
 size = Vector3(0.0384175, 0.0566459, 0.173759)
@@ -53,25 +48,6 @@ shadow_enabled = true
 shadow_bias = 0.1
 spot_range = 5.45182
 spot_angle = 24.5206
-
-[node name="SubViewport" type="SubViewport" parent="SpotLight3D" index="0"]
-size = Vector2i(1920, 1080)
-render_target_update_mode = 4
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SpotLight3D/SubViewport" index="0"]
-offset_right = 1920.0
-offset_bottom = 1088.0
-stream = ExtResource("3_v1c7c")
-autoplay = true
-loop = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLight3D/SubViewport" index="1"]
-transform = Transform3D(-1.19646e-08, -0.0235547, -0.152154, 3.92951e-15, 0.152154, -0.0235547, 0.273719, -1.02961e-09, -6.65087e-09, 0.319613, 0.0999176, 0.0753799)
-material_override = SubResource("StandardMaterial3D_8jar2")
-transparency = 0.9
-ignore_occlusion_culling = true
-mesh = SubResource("QuadMesh_gtno3")
-skeleton = NodePath("../..")
 
 [node name="Activation Module" type="Area3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0939977, 0.044889, 0)

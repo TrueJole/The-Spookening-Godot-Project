@@ -133,11 +133,11 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Head/Camera3D/Hand"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, -0.00566101, 0.0773439, -1.07184)
+transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, -0.00566101, 0.00542343, -1.07184)
 shape = SubResource("BoxShape3D_g7478")
 
 [node name="Dot" type="CSGSphere3D" parent="Player/Head/Camera3D/Hand"]
-transform = Transform3D(0.01, -3.67662e-16, 0, -3.67662e-16, 0.01, 0, 0, 0, 0.01, 0, -7.15256e-07, -0.985848)
+transform = Transform3D(0.01, -4.23173e-16, 0, -4.23173e-16, 0.01, 0, 0, 0, 0.01, 0, -8.34465e-07, -0.829209)
 layers = 2
 sorting_offset = 9.22337e+18
 cast_shadow = 0

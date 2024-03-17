@@ -4,7 +4,6 @@
 albedo_color = Color(0.92549, 0.937255, 0.890196, 1)
 emission_enabled = true
 emission = Color(0.960784, 0.960784, 0.956863, 1)
-emission_energy_multiplier = 1.5
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pf48m"]
 lightmap_size_hint = Vector2i(17, 19)
