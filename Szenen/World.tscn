@@ -51,13 +51,13 @@ volumetric_fog_density = 0.0
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_v7jx1"]
 frequency = 0.0662
 
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_mvt8o"]
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3bpmt"]
 noise = SubResource("FastNoiseLite_v7jx1")
 
 [sub_resource type="FogMaterial" id="FogMaterial_472m1"]
 density = 1.1624
 edge_fade = 1e-05
-density_texture = SubResource("NoiseTexture3D_mvt8o")
+density_texture = SubResource("NoiseTexture3D_3bpmt")
 
 [node name="Schule" type="Node3D"]
 top_level = true
