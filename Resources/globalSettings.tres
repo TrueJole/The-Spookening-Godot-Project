@@ -4,9 +4,10 @@
 
 [resource]
 script = ExtResource("1_4j7up")
-ssao = false
-volumetricFog = false
+ssao = true
+volumetricFog = true
 GI = "voxelGI"
-ssil = false
-giQuality = 0
-msaa = false
+ssil = true
+giQuality = 1
+msaa = true
+exposure = 0.479022

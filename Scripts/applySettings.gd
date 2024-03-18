@@ -11,6 +11,7 @@ func _ready():
 	WEnvironment.ssao_enabled = Settings.ssao
 	volFog.visible = Settings.volumetricFog
 	WEnvironment.ssil_enabled = Settings.ssil
+	WEnvironment.tonemap_exposure = Settings.exposure
 	
 	#WEnvironment.sdfgi_enabled = false
 	#bakedVoxelGI.visible = (Settings.GI == 'voxelGI')

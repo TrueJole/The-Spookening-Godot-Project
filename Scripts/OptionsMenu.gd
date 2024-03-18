@@ -11,6 +11,8 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSIL").button_pressed = Settings.ssil
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/giQualitySlider").value = Settings.giQuality
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton").button_pressed = Settings.msaa
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Settings.exposure
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 	
 
@@ -19,6 +21,7 @@ func applySettings():
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
 	subviewport.get_node("FogVolume").visible = Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
+	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
 	if Settings.msaa == true:
 		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_4X)
 	else:
@@ -76,6 +79,7 @@ func _on_ssil_toggled(toggled_on):
 	applySettings()
 
 
+
 func _on_gi_quality_slider_value_changed(value):
 	Settings.giQuality = value
 	match Settings.giQuality:
@@ -93,3 +97,7 @@ func _on_msaa_toggle_button_toggled(toggled_on):
 	Settings.msaa = toggled_on
 	applySettings()
 
+func _on_brightness_slider_value_changed(value):
+	Settings.exposure = value
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
+	applySettings()
