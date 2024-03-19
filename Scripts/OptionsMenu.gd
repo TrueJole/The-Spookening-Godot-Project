@@ -23,9 +23,9 @@ func applySettings():
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
 	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
 	if Settings.msaa == true:
-		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_4X)
+		subviewport.msaa_3d = subviewport.MSAA_4X
 	else:
-		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
+		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 	
 	
 	
@@ -99,5 +99,5 @@ func _on_msaa_toggle_button_toggled(toggled_on):
 
 func _on_brightness_slider_value_changed(value):
 	Settings.exposure = value
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + 	str(Settings.exposure).pad_decimals(2)
 	applySettings()
