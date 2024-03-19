@@ -10,4 +10,5 @@ GI = "voxelGI"
 ssil = true
 giQuality = 3
 msaa = true
-exposure = 1.39161
+exposure = 1.01136
+shadowPower = 14

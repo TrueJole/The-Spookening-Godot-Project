@@ -13,30 +13,32 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton").button_pressed = Settings.msaa
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Settings.exposure
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 	
 
 func applySettings():
-	print_debug(Settings.volumetricFog)
+	print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
 	subviewport.get_node("FogVolume").visible = Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
 	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
+	
 	if Settings.msaa == true:
 		subviewport.msaa_3d = subviewport.MSAA_4X
 	else:
-		subviewport.msaa_3d = subviewport.MSAA_DISABLED
-	
-	
-	
-	ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', false)
+		subviewport.msaas_3d = subviewport.MSAA_DISABLED
+
+	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
+	RenderingServer.positional_soft_shadow_filter_set_quality(2**Settings.shadowPower)
+	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	match Settings.giQuality:
 		0:
 			subviewport.get_node("VoxelGI").visible = false
 		1:
 			subviewport.get_node("VoxelGI").visible = true
-			ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', true)
+			RenderingServer.gi_set_use_half_resolution(true)
 		2:
 			subviewport.get_node("VoxelGI").visible = true
 		3:
@@ -100,4 +102,9 @@ func _on_msaa_toggle_button_toggled(toggled_on):
 func _on_brightness_slider_value_changed(value):
 	Settings.exposure = value
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + 	str(Settings.exposure).pad_decimals(2)
+	applySettings()
+
+
+func _on_shadow_slider_value_changed(value):
+	Settings.shadowPower = value
 	applySettings()

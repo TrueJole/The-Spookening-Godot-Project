@@ -7,6 +7,7 @@ var loading: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	loadingBar.hide()
+	RenderingServer.viewport_set_msaa_2d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
 	pass # Replace with function body.
 
 
@@ -20,6 +21,7 @@ func _process(_delta):
 			
 			
 			get_parent().add_child(ResourceLoader.load_threaded_get(nextScene).instantiate())
+			RenderingServer.viewport_set_msaa_2d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
 			queue_free()
 
 

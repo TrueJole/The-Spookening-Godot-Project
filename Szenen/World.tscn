@@ -68,6 +68,7 @@ transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.
 light_color = Color(0.803922, 0.831373, 1, 1)
 light_energy = 0.1
 light_indirect_energy = 0.05
+light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 50.0
@@ -171,10 +172,10 @@ material = SubResource("FogMaterial_472m1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2997, 2.41827, -9.36537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2535, 2.41827, -9.36537)
 layers = 1023
 subdiv = 0
-size = Vector3(29.1596, 7.53968, 16.7805)
+size = Vector3(23.0671, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]

@@ -12,6 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if loaded != null:
+		projector.show()
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
 		loaded.rotation = Vector3(0,deg_to_rad(180),0)
 
@@ -20,6 +21,7 @@ func _process(_delta):
 		#print_debug('applied: ', texture)
 		loaded = null
 	else:
+		projector.hide()
 		projector.light_projector = null
 		
 

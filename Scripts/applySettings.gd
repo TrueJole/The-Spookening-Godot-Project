@@ -24,16 +24,16 @@ func _ready():
 	else:
 		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
 	
+	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
 	
-	
-	ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', false)
+	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	match Settings.giQuality:
 		0:
 			bakedVoxelGI.visible = false
 		1:
 			bakedVoxelGI.visible = true
-			ProjectSettings.set_setting('rendering/global_illumination/gi/use_half_resolution', true)
+			RenderingServer.gi_set_use_half_resolution(true)
 		2:
 			bakedVoxelGI.visible = true
 		3:

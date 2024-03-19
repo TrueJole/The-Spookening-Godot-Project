@@ -8,6 +8,7 @@ extends Resource
 @export var giQuality: int
 @export var msaa: bool
 @export var exposure: float
+@export var shadowPower: int
 #@export var sdfgi: bool
 #@export var voxelGI: bool
 

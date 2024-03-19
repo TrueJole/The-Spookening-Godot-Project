@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dts1pgqy8xlwp"]
+[gd_scene load_steps=13 format=3 uid="uid://dts1pgqy8xlwp"]
 
 [ext_resource type="PackedScene" uid="uid://blhn8kdvd52vw" path="res://Assets/tv.glb" id="1_b1gju"]
 [ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_r6amd"]
@@ -8,18 +8,14 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivi8y"]
 albedo_color = Color(0.188235, 0.188235, 0.188235, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_o8g47"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_iimoe"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7h2i8"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o42o"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_o8g47")
+albedo_texture = SubResource("ViewportTexture_7h2i8")
 roughness = 0.0
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_iimoe")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x5h6"]
 albedo_color = Color(0.470588, 0.470588, 0.470588, 1)
@@ -79,7 +75,7 @@ autoplay = true
 loop = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
-transform = Transform3D(-9.48095e-09, 0.0135562, -5.33304e-09, 0, -5.9256e-10, -0.122006, -0.216899, -5.9256e-10, 2.33114e-16, 0.116464, 0.300431, -0.00847936)
+transform = Transform3D(-9.48095e-09, 0.0135562, -5.33304e-09, 0, -5.9256e-10, -0.122006, -0.216899, -5.9256e-10, 2.33114e-16, 0.117641, 0.300431, -0.00847936)
 material_override = SubResource("StandardMaterial3D_6o42o")
 cast_shadow = 0
 gi_mode = 0
