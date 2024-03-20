@@ -193,6 +193,7 @@ directional_shadow_max_distance = 50.0
 
 [node name="Camera3D" type="Camera3D" parent="PanelContainer/HBoxContainer/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.991206, 0.132326, 0, -0.132326, 0.991206, 0.931786, 1.33291, 0.916981)
+current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PanelContainer/HBoxContainer/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56251, 1.26878, -1.16303)

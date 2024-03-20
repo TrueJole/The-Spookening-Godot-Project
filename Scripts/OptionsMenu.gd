@@ -27,7 +27,7 @@ func applySettings():
 	if Settings.msaa == true:
 		subviewport.msaa_3d = subviewport.MSAA_4X
 	else:
-		subviewport.msaas_3d = subviewport.MSAA_DISABLED
+		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
 	RenderingServer.positional_soft_shadow_filter_set_quality(2**Settings.shadowPower)
