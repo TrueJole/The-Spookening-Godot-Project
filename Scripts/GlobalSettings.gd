@@ -9,6 +9,7 @@ extends Resource
 @export var msaa: bool
 @export var exposure: float
 @export var shadowPower: int
+@export var showFPS: bool = true
 #@export var sdfgi: bool
 #@export var voxelGI: bool
 

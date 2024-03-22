@@ -15,7 +15,6 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
-	
 
 func applySettings():
 	print_debug(2**Settings.shadowPower)
@@ -30,7 +29,7 @@ func applySettings():
 		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
-	RenderingServer.positional_soft_shadow_filter_set_quality(2**Settings.shadowPower)
+	#RenderingServer.positional_shadow_atlas_set_size(2**Settings.shadowPower)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	match Settings.giQuality:
@@ -80,8 +79,6 @@ func _on_ssil_toggled(toggled_on):
 	Settings.ssil = toggled_on
 	applySettings()
 
-
-
 func _on_gi_quality_slider_value_changed(value):
 	Settings.giQuality = value
 	match Settings.giQuality:
@@ -104,7 +101,10 @@ func _on_brightness_slider_value_changed(value):
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + 	str(Settings.exposure).pad_decimals(2)
 	applySettings()
 
-
 func _on_shadow_slider_value_changed(value):
 	Settings.shadowPower = value
 	applySettings()
+
+
+func _on_fps_toggle_button_toggled(toggled_on):
+	Settings.showFPS = toggled_on
