@@ -29,10 +29,8 @@ func _physics_process(_delta):
 	if locked:
 		if to_global(anker.position).distance_to(player.global_position) < to_global(anker.position+Vector3(0, 0, 0.2)).distance_to(player.global_position):
 			movingFire.position = Vector3(0, 0, 0)
-			print_debug('000')
 			
 		else:
-			print_debug('nicht 000')
 			movingFire.position = Vector3(0, 0, 0.2)
 		
 		if fireValue != 200 and fireValue > 0:

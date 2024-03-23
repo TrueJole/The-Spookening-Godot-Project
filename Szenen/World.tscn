@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=18 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
+[ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor Punkt.png" id="4_i3u30"]
 [ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
-size = Vector3(0.0856628, 0.0544128, 2.07825)
+size = Vector3(0.0181231, 0.0143356, 2.07825)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vnpd"]
 no_depth_test = true
@@ -134,17 +135,33 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Head/Camera3D/Hand"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, -0.00566101, 0.00542343, -1.07184)
+transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0.00115776, 0.00135863, -1.07184)
 shape = SubResource("BoxShape3D_g7478")
 
 [node name="Dot" type="CSGSphere3D" parent="Player/Head/Camera3D/Hand"]
 transform = Transform3D(0.01, -4.23173e-16, 0, -4.23173e-16, 0.01, 0, 0, 0, 0.01, 0, -8.34465e-07, -0.829209)
+visible = false
 layers = 2
 sorting_offset = 9.22337e+18
 cast_shadow = 0
 ignore_occlusion_culling = true
 gi_mode = 0
 material = SubResource("StandardMaterial3D_4vnpd")
+
+[node name="Cursor" type="TextureRect" parent="Player/Head/Camera3D/Hand"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_i3u30")
+expand_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)

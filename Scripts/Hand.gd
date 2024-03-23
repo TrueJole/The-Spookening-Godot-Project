@@ -8,9 +8,24 @@ var equipped: bool
 var equipReached:bool
 var heldObject
 var originalObject
+@onready var cursor = $Hand/Cursor
+const CURSOR_KREIS = preload("res://Assets/Materials/Textures/Cursor Kreis.png")
+const CURSOR_PUNKT = preload("res://Assets/Materials/Textures/Cursor Punkt.png")
 
-
+	
+func checkHand():
+	var bodies = hand.get_overlapping_bodies()
+	if (not bodies.is_empty()) and (heldObject == null):
+		print_debug('Kreis')
+		cursor.texture = CURSOR_KREIS
+	else:
+		print_debug('Punkt')
+		cursor.texture = CURSOR_PUNKT
+		
+	
 func _physics_process(_delta):
+	checkHand()
+	
 	if Input.is_action_pressed("interact") and equipped:
 		if heldObject.has_method('used'):
 			heldObject.used()

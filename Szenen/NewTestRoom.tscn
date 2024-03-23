@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=28 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
 [ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Deco/Tisch.tscn" id="3_nitg4"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/FloorTile.tscn" id="21_jdwer"]
 [ext_resource type="PackedScene" uid="uid://b8t31041u720e" path="res://Game Assets/Deco/Spinde.tscn" id="22_w7cs0"]
 [ext_resource type="PackedScene" uid="uid://dpo0io7glisbf" path="res://Game Assets/Deco/Schrank.tscn" id="23_1b55k"]
+[ext_resource type="PackedScene" uid="uid://dosww8raflm46" path="res://Game Assets/Deco/Knopf.tscn" id="24_fns6j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeyxa"]
 
@@ -416,3 +417,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2236
 
 [node name="Schrank" parent="." instance=ExtResource("23_1b55k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.926589, 0, 2.57991)
+
+[node name="Knopf" parent="." instance=ExtResource("24_fns6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44621, 1.03927, 6.8)
