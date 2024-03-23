@@ -14,6 +14,7 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Settings.exposure
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 
 func applySettings():

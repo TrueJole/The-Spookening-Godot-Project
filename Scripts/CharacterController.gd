@@ -13,6 +13,7 @@ var lampOn := true
 var testX = 0
 
 func _ready():
+	#print_debug(node_path.get_as_property_path())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
