@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dosww8raflm46"]
+
+[ext_resource type="PackedScene" uid="uid://b7qf5ryy5xvp5" path="res://Assets/Knopf.glb" id="1_16ydq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l7dh"]
+albedo_color = Color(0.709804, 0.709804, 0.709804, 1)
+roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gntxf"]
+albedo_color = Color(0, 0.74902, 0.427451, 1)
+roughness = 0.52
+emission_enabled = true
+emission = Color(0, 0.556863, 0.278431, 1)
+emission_energy_multiplier = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_au2w6"]
+size = Vector3(0.0512695, 0.190872, 0.190796)
+
+[node name="Knopf" instance=ExtResource("1_16ydq")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(-5.27071e-09, 0, 0.12058, 0, 0.12058, 0, -0.12058, 0, -5.27071e-09, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_7l7dh")
+
+[node name="Cube_001" parent="." index="1"]
+transform = Transform3D(-5.27071e-09, 0, 0.12058, 0, 0.12058, 0, -0.12058, 0, -5.27071e-09, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_gntxf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0314941, 0.0031662, 0.000427246)
+shape = SubResource("BoxShape3D_au2w6")
