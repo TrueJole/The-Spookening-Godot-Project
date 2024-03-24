@@ -10,6 +10,7 @@ extends Resource
 @export var exposure: float
 @export var shadowPower: int
 @export var showFPS: bool
+@export var fullscreen: bool
 #@export var sdfgi: bool
 #@export var voxelGI: bool
 

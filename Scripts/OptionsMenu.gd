@@ -15,6 +15,7 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 
 func applySettings():
@@ -109,3 +110,11 @@ func _on_shadow_slider_value_changed(value):
 
 func _on_fps_toggle_button_toggled(toggled_on):
 	Settings.showFPS = toggled_on
+
+
+func _on_full_screen_toggle_button_toggled(toggled_on):
+	Settings.fullscreen = toggled_on
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

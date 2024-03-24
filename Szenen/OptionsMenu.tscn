@@ -68,7 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stretch_mode = 0
+stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -86,6 +86,12 @@ layout_mode = 2
 theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
 text = "FPS anzeigen"
+
+[node name="fullScreenToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "Vollbild"
 
 [node name="ssaoToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -282,6 +288,7 @@ transform = Transform3D(4.19558, 0, 0, 0, 1, 0, 0, 0, 5.85831, 1.11377, 3, -0.66
 mesh = SubResource("BoxMesh_wxttw")
 
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton" to="." method="_on_fps_toggle_button_toggled"]
+[connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton" to="." method="_on_full_screen_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton" to="." method="_on_ssao_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton" to="." method="_on_vol_fog_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/SSIL" to="." method="_on_ssil_toggled"]
