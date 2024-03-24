@@ -16,6 +16,7 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/vsyncToggleButton").button_pressed = Settings.vsync
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 
 func applySettings():
@@ -118,3 +119,11 @@ func _on_full_screen_toggle_button_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_vsync_toggle_button_toggled(toggled_on):
+	Settings.vsync = toggled_on
+	if toggled_on:
+		DisplayServer.window_set_vsync_mode(1) 
+	else:
+		DisplayServer.window_set_vsync_mode(0) 

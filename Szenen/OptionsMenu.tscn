@@ -93,6 +93,12 @@ theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
 text = "Vollbild"
 
+[node name="vsyncToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "VSync"
+
 [node name="ssaoToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_o8mxa")
@@ -289,6 +295,7 @@ mesh = SubResource("BoxMesh_wxttw")
 
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton" to="." method="_on_fps_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton" to="." method="_on_full_screen_toggle_button_toggled"]
+[connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/vsyncToggleButton" to="." method="_on_vsync_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton" to="." method="_on_ssao_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton" to="." method="_on_vol_fog_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/SSIL" to="." method="_on_ssil_toggled"]

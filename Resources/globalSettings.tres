@@ -5,12 +5,13 @@
 [resource]
 script = ExtResource("1_4j7up")
 ssao = true
-volumetricFog = false
+volumetricFog = true
 GI = "voxelGI"
-ssil = false
-giQuality = 1
-msaa = false
+ssil = true
+giQuality = 3
+msaa = true
 exposure = 1.0005
 shadowPower = 14
 showFPS = true
 fullscreen = true
+vsync = true
