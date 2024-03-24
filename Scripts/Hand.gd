@@ -16,10 +16,10 @@ const CURSOR_PUNKT = preload("res://Assets/Materials/Textures/Cursor Punkt.png")
 func checkHand():
 	var bodies = hand.get_overlapping_bodies()
 	if (not bodies.is_empty()) and (heldObject == null):
-		print_debug('Kreis')
+		#print_debug('Kreis')
 		cursor.texture = CURSOR_KREIS
 	else:
-		print_debug('Punkt')
+		#print_debug('Punkt')
 		cursor.texture = CURSOR_PUNKT
 		
 	

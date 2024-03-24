@@ -16,8 +16,8 @@ func _process(_delta):
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
 		loaded.rotation = Vector3(0,deg_to_rad(180),0)
 
-		var texture: Texture2D = loaded.get_meta('data')
-		projector.light_projector = texture
+		#var texture: Texture2D = loaded.get_meta('data')
+		#projector.light_projector = texture
 		#print_debug('applied: ', texture)
 		loaded = null
 	else:
@@ -29,4 +29,10 @@ func activated():
 	var cart = get_node("Activation Module").lastBody
 	if cart.has_meta('held') and not cart.get_meta('held'):
 		loaded = cart
-		print_debug('used')
+		if projector.light_projector == null:
+			var texture: Texture2D = loaded.get_meta('data')
+			projector.light_projector = texture
+		
+			print_debug('used')
+		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
+		loaded.rotation = Vector3(0,deg_to_rad(180),0)
