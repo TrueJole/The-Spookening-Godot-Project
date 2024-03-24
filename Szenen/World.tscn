@@ -108,7 +108,6 @@ light_color = Color(1, 0.866667, 0.698039, 1)
 light_energy = 0.5
 light_bake_mode = 0
 light_cull_mask = 4294966275
-shadow_enabled = true
 spot_range = 16.691
 spot_attenuation = 1.56916
 spot_angle = 31.09
