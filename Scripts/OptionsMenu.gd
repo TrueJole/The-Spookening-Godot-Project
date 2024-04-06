@@ -16,7 +16,9 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Settings.fpsMode
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
+	_on_fps_slider_value_changed(Settings.fpsMode)
 
 func applySettings():
 	print_debug(2**Settings.shadowPower)
@@ -118,3 +120,26 @@ func _on_full_screen_toggle_button_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_fps_slider_value_changed(value):
+	#print_debug(value)
+	Settings.fpsMode = value
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	match Settings.fpsMode:
+		1:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
+			Engine.max_fps = 0
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		2:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
+			Engine.max_fps = 30
+		3:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
+			Engine.max_fps = 60
+		4:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'
+			Engine.max_fps = 120
+		5:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
+			Engine.max_fps = 0

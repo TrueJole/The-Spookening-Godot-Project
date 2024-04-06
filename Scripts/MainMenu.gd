@@ -1,6 +1,6 @@
 extends Control
 
-@onready var loadingBar = $AspectRatioContainer/VBoxContainer/MarginContainer/ProgressBar
+@onready var loadingBar = $CenterContainer/VBoxContainer/MarginContainer/ProgressBar
 @export var nextScene = "res://Szenen/World.tscn"
 
 var loading: bool = false
