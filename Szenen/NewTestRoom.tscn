@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ugxjkg78r56m"]
+[gd_scene load_steps=30 format=3 uid="uid://ugxjkg78r56m"]
 
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="3_cm83u"]
 [ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Deco/Tisch.tscn" id="3_nitg4"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://b8t31041u720e" path="res://Game Assets/Deco/Spinde.tscn" id="22_w7cs0"]
 [ext_resource type="PackedScene" uid="uid://dpo0io7glisbf" path="res://Game Assets/Deco/Schrank.tscn" id="23_1b55k"]
 [ext_resource type="PackedScene" uid="uid://dosww8raflm46" path="res://Game Assets/Deco/Knopf.tscn" id="24_fns6j"]
+[ext_resource type="PackedScene" uid="uid://cr8psxcgciod8" path="res://Game Assets/Deco/Schalter.tscn" id="25_g6rka"]
+[ext_resource type="PackedScene" uid="uid://b1m4jhfhi58dd" path="res://Game Assets/Deco/Spiegel.tscn" id="26_76vng"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeyxa"]
 
@@ -222,22 +224,28 @@ transform = Transform3D(-1, 0, -8.74228e-08, 7.64274e-15, -1, -8.74228e-08, -8.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.90938)
 
 [node name="Bilderrahmen" parent="." instance=ExtResource("4_t032x")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.45669, 1.79768, 6.8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.45669, 1.96283, 6.8)
 
 [node name="WandMitLeiste1_10" parent="." instance=ExtResource("3_cm83u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.53833, 0.00793934, 2.06146)
 
+[node name="WandMitLeiste1_23" parent="." instance=ExtResource("3_cm83u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53833, 0.00793934, 2.06146)
+
 [node name="Uhr2" parent="." instance=ExtResource("13_enf0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13602, 1.86521, 2.26146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.92371, 2.125, 2.26146)
 
 [node name="Uhr3" parent="." instance=ExtResource("13_enf0a")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.821705, 1.9664, 6.8)
 
 [node name="Bilderrahmen2" parent="." instance=ExtResource("4_t032x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13949, 1.22556, 2.26146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.92718, 1.48535, 2.26146)
 
 [node name="WandMitLeiste1_22" parent="." instance=ExtResource("3_cm83u")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 6)
+
+[node name="WandMitLeiste1_24" parent="." instance=ExtResource("3_cm83u")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 0, 6)
 
 [node name="Uhr4" parent="." instance=ExtResource("13_enf0a")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.58883, 1.84074, 5.8)
@@ -419,4 +427,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2236
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.926589, 0, 2.57991)
 
 [node name="Knopf" parent="." instance=ExtResource("24_fns6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44621, 1.03927, 6.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579744, 1.03927, 6.8)
+
+[node name="Schalter2" parent="." instance=ExtResource("25_g6rka")]
+transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, 8.65753, 1.17351, 5.8)
+
+[node name="Schalter3" parent="." instance=ExtResource("25_g6rka")]
+transform = Transform3D(-1, 0, 7.54976e-08, 0, 1, 0, -7.54976e-08, 0, -1, 1.56367, 1.2508, 6.8)
+
+[node name="Schalter" parent="." instance=ExtResource("25_g6rka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.99949, 1.02695, 2.26146)
+
+[node name="Spiegel" parent="." instance=ExtResource("26_76vng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98048, 1.89232, 2.26146)
+
+[node name="Spiegel2" parent="." instance=ExtResource("26_76vng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36286, 1.422, 0.201515)
