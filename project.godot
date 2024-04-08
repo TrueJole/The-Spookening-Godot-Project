@@ -31,6 +31,10 @@ window/stretch/aspect="expand"
 window/dpi/allow_hidpi=false
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotMirror-ab051bd2b8fb6376d892c1a84e3e8653db9edf52/addons/Mirror/plugin.cfg", "res://addons/Mirror/plugin.cfg")
+
 [input]
 
 forward={

@@ -13,5 +13,5 @@ msaa = true
 exposure = 1.0005
 shadowPower = 14
 showFPS = true
-fullscreen = true
+fullscreen = false
 fpsMode = 1
