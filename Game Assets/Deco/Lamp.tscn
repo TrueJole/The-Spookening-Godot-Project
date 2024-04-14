@@ -12,3 +12,8 @@ material = SubResource("StandardMaterial3D_0l7k6")
 [node name="Lamp" type="MeshInstance3D"]
 transform = Transform3D(-4.91244e-09, 1.59211, 0, -0.112384, -6.95934e-08, 0, 0, 0, 0.112384, 0, 0, 0)
 mesh = SubResource("CylinderMesh_pf48m")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.913725, 1, 1, 1)
+light_energy = 0.2
+light_bake_mode = 1
