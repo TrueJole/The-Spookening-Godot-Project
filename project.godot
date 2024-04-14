@@ -27,8 +27,13 @@ shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.50196
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/dpi/allow_hidpi=false
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotMirror-ab051bd2b8fb6376d892c1a84e3e8653db9edf52/addons/Mirror/plugin.cfg", "res://addons/Mirror/plugin.cfg")
 
 [input]
 

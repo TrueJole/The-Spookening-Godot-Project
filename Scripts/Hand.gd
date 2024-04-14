@@ -14,7 +14,7 @@ const CURSOR_PUNKT = preload("res://Assets/Materials/Textures/Cursor Punkt.png")
 
 	
 func checkHand():
-	var bodies = hand.get_overlapping_bodies()
+	var bodies = hand.get_overlapping_bodies() + hand.get_overlapping_areas()
 	if (not bodies.is_empty()) and (heldObject == null):
 		#print_debug('Kreis')
 		cursor.texture = CURSOR_KREIS
@@ -26,16 +26,32 @@ func checkHand():
 func _physics_process(_delta):
 	checkHand()
 	
+	
 	if Input.is_action_pressed("interact") and equipped:
 		if heldObject.has_method('used'):
 			heldObject.used()
 	
 	if Input.is_action_pressed("hold"):
+		var areas = hand.get_overlapping_areas()
+		if (not areas.is_empty()) and (heldObject == null):
+			
+			var selectedObject:Area3D = areas[0]
+			
+			if selectedObject.has_method('on_interacted'):
+				print_debug(selectedObject)
+				selectedObject.on_interacted()
+	
+			
 		var bodies = hand.get_overlapping_bodies()
 		holding = true
+		
 		if (not bodies.is_empty()) and (heldObject == null):
+			
 			heldObject = bodies[0]
 			originalObject = bodies[0].duplicate()
+			
+			if heldObject.has_method('on_pickup'):
+				heldObject.on_pickup()
 			
 			#check if object needs to be equipped -> send to lower right corner of screen
 			if heldObject.has_meta('equipable'):
@@ -67,7 +83,7 @@ func _physics_process(_delta):
 		holding = false
 	
 	if holding and (heldObject != null):
-		print_debug(heldObject)
+		#print_debug(heldObject)
 		if not equipped:
 			if heldObject.global_position.distance_to(dot.global_position) > 0.01:
 				var vel = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
