@@ -16,8 +16,9 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/vsyncToggleButton").button_pressed = Settings.vsync
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Settings.fpsMode
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
+	_on_fps_slider_value_changed(Settings.fpsMode)
 
 func applySettings():
 	print_debug(2**Settings.shadowPower)
@@ -32,13 +33,9 @@ func applySettings():
 		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
-	subviewport.positional_shadow_atlas_size = 2**(Settings.shadowPower-1)
 	#RenderingServer.positional_shadow_atlas_set_size(2**Settings.shadowPower)
-	#rendering/lights_and_shadows/positional_shadow/atlas_size
-
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
-	subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_64
 	match Settings.giQuality:
 		0:
 			subviewport.get_node("VoxelGI").visible = false
@@ -47,11 +44,9 @@ func applySettings():
 			RenderingServer.gi_set_use_half_resolution(true)
 		2:
 			subviewport.get_node("VoxelGI").visible = true
-			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_128
 		3:
 			subviewport.get_node("VoxelGI").visible = true
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
-			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
 
 func _on_back_button_pressed():
 	ResourceSaver.save(Settings)
@@ -127,9 +122,24 @@ func _on_full_screen_toggle_button_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
-func _on_vsync_toggle_button_toggled(toggled_on):
-	Settings.vsync = toggled_on
-	if toggled_on:
-		DisplayServer.window_set_vsync_mode(1) 
-	else:
-		DisplayServer.window_set_vsync_mode(0) 
+func _on_fps_slider_value_changed(value):
+	#print_debug(value)
+	Settings.fpsMode = value
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	match Settings.fpsMode:
+		1:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
+			Engine.max_fps = 0
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		2:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
+			Engine.max_fps = 30
+		3:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
+			Engine.max_fps = 60
+		4:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'
+			Engine.max_fps = 120
+		5:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
+			Engine.max_fps = 0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://ce5fm2pi74us6"]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://drm1u1eda5baq"]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -13,5 +13,5 @@ msaa = true
 exposure = 1.0005
 shadowPower = 14
 showFPS = true
-fullscreen = true
-vsync = true
+fullscreen = false
+fpsMode = 1

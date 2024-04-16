@@ -26,10 +26,8 @@ func _ready():
 	
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
 	#RenderingServer.positional_shadow_filter_set_size(2**Settings.shadowPower)
-	get_viewport().positional_shadow_atlas_size = 2**(Settings.shadowPower-1)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
-	bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_64
 	match Settings.giQuality:
 		0:
 			bakedVoxelGI.visible = false
@@ -38,9 +36,7 @@ func _ready():
 			RenderingServer.gi_set_use_half_resolution(true)
 		2:
 			bakedVoxelGI.visible = true
-			bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_128
 		3:
 			bakedVoxelGI.visible = true
-			bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_256
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 
