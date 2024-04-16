@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ccdcruw7mockq" path="res://Szenen/MainMenu.tscn" id="1_0odwc"]
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_pwi0x"]
 [ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="2_aduhv"]
-[ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="4_johsw"]
+[ext_resource type="Script" path="res://Szenen/FPSCounter.gd" id="4_johsw"]
 
 [node name="root" type="Node"]
 script = ExtResource("1_pwi0x")

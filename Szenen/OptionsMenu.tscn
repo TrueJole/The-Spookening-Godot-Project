@@ -68,7 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stretch_mode = 3
+stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -116,25 +116,6 @@ layout_mode = 2
 theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
 text = "MSAA"
-
-[node name="fpsLabel" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Die Qualität der VoxelGI"
-mouse_filter = 1
-theme = ExtResource("1_o8mxa")
-theme_override_font_sizes/font_size = 32
-text = "FPSLABEL"
-
-[node name="fpsSlider" type="HSlider" parent="PanelContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "
-"
-theme = ExtResource("1_o8mxa")
-min_value = 1.0
-max_value = 5.0
-value = 1.0
-tick_count = 5
-ticks_on_borders = true
 
 [node name="brightnessLabel" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -312,7 +293,6 @@ mesh = SubResource("BoxMesh_wxttw")
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton" to="." method="_on_vol_fog_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/SSIL" to="." method="_on_ssil_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton" to="." method="_on_msaa_toggle_button_toggled"]
-[connection signal="value_changed" from="PanelContainer/HBoxContainer/VBoxContainer/fpsSlider" to="." method="_on_fps_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/HBoxContainer/VBoxContainer/shadowSlider" to="." method="_on_shadow_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/HBoxContainer/VBoxContainer/giQualitySlider" to="." method="_on_gi_quality_slider_value_changed"]
