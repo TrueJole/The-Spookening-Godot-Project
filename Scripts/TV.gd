@@ -36,7 +36,6 @@ func activated():
 			
 			video_stream_player.stream = (cart.get_meta('data'))
 			video_stream_player.play()
-			print_debug('TV used')
 			
 		loaded = cart
-		
+		print_debug('used')

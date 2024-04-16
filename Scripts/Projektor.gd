@@ -33,6 +33,6 @@ func activated():
 			var texture: Texture2D = loaded.get_meta('data')
 			projector.light_projector = texture
 		
-			print_debug('Projector used')
+			print_debug('used')
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
 		loaded.rotation = Vector3(0,deg_to_rad(180),0)
