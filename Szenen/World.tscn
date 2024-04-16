@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=18 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
@@ -53,9 +53,7 @@ ambient_light_color = Color(0.380392, 0.447059, 0.698039, 1)
 ambient_light_energy = 0.01
 tonemap_mode = 2
 ssao_enabled = true
-ssao_radius = 2.0
-ssao_intensity = 8.0
-ssao_power = 0.337969
+ssao_intensity = 4.0
 ssao_light_affect = 1.0
 ssil_enabled = true
 ssil_radius = 3.32
@@ -67,8 +65,8 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_472m1"]
-density = 0.4786
-height_falloff = 1.41421e-05
+density = 0.2536
+height_falloff = 0.415114
 edge_fade = 1e-05
 
 [node name="Schule" type="Node3D"]

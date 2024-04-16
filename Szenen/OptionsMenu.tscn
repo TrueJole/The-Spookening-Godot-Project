@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://3o2l8b5bj0uv" path="res://Resources/MenuTheme.tres" id="1_o8mxa"]
 [ext_resource type="Script" path="res://Scripts/OptionsMenu.gd" id="1_syltm"]
-[ext_resource type="VoxelGIData" uid="uid://dd2g22j28lk7" path="res://Resources/PreviewVoxelGI.res" id="3_1qtus"]
+[ext_resource type="VoxelGIData" uid="uid://dqu60vsi6gu75" path="res://Resources/previewVoxelGI.res" id="3_1qtus"]
 [ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Deco/Tisch.tscn" id="3_47wyk"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/FloorTile.tscn" id="3_l3m2c"]
 [ext_resource type="PackedScene" uid="uid://dkj4hwgcmkmnk" path="res://Game Assets/Walls n Stuff/Fenster2_3.tscn" id="4_ldhjw"]
@@ -103,6 +103,7 @@ theme_override_font_sizes/font_size = 32
 text = "Vollbild"
 
 [node name="vsyncToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_o8mxa")
 theme_override_font_sizes/font_size = 32
