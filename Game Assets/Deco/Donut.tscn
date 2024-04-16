@@ -60,7 +60,7 @@ roughness = 0.6
 
 [node name="donut" type="RigidBody3D"]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 input_ray_pickable = false
 mass = 0.27
 

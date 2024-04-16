@@ -82,7 +82,7 @@ uv1_triplanar = true
 [node name="Cartridge" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0654716, 2.86186e-09)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 mass = 0.26
 metadata/itemid = "cart"
 metadata/data = ExtResource("2_si6vs")
