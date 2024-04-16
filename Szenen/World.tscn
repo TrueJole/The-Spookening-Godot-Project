@@ -32,14 +32,31 @@ lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_uumfr")
 add_uv2 = true
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54d1j"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0.109804, 0.243137, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.0862745, 0, 0.223529, 1)
+sun_angle_max = 2.79
+sun_curve = 2.4
+
+[sub_resource type="Sky" id="Sky_rng2j"]
+sky_material = SubResource("ProceduralSkyMaterial_54d1j")
+
 [sub_resource type="Environment" id="Environment_l2r8m"]
-background_mode = 1
-background_energy_multiplier = 0.0
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_rng2j")
 ambient_light_source = 2
 ambient_light_color = Color(0.380392, 0.447059, 0.698039, 1)
 ambient_light_energy = 0.01
 tonemap_mode = 2
 ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 8.0
+ssao_power = 0.337969
+ssao_light_affect = 1.0
 ssil_enabled = true
 ssil_radius = 3.32
 ssil_intensity = 0.54
@@ -182,10 +199,10 @@ material = SubResource("FogMaterial_472m1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2535, 2.41827, -9.36537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9909, 2.41827, -9.36537)
 layers = 1023
-subdiv = 0
-size = Vector3(23.0671, 7.53968, 16.7805)
+subdiv = 3
+size = Vector3(21.5923, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
