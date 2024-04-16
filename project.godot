@@ -37,11 +37,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-<<<<<<< Updated upstream
-enabled=PackedStringArray("res://addons/GodotMirror-ab051bd2b8fb6376d892c1a84e3e8653db9edf52/addons/Mirror/plugin.cfg", "res://addons/Mirror/plugin.cfg")
-=======
 enabled=PackedStringArray()
->>>>>>> Stashed changes
 
 [input]
 
