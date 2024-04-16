@@ -65,6 +65,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291229, 0.0075541, -0.0037
 shape = SubResource("BoxShape3D_btqjp")
 
 [node name="SubViewport" type="SubViewport" parent="." index="3"]
+disable_3d = true
+positional_shadow_atlas_size = 0
 size = Vector2i(1920, 1080)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" index="0"]

@@ -64,7 +64,7 @@ size = Vector3(0.0227281, 0.113761, 0.448411)
 
 [node name="Schlüssel" type="RigidBody3D"]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 3
 mass = 0.67
 script = ExtResource("1_o34b1")
 

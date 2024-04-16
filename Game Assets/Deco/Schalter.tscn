@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://d2dxx8gm1jmrm" path="res://Assets/Schalter.glb" id="1_dhk6t"]
 [ext_resource type="Script" path="res://Scripts/Schalter.gd" id="2_bbxv8"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Game Assets/Deco/InteractiveComponent.gd" id="3_fk66f"]
+=======
+[ext_resource type="Script" path="res://Szenen/InteractiveComponent.gd" id="3_fk66f"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag2w6"]
 metallic = 0.64
@@ -68,6 +72,10 @@ surface_material_override/1 = SubResource("StandardMaterial3D_ntq4i")
 
 [node name="Cylinder" parent="." index="1"]
 transform = Transform3D(-5.21253e-16, -4.37114e-08, 1, -1, 1.19249e-08, 0, -1.19249e-08, -1, -4.37114e-08, 0.0158159, 0.00305567, 0.0168688)
+<<<<<<< Updated upstream
+=======
+layers = 2
+>>>>>>> Stashed changes
 gi_mode = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_1dmpb")
 

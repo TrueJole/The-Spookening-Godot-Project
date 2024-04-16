@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1m4jhfhi58dd"]
+
+[ext_resource type="PackedScene" uid="uid://cl3f0uwrurh4a" path="res://Assets/Spiegel.glb" id="1_akn76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s23v3"]
+metallic = 1.0
+roughness = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j8fh"]
+resource_local_to_scene = true
+metallic = 1.0
+roughness = 0.0
+uv1_scale = Vector3(1, -1, 1)
+
+[node name="Spiegel" instance=ExtResource("1_akn76")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_s23v3")
+surface_material_override/1 = SubResource("StandardMaterial3D_2j8fh")
