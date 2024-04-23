@@ -1,12 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=15 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
 [ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor Punkt.png" id="4_i3u30"]
-[ext_resource type="VoxelGIData" uid="uid://duxfvo52vjbrb" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
+[ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
-[ext_resource type="PackedScene" uid="uid://ugxjkg78r56m" path="res://Szenen/NewTestRoom.tscn" id="7_gs1h0"]
+[ext_resource type="PackedScene" uid="uid://bui61qoub4dv7" path="res://Szenen/Schule.tscn" id="8_to1ux"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
 size = Vector3(0.0181231, 0.0143356, 2.07825)
@@ -21,16 +21,6 @@ fixed_size = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.82206
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aafdv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uumfr"]
-metallic_specular = 0.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_vieg0"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_uumfr")
-add_uv2 = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54d1j"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -69,7 +59,7 @@ density = 0.2536
 height_falloff = 0.415114
 edge_fade = 1e-05
 
-[node name="Schule" type="Node3D"]
+[node name="World" type="Node3D"]
 top_level = true
 script = ExtResource("1_c6mct")
 
@@ -90,7 +80,7 @@ light_bake_mode = 0
 light_cull_mask = 4294966273
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.4064, 0.931498, -7.65383)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.613435, 0)
 collision_layer = 4
 collision_priority = 1100.0
 axis_lock_angular_x = true
@@ -175,34 +165,25 @@ expand_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
 shape = SubResource("CapsuleShape3D_a570a")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.40265, 0, 0, 0, 0.235287, 0, 0, 0, -8.57167, -19.5709, 2.6108, -7.90782)
-material_override = SubResource("StandardMaterial3D_aafdv")
-mesh = SubResource("BoxMesh_vieg0")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.87884, 0, 0, 0, 0.346975, 0, 0, 0, -3.69544, -22.4372, 2.66575, -9.98913)
-material_override = SubResource("StandardMaterial3D_aafdv")
-mesh = SubResource("BoxMesh_vieg0")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l2r8m")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0021, -0.116959, -4.87559)
-size = Vector3(16.8717, 1.40905, 23.6292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26346, -0.116959, -2.63724)
+size = Vector3(31.6136, 1.40905, 23.6292)
 material = SubResource("FogMaterial_472m1")
 
-[node name="TestWorld" parent="." instance=ExtResource("7_gs1h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2819, 0, -11.2683)
-
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9909, 2.41827, -9.36537)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76172, 2.41827, -0.568071)
 layers = 1023
-subdiv = 3
+subdiv = 0
 size = Vector3(21.5923, 7.53968, 16.7805)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+unique_name_in_owner = true
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
+
+[node name="Node3D" parent="." instance=ExtResource("8_to1ux")]

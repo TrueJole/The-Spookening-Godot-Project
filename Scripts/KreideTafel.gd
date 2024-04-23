@@ -12,7 +12,9 @@ func _ready():
 	rightFace.rotation.y = (-3.14 + 3.14 * (1- rightRotation))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous fram		currentScene = get_scene
+		#TODO:set Half Rese		currentScene = get_scene
+		#TODO:set Half Res.
 func _process(_delta):
 	if Engine.is_editor_hint():
 		leftFace.rotation.y = (3.14 * leftRotation)

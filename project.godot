@@ -18,7 +18,7 @@ config/icon="res://Assets/Materials/Textures/icon.svg"
 
 [autoload]
 
-AlwaysHalfRes="*res://always_half_res.gd"
+AlwaysHalfRes="res://always_half_res.gd"
 
 [debug]
 

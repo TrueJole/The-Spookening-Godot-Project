@@ -27,3 +27,4 @@ func _physics_process(_delta):
 		door.set_collision_layer_value ( 1, false )	
 		door.freeze = false
 
+

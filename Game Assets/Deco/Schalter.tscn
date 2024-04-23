@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2dxx8gm1jmrm" path="res://Assets/Schalter.glb" id="1_dhk6t"]
 [ext_resource type="Script" path="res://Scripts/Schalter.gd" id="2_bbxv8"]
-[ext_resource type="Script" path="res://Game Assets/Deco/InteractiveComponent.gd" id="3_fk66f"]
+[ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="3_62ohi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag2w6"]
 metallic = 0.64
@@ -77,7 +77,7 @@ transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2
 collision_layer = 2
 collision_mask = 0
 monitoring = false
-script = ExtResource("3_fk66f")
+script = ExtResource("3_62ohi")
 metadata/Interactable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/Interactive Component" index="0"]
