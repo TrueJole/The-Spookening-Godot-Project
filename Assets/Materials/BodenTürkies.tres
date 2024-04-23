@@ -7,4 +7,3 @@ albedo_color = Color(0.137255, 0.309804, 0.345098, 1)
 normal_enabled = true
 normal_scale = -3.0
 normal_texture = ExtResource("1_pbxpk")
-uv1_scale = Vector3(2, 2, 2)

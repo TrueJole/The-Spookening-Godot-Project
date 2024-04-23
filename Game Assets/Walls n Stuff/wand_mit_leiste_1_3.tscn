@@ -52,8 +52,10 @@ _surfaces = [{
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 shape = SubResource("ConcavePolygonShape3D_orpql")
 
 [node name="Wand 1 * 4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 mesh = SubResource("ArrayMesh_inwr2")
 skeleton = NodePath("")

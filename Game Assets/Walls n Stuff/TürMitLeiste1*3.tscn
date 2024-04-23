@@ -43,6 +43,7 @@ size = Vector3(0.254089, 0.399109, 0.347137)
 script = ExtResource("1_n4ggk")
 
 [node name="Rahmen" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 collision_mask = 0
 
 [node name="Wand 1 * 4" type="MeshInstance3D" parent="Rahmen"]
@@ -53,12 +54,12 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_ovyu6")
 
 [node name="Tür" parent="." instance=ExtResource("4_u1mfx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0570133, 0, 0.134592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057, 0, 0.035)
 collision_mask = 6
 metadata/door = true
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0533804, 0.0210888, 0.0823693)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0533804, 0.0210888, 0.00129199)
 node_a = NodePath("../Rahmen")
 node_b = NodePath("../Tür")
 params/bias = 0.65
@@ -73,7 +74,7 @@ script = ExtResource("5_yyx5o")
 activators = Array[String](["key1"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Activation Module"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.863849, 0.935604, 0.108078)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.864, 0.936, 0)
 shape = SubResource("BoxShape3D_cxam8")
 
 [connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]

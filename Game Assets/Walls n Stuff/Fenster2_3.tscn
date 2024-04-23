@@ -77,8 +77,10 @@ data = PackedVector3Array(1, 0.8293, 0, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 1, 2.3946, 
 collision_mask = 0
 
 [node name="Wand 2 * 4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 mesh = SubResource("ArrayMesh_ejaqt")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 shape = SubResource("ConcavePolygonShape3D_jt6na")
