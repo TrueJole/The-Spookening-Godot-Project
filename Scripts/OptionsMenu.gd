@@ -5,7 +5,9 @@ var Settings: Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	Settings = load('res://Resources/globalSettings.tres')
+	#Settings.resolutionX = 1920
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton").button_pressed = Settings.ssao
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSIL").button_pressed = Settings.ssil
@@ -17,11 +19,15 @@ func _ready():
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Settings.fpsMode
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleSlider").value = Settings.scale3D
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
 	_on_gi_quality_slider_value_changed(Settings.giQuality)
 	_on_fps_slider_value_changed(Settings.fpsMode)
+	applySettings()
 
 func applySettings():
-	print_debug(2**Settings.shadowPower)
+
+	#print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
 	subviewport.get_node("FogVolume").visible = Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
@@ -50,6 +56,9 @@ func applySettings():
 			subviewport.get_node("VoxelGI").visible = true
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
+	
+	get_tree().root.scaling_3d_scale = Settings.scale3D
+	print_debug(get_tree().root.scaling_3d_scale)
 
 func _on_back_button_pressed():
 	ResourceSaver.save(Settings)
@@ -146,3 +155,14 @@ func _on_fps_slider_value_changed(value):
 		5:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
 			Engine.max_fps = 0
+	applySettings()
+
+
+
+
+
+
+func _on_scale_slider_value_changed(value):
+	Settings.scale3D = snappedf(value, 0.01)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
+	applySettings()

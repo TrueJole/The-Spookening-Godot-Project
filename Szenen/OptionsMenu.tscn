@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://3o2l8b5bj0uv" path="res://Resources/MenuTheme.tres" id="1_o8mxa"]
 [ext_resource type="Script" path="res://Scripts/OptionsMenu.gd" id="1_syltm"]
-[ext_resource type="VoxelGIData" uid="uid://dqu60vsi6gu75" path="res://Resources/previewVoxelGI.res" id="3_1qtus"]
 [ext_resource type="PackedScene" uid="uid://dvkhlvy7ssp4k" path="res://Game Assets/Deco/Tisch.tscn" id="3_47wyk"]
-[ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/FloorTile.tscn" id="3_l3m2c"]
+[ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="3_l3m2c"]
+[ext_resource type="VoxelGIData" uid="uid://c0peh5sctd5qb" path="res://Resources/PreviewVoxelGI.res" id="3_t3o2y"]
 [ext_resource type="PackedScene" uid="uid://dkj4hwgcmkmnk" path="res://Game Assets/Walls n Stuff/Fenster2_3.tscn" id="4_ldhjw"]
 [ext_resource type="PackedScene" uid="uid://bhwtbibiiurqu" path="res://Game Assets/Walls n Stuff/wand_mit_leiste_1_3.tscn" id="5_paph5"]
 [ext_resource type="PackedScene" uid="uid://bafa7ptmntj0y" path="res://Game Assets/Deco/Mülleimer.tscn" id="7_1nlli"]
@@ -72,9 +72,15 @@ script = ExtResource("1_syltm")
 
 [node name="PanelContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -499.0
+offset_top = -377.0
+offset_right = 499.0
+offset_bottom = 377.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 3
@@ -89,6 +95,27 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+
+[node name="scaleLabel" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Die Qualität der VoxelGI"
+mouse_filter = 1
+theme = ExtResource("1_o8mxa")
+theme_override_font_sizes/font_size = 32
+text = "3D Skalierung"
+
+[node name="scaleSlider" type="HSlider" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "
+"
+theme = ExtResource("1_o8mxa")
+min_value = 0.01
+max_value = 2.0
+step = 0.01
+value = 1.0
+allow_greater = true
+tick_count = 3
+ticks_on_borders = true
 
 [node name="fpsToggleButton" type="CheckButton" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -234,11 +261,12 @@ use_debanding = true
 render_target_update_mode = 4
 
 [node name="VoxelGI" type="VoxelGI" parent="PanelContainer/HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889194, 1.76491, -0.743347)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648319, 1.97371, -0.857558)
 layers = 1023
-subdiv = 3
+subdiv = 0
 size = Vector3(7.04218, 3.99548, 6.5608)
-data = ExtResource("3_1qtus")
+data = ExtResource("3_t3o2y")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="PanelContainer/HBoxContainer/SubViewportContainer/SubViewport"]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -26.3676, 4.5557, -9.96595)
@@ -332,6 +360,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60516, 0.612413, -0.748238)
 [node name="Bilderrahmen" parent="." instance=ExtResource("11_p1m7o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.8, 1.28229, -0.743915)
 
+[connection signal="value_changed" from="PanelContainer/HBoxContainer/VBoxContainer/scaleSlider" to="." method="_on_scale_slider_value_changed"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton" to="." method="_on_fps_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton" to="." method="_on_full_screen_toggle_button_toggled"]
 [connection signal="toggled" from="PanelContainer/HBoxContainer/VBoxContainer/vsyncToggleButton" to="." method="_on_vsync_toggle_button_toggled"]

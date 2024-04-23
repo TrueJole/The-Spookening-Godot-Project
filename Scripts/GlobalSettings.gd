@@ -13,6 +13,10 @@ extends Resource
 @export var fullscreen: bool
 @export var fpsMode: int
 
+@export var scale3D: float
+@export var resolutionX: int
+@export var resolutionY: int
+
 #@export var sdfgi: bool
 #@export var voxelGI: bool
 

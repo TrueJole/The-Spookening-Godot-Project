@@ -43,3 +43,4 @@ func _ready():
 			bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_256
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 
+	get_tree().root.content_scale_factor  =  (float(Settings.resolutionX) / 3840)
