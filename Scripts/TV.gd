@@ -1,10 +1,10 @@
 extends Node3D
 
 
-var loaded
+var loaded: RigidBody3D
 var justLoaded: bool
-@onready var sub_viewport = $SubViewport
-@onready var video_stream_player = $SubViewport/VideoStreamPlayer
+@onready var sub_viewport := $SubViewport
+@onready var video_stream_player := $MeshInstance3D/SubViewport/VideoStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +28,7 @@ func _process(_delta):
 		
 
 func activated():
-	var cart = get_node("Activation Module").lastBody
+	var cart:RigidBody3D = get_node("Activation Module").lastBody
 	
 	if cart.has_meta('held') and not cart.get_meta('held'):
 		

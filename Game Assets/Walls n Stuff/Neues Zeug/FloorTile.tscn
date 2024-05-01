@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="1_vjymb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3cpqa"]
-size = Vector3(2, 0.243425, 2)
+size = Vector3(1, 0.243, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_35uaj"]
 material = ExtResource("1_vjymb")
@@ -12,9 +12,10 @@ size = Vector2(1, 1)
 [node name="FloorTile" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0.5, -0.122, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.122, 0.5)
 shape = SubResource("BoxShape3D_3cpqa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_35uaj")

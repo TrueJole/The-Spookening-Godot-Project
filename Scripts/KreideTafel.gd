@@ -1,7 +1,7 @@
 @tool
 extends StaticBody3D
-@onready var leftFace = $middleFace/leftFace
-@onready var rightFace = $middleFace/rightFace
+@onready var leftFace := $middleFace/leftFace
+@onready var rightFace := $middleFace/rightFace
 
 @export_range(0, 1) var leftRotation:float
 @export_range(0, 1) var rightRotation:float

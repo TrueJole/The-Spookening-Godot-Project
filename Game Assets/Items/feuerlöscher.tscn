@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvar7yqb8fxjl"]
+[gd_scene load_steps=21 format=3 uid="uid://bvar7yqb8fxjl"]
 
 [ext_resource type="Script" path="res://Scripts/Feuerlöscher.gd" id="1_k2u5l"]
+[ext_resource type="AudioStream" uid="uid://v8yko1htgw3j" path="res://Resources/Sounds/Schaum.wav" id="2_wi437"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2h3g"]
 resource_name = "Rotes Metall"
@@ -167,16 +168,17 @@ turbulence_noise_strength = 14.85
 turbulence_noise_scale = 0.82
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc5w7"]
+shading_mode = 2
 diffuse_mode = 3
-specular_mode = 1
+specular_mode = 2
 disable_receive_shadows = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_61ljb"]
 material = SubResource("StandardMaterial3D_fc5w7")
 radius = 0.05
 height = 0.1
-radial_segments = 10
-rings = 10
+radial_segments = 7
+rings = 7
 
 [node name="Feuerlöscher" type="RigidBody3D"]
 collision_layer = 2
@@ -189,7 +191,9 @@ metadata/equipable = true
 [node name="Flasche" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.110293, 0, -9.64212e-09, 0, 0.110293, 0, 9.64212e-09, 0, -0.110293, 0, 0.000717605, 0)
 layers = 2
+lod_bias = 0.4
 gi_mode = 0
+visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_hmu1m")
 skeleton = NodePath("")
 
@@ -197,6 +201,7 @@ skeleton = NodePath("")
 transform = Transform3D(-0.110293, 0, 2.79613e-07, 0, 0.110293, 0, -2.79613e-07, 0, -0.110293, 0, 0.546555, 0)
 layers = 2
 gi_mode = 0
+visibility_range_end = 10.0
 mesh = SubResource("ArrayMesh_rlvgn")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_36jsv")
@@ -226,12 +231,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00488281, 0.00679016, -0.79
 shape = SubResource("BoxShape3D_btm3c")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197913, 0.526117, -0.0894407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197913, 0.527771, -0.0894407)
+cast_shadow = 0
+gi_mode = 0
 emitting = false
 amount = 80
 lifetime = 0.7
 explosiveness = 0.1
 randomness = 1.0
+visibility_aabb = AABB(-0.349447, -0.335158, -1.6431, 0.688193, 0.685915, 1.7425)
 trail_lifetime = 4.85
 process_material = SubResource("ParticleProcessMaterial_6i1yp")
 draw_pass_1 = SubResource("SphereMesh_61ljb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_wi437")

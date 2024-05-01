@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://Assets/Materials/Textures/ziffernblatt-15cm-zahlen.png"
 config/icon="res://Assets/Materials/Textures/icon.svg"
 
-[autoload]
-
-AlwaysHalfRes="res://always_half_res.gd"
-
 [debug]
 
 settings/stdout/print_fps=true
@@ -90,7 +86,8 @@ interact={
 [rendering]
 
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
+environment/ssao/fadeout_from=40.0
+environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
 global_illumination/sdfgi/probe_ray_count=2
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)

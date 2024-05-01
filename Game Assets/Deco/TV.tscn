@@ -9,7 +9,7 @@
 albedo_color = Color(0.188235, 0.188235, 0.188235, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7h2i8"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("MeshInstance3D/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o42o"]
 resource_local_to_scene = true
@@ -37,6 +37,7 @@ size = Vector3(0.0671567, 0.0505384, 0.173759)
 script = ExtResource("2_rhws3")
 
 [node name="Cube_001" parent="." index="0"]
+visibility_range_end = 30.0
 surface_material_override/0 = SubResource("StandardMaterial3D_ivi8y")
 surface_material_override/1 = SubResource("StandardMaterial3D_6o42o")
 surface_material_override/2 = SubResource("StandardMaterial3D_4x5h6")
@@ -64,23 +65,24 @@ activators = Array[String](["videocart"])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291229, 0.0075541, -0.0037498)
 shape = SubResource("BoxShape3D_btqjp")
 
-[node name="SubViewport" type="SubViewport" parent="." index="3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-9.48095e-09, 0.0135562, -5.33304e-09, 0, -5.9256e-10, -0.122006, -0.216899, -5.9256e-10, 2.33114e-16, 0.117641, 0.300431, -0.00847936)
+material_override = SubResource("StandardMaterial3D_6o42o")
+cast_shadow = 0
+gi_mode = 0
+visibility_range_end = 20.0
+mesh = SubResource("PlaneMesh_l33ks")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D" index="0"]
 disable_3d = true
 positional_shadow_atlas_size = 0
 size = Vector2i(1920, 1080)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" index="0"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MeshInstance3D/SubViewport" index="0"]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("4_4of44")
 autoplay = true
 loop = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
-transform = Transform3D(-9.48095e-09, 0.0135562, -5.33304e-09, 0, -5.9256e-10, -0.122006, -0.216899, -5.9256e-10, 2.33114e-16, 0.117641, 0.300431, -0.00847936)
-material_override = SubResource("StandardMaterial3D_6o42o")
-cast_shadow = 0
-gi_mode = 0
-mesh = SubResource("PlaneMesh_l33ks")
 
 [connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]

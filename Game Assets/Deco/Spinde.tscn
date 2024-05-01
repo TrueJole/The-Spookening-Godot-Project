@@ -69,6 +69,7 @@ skeleton = NodePath("")
 
 [node name="Schrank2" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -1.126, 0)
+visibility_range_end = 40.0
 mesh = SubResource("ArrayMesh_v3p4x")
 skeleton = NodePath("")
 

@@ -1,16 +1,16 @@
 extends Camera3D
 
-@onready var hand = $Hand
-@onready var dot = $Hand/Dot
-@onready var equipHand = $"../EquippedHand"
+@onready var hand := $Hand
+@onready var dot := $Hand/Dot
+@onready var equipHand := $"../EquippedHand"
 var holding: bool
 var equipped: bool
 var equipReached:bool
-var heldObject
-var originalObject
-@onready var cursor = $Hand/Cursor
-const CURSOR_KREIS = preload("res://Assets/Materials/Textures/Cursor Kreis.png")
-const CURSOR_PUNKT = preload("res://Assets/Materials/Textures/Cursor Punkt.png")
+var heldObject: RigidBody3D
+var originalObject: RigidBody3D
+@onready var cursor := $Hand/Cursor
+const CURSOR_KREIS := preload("res://Assets/Materials/Textures/Cursor Kreis.png")
+const CURSOR_PUNKT := preload("res://Assets/Materials/Textures/Cursor Punkt.png")
 
 	
 func checkHand():
@@ -32,7 +32,7 @@ func _physics_process(_delta):
 			heldObject.used()
 	
 	if Input.is_action_pressed("hold"):
-		var areas = hand.get_overlapping_areas()
+		var areas:Array[Area3D] = hand.get_overlapping_areas()
 		if (not areas.is_empty()) and (heldObject == null):
 			
 			var selectedObject:Area3D = areas[0]
@@ -42,7 +42,7 @@ func _physics_process(_delta):
 				selectedObject.on_interacted()
 	
 			
-		var bodies = hand.get_overlapping_bodies()
+		var bodies:Array[Node3D] = hand.get_overlapping_bodies()
 		holding = true
 		
 		if (not bodies.is_empty()) and (heldObject == null):
@@ -69,6 +69,8 @@ func _physics_process(_delta):
 			
 	
 	elif heldObject != null:
+		heldObject.linear_velocity *= 0.5
+		heldObject.angular_velocity *= 0.5
 		heldObject.set_meta('held', false)
 		holding = false
 		heldObject.gravity_scale = 1
@@ -86,7 +88,7 @@ func _physics_process(_delta):
 		#print_debug(heldObject)
 		if not equipped:
 			if heldObject.global_position.distance_to(dot.global_position) > 0.01:
-				var vel = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
+				var vel:Vector3 = heldObject.global_position.direction_to(dot.global_position) * heldObject.global_position.distance_to(dot.global_position)
 				heldObject.linear_velocity *= 0.5
 				vel *= heldObject.mass
 				vel *= 150
@@ -96,7 +98,7 @@ func _physics_process(_delta):
 				heldObject.linear_velocity = Vector3(0,0,0)
 		else:
 			#if not equipReached:
-			var vel = heldObject.global_position.direction_to(equipHand.global_position) * heldObject.global_position.distance_to(equipHand.global_position)
+			var vel:Vector3 = heldObject.global_position.direction_to(equipHand.global_position) * heldObject.global_position.distance_to(equipHand.global_position)
 			heldObject.linear_velocity *= 0.5
 			vel *= heldObject.mass
 			#if heldObject.has_meta('door'):

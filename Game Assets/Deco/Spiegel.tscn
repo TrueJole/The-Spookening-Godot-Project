@@ -16,5 +16,7 @@ uv1_scale = Vector3(1, -1, 1)
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+lod_bias = 0.001
+visibility_range_end = 25.0
 surface_material_override/0 = SubResource("StandardMaterial3D_s23v3")
 surface_material_override/1 = SubResource("StandardMaterial3D_2j8fh")

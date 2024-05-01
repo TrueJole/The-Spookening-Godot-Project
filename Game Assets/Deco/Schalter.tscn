@@ -62,14 +62,18 @@ script = ExtResource("2_bbxv8")
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0168688, 0, -0.0158159)
+lod_bias = 0.2
 gi_mode = 0
+visibility_range_end = 40.0
 surface_material_override/0 = SubResource("StandardMaterial3D_ag2w6")
 surface_material_override/1 = SubResource("StandardMaterial3D_ntq4i")
 
 [node name="Cylinder" parent="." index="1"]
 transform = Transform3D(-5.21253e-16, -4.37114e-08, 1, -1, 1.19249e-08, 0, -1.19249e-08, -1, -4.37114e-08, 0.0158159, 0.00305567, 0.0168688)
 layers = 2
+lod_bias = 0.3
 gi_mode = 0
+visibility_range_end = 25.0
 surface_material_override/0 = SubResource("StandardMaterial3D_1dmpb")
 
 [node name="Interactive Component" type="Area3D" parent="Cylinder" index="0"]

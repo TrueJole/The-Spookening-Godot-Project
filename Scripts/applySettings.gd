@@ -1,9 +1,9 @@
 extends Node3D
 
-@onready var WEnvironment =  $WorldEnvironment.environment
-@onready var bakedVoxelGI = $VoxelGI
-@onready var volFog = $FogVolume
-@onready var Settings = preload('res://Resources/globalSettings.tres')
+@onready var WEnvironment:Resource =  $WorldEnvironment.environment
+@onready var bakedVoxelGI := $VoxelGI
+@onready var volFog := $FogVolume
+@onready var Settings := preload('res://Resources/globalSettings.tres')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,12 +20,12 @@ func _ready():
 	
 	
 	if Settings.msaa == true:
-		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_4X)
+		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
 	else:
 		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
 	
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
-	get_viewport().positional_shadow_atlas_size = 2**(Settings.shadowPower-1)
+	get_viewport().positional_shadow_atlas_size = 2**(Settings.shadowPower-2)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_64
@@ -42,5 +42,9 @@ func _ready():
 			bakedVoxelGI.visible = true
 			bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_256
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
-
-	get_tree().root.content_scale_factor  =  (float(Settings.resolutionX) / 3840)
+	
+	get_tree().root.scaling_3d_scale = Settings.scale3D
+	
+	# ENABLE WIREFRAME MODE
+	#get_tree().root.debug_draw = 4
+	

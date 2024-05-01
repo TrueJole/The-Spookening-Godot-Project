@@ -18,5 +18,7 @@ uv1_offset = Vector3(0, -0.02, 0)
 [node name="Bilderrahmen" instance=ExtResource("1_d2y48")]
 
 [node name="Cube" parent="." index="0"]
+lod_bias = 0.001
+visibility_range_end = 50.0
 surface_material_override/0 = SubResource("StandardMaterial3D_alfbh")
 surface_material_override/1 = SubResource("StandardMaterial3D_qkbu7")

@@ -4,11 +4,11 @@ extends Node3D
 @onready var door := $"Tür"
 @onready var activator := $"Activation Module"
 var fireValue: float = 200
-@onready var fireParticles = $FireParticles
-@onready var occluder = $"Tür/OccluderInstance3D"
-@onready var movingFire = $FireParticles/Anker/MovingFireLight
-@onready var player = $"/root/root/Schule/Player"
-@onready var anker = $FireParticles/Anker
+@onready var fireParticles := $FireParticles
+@onready var occluder := $"Tür/OccluderInstance3D"
+@onready var movingFire := $FireParticles/Anker/MovingFireLight
+@onready var player := $"/root/root/Schule/Player"
+@onready var anker := $FireParticles/Anker
 
 
 # Called when the node enters the scene tree for the first time.

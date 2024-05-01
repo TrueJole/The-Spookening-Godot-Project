@@ -1,5 +1,5 @@
 extends RigidBody3D
-@onready var animationPlayer = $AnimationPlayer
+@onready var animationPlayer := $AnimationPlayer
 var used: bool
 
 # Called when the node enters the scene tree for the first time.

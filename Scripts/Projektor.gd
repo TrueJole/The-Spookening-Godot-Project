@@ -1,12 +1,8 @@
 extends Node3D
 
-@onready var projector = $SpotLight3D
-var loaded
+@onready var projector := $SpotLight3D
+var loaded:RigidBody3D
 var justLoaded: bool
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

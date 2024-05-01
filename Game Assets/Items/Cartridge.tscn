@@ -95,6 +95,7 @@ shape = SubResource("BoxShape3D_2u3mq")
 transform = Transform3D(0.0876633, 0, 0, 0, -3.83189e-09, -0.0876633, 0, 0.0876633, -3.83189e-09, 0, 0, -0.0122533)
 layers = 2
 gi_mode = 0
+visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_471kx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_lmx2x")

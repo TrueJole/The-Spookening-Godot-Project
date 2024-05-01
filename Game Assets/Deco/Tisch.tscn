@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvkhlvy7ssp4k"]
+[gd_scene load_steps=11 format=3 uid="uid://dvkhlvy7ssp4k"]
 
 [ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="1_gwqov"]
-[ext_resource type="Material" uid="uid://cmyr0vqn8fmur" path="res://Assets/Materials/Tischplatte.tres" id="2_c8tpp"]
+[ext_resource type="Texture2D" uid="uid://gni1t6djwo3a" path="res://Assets/Materials/Textures/Holztextur.jpeg" id="2_decuv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dec1c"]
 size = Vector3(1.45383, 0.611518, 0.552483)
@@ -38,6 +38,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5dbgs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wrll"]
+albedo_texture = ExtResource("2_decuv")
+roughness = 0.82
+uv1_scale = Vector3(3.855, 3.855, 3.855)
+uv1_offset = Vector3(0.595, -0.685, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv8qe"]
 
@@ -82,10 +88,12 @@ shape = SubResource("BoxShape3D_dec1c")
 
 [node name="Beine" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_gwqov")
+visibility_range_end = 40.0
 mesh = SubResource("ArrayMesh_nbaj4")
 skeleton = NodePath("")
 
 [node name="Platte" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_c8tpp")
+material_override = SubResource("StandardMaterial3D_0wrll")
+visibility_range_end = 40.0
 mesh = SubResource("ArrayMesh_jwh0x")
 skeleton = NodePath("")

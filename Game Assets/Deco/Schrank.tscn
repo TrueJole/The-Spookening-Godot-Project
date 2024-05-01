@@ -16,4 +16,5 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_7it4l")
 
 [node name="Cube_001" parent="." index="1"]
+visibility_range_end = 50.0
 surface_material_override/0 = ExtResource("2_sgp50")

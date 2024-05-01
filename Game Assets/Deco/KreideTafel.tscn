@@ -171,15 +171,19 @@ collision_mask = 0
 script = ExtResource("1_l8k1g")
 
 [node name="middleFace" type="MeshInstance3D" parent="."]
+lod_bias = 0.001
 mesh = SubResource("ArrayMesh_dasur")
 skeleton = NodePath("")
 
 [node name="rightFace" type="MeshInstance3D" parent="middleFace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80169, 0.938093, 0.271651)
+lod_bias = 0.001
+visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_8nfq7")
 skeleton = NodePath("")
 
 [node name="leftFace" type="MeshInstance3D" parent="middleFace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210797, 0.938093, 0.272458)
+visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_uxund")
 skeleton = NodePath("")

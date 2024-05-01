@@ -71,6 +71,7 @@ script = ExtResource("1_o34b1")
 [node name="Cube" type="MeshInstance3D" parent="."]
 layers = 2
 gi_mode = 0
+visibility_range_end = 30.0
 mesh = SubResource("ArrayMesh_x3b6l")
 skeleton = NodePath("")
 

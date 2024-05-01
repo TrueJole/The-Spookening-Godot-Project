@@ -82,7 +82,9 @@ mass = 0.29
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 layers = 2
+lod_bias = 0.001
 gi_mode = 0
+visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_c2o03")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghwx5")

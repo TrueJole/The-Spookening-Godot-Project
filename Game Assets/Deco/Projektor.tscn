@@ -6,7 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
 albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
-roughness = 0.35
+roughness = 0.23
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv26u"]
 roughness = 0.0
@@ -29,6 +29,8 @@ size = Vector3(0.0384175, 0.0566459, 0.173759)
 script = ExtResource("2_fj0hs")
 
 [node name="Cube" parent="." index="0"]
+lod_bias = 0.4
+visibility_range_end = 30.0
 surface_material_override/0 = SubResource("StandardMaterial3D_xvhiu")
 surface_material_override/1 = SubResource("StandardMaterial3D_xv26u")
 surface_material_override/2 = SubResource("StandardMaterial3D_cydd4")
@@ -46,8 +48,9 @@ light_volumetric_fog_energy = 1.734
 light_bake_mode = 0
 shadow_enabled = true
 distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
+distance_fade_begin = 20.0
+distance_fade_shadow = 5.0
+distance_fade_length = 2.0
 spot_range = 5.45182
 spot_angle = 24.5206
 

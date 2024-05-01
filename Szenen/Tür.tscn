@@ -166,7 +166,9 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826815, 0.944325, 0.00676887)
 layers = 2
 material_override = ExtResource("1_assuh")
+lod_bias = 0.4
 gi_mode = 0
+visibility_range_end = 30.0
 mesh = SubResource("ArrayMesh_kc3ic")
 skeleton = NodePath("")
 
@@ -174,7 +176,9 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826986, 0.944057, -0.0627617)
 layers = 2
 material_override = ExtResource("1_assuh")
+lod_bias = 0.4
 gi_mode = 0
+visibility_range_end = 30.0
 mesh = SubResource("ArrayMesh_rakdx")
 skeleton = NodePath("")
 
