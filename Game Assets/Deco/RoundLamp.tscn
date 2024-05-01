@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://crguvbqvdpj3j"]
+
+[ext_resource type="PackedScene" uid="uid://quugtihpp1db" path="res://Assets/RoundLamp.glb" id="1_d062r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shmn7"]
+emission_enabled = true
+emission = Color(0.900249, 0.899906, 0.814261, 1)
+emission_energy_multiplier = 2.0
+
+[node name="RoundLamp" instance=ExtResource("1_d062r")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="0"]
+transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, -1.15463e-14, 3.46714, 0)
+light_color = Color(0.989745, 0.999999, 0.945121, 1)
+light_energy = 0.1
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+
+[node name="Cylinder" parent="." index="1"]
+transform = Transform3D(-0.139657, 2.10875e-08, 0, -2.10875e-08, -0.139657, 0, 0, 0, 0.139657, 0, 3.5, 0)
+lod_bias = 0.2
+visibility_range_end = 25.0
+surface_material_override/1 = SubResource("StandardMaterial3D_shmn7")
