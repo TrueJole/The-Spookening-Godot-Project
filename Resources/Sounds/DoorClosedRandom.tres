@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://doe7nh4tpqp6t"]
+
+[ext_resource type="AudioStream" uid="uid://kpci326oujte" path="res://Resources/Sounds/DoorClose.wav" id="1_4li1f"]
+
+[resource]
+playback_mode = 1
+random_pitch = 1.05
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("1_4li1f")
+stream_0/weight = 1.0

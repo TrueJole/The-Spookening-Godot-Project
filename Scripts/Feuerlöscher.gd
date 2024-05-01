@@ -1,9 +1,9 @@
 extends RigidBody3D
 
-@onready var foamArea = $FoamArea
-@onready var foam = $GPUParticles3D
-@onready var animation = $AnimationPlayer
-
+@onready var foamArea := $FoamArea
+@onready var foam := $GPUParticles3D
+@onready var animation := $AnimationPlayer
+@onready var audioPlayer := $AudioStreamPlayer3D
 
 var emit: bool = false 
 var emitting: bool = false
@@ -24,7 +24,10 @@ func _physics_process(_delta):
 		foam.emitting = true
 		emit = false
 		foamArea.monitorable = true
+		if not audioPlayer.playing:
+			audioPlayer.play()
 	else:
+		audioPlayer.stop()
 		if emitting:
 			animation.play_backwards("feuerlöscher_an")
 		emitting = false
