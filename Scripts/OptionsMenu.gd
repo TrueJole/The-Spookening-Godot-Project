@@ -1,7 +1,7 @@
 extends Control
 
 var Settings: Resource
-@onready var subviewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
+@onready var subviewport := $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +26,7 @@ func _ready():
 	applySettings()
 
 func applySettings():
-
+	_on_fps_slider_value_changed(Settings.fpsMode)
 	#print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
 	subviewport.get_node("FogVolume").visible = Settings.volumetricFog
@@ -34,12 +34,12 @@ func applySettings():
 	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
 	
 	if Settings.msaa == true:
-		subviewport.msaa_3d = subviewport.MSAA_4X
+		subviewport.msaa_3d = subviewport.MSAA_2X
 	else:
 		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
-	subviewport.positional_shadow_atlas_size = 2**(Settings.shadowPower-1)
+	subviewport.positional_shadow_atlas_size = 2**(Settings.shadowPower-2)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_64
@@ -58,6 +58,7 @@ func applySettings():
 			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
 	
 	get_tree().root.scaling_3d_scale = Settings.scale3D
+	subviewport.scaling_3d_scale = Settings.scale3D
 	print_debug(get_tree().root.scaling_3d_scale)
 
 func _on_back_button_pressed():
@@ -76,20 +77,6 @@ func _on_vol_fog_toggle_button_toggled(toggled_on):
 	Settings.volumetricFog = toggled_on
 	applySettings()
 
-
-# @deprecated
-func _on_sdfgi_toggle_button_pressed():
-	if Settings.GI == 'off':
-		Settings.GI = 'voxelGI'
-	elif Settings.GI == 'voxelGI':
-		Settings.GI = 'sdfgi'
-	elif Settings.GI == 'sdfgi':
-		Settings.GI = 'off'
-	else:
-		Settings.GI = 'off'
-	print_debug(Settings.GI)
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/GIToggleButton").text = 'Global Illumination: ' + Settings.GI
-	applySettings()
 
 func _on_ssil_toggled(toggled_on):
 	Settings.ssil = toggled_on
@@ -137,12 +124,12 @@ func _on_full_screen_toggle_button_toggled(toggled_on):
 func _on_fps_slider_value_changed(value):
 	#print_debug(value)
 	Settings.fpsMode = value
-	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
 	match Settings.fpsMode:
 		1:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
 			Engine.max_fps = 0
-			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED, DisplayServer.get_window_list()[0])
 		2:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
 			Engine.max_fps = 30
@@ -155,7 +142,7 @@ func _on_fps_slider_value_changed(value):
 		5:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
 			Engine.max_fps = 0
-	applySettings()
+	
 
 
 

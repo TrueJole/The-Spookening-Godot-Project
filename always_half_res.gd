@@ -1,6 +1,6 @@
 @tool
 extends EditorScript
-var currentScene
+
 
 # Called when the script is executed (using File -> Run in Script Editor).
 

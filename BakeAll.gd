@@ -3,11 +3,12 @@ extends EditorScript
 
 const VoxelGIs := ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
 const Occluders := ["res://Szenen/World.tscn"]
-
+var originalScene: NodePath
 # Called when the script is executed (using File -> Run in Script Editor).
 func _run():
-	var originalScene := get_scene().get_path()
-	for x in VoxelGIs:
+	if get_scene() != null:
+		var originalScene := get_scene().get_path()
+	for x:String in VoxelGIs:
 		EditorInterface.open_scene_from_path(x)
 		var Voxel:VoxelGI = EditorInterface.get_edited_scene_root().get_node("%VoxelGI")
 		Voxel.subdiv = VoxelGI.SUBDIV_512
@@ -16,7 +17,8 @@ func _run():
 		print_debug('Baked ', x)
 	
 	EditorInterface.save_all_scenes()
-	EditorInterface.open_scene_from_path(originalScene)
+	if originalScene != null:
+		EditorInterface.open_scene_from_path(originalScene)
 	print_debug('Done!')
 	#if get_parent() is VoxelGI:
 	#	get_parent().bake()
