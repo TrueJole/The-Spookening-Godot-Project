@@ -1,12 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=16 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
 [ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor Punkt.png" id="4_i3u30"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
+[ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_nnuo0"]
+[ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://bui61qoub4dv7" path="res://Szenen/Schule.tscn" id="8_to1ux"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_l073w"]
+auto_exposure_enabled = true
+auto_exposure_min_sensitivity = 100.0
+auto_exposure_max_sensitivity = 600.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
 size = Vector3(0.0181231, 0.0143356, 2.07825)
@@ -22,41 +29,16 @@ fixed_size = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.82206
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54d1j"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0, 0.109804, 0.243137, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.0862745, 0, 0.223529, 1)
-sun_angle_max = 2.79
-sun_curve = 2.4
-
-[sub_resource type="Sky" id="Sky_rng2j"]
-sky_material = SubResource("ProceduralSkyMaterial_54d1j")
-
-[sub_resource type="Environment" id="Environment_l2r8m"]
-background_mode = 2
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.25
-sky = SubResource("Sky_rng2j")
-ambient_light_source = 2
-ambient_light_color = Color(0.380392, 0.447059, 0.698039, 1)
-ambient_light_energy = 0.01
-tonemap_mode = 2
-ssao_enabled = true
-ssao_intensity = 4.0
-ssao_light_affect = 1.0
-ssil_enabled = true
-ssil_radius = 3.32
-ssil_intensity = 0.54
-sdfgi_y_scale = 0
-glow_normalized = true
-glow_blend_mode = 0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sxqim"]
+playback_mode = 2
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("5_nnuo0")
+stream_0/weight = 1.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_472m1"]
-density = 0.2536
-height_falloff = 0.415114
+density = 0.2
+height_falloff = 1.27456e-05
 edge_fade = 1e-05
 
 [node name="World" type="Node3D"]
@@ -64,14 +46,17 @@ top_level = true
 script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
-light_color = Color(0.803922, 0.831373, 1, 1)
+transform = Transform3D(0.932305, -0.144055, 0.331746, 0, 0.917255, 0.398301, -0.361673, -0.371338, 0.855161, 5.25206, 23.9638, 45.0162)
+layers = 3
+light_color = Color(0.727311, 0.857878, 1, 1)
 light_energy = 0.1
 light_indirect_energy = 0.05
+light_volumetric_fog_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
+shadow_blur = 0.5
 directional_shadow_blend_splits = true
-directional_shadow_max_distance = 40.0
+directional_shadow_max_distance = 30.0
 
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
@@ -87,6 +72,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_qsfrb")
+walkTime = 0.4
 
 [node name="Head" type="Marker3D" parent="Player"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43804, 0)
@@ -98,19 +84,21 @@ transform = Transform3D(-2, 1.74846e-07, 1.42109e-14, 1.74846e-07, 2, 1.74846e-0
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(-1.43833, 1.25743e-07, 0, 1.25743e-07, 1.43833, 1.25743e-07, 0, 1.25743e-07, -1.43833, 0, 0.2, -0.219)
 rotation_order = 0
+attributes = SubResource("CameraAttributesPractical_l073w")
 current = true
+far = 500.0
 script = ExtResource("3_g2br0")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 0, 0, 0)
-light_color = Color(1, 0.866667, 0.698039, 1)
+transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
+light_color = Color(1, 0.965503, 0.922936, 1)
 light_energy = 0.5
+light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
-light_cull_mask = 4294966275
 spot_range = 16.691
-spot_attenuation = 1.56916
-spot_angle = 31.09
-spot_angle_attenuation = 3.36357
+spot_attenuation = 1.41421
+spot_angle = 25.26
+spot_angle_attenuation = 1.79049
 
 [node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
 transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
@@ -120,7 +108,6 @@ light_energy = 5.0
 light_indirect_energy = 10.0
 light_bake_mode = 0
 light_cull_mask = 4294966273
-shadow_enabled = true
 spot_range = 16.691
 spot_attenuation = 1.23114
 spot_angle = 41.09
@@ -159,30 +146,36 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_i3u30")
-expand_mode = 1
+expand_mode = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
 shape = SubResource("CapsuleShape3D_a570a")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.379436, 0)
+stream = SubResource("AudioStreamRandomizer_sxqim")
+volume_db = -5.0
+unit_size = 3.0
+pitch_scale = 1.1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l2r8m")
+environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26346, -0.116959, -2.63724)
-size = Vector3(31.6136, 1.40905, 23.6292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16325, 1.85767, -2.63724)
+size = Vector3(14.6919, 5.79478, 23.6292)
 material = SubResource("FogMaterial_472m1")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76172, 2.41827, -0.568071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29537, 1.7068, 3.66832)
 layers = 1023
 subdiv = 0
-size = Vector3(21.5923, 7.53968, 16.7805)
+size = Vector3(10.1706, 4.05655, 10)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-unique_name_in_owner = true
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
 
