@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bync8snl5bq20"]
+
+[ext_resource type="PackedScene" uid="uid://c8tp8mr5suotu" path="res://Assets/MülleimerKlein.glb" id="1_les3p"]
+[ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="2_1vuyq"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_i7mig"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pf8v"]
+albedo_color = Color(0.302841, 0, 0.00801473, 1)
+roughness = 0.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0fsvt"]
+height = 0.488979
+radius = 0.13111
+
+[node name="MülleimerKlein" instance=ExtResource("1_les3p")]
+
+[node name="Cylinder" parent="." index="0"]
+lod_bias = 0.1
+visibility_range_end = 40.0
+surface_material_override/0 = SubResource("StandardMaterial3D_4pf8v")
+surface_material_override/1 = ExtResource("2_1vuyq")
+surface_material_override/2 = ExtResource("3_i7mig")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24222, 0)
+shape = SubResource("CylinderShape3D_0fsvt")
