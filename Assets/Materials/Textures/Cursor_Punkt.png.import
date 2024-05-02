@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ub5lvtrpjrcw"
-path="res://.godot/imported/Cursor Kreis.png-d62fbefe2deb0d27ffdda38723eb75f3.ctex"
+uid="uid://bcauowill6bhy"
+path="res://.godot/imported/Cursor_Punkt.png-49dd2d7d56a67d3af4fb543ef1f7a0dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Materials/Textures/Cursor Kreis.png"
-dest_files=["res://.godot/imported/Cursor Kreis.png-d62fbefe2deb0d27ffdda38723eb75f3.ctex"]
+source_file="res://Assets/Materials/Textures/Cursor_Punkt.png"
+dest_files=["res://.godot/imported/Cursor_Punkt.png-49dd2d7d56a67d3af4fb543ef1f7a0dd.ctex"]
 
 [params]
 

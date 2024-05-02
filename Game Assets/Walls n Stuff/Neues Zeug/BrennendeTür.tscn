@@ -1,53 +1,53 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbmdvuwrit6gj"]
+[gd_scene load_steps=28 format=3 uid="uid://b6yrkx1tp30d5"]
 
-[ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/Walls n Stuff/TürMitLeiste1*3.tscn" id="1_n2tti"]
-[ext_resource type="Script" path="res://Scripts/BrennendeTür.gd" id="2_03s2e"]
+[ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="1_buea5"]
+[ext_resource type="Script" path="res://Scripts/BrennendeTürNeu.gd" id="2_4lnjn"]
 
-[sub_resource type="Curve" id="Curve_7vvxl"]
+[sub_resource type="Curve" id="Curve_n63ac"]
 bake_resolution = 1000
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.623188, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_gpxci"]
-curve = SubResource("Curve_7vvxl")
+curve = SubResource("Curve_n63ac")
 
-[sub_resource type="Gradient" id="Gradient_xsi0v"]
+[sub_resource type="Gradient" id="Gradient_rg60c"]
 colors = PackedColorArray(0.885077, 0.302956, 1.92523e-07, 1, 0.982341, 0.849834, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_b1wb1"]
-gradient = SubResource("Gradient_xsi0v")
+gradient = SubResource("Gradient_rg60c")
 
-[sub_resource type="Gradient" id="Gradient_n88pe"]
+[sub_resource type="Gradient" id="Gradient_w4hoa"]
 offsets = PackedFloat32Array(0, 0.616352, 0.949686)
 colors = PackedColorArray(1, 1, 1, 1, 0.318616, 0.0537965, 3.60981e-08, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_r7qy4"]
-gradient = SubResource("Gradient_n88pe")
+gradient = SubResource("Gradient_w4hoa")
 
-[sub_resource type="Curve" id="Curve_6xaff"]
+[sub_resource type="Curve" id="Curve_1gpod"]
 max_value = 102.28
 _data = [Vector2(0, 67.4374), 0.0, 0.0, 0, 0, Vector2(0.0696203, 3.37186), 0.0, 0.0, 0, 0, Vector2(0.120253, 64.0655), 0.0, 0.0, 0, 0, Vector2(0.202532, 3.37186), 0.0, 0.0, 0, 0, Vector2(0.234177, 60.6936), 0.0, 0.0, 0, 0, Vector2(0.594937, 34.8426), -6.94506, -6.94506, 0, 0, Vector2(0.816456, 0.32967), 0.840127, 0.840127, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 8
 
 [sub_resource type="CurveTexture" id="CurveTexture_yb4cb"]
-curve = SubResource("Curve_6xaff")
+curve = SubResource("Curve_1gpod")
 
-[sub_resource type="Curve" id="Curve_bmcru"]
+[sub_resource type="Curve" id="Curve_ryknc"]
 _data = [Vector2(0, 0.0659341), 0.0, 0.0, 0, 0, Vector2(0.0506329, 0.604396), 0.0, 0.0, 0, 0, Vector2(0.28481, 0.857143), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1.53846), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="CurveTexture" id="CurveTexture_ni2e4"]
-curve = SubResource("Curve_bmcru")
+curve = SubResource("Curve_ryknc")
 
-[sub_resource type="Curve" id="Curve_v61a2"]
+[sub_resource type="Curve" id="Curve_kbgqi"]
 max_value = 10.0
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8, 3.07692), 10.3069, 10.3069, 0, 0, Vector2(1, 9.56044), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_fn62j"]
-curve = SubResource("Curve_v61a2")
+curve = SubResource("Curve_kbgqi")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c4cuv"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ki7xx"]
 particle_flag_align_y = true
 emission_shape_scale = Vector3(0.3, 0.5, 0.1)
 emission_shape = 3
@@ -75,7 +75,7 @@ diffuse_mode = 3
 specular_mode = 2
 vertex_color_use_as_albedo = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_d280f"]
+[sub_resource type="SphereMesh" id="SphereMesh_fvko4"]
 material = SubResource("StandardMaterial3D_552tt")
 radius = 0.07
 height = 0.14
@@ -83,29 +83,29 @@ is_hemisphere = true
 
 [sub_resource type="CurveTexture" id="CurveTexture_2w1kv"]
 
-[sub_resource type="Gradient" id="Gradient_n2rg7"]
+[sub_resource type="Gradient" id="Gradient_jhbu2"]
 offsets = PackedFloat32Array(0, 0.636364)
 colors = PackedColorArray(0.851769, 0.851769, 0.851769, 1, 0.133196, 0.133196, 0.133196, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_oulws"]
-gradient = SubResource("Gradient_n2rg7")
+gradient = SubResource("Gradient_jhbu2")
 
-[sub_resource type="Curve" id="Curve_vwu4v"]
+[sub_resource type="Curve" id="Curve_eqe55"]
 _data = [Vector2(0, 0.175824), 0.0, 0.0, 0, 0, Vector2(0.21519, 0.89011), 1.44689, 1.44689, 0, 0, Vector2(0.765823, 0.769231), -0.843328, -0.843328, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_phxap"]
-curve = SubResource("Curve_vwu4v")
+curve = SubResource("Curve_eqe55")
 
-[sub_resource type="Curve" id="Curve_38vfv"]
+[sub_resource type="Curve" id="Curve_4xwn8"]
 max_value = 3.0
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.664557, 1.84615), -6.07692, -6.07692, 0, 0, Vector2(1, 1.05494), -1.85201, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_dtkd2"]
-curve = SubResource("Curve_38vfv")
+curve = SubResource("Curve_4xwn8")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qxb1x"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pic4a"]
 emission_shape_scale = Vector3(0.2, 0.2, 0.2)
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
@@ -128,27 +128,20 @@ diffuse_mode = 3
 specular_mode = 2
 vertex_color_use_as_albedo = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_ajdji"]
+[sub_resource type="SphereMesh" id="SphereMesh_u1f2o"]
 material = SubResource("StandardMaterial3D_ofwlt")
 radius = 0.07
 height = 0.14
 radial_segments = 10
 rings = 10
 
-[node name="Brennende Tür" instance=ExtResource("1_n2tti")]
-script = ExtResource("2_03s2e")
-locked = true
+[node name="TürMitLeiste" instance=ExtResource("1_buea5")]
+script = ExtResource("2_4lnjn")
 
-[node name="Wand 1 * 4" parent="Rahmen" index="0"]
-lod_bias = 0.3
-
-[node name="Activation Module" parent="." index="3"]
+[node name="Activation Module" parent="." index="4"]
 activators = Array[String](["foam"])
 
-[node name="CollisionShape3D" parent="Activation Module" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.505705, 0.876199, 0.108078)
-
-[node name="FireParticles" type="GPUParticles3D" parent="." index="4"]
+[node name="FireParticles" type="GPUParticles3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
 cast_shadow = 0
 lod_bias = 0.1
@@ -156,8 +149,8 @@ visibility_range_end = 50.0
 amount = 50
 explosiveness = 0.17
 visibility_aabb = AABB(-0.491849, -0.273762, -0.630392, 1.09025, 2.36194, 1.10172)
-process_material = SubResource("ParticleProcessMaterial_c4cuv")
-draw_pass_1 = SubResource("SphereMesh_d280f")
+process_material = SubResource("ParticleProcessMaterial_ki7xx")
+draw_pass_1 = SubResource("SphereMesh_fvko4")
 
 [node name="Anker" type="Node3D" parent="FireParticles" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111855, 0.584904, -0.112521)
@@ -186,5 +179,7 @@ explosiveness = 0.1
 randomness = 1.0
 visibility_aabb = AABB(-0.974976, -0.329475, -0.717944, 1.89685, 2.67504, 2.03165)
 trail_lifetime = 4.85
-process_material = SubResource("ParticleProcessMaterial_qxb1x")
-draw_pass_1 = SubResource("SphereMesh_ajdji")
+process_material = SubResource("ParticleProcessMaterial_pic4a")
+draw_pass_1 = SubResource("SphereMesh_u1f2o")
+
+[connection signal="activated" from="Activation Module" to="FireParticles" method="_on_activation_module_activated"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lihcr8aopkiu"
-path="res://.godot/imported/IMG_20240202_102348.jpg-25fbd75f59c8226eb3e822c103861488.ctex"
+uid="uid://ub5lvtrpjrcw"
+path="res://.godot/imported/Cursor_Kreis.png-49d0a30fed7708d90afcbca1251ce68b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Schulfotos/Kellerflur/IMG_20240202_102348.jpg"
-dest_files=["res://.godot/imported/IMG_20240202_102348.jpg-25fbd75f59c8226eb3e822c103861488.ctex"]
+source_file="res://Assets/Materials/Textures/Cursor_Kreis.png"
+dest_files=["res://.godot/imported/Cursor_Kreis.png-49d0a30fed7708d90afcbca1251ce68b.ctex"]
 
 [params]
 
