@@ -4,7 +4,7 @@ extends Node3D
 @onready var door := $"Tür"
 @onready var activator := $"Activation Module"
 @onready var audioPlayer := $AudioStreamPlayer3D
-
+@onready var occluder := $"Tür/OccluderInstance3D"
 var closed: bool
 var closeSound := preload("res://Resources/Sounds/DoorClosedRandom.tres")
 var screachSound := preload("res://Resources/Sounds/DoorClosingRandom.tres")
@@ -14,10 +14,6 @@ var screachSound := preload("res://Resources/Sounds/DoorClosingRandom.tres")
 func _ready():
 	#connect(get_node("Activation Module").get_signal_list().activated, _on_activation_module_activated())
 	pass
-	
-func activated():
-	locked = false
-	print_debug('recieved')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -36,7 +32,9 @@ func _physics_process(_delta):
 				audioPlayer.stream = closeSound
 				audioPlayer.play()
 			closed = true
+			occluder.show()
 		else:
+			occluder.hide()
 			audioPlayer.pitch_scale = clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,2)
 			#audioPlayer.pitch_scale = door.angular_velocity.y
 			if absf(door.angular_velocity.y) > 0.02 and not audioPlayer.playing and randi_range(0,(60/clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,5))) == 0:
@@ -56,3 +54,8 @@ func _physics_process(_delta):
 		door.freeze = false
 
 
+
+
+func _on_activation_module_activated():
+	locked = false
+	print_debug('recieved')

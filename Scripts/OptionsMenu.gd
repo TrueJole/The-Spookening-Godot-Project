@@ -59,7 +59,7 @@ func applySettings():
 	
 	get_tree().root.scaling_3d_scale = Settings.scale3D
 	subviewport.scaling_3d_scale = Settings.scale3D
-	print_debug(get_tree().root.scaling_3d_scale)
+	#print_debug(get_tree().root.scaling_3d_scale)
 
 func _on_back_button_pressed():
 	ResourceSaver.save(Settings)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
-[ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor Punkt.png" id="4_i3u30"]
+[ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor_Punkt.png" id="4_i3u30"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_nnuo0"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
@@ -46,7 +46,7 @@ top_level = true
 script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.932305, -0.144055, 0.331746, 0, 0.917255, 0.398301, -0.361673, -0.371338, 0.855161, 5.25206, 23.9638, 45.0162)
+transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 23.9638, 45.0162)
 layers = 3
 light_color = Color(0.727311, 0.857878, 1, 1)
 light_energy = 0.1
@@ -65,6 +65,7 @@ light_bake_mode = 0
 light_cull_mask = 4294966273
 
 [node name="Player" type="CharacterBody3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.613435, 0)
 collision_layer = 4
 collision_priority = 1100.0
@@ -92,7 +93,7 @@ script = ExtResource("3_g2br0")
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Head/Camera3D"]
 transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
 light_color = Color(1, 0.965503, 0.922936, 1)
-light_energy = 0.5
+light_energy = 0.3
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 spot_range = 16.691
@@ -163,20 +164,21 @@ pitch_scale = 1.1
 environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16325, 1.85767, -2.63724)
-size = Vector3(14.6919, 5.79478, 23.6292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49635, 1.85767, 2.02676)
+size = Vector3(21.0984, 5.79478, 12.7782)
 material = SubResource("FogMaterial_472m1")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29537, 1.7068, 3.66832)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77719, 1.7068, 2.10313)
 layers = 1023
 subdiv = 0
-size = Vector3(10.1706, 4.05655, 10)
+size = Vector3(17.1343, 4.05655, 13.1304)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
+bake_simplification_distance = 0.05
 
 [node name="Node3D" parent="." instance=ExtResource("8_to1ux")]

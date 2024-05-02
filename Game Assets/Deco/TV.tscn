@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dts1pgqy8xlwp"]
 
 [ext_resource type="PackedScene" uid="uid://blhn8kdvd52vw" path="res://Assets/tv.glb" id="1_b1gju"]
-[ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_r6amd"]
+[ext_resource type="Script" path="res://Scripts/Activation_Module.gd" id="2_r6amd"]
 [ext_resource type="Script" path="res://Scripts/TV.gd" id="2_rhws3"]
 [ext_resource type="VideoStream" uid="uid://b8253fgid1un2" path="res://Assets/Materials/Textures/testVideo.ogv" id="4_4of44"]
 

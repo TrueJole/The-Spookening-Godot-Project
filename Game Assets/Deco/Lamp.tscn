@@ -17,5 +17,8 @@ mesh = SubResource("CylinderMesh_pf48m")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.913725, 1, 1, 1)
 light_energy = 0.2
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 distance_fade_enabled = true
+omni_range = 4.96318

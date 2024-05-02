@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8tcknjjs31rh" path="res://Assets/Projektor.glb" id="1_oxmsp"]
 [ext_resource type="Script" path="res://Scripts/Projektor.gd" id="2_fj0hs"]
-[ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="2_origj"]
+[ext_resource type="Script" path="res://Scripts/Activation_Module.gd" id="2_origj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
 albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -43,6 +43,7 @@ shape = SubResource("BoxShape3D_6eafa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
 transform = Transform3D(-4.37114e-08, -0.152986, -0.988228, 0, 0.988228, -0.152986, 1, -6.68723e-09, -4.31968e-08, 0.126928, 0.0700883, 0.0753799)
+visible = false
 light_energy = 2.891
 light_volumetric_fog_energy = 1.734
 light_bake_mode = 0

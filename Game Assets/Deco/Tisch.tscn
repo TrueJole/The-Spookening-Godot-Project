@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvkhlvy7ssp4k"]
 
-[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="1_gwqov"]
+[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein_Grün.tres" id="1_gwqov"]
 [ext_resource type="Texture2D" uid="uid://gni1t6djwo3a" path="res://Assets/Materials/Textures/Holztextur.jpeg" id="2_decuv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dec1c"]

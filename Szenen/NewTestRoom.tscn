@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4kahl48axhq" path="res://Game Assets/Deco/KreideTafel.tscn" id="7_4tfbf"]
 [ext_resource type="PackedScene" uid="uid://ce0u8nh15u7k2" path="res://Game Assets/Walls n Stuff/TürMitLeiste1*3.tscn" id="7_uyb2e"]
 [ext_resource type="PackedScene" uid="uid://c00jxqktxgflj" path="res://Game Assets/Walls n Stuff/TürrahmenMitLeiste1_3.tscn" id="9_1dtfs"]
-[ext_resource type="PackedScene" uid="uid://dbmdvuwrit6gj" path="res://Game Assets/Walls n Stuff/Neues Zeug/brennende_tür.tscn" id="9_u4x0m"]
+[ext_resource type="PackedScene" uid="uid://dbmdvuwrit6gj" path="res://Game Assets/Walls n Stuff/brennende_tür.tscn" id="9_u4x0m"]
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Items/Schlüssel.tscn" id="10_ijaxw"]
 [ext_resource type="PackedScene" uid="uid://bafa7ptmntj0y" path="res://Game Assets/Deco/Mülleimer.tscn" id="11_rx2th"]
 [ext_resource type="PackedScene" uid="uid://cyo3r0igdh106" path="res://Game Assets/Deco/Lamp.tscn" id="12_a1ot4"]

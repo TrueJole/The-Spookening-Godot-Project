@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="3_m25vv"]
 [ext_resource type="PackedScene" uid="uid://bg2gy4st6tkbd" path="res://Szenen/Tür.tscn" id="3_xtmaj"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="4_8bi3r"]
-[ext_resource type="Script" path="res://Scripts/Activation Module.gd" id="4_io022"]
+[ext_resource type="Script" path="res://Scripts/Activation_Module.gd" id="4_io022"]
 [ext_resource type="AudioStream" uid="uid://byw2yxcu7kuju" path="res://Resources/Sounds/DoorClosingRandom.tres" id="7_3gejw"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_50dwj"]
@@ -58,3 +58,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408491, 0.935784, 0)
 stream = ExtResource("7_3gejw")
 unit_size = 2.0
 pitch_scale = 2.0
+
+[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]

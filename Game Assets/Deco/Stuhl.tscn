@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://xobymtoepjql"]
 
 [ext_resource type="Material" uid="uid://ch1drv0vxjee4" path="res://Assets/Materials/Tischplatte.tres" id="1_fn636"]
-[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein Grün.tres" id="1_rskpq"]
+[ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein_Grün.tres" id="1_rskpq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6oulb"]
 size = Vector3(0.322495, 0.0311298, 0.323179)
@@ -36,6 +36,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [node name="Stuhl" type="StaticBody3D"]
+transform = Transform3D(1.25615, 0, 0, 0, 1.25615, 0, 0, 0, 1.25615, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00599515, 0.373301, 0.0394793)

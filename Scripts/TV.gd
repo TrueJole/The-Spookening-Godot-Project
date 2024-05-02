@@ -3,7 +3,7 @@ extends Node3D
 
 var loaded: RigidBody3D
 var justLoaded: bool
-@onready var sub_viewport := $SubViewport
+@onready var sub_viewport := $MeshInstance3D/SubViewport
 @onready var video_stream_player := $MeshInstance3D/SubViewport/VideoStreamPlayer
 
 # Called when the node enters the scene tree for the first time.

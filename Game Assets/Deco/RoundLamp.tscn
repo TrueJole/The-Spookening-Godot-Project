@@ -17,6 +17,8 @@ light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 distance_fade_enabled = true
+omni_range = 4.67726
+omni_attenuation = 1.7411
 
 [node name="Cylinder" parent="." index="1"]
 transform = Transform3D(-0.139657, 2.10875e-08, 0, -2.10875e-08, -0.139657, 0, 0, 0, 0.139657, 0, 3.5, 0)

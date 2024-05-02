@@ -9,8 +9,8 @@ var equipReached:bool
 var heldObject: RigidBody3D
 var originalObject: RigidBody3D
 @onready var cursor := $Hand/Cursor
-const CURSOR_KREIS := preload("res://Assets/Materials/Textures/Cursor Kreis.png")
-const CURSOR_PUNKT := preload("res://Assets/Materials/Textures/Cursor Punkt.png")
+const CURSOR_KREIS := preload("res://Assets/Materials/Textures/Cursor_Kreis.png")
+const CURSOR_PUNKT := preload("res://Assets/Materials/Textures/Cursor_Punkt.png")
 
 	
 func checkHand():
