@@ -2,4 +2,4 @@
 
 [resource]
 albedo_color = Color(0, 0.435294, 0.203922, 1)
-roughness = 0.53
+roughness = 0.66

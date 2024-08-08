@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwqbqv31lsyhy"]
+
+[ext_resource type="Shader" path="res://RegenGlas.gdshader" id="1_bt8tx"]
+
+[sub_resource type="Gradient" id="Gradient_qaolx"]
+colors = PackedColorArray(0.797659, 0.797658, 0.797659, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_efkts"]
+gradient = SubResource("Gradient_qaolx")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66xuk"]
+resource_local_to_scene = true
+shader = ExtResource("1_bt8tx")
+shader_parameter/frequency = 0.8
+shader_parameter/size = 0.03
+shader_parameter/iChannel0 = SubResource("GradientTexture2D_efkts")
+
+[node name="SubViewport" type="SubViewport"]
+disable_3d = true
+gui_disable_input = true
+size = Vector2i(1920, 1920)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_66xuk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

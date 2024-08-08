@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf6we7nmx02og"]
+
+[ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="1_wrgvh"]
+[ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="2_t6eoq"]
+
+[node name="WandInnenOhneLeiste" instance=ExtResource("1_wrgvh")]
+
+[node name="Wand 1 * 4" parent="." index="0"]
+material_override = ExtResource("2_t6eoq")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://7ac2shnkgiew"]
+
+[ext_resource type="PackedScene" uid="uid://dnuk1x40xs8am" path="res://Assets/Treppe.glb" id="1_g0vao"]
+[ext_resource type="Material" uid="uid://d12bwweifo0wq" path="res://Assets/Materials/Beton.tres" id="2_xplfu"]
+[ext_resource type="Texture2D" uid="uid://crcsdc3gmwl5d" path="res://Assets/Materials/Textures/Fliesen.png" id="3_hsg66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogjgk"]
+albedo_texture = ExtResource("3_hsg66")
+uv1_scale = Vector3(11.995, 11.995, 11.995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80b7r"]
+size = Vector3(0.167725, 5.32043, 3.14734)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4yejp"]
+size = Vector3(3.99683, 0.472961, 2.29108)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ybp4k"]
+size = Vector3(2.01184, 0.397339, 3.04736)
+
+[node name="Treppe2" instance=ExtResource("1_g0vao")]
+
+[node name="Treppe_005" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xplfu")
+surface_material_override/1 = SubResource("StandardMaterial3D_ogjgk")
+surface_material_override/2 = ExtResource("2_xplfu")
+surface_material_override/3 = ExtResource("2_xplfu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000755787, 2.37274, 1.47603)
+shape = SubResource("BoxShape3D_80b7r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 1.51415, 3.62893)
+shape = SubResource("BoxShape3D_4yejp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 4.12199e-09, 3.30316e-09, -5.27255e-09, 0.816712, 0.577045, -3.19159e-10, -0.577045, 0.816712, 1.0019, 0.708819, 1.35189)
+shape = SubResource("BoxShape3D_ybp4k")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(-1, 5.03933e-08, -7.14371e-08, 0, 0.817145, 0.576432, 8.74228e-08, 0.576432, -0.817145, -0.998098, 2.46145, 1.41787)
+shape = SubResource("BoxShape3D_ybp4k")

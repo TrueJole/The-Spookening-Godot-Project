@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://whngmggv7mwp"]
+
+[ext_resource type="PackedScene" uid="uid://y2j3vsjyu68x" path="res://Assets/RollStuhl.glb" id="1_p0rek"]
+[ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="2_6kf1h"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_h0npb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhb3g"]
+albedo_color = Color(0, 0.288107, 0.723762, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8t7q2"]
+size = Vector3(0.329117, 0.0275879, 0.312988)
+
+[node name="RollStuhl" instance=ExtResource("1_p0rek")]
+
+[node name="Cube" parent="." index="0"]
+lod_bias = 0.3
+visibility_range_end = 40.0
+surface_material_override/0 = ExtResource("2_6kf1h")
+surface_material_override/1 = ExtResource("3_h0npb")
+surface_material_override/2 = SubResource("StandardMaterial3D_nhb3g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.996038, -0.0889291, 0, 0.0889291, 0.996038, 0, 0, 0, 1, 0.0171029, 0.37594, 0.000732422)
+shape = SubResource("BoxShape3D_8t7q2")

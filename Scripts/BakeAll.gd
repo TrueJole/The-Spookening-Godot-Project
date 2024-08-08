@@ -4,7 +4,7 @@ extends EditorScript
 const VoxelGIs := ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
 const Occluders := ["res://Szenen/World.tscn"]
 var originalScene: NodePath
-# Called when the script is executed (using File -> Run in Script Editor).
+# Called when the script is executed (usin>g File -> Run in Script Editor).
 func _run():
 	if get_scene() != null:
 		var originalScene := get_scene().get_path()

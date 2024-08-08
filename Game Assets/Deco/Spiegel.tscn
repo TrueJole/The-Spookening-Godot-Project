@@ -7,10 +7,8 @@ metallic = 1.0
 roughness = 0.55
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j8fh"]
-resource_local_to_scene = true
 metallic = 1.0
 roughness = 0.0
-uv1_scale = Vector3(1, -1, 1)
 
 [node name="Spiegel" instance=ExtResource("1_akn76")]
 
@@ -20,3 +18,11 @@ lod_bias = 0.001
 visibility_range_end = 25.0
 surface_material_override/0 = SubResource("StandardMaterial3D_s23v3")
 surface_material_override/1 = SubResource("StandardMaterial3D_2j8fh")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00138283)
+update_mode = 1
+max_distance = 2.0
+size = Vector3(0.62, 0.79, 0.24)
+box_projection = true
+ambient_mode = 0

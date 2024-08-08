@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://qaq83xxd001n"]
+
+[ext_resource type="PackedScene" uid="uid://ccfix1bnu103h" path="res://Assets/BlenderFiles/Vent.glb" id="1_jdc7f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npnpk"]
+metallic = 1.0
+roughness = 0.53
+
+[node name="Vent" instance=ExtResource("1_jdc7f")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_npnpk")

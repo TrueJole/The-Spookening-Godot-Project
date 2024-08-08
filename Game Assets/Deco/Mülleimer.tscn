@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bafa7ptmntj0y"]
+[gd_scene load_steps=10 format=3 uid="uid://bafa7ptmntj0y"]
 
 [ext_resource type="Material" uid="uid://bw5rlgysmyf56" path="res://Assets/Materials/MülleimerBlau.tres" id="1_f014g"]
+[ext_resource type="Material" uid="uid://1ffi8n27ury7" path="res://Assets/Materials/Metall_Rau.tres" id="1_y4l62"]
 [ext_resource type="Material" uid="uid://d2nsdo2laow2h" path="res://Assets/Materials/MülleimerGelb.tres" id="2_d0ka7"]
 [ext_resource type="Material" uid="uid://bk2kieh5nwfj2" path="res://Assets/Materials/MülleimerGrau.tres" id="3_q8qyk"]
 
@@ -70,6 +71,7 @@ points = PackedVector3Array(0.373202, 0.00865038, -0.4078, 0.235032, 0.896702, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.407485)
 mesh = SubResource("ArrayMesh_5b5g4")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_y4l62")
 
 [node name="Deckel" type="MeshInstance3D" parent="Eimer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)
@@ -85,6 +87,7 @@ shape = SubResource("ConvexPolygonShape3D_vjp05")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00188506)
 mesh = SubResource("ArrayMesh_5b5g4")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_y4l62")
 
 [node name="Deckel2" type="MeshInstance3D" parent="Eimer2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)
@@ -104,6 +107,7 @@ shape = SubResource("ConvexPolygonShape3D_vjp05")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.816712)
 mesh = SubResource("ArrayMesh_5b5g4")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_y4l62")
 
 [node name="Deckel3" type="MeshInstance3D" parent="Eimer3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235751, 0.882333, -0.202428)

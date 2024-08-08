@@ -1,0 +1,182 @@
+[gd_scene load_steps=18 format=3 uid="uid://64cfsukhr3v3"]
+
+[ext_resource type="PackedScene" uid="uid://6posi0dghjba" path="res://Assets/Toilette.glb" id="1_a2ujm"]
+[ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_53nqw"]
+[ext_resource type="Script" path="res://Game Assets/Deco/Toilette.gd" id="3_0afn1"]
+[ext_resource type="AudioStream" uid="uid://bthaaup5uo5v3" path="res://Resources/Sounds/Spülung.wav" id="4_kppq8"]
+[ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="5_q206b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynj2r"]
+size = Vector3(0.522598, 0.310547, 0.351929)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gw66e"]
+size = Vector3(0.122803, 0.46051, 0.456055)
+
+[sub_resource type="Animation" id="Animation_iawfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_003:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aa170"]
+resource_name = "Spülen"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Cube_003")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_003:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.376991, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t60dt"]
+resource_name = "Spülen"
+length = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Cube_003")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_003:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.377, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w5oe6"]
+_data = {
+"RESET": SubResource("Animation_iawfi"),
+"Spülen": SubResource("Animation_aa170"),
+"SpülenZurück": SubResource("Animation_t60dt")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tab22"]
+size = Vector3(0.0915527, 0.0427246, 0.103027)
+
+[sub_resource type="Curve" id="Curve_hfc1b"]
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0.0413386, 0.641597), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_jrj4j"]
+curve = SubResource("Curve_hfc1b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gpk6l"]
+angle_max = 360.0
+velocity_pivot = Vector3(0.03, 0, 0.03)
+direction = Vector3(0, -0.1, 0)
+spread = 12.216
+initial_velocity_max = 0.1
+angular_velocity_min = 51.25
+angular_velocity_max = 251.55
+orbit_velocity_min = 0.939
+orbit_velocity_max = 0.939
+orbit_velocity_curve = SubResource("CurveTexture_jrj4j")
+gravity = Vector3(0, 0, 0)
+attractor_interaction_enabled = false
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.402
+turbulence_influence_min = 0.05
+turbulence_influence_max = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gq87"]
+transparency = 2
+alpha_scissor_threshold = 0.01
+alpha_antialiasing_mode = 0
+albedo_color = Color(1.15514e-06, 0.406646, 0.602866, 1)
+albedo_texture = ExtResource("5_q206b")
+roughness = 0.0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jq1hk"]
+material = SubResource("StandardMaterial3D_4gq87")
+size = Vector2(0.175, 0.175)
+
+[node name="Toilette" instance=ExtResource("1_a2ujm")]
+
+[node name="Cube_003" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313263, 0.722084, -0.442737)
+surface_material_override/0 = ExtResource("2_53nqw")
+
+[node name="Sphere" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_53nqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0293045, 0.146484, -0.281433)
+shape = SubResource("BoxShape3D_ynj2r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.312956, 0.502703, -0.27832)
+shape = SubResource("BoxShape3D_gw66e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_w5oe6")
+}
+
+[node name="Interactive Component" type="Area3D" parent="." index="4"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_0afn1")
+metadata/Interactable = true
+
+[node name="Timer" type="Timer" parent="Interactive Component" index="0"]
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive Component" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317184, 0.739018, -0.448486)
+shape = SubResource("BoxShape3D_tab22")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237339, -0.293023)
+stream = ExtResource("4_kppq8")
+unit_size = 3.0
+max_distance = 15.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="6"]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -0.00679975, 0.191187, -0.276593)
+emitting = false
+amount = 40
+lifetime = 2.0
+visibility_aabb = AABB(-0.213621, -0.252036, -0.209259, 0.431146, 0.445894, 0.427604)
+process_material = SubResource("ParticleProcessMaterial_gpk6l")
+draw_pass_1 = SubResource("QuadMesh_jq1hk")
+
+[connection signal="timeout" from="Interactive Component/Timer" to="Interactive Component" method="_on_timer_timeout"]

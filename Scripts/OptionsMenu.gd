@@ -101,7 +101,7 @@ func _on_msaa_toggle_button_toggled(toggled_on):
 
 func _on_brightness_slider_value_changed(value):
 	Settings.exposure = value
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + 	str(Settings.exposure).pad_decimals(2)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	applySettings()
 
 func _on_shadow_slider_value_changed(value):
@@ -134,7 +134,7 @@ func _on_fps_slider_value_changed(value):
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
 			Engine.max_fps = 30
 		3:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").texWorldt = '60 FPS'
 			Engine.max_fps = 60
 		4:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'

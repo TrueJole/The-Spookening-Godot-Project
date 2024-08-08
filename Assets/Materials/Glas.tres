@@ -2,4 +2,5 @@
 
 [resource]
 transparency = 1
-albedo_color = Color(0.862745, 0.862745, 0.862745, 0.211765)
+albedo_color = Color(0.505882, 0.505882, 0.505882, 0.584314)
+roughness = 0.0

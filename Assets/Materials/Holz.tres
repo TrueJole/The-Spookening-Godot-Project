@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ch1drv0vxjee4"]
+
+[ext_resource type="Texture2D" uid="uid://57eflvwsg5er" path="res://Assets/Materials/Textures/Holz.png" id="1_xc2r6"]
+
+[resource]
+albedo_texture = ExtResource("1_xc2r6")
+metallic = 1.0
+roughness = 0.82
+uv1_scale = Vector3(4.28, 4.28, 4.28)

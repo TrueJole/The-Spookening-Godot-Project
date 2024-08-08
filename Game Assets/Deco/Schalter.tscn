@@ -7,10 +7,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag2w6"]
 metallic = 0.64
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntq4i"]
-albedo_color = Color(0, 0.929412, 0.368627, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3bkx"]
+albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
 roughness = 0.15
-emission_enabled = true
 emission = Color(0.145098, 0.835294, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dmpb"]
@@ -19,9 +18,10 @@ albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbvfm"]
 size = Vector3(0.112625, 0.362854, 0.171448)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3bkx"]
-albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntq4i"]
+albedo_color = Color(0, 0.929412, 0.368627, 1)
 roughness = 0.15
+emission_enabled = true
 emission = Color(0.145098, 0.835294, 0, 1)
 
 [sub_resource type="Animation" id="Animation_xxonp"]
@@ -66,10 +66,10 @@ lod_bias = 0.2
 gi_mode = 0
 visibility_range_end = 40.0
 surface_material_override/0 = SubResource("StandardMaterial3D_ag2w6")
-surface_material_override/1 = SubResource("StandardMaterial3D_ntq4i")
+surface_material_override/1 = SubResource("StandardMaterial3D_y3bkx")
 
 [node name="Cylinder" parent="." index="1"]
-transform = Transform3D(-5.21253e-16, -4.37114e-08, 1, -1, 1.19249e-08, 0, -1.19249e-08, -1, -4.37114e-08, 0.0158159, 0.00305567, 0.0168688)
+transform = Transform3D(2.77307e-06, 2.32689e-06, 1, 0.642788, -0.766044, 0, 0.766044, 0.642788, -3.61999e-06, 0.0158159, 0.00305567, 0.0168688)
 layers = 2
 lod_bias = 0.3
 gi_mode = 0
@@ -85,7 +85,7 @@ script = ExtResource("3_62ohi")
 metadata/Interactable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/Interactive Component" index="0"]
-transform = Transform3D(0.999998, 0.000916663, -0.00173582, 0.000916744, 0.563845, 0.82587, 0.0017358, -0.82588, 0.563836, 0.191936, 0.310327, -0.101328)
+transform = Transform3D(0.999998, 0.000916663, -0.00173584, 0.000916744, 0.563845, 0.82588, 0.0017358, -0.82588, 0.563843, 0.191936, 0.310327, -0.101328)
 shape = SubResource("BoxShape3D_bbvfm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]

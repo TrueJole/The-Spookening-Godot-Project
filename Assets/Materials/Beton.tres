@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d12bwweifo0wq"]
+
+[ext_resource type="Texture2D" uid="uid://deree4imyrrnw" path="res://Assets/Materials/Textures/Beton.png" id="1_py7ww"]
+[ext_resource type="Texture2D" uid="uid://dvvb5xcypr7p5" path="res://Assets/Materials/Textures/BetonNormalMap.png" id="2_nxrxr"]
+
+[resource]
+albedo_texture = ExtResource("1_py7ww")
+normal_enabled = true
+normal_scale = 0.67
+normal_texture = ExtResource("2_nxrxr")
+uv1_scale = Vector3(11.385, 11.385, 11.385)
