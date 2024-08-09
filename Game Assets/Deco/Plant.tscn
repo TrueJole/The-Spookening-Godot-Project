@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhl6g0y3hal28"]
+
+[ext_resource type="PackedScene" uid="uid://bdbh38wsry0do" path="res://Assets/PlantApplied.glb" id="1_fv3j7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y25pi"]
+albedo_color = Color(1.1792e-06, 0.441374, 0.107093, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glb0t"]
+cull_mode = 2
+albedo_color = Color(0.097327, 0.444546, 0, 1)
+roughness = 0.69
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3hl0"]
+albedo_color = Color(0.638415, 0.332977, 0, 1)
+roughness = 0.77
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjww8"]
+albedo_color = Color(0.252997, 0.0832252, 4.81308e-08, 1)
+roughness = 0.41
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m7ibc"]
+height = 0.368055
+radius = 0.181365
+
+[node name="PlantApplied" instance=ExtResource("1_fv3j7")]
+
+[node name="NurbsCurve_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y25pi")
+
+[node name="Plane_002" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_glb0t")
+surface_material_override/1 = SubResource("StandardMaterial3D_u3hl0")
+surface_material_override/2 = SubResource("StandardMaterial3D_rjww8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.183995, 0)
+shape = SubResource("CylinderShape3D_m7ibc")
