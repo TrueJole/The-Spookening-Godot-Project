@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b78p4v3k6a2ov"]
+
+[ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="1_upwqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bbvfm"]
+size = Vector3(0.112625, 0.362854, 0.171448)
+
+[node name="Interactive Component" type="Area3D"]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00366557, 0.267687, 0.196364)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_upwqo")
+metadata/Interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999998, 0.000916663, -0.00173584, 0.000916744, 0.563845, 0.82588, 0.0017358, -0.82588, 0.563843, 0.191936, 0.310327, -0.101328)
+shape = SubResource("BoxShape3D_bbvfm")

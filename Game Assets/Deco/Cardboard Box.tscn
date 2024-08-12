@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://br7uh0304gqut"]
+
+[ext_resource type="PackedScene" uid="uid://ib7hv6v5gmn3" path="res://Assets/Cardboard Box.glb" id="1_x182s"]
+[ext_resource type="Material" uid="uid://t7fo2ropf1xd" path="res://Assets/Materials/Cardboard.tres" id="2_rmm06"]
+
+[node name="Cardboard Box" instance=ExtResource("1_x182s")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_rmm06")
+
+[node name="Cube_001" parent="." index="1"]
+material_override = ExtResource("2_rmm06")
+
+[node name="Cube_002" parent="." index="2"]
+material_override = ExtResource("2_rmm06")

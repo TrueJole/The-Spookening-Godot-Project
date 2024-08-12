@@ -11,8 +11,7 @@ func _ready():
 	else:
 		animationPlayer.play_backwards("down")
 
-# Dieser Teil wird ausgeführt, wenn der Hebel umgelegt wird
-func turned():
+func _on_interactive_component_pressed():
 	if not animationPlayer.is_playing():
 		# Status ändern
 		state = not state
@@ -23,5 +22,3 @@ func turned():
 			animationPlayer.play("down")
 		else:
 			animationPlayer.play_backwards("down")
-			
-			

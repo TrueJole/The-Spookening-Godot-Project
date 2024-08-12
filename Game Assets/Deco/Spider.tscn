@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7m75ist077sw"]
+
+[ext_resource type="PackedScene" uid="uid://wcikx8oabdfs" path="res://Assets/Spider.glb" id="1_hm1r2"]
+[ext_resource type="Script" path="res://Game Assets/Deco/Spider.gd" id="2_tmidq"]
+
+[sub_resource type="Animation" id="Animation_nu54c"]
+resource_name = "down"
+length = 3.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 5.5, 0, 3, 1, 0, 3.5, 0)
+
+[sub_resource type="Animation" id="Animation_236x8"]
+resource_name = "up"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 3.5, 0, 1, 1, 0, 5.5, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4nyp2"]
+_data = {
+"down": SubResource("Animation_nu54c"),
+"up": SubResource("Animation_236x8")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6winu"]
+albedo_color = Color(0.234958, 0.234958, 0.234958, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdyqi"]
+roughness = 0.35
+
+[node name="Spider" instance=ExtResource("1_hm1r2")]
+script = ExtResource("2_tmidq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_4nyp2")
+}
+
+[node name="Cylinder" parent="." index="1"]
+transform = Transform3D(-0.00169486, 0, 0, 0, 2.54642, 0, 0, 0, -0.00169486, 0, 5.5, 0)
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_6winu")
+surface_material_override/1 = SubResource("StandardMaterial3D_mdyqi")

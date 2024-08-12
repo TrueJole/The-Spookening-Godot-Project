@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhcpkhuhd5bjt"]
+
+[ext_resource type="PackedScene" uid="uid://2nt1xea36woc" path="res://Assets/Bell.glb" id="1_28mvm"]
+[ext_resource type="Script" path="res://Game Assets/Deco/Bell.gd" id="2_itsjy"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="2_wpdxg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r43tg"]
+albedo_color = Color(0.230016, 0.0826303, 0, 1)
+roughness = 0.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13c1l"]
+cull_mode = 1
+albedo_color = Color(0.529067, 0.529067, 0.529067, 1)
+metallic = 1.0
+roughness = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mudmo"]
+height = 0.0435222
+radius = 0.0565862
+
+[node name="Bell" instance=ExtResource("1_28mvm")]
+script = ExtResource("2_itsjy")
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r43tg")
+
+[node name="Cylinder_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_13c1l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0280781, 0)
+shape = SubResource("CylinderShape3D_mudmo")
+
+[node name="Interactive Component" parent="." index="3" instance=ExtResource("2_wpdxg")]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00105086, 0.0498392, 0.0175802)
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -1.50641e-07, -4.59721e-12, 1.50641e-07, 1, -9.86711e-15, 7.48202e-12, -1.75443e-13, 1, 0.0163257, -0.0185753, 0.00284273)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0303279, 0)
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+
+[editable path="Interactive Component"]

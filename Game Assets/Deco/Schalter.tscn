@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr8psxcgciod8"]
+[gd_scene load_steps=10 format=3 uid="uid://cr8psxcgciod8"]
 
 [ext_resource type="PackedScene" uid="uid://d2dxx8gm1jmrm" path="res://Assets/Schalter.glb" id="1_dhk6t"]
 [ext_resource type="Script" path="res://Scripts/Schalter.gd" id="2_bbxv8"]
-[ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="3_62ohi"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="3_qmw2e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag2w6"]
 metallic = 0.64
@@ -14,9 +14,6 @@ emission = Color(0.145098, 0.835294, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dmpb"]
 albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bbvfm"]
-size = Vector3(0.112625, 0.362854, 0.171448)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntq4i"]
 albedo_color = Color(0, 0.929412, 0.368627, 1)
@@ -76,17 +73,7 @@ gi_mode = 0
 visibility_range_end = 25.0
 surface_material_override/0 = SubResource("StandardMaterial3D_1dmpb")
 
-[node name="Interactive Component" type="Area3D" parent="Cylinder" index="0"]
-transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00366557, 0.267687, 0.196364)
-collision_layer = 2
-collision_mask = 0
-monitoring = false
-script = ExtResource("3_62ohi")
-metadata/Interactable = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/Interactive Component" index="0"]
-transform = Transform3D(0.999998, 0.000916663, -0.00173584, 0.000916744, 0.563845, 0.82588, 0.0017358, -0.82588, 0.563843, 0.191936, 0.310327, -0.101328)
-shape = SubResource("BoxShape3D_bbvfm")
+[node name="Interactive Component" parent="Cylinder" index="0" instance=ExtResource("3_qmw2e")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {

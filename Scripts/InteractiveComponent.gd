@@ -1,7 +1,5 @@
 extends Area3D
-
+signal pressed
 
 func on_interacted():
-	get_parent().get_parent().turned()
-
-
+	emit_signal("pressed")

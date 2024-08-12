@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=25 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://blvxxxj44qb66" path="res://Game Assets/Deco/Uhr.tscn" id="20_msb2g"]
 [ext_resource type="PackedScene" uid="uid://df87isk1ee1nq" path="res://Game Assets/Deco/Projektor.tscn" id="21_e0vf5"]
 [ext_resource type="PackedScene" uid="uid://crguvbqvdpj3j" path="res://Game Assets/Deco/RoundLamp.tscn" id="22_1bqja"]
+[ext_resource type="PackedScene" uid="uid://c7m75ist077sw" path="res://Game Assets/Deco/Spider.tscn" id="23_w83a8"]
+[ext_resource type="PackedScene" uid="uid://dhcpkhuhd5bjt" path="res://Game Assets/Deco/Bell.tscn" id="24_gms8d"]
 
 [node name="keller" type="Node3D"]
 
@@ -4762,3 +4764,9 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -32.52
 
 [node name="RoundLamp" parent="." instance=ExtResource("22_1bqja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1639, -0.000499986, -4.89442)
+
+[node name="Spider" parent="." instance=ExtResource("23_w83a8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.9317, -0.000499748, -2.58637)
+
+[node name="Bell" parent="." instance=ExtResource("24_gms8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3515, -0.000499986, -2.2349)
