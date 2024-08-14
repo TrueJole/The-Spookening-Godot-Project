@@ -1,58 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=11 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
-[ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_qsfrb"]
-[ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g2br0"]
-[ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="3_t3fmt"]
-[ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor_Punkt.png" id="4_i3u30"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
-[ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_nnuo0"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
+[ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
-size = Vector3(0.0181231, 0.0143356, 2.07825)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vnpd"]
-no_depth_test = true
-shading_mode = 0
-disable_ambient_light = true
-disable_fog = true
-disable_receive_shadows = true
-fixed_size = true
-
-[sub_resource type="Shader" id="Shader_gq81y"]
-code = "shader_type canvas_item;
-
-uniform float alpha = 1.0;
-uniform float inner_radius = 0.0;
-uniform float outer_radius = 1.0;
-
-void fragment() {
-	float x = abs(UV.r-.5)*2.0;
-	float y = abs(UV.g-.5)*2.0;
-	float q = 1.0-(1.0-sqrt(x*x+y*y)/outer_radius)/(1.0-inner_radius);
-	COLOR = vec4(0, 0, 0, q*alpha);
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pqy3d"]
-shader = SubResource("Shader_gq81y")
-shader_parameter/alpha = 0.8
-shader_parameter/inner_radius = 0.7
-shader_parameter/outer_radius = 1.5
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
-height = 2.82206
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sxqim"]
-playback_mode = 2
-random_pitch = 1.2
-streams_count = 1
-stream_0/stream = ExtResource("5_nnuo0")
-stream_0/weight = 1.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ud774"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_472m1"]
 density = 0.2
@@ -93,121 +46,6 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966273
 
-[node name="Player" type="CharacterBody3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -26.5888, 0.635761, 1.5956)
-collision_layer = 4
-collision_priority = 1100.0
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-script = ExtResource("1_qsfrb")
-walkTime = 0.4
-
-[node name="Head" type="Marker3D" parent="Player"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43804, 0)
-rotation_edit_mode = 2
-
-[node name="EquippedHand" type="Node3D" parent="Player/Head"]
-transform = Transform3D(-2, 1.74846e-07, 1.42109e-14, 1.74846e-07, 2, 1.74846e-07, 1.42109e-14, 1.74846e-07, -2, -0.353451, -1.13628, 0.351559)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
-unique_name_in_owner = true
-transform = Transform3D(-1.43833, 1.25743e-07, 0, 1.25743e-07, 1.43833, 1.25743e-07, 0, 1.25743e-07, -1.43833, 0, 0.2, -0.219)
-rotation_order = 0
-attributes = ExtResource("3_t3fmt")
-current = true
-far = 500.0
-script = ExtResource("3_g2br0")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
-light_color = Color(1, 0.965503, 0.922936, 1)
-light_energy = 0.3
-light_volumetric_fog_energy = 0.0
-light_bake_mode = 0
-spot_range = 16.691
-spot_attenuation = 1.41421
-spot_angle = 25.26
-spot_angle_attenuation = 1.79049
-
-[node name="Testlampe" type="SpotLight3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
-visible = false
-light_color = Color(0.996078, 1, 0.854902, 1)
-light_energy = 5.0
-light_indirect_energy = 10.0
-light_bake_mode = 0
-light_cull_mask = 4294966273
-spot_range = 16.691
-spot_attenuation = 1.23114
-spot_angle = 41.09
-spot_angle_attenuation = 10.556
-
-[node name="Hand" type="Area3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0, 0, 0)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Head/Camera3D/Hand"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0.00115776, 0.00135863, -1.07184)
-shape = SubResource("BoxShape3D_g7478")
-
-[node name="Dot" type="CSGSphere3D" parent="Player/Head/Camera3D/Hand"]
-transform = Transform3D(0.01, -4.23173e-16, 0, -4.23173e-16, 0.01, 0, 0, 0, 0.01, 0, -8.34465e-07, -0.829209)
-visible = false
-layers = 2
-sorting_offset = 9.22337e+18
-cast_shadow = 0
-ignore_occlusion_culling = true
-gi_mode = 0
-material = SubResource("StandardMaterial3D_4vnpd")
-
-[node name="Cursor" type="TextureRect" parent="Player/Head/Camera3D/Hand"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.989519, 1)
-texture = ExtResource("4_i3u30")
-expand_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Player/Head/Camera3D"]
-material = SubResource("ShaderMaterial_pqy3d")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
-shape = SubResource("CapsuleShape3D_a570a")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.379436, 0)
-stream = SubResource("AudioStreamRandomizer_sxqim")
-volume_db = -5.0
-unit_size = 3.0
-pitch_scale = 1.1
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1.38727, 0, 0, 0, 1, 0, 0.503566, 0)
-layers = 2
-gi_mode = 0
-mesh = SubResource("CapsuleMesh_ud774")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_p615n")
 
@@ -243,3 +81,6 @@ shape = SubResource("SphereShape3D_m7i5n")
 
 [node name="keller" parent="." instance=ExtResource("9_oo8js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="Player" parent="." instance=ExtResource("6_86xrg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.59365, 0.587801, 1.93763)

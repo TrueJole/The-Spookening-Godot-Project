@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=29 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dhcpkhuhd5bjt" path="res://Game Assets/Deco/Bell.tscn" id="24_gms8d"]
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_2klpb"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="26_fuqor"]
+[ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürOhneLeiste.tscn" id="27_ede4f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
 
@@ -999,6 +1000,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
 
 [node name="FloorTile440" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="FloorTile831" parent="." instance=ExtResource("1_b6a5a")]
+
+[node name="FloorTile832" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="FloorTile833" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="FloorTile834" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="FloorTile835" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="FloorTile836" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="FloorTile837" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="FloorTile838" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="FloorTile839" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="FloorTile840" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="FloorTile841" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTile842" parent="." instance=ExtResource("1_b6a5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
 
 [node name="FloorTile19" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
@@ -3585,6 +3621,12 @@ transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 2, 0, 
 [node name="WandInnenOhneLeiste437" parent="." instance=ExtResource("6_2jhgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
 
+[node name="WandInnenOhneLeiste438" parent="." instance=ExtResource("6_2jhgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75391, 5)
+
+[node name="WandInnenOhneLeiste439" parent="." instance=ExtResource("6_2jhgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.75391, 5)
+
 [node name="WandInnenOhneLeiste138" parent="." instance=ExtResource("6_2jhgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
 
@@ -4790,5 +4832,8 @@ mesh = SubResource("BoxMesh_r5vns")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.47111, 0, 0, 0, 0.997893, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
 mesh = SubResource("BoxMesh_r5vns")
+
+[node name="Node3D" parent="." instance=ExtResource("27_ede4f")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74668, 5)
 
 [editable path="TürMitSchloss"]
