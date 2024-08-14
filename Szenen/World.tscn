@@ -1,23 +1,19 @@
 [gd_scene load_steps=11 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
+[ext_resource type="Material" uid="uid://bcl348u51riw2" path="res://Resources/fog.tres" id="3_es8gc"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
 [ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
 
-[sub_resource type="FogMaterial" id="FogMaterial_472m1"]
-density = 0.2
-height_falloff = 1.27456e-05
-edge_fade = 1e-05
-
 [sub_resource type="SphereMesh" id="SphereMesh_olk4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnpve"]
 metallic = 1.0
 metallic_specular = 0.0
-roughness = 0.0
+roughness = 0.05
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m7i5n"]
 radius = 0.147653
@@ -50,16 +46,26 @@ light_cull_mask = 4294966273
 environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49635, 1.85767, 2.02676)
-size = Vector3(21.0984, 5.79478, 12.7782)
-material = SubResource("FogMaterial_472m1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.47822, 1.85767, 1.508)
+size = Vector3(52.9077, 5.79478, 15)
+material = ExtResource("3_es8gc")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.467, 1.85767, 10.197)
+size = Vector3(5.56363, 5.79478, 3.78821)
+material = ExtResource("3_es8gc")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5282, 1.85767, -7.53865)
+size = Vector3(9.13051, 5.79478, 3.19508)
+material = ExtResource("3_es8gc")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 1.67854, 0.0379303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 1.98414, 0.750333)
 layers = 1023
 subdiv = 0
-size = Vector3(53.7896, 4, 19)
+size = Vector3(53.7896, 4.61121, 20.4248)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]

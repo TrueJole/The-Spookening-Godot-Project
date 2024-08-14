@@ -11,7 +11,7 @@ const SENSITIVITY := 0.005
 @onready var camera := $Head/Camera3D
 @onready var lamp := $Head/Camera3D/SpotLight3D
 @onready var stepAudio := $AudioStreamPlayer3D
-var lampOn: bool = true
+var lampOn: bool = false
 var previouslyOnFloor:bool
 #var testX = 0
 

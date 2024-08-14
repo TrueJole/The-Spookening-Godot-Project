@@ -1,0 +1,6 @@
+[gd_resource type="FogMaterial" format=3 uid="uid://bcl348u51riw2"]
+
+[resource]
+density = 0.2
+height_falloff = 1.27456e-05
+edge_fade = 1e-05
