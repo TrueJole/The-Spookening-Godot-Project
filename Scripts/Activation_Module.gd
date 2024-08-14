@@ -18,7 +18,7 @@ func _physics_process(_delta):
 					#print_debug(body)
 					lastBody = body
 					if body.has_method('activated'):
-						body.activated()
+						body.activated(self)
 					if get_parent().has_method('activated'):
 						get_parent().activated()
 					activated.emit()

@@ -2,5 +2,5 @@
 
 [resource]
 auto_exposure_enabled = true
-auto_exposure_min_sensitivity = 100.0
-auto_exposure_max_sensitivity = 600.0
+auto_exposure_min_sensitivity = 300.0
+auto_exposure_max_sensitivity = 500.0

@@ -5,6 +5,7 @@ const SPEED := 2.5
 const JUMP_VELOCITY := 4
 const GRAVITY := 9.81
 const SENSITIVITY := 0.005
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
 @onready var head := $Head
 @onready var camera := $Head/Camera3D
@@ -33,12 +34,18 @@ func _unhandled_input(event):
 		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(130), deg_to_rad(-130))
 		#camera.rotation.x = min(max(camera.rotation.x, deg_to_rad(-130)), deg_to_rad(130))#clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		#print_debug(min(abs(camera.rotation.x), deg(130)))
-		camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(120)) * (camera.rotation.x / abs(camera.rotation.x))
+		camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
 		
 
 func _physics_process(delta):
 	
 	walkTimer -= delta
+	
+	if Input.is_action_just_pressed("sneak"):
+		animationPlayer.play('Sneak')
+		
+	if Input.is_action_just_released("sneak"):
+		animationPlayer.play_backwards('Sneak')
 	
 	if is_on_floor() and not previouslyOnFloor:
 		walkSound()
@@ -51,7 +58,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		walkSound()
-	
+
 	
 	if Input.is_action_just_pressed("toggleLamp"):
 		lampOn = !lampOn

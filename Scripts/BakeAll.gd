@@ -15,6 +15,7 @@ func _run():
 		Voxel.bake()
 		Voxel.subdiv = VoxelGI.SUBDIV_64
 		print_debug('Baked ', x)
+		get_scene().queue_free()
 	
 	EditorInterface.save_all_scenes()
 	if originalScene != null:

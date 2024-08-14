@@ -6,9 +6,21 @@ var used: bool
 func _ready():
 	pass # Replace with function body.
 
-func activated():
+func activated(origin: Area3D):
 	print_debug('used key')
 	if not used:
+		#rotation.z = -90
+		
+		rotation = (origin.rotation)
+		rotation.y += deg_to_rad(180)
+		#position = origin.global_position
+		#position += global_transform.basis * Vector3(0,,0)
+		
+		axis_lock_linear_x = true
+		axis_lock_linear_y = true
+		axis_lock_linear_z = true
+		axis_lock_linear_y = true
+		axis_lock_linear_z = true
 		animationPlayer.play("turn")
 	used = true
 	
