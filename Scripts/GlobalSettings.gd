@@ -19,4 +19,3 @@ extends Resource
 
 #@export var sdfgi: bool
 #@export var voxelGI: bool
-

@@ -1,12 +1,12 @@
 extends Node3D
 
-@onready var projector := $SpotLight3D
+@onready var projector: SpotLight3D = $SpotLight3D
 var loaded:RigidBody3D
 var justLoaded: bool
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if loaded != null:
 		projector.show()
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
@@ -21,8 +21,8 @@ func _process(_delta):
 		projector.light_projector = null
 		
 
-func activated():
-	var cart = get_node("Activation Module").lastBody
+func activated() -> void:
+	var cart: Node3D = get_node("Activation Module").lastBody
 	if cart.has_meta('held') and not cart.get_meta('held'):
 		loaded = cart
 		if projector.light_projector == null:

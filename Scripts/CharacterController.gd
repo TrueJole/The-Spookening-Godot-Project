@@ -1,16 +1,16 @@
 extends CharacterBody3D
 
 
-const SPEED := 2.5
-const JUMP_VELOCITY := 4
-const GRAVITY := 9.81
-const SENSITIVITY := 0.005
+const SPEED: float = 2.5
+const JUMP_VELOCITY: float = 4
+const GRAVITY: float = 9.81
+const SENSITIVITY: float = 0.005
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
-@onready var head := $Head
-@onready var camera := $Head/Camera3D
-@onready var lamp := $Head/Camera3D/SpotLight3D
-@onready var stepAudio := $AudioStreamPlayer3D
+@onready var head: Marker3D = $Head
+@onready var camera: Camera3D = $Head/Camera3D
+@onready var lamp: SpotLight3D= $Head/Camera3D/SpotLight3D
+@onready var stepAudio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 var lampOn: bool = false
 var previouslyOnFloor:bool
 #var testX = 0
@@ -18,15 +18,15 @@ var previouslyOnFloor:bool
 @export var walkTime: float
 var walkTimer: float
 
-func walkSound():
+func walkSound() -> void:
 	stepAudio.play()
 	walkTimer = walkTime
 
-func _ready():
+func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(event.relative.y * SENSITIVITY)
@@ -37,7 +37,7 @@ func _unhandled_input(event):
 		camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
 		
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	
 	walkTimer -= delta
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=31 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
@@ -26,8 +26,15 @@
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_2klpb"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="26_fuqor"]
 [ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürOhneLeiste.tscn" id="27_ede4f"]
+[ext_resource type="Script" path="res://Szenen/ShowOnStart.gd" id="27_wedxd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qykwn"]
+size = Vector3(42.8994, 3.45605, 3.09821)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1s6jn"]
+size = Vector3(3.08014, 3.43896, 2.99811)
 
 [node name="keller" type="Node3D"]
 
@@ -2164,57 +2171,75 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 
 
 [node name="TürMitLeiste" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+locked = null
 
 [node name="TürMitLeiste5" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1)
+locked = null
 
 [node name="TürMitLeiste8" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -1)
+locked = null
 
 [node name="TürMitLeiste9" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17, 0, -7)
+locked = null
 
 [node name="TürMitLeiste6" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 0, -2)
+locked = null
 
 [node name="TürMitLeiste7" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0, -7)
+locked = null
 
 [node name="TürMitLeiste4" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+locked = null
 
 [node name="TürMitLeiste2" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, -4)
+locked = null
 
 [node name="TürMitLeiste3" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, 0, -4)
+locked = null
 
 [node name="TürMitLeiste10" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3, 0, -4)
+locked = null
 
 [node name="TürMitLeiste11" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -7, 0, -1)
+locked = null
 
 [node name="TürMitLeiste14" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -15, 0, -1)
+locked = null
 
 [node name="TürMitLeiste15" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -19, 0, -1)
+locked = null
 
 [node name="TürMitLeiste17" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -23, 0, -1)
+locked = null
 
 [node name="TürMitLeiste18" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -24, 0, -1)
+locked = null
 
 [node name="TürMitLeiste19" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22, 0, 4)
+locked = null
 
 [node name="TürMitLeiste12" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -12, 0, 3)
+locked = null
 
 [node name="TürMitLeiste13" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -15, 0, 5)
+locked = null
 
 [node name="WandInnen" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
@@ -2725,6 +2750,7 @@ transform = Transform3D(1, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 1, -22, 0, 
 
 [node name="TürMitLeiste20" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -20, 0, -1)
+locked = null
 
 [node name="WandInnenOhneLeiste219" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, -20, 0, -1)
@@ -3970,27 +3996,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -10)
 
 [node name="TürMitLeiste16" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, -4)
+locked = null
 
 [node name="TürMitLeiste21" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 0, -4)
+locked = null
 
 [node name="TürMitLeiste23" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -23, 0, -7)
+locked = null
 
 [node name="TürMitLeiste26" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -27, 0, -1)
+locked = null
 
 [node name="TürMitLeiste29" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -28, 0, 5)
+locked = null
 
 [node name="TürMitLeiste27" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -30, 0, -1)
+locked = null
 
 [node name="TürMitLeiste28" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -30, 0, 5)
+locked = null
 
 [node name="TürMitLeiste25" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30, 0, -3)
+locked = null
 
 [node name="WandInnen148" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -10, 0, -4)
@@ -4810,26 +4844,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3515, -0.000499986, -2.23
 [node name="TürMitSchloss" parent="." instance=ExtResource("25_2klpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -4)
 
+[node name="AudioStreamPlayer3D" parent="TürMitSchloss" index="4"]
+area_mask = 1
+
 [node name="VersperrteTür" parent="." instance=ExtResource("26_fuqor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -4)
+locked = null
 
 [node name="Schlüssel2" parent="." instance=ExtResource("18_kj346")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4625, -0.000499986, -3.0537)
 metadata/itemid = "key1"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(53.3859, 0, 0, 0, 1, 0, 0, 0, 15.2951, -7.55212, 3.60561, -2.61707)
-mesh = SubResource("BoxMesh_r5vns")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.36786, 0, 0, 0, 1, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
-mesh = SubResource("BoxMesh_r5vns")
+[node name="Node3D" parent="." instance=ExtResource("27_ede4f")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74668, 5)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.47111, 0, 0, 0, 0.997893, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
+visible = false
 mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
 
-[node name="Node3D" parent="." instance=ExtResource("27_ede4f")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74668, 5)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(53.3859, 0, 0, 0, 1, 0, 0, 0, 15.2951, -7.55212, 3.60561, -2.61707)
+visible = false
+mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.36786, 0, 0, 0, 1, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
+visible = false
+mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
+
+[node name="AudioArea3D" type="Area3D" parent="."]
+monitoring = false
+audio_bus_override = true
+audio_bus_name = &"Flur"
+reverb_bus_name = &"Flur"
+reverb_bus_amount = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53076, 1.69937, -2.51584)
+shape = SubResource("BoxShape3D_qykwn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AudioArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5163, 1.70786, -5.53339)
+shape = SubResource("BoxShape3D_1s6jn")
 
 [editable path="TürMitSchloss"]

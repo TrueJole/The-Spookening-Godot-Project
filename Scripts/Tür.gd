@@ -1,23 +1,23 @@
 extends Node3D
 
 @export var locked: bool
-@onready var door := $"Tür"
-@onready var activator := $"Activation Module"
-@onready var audioPlayer := $AudioStreamPlayer3D
-@onready var occluder := $"Tür/OccluderInstance3D"
+@onready var door: RigidBody3D = $"Tür"
+@onready var activator: Area3D = $"Activation Module"
+@onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var occluder: OccluderInstance3D = $"Tür/OccluderInstance3D"
 var closed: bool
-var closeSound := preload("res://Resources/Sounds/DoorClosedRandom.tres")
-var screachSound := preload("res://Resources/Sounds/DoorClosingRandom.tres")
+var closeSound: Resource = preload("res://Resources/Sounds/DoorClosedRandom.tres")
+var screachSound: Resource = preload("res://Resources/Sounds/DoorClosingRandom.tres")
 
 signal opened
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	#connect(get_node("Activation Module").get_signal_list().activated, _on_activation_module_activated())
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	if locked:
 		door.set_collision_layer_value ( 1, true )
 		door.rotation.y = 0
@@ -57,7 +57,7 @@ func _physics_process(_delta):
 
 
 
-func _on_activation_module_activated():
+func _on_activation_module_activated() -> void:
 	locked = false
 	emit_signal("opened")
 	print_debug('recieved')

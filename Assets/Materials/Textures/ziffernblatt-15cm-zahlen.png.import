@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbx48sij7ya3"
 path.s3tc="res://.godot/imported/ziffernblatt-15cm-zahlen.png-63a62cbb0855b3e2b1a11f76913ad727.s3tc.ctex"
+path.etc2="res://.godot/imported/ziffernblatt-15cm-zahlen.png-63a62cbb0855b3e2b1a11f76913ad727.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Textures/ziffernblatt-15cm-zahlen.png"
-dest_files=["res://.godot/imported/ziffernblatt-15cm-zahlen.png-63a62cbb0855b3e2b1a11f76913ad727.s3tc.ctex"]
+dest_files=["res://.godot/imported/ziffernblatt-15cm-zahlen.png-63a62cbb0855b3e2b1a11f76913ad727.s3tc.ctex", "res://.godot/imported/ziffernblatt-15cm-zahlen.png-63a62cbb0855b3e2b1a11f76913ad727.etc2.ctex"]
 
 [params]
 

@@ -1,18 +1,18 @@
 extends Control
 
-@onready var loadingBar := $CenterContainer/VBoxContainer/ProgressBar
-@export var nextScene := "res://Szenen/World.tscn"
+@onready var loadingBar: ProgressBar = $CenterContainer/VBoxContainer/ProgressBar
+@export var nextScene: String = "res://Szenen/World.tscn"
 
 var loading: bool = false
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	loadingBar.hide()
 	#RenderingServer.viewport_set_msaa_2d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
-	pass # Replace with function body.
+	pass # Replace with function bosdy.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if loading:
 		var progress: Array[float]
 		ResourceLoader.load_threaded_get_status(nextScene, progress)
@@ -25,16 +25,16 @@ func _process(_delta):
 			queue_free()
 
 
-func _on_start_button_pressed():
+func _on_start_button_pressed() -> void:
 	get_parent().get_node('OptionsMenu').queue_free()
 	loadingBar.show()
 	ResourceLoader.load_threaded_request(nextScene)
 	loading = true
 
-func _on_exit_button_pressed():
+func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_options_button_pressed():
+func _on_options_button_pressed() -> void:
 	hide()
 	get_parent().get_node('OptionsMenu').show()

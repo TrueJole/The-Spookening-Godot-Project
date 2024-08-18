@@ -1,12 +1,12 @@
 extends Node3D
 
 @onready var WEnvironment:Resource =  $WorldEnvironment.environment
-@onready var bakedVoxelGI := $VoxelGI
-@onready var volFog := $FogVolume
-@onready var Settings := preload('res://Resources/globalSettings.tres')
+@onready var bakedVoxelGI: VoxelGI = $VoxelGI
+@onready var volFog: FogVolume = $FogVolume
+@onready var Settings: GlobalSettings = preload('res://Resources/globalSettings.tres')
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	
 	WEnvironment.ssao_enabled = Settings.ssao
 	volFog.visible = Settings.volumetricFog

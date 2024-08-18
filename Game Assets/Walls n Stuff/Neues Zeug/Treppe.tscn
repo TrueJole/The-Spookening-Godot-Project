@@ -17,7 +17,7 @@ size = Vector3(3.99683, 0.472961, 2.29108)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ybp4k"]
 size = Vector3(2.01184, 0.397339, 3.04736)
 
-[node name="Treppe2" instance=ExtResource("1_g0vao")]
+[node name="Treppe" instance=ExtResource("1_g0vao")]
 
 [node name="Treppe_005" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_xplfu")

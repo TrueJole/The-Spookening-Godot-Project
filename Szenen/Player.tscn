@@ -45,7 +45,6 @@ playback_mode = 2
 random_pitch = 1.2
 streams_count = 1
 stream_0/stream = ExtResource("5_lpcba")
-stream_0/weight = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ud774"]
 
@@ -121,9 +120,10 @@ light_color = Color(0.932153, 0.8663, 0.582667, 1)
 light_energy = 0.3
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
-spot_range = 21.615
+spot_range = 15.0
+spot_attenuation = 0.25
 spot_angle = 25.26
-spot_angle_attenuation = 4.72513
+spot_angle_attenuation = 6.23484
 
 [node name="Testlampe" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)

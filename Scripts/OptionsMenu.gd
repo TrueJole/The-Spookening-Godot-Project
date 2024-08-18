@@ -1,10 +1,10 @@
 extends Control
 
 var Settings: Resource
-@onready var subviewport := $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
+@onready var subviewport: SubViewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	
 	Settings = load('res://Resources/globalSettings.tres')
 	#Settings.resolutionX = 1920
@@ -25,7 +25,7 @@ func _ready():
 	_on_fps_slider_value_changed(Settings.fpsMode)
 	applySettings()
 
-func applySettings():
+func applySettings() -> void:
 	_on_fps_slider_value_changed(Settings.fpsMode)
 	#print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
@@ -61,28 +61,28 @@ func applySettings():
 	subviewport.scaling_3d_scale = Settings.scale3D
 	#print_debug(get_tree().root.scaling_3d_scale)
 
-func _on_back_button_pressed():
+func _on_back_button_pressed() -> void:
 	ResourceSaver.save(Settings)
 	hide()
 	get_parent().get_node('MainMenu').show()
 	
 
 
-func _on_ssao_toggle_button_toggled(toggled_on):
+func _on_ssao_toggle_button_toggled(toggled_on: bool) -> void:
 	Settings.ssao = toggled_on
 	applySettings()
 
 
-func _on_vol_fog_toggle_button_toggled(toggled_on):
+func _on_vol_fog_toggle_button_toggled(toggled_on: bool) -> void:
 	Settings.volumetricFog = toggled_on
 	applySettings()
 
 
-func _on_ssil_toggled(toggled_on):
+func _on_ssil_toggled(toggled_on: bool) -> void:
 	Settings.ssil = toggled_on
 	applySettings()
 
-func _on_gi_quality_slider_value_changed(value):
+func _on_gi_quality_slider_value_changed(value: int) -> void:
 	Settings.giQuality = value
 	match Settings.giQuality:
 		0:
@@ -95,25 +95,25 @@ func _on_gi_quality_slider_value_changed(value):
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/GILabel").text = 'Extra'
 	applySettings()
 
-func _on_msaa_toggle_button_toggled(toggled_on):
+func _on_msaa_toggle_button_toggled(toggled_on: bool) -> void:
 	Settings.msaa = toggled_on
 	applySettings()
 
-func _on_brightness_slider_value_changed(value):
+func _on_brightness_slider_value_changed(value: float) -> void:
 	Settings.exposure = value
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
 	applySettings()
 
-func _on_shadow_slider_value_changed(value):
+func _on_shadow_slider_value_changed(value: int) -> void:
 	Settings.shadowPower = value
 	applySettings()
 
 
-func _on_fps_toggle_button_toggled(toggled_on):
+func _on_fps_toggle_button_toggled(toggled_on: bool) -> void:
 	Settings.showFPS = toggled_on
 
 
-func _on_full_screen_toggle_button_toggled(toggled_on):
+func _on_full_screen_toggle_button_toggled(toggled_on: bool) -> void:
 	Settings.fullscreen = toggled_on
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
@@ -121,7 +121,7 @@ func _on_full_screen_toggle_button_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
-func _on_fps_slider_value_changed(value):
+func _on_fps_slider_value_changed(value: int) -> void:
 	#print_debug(value)
 	Settings.fpsMode = value
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
@@ -134,7 +134,7 @@ func _on_fps_slider_value_changed(value):
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
 			Engine.max_fps = 30
 		3:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").texWorldt = '60 FPS'
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
 			Engine.max_fps = 60
 		4:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'
@@ -149,7 +149,7 @@ func _on_fps_slider_value_changed(value):
 
 
 
-func _on_scale_slider_value_changed(value):
+func _on_scale_slider_value_changed(value: float) -> void:
 	Settings.scale3D = snappedf(value, 0.01)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
 	applySettings()

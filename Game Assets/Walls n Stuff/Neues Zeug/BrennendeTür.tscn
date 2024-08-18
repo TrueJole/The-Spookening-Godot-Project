@@ -135,13 +135,10 @@ height = 0.14
 radial_segments = 10
 rings = 10
 
-[node name="TürMitLeiste" instance=ExtResource("1_buea5")]
+[node name="BrennendeTür" instance=ExtResource("1_buea5")]
 script = ExtResource("2_4lnjn")
 
-[node name="Activation Module" parent="." index="4"]
-activators = Array[String](["foam"])
-
-[node name="FireParticles" type="GPUParticles3D" parent="." index="6"]
+[node name="FireParticles" type="GPUParticles3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
 cast_shadow = 0
 lod_bias = 0.1
@@ -181,5 +178,3 @@ visibility_aabb = AABB(-0.974976, -0.329475, -0.717944, 1.89685, 2.67504, 2.0316
 trail_lifetime = 4.85
 process_material = SubResource("ParticleProcessMaterial_pic4a")
 draw_pass_1 = SubResource("SphereMesh_u1f2o")
-
-[connection signal="activated" from="Activation Module" to="FireParticles" method="_on_activation_module_activated"]

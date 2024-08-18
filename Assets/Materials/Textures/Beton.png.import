@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://deree4imyrrnw"
 path.s3tc="res://.godot/imported/Beton.png-3f861cbaea2b7a9188df69f53fe7ec19.s3tc.ctex"
+path.etc2="res://.godot/imported/Beton.png-3f861cbaea2b7a9188df69f53fe7ec19.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Textures/Beton.png"
-dest_files=["res://.godot/imported/Beton.png-3f861cbaea2b7a9188df69f53fe7ec19.s3tc.ctex"]
+dest_files=["res://.godot/imported/Beton.png-3f861cbaea2b7a9188df69f53fe7ec19.s3tc.ctex", "res://.godot/imported/Beton.png-3f861cbaea2b7a9188df69f53fe7ec19.etc2.ctex"]
 
 [params]
 

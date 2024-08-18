@@ -1,13 +1,13 @@
 @tool
 extends EditorScript
 
-const VoxelGIs := ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
-const Occluders := ["res://Szenen/World.tscn"]
-var originalScene: NodePath
+const VoxelGIs: Array[String] = ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
+const Occluders: Array[String] = ["res://Szenen/World.tscn"]
+var originalScene: NodePath 
 # Called when the script is executed (usin>g File -> Run in Script Editor).
-func _run():
+func _run() -> void:
 	if get_scene() != null:
-		var originalScene := get_scene().get_path()
+		var originalScene: NodePath = get_scene().get_path()
 	for x:String in VoxelGIs:
 		EditorInterface.open_scene_from_path(x)
 		var Voxel:VoxelGI = EditorInterface.get_edited_scene_root().get_node("%VoxelGI")

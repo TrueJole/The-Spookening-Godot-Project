@@ -1,20 +1,20 @@
 extends Camera3D
 
-@onready var hand := $Hand
-@onready var dot := $Hand/Dot
-@onready var equipHand := $"../EquippedHand"
+@onready var hand: Area3D = $Hand
+@onready var dot: CSGSphere3D = $Hand/Dot
+@onready var equipHand: Node3D = $"../EquippedHand"
 var holding: bool
 var equipped: bool
 var equipReached:bool
 var heldObject: RigidBody3D
 var originalObject: RigidBody3D
-@onready var cursor := $Hand/Cursor
-const CURSOR_KREIS := preload("res://Assets/Materials/Textures/Cursor_Kreis.png")
-const CURSOR_PUNKT := preload("res://Assets/Materials/Textures/Cursor_Punkt.png")
+@onready var cursor: TextureRect = $Hand/Cursor
+const CURSOR_KREIS: Resource = preload("res://Assets/Materials/Textures/Cursor_Kreis.png")
+const CURSOR_PUNKT: Resource = preload("res://Assets/Materials/Textures/Cursor_Punkt.png")
 
 	
-func checkHand():
-	var bodies = hand.get_overlapping_bodies() + hand.get_overlapping_areas()
+func checkHand() -> void:
+	var bodies: Array = hand.get_overlapping_bodies() + hand.get_overlapping_areas()
 	if (not bodies.is_empty()) and (heldObject == null):
 		#print_debug('Kreis')
 		cursor.texture = CURSOR_KREIS
@@ -23,7 +23,7 @@ func checkHand():
 		cursor.texture = CURSOR_PUNKT
 		
 	
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	checkHand()
 	
 	

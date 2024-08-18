@@ -3,16 +3,16 @@ extends Node3D
 
 var loaded: RigidBody3D
 var justLoaded: bool
-@onready var sub_viewport := $MeshInstance3D/SubViewport
-@onready var video_stream_player := $MeshInstance3D/SubViewport/VideoStreamPlayer
+@onready var sub_viewport: SubViewport = $MeshInstance3D/SubViewport
+@onready var video_stream_player: VideoStreamPlayer = $MeshInstance3D/SubViewport/VideoStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if loaded != null:
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0,0)
 		loaded.rotation = Vector3(deg_to_rad(270),deg_to_rad(180),deg_to_rad(180))
@@ -27,7 +27,7 @@ func _process(_delta):
 		#projector.light_projector = null
 		
 
-func activated():
+func activated() -> void:
 	var cart:RigidBody3D = get_node("Activation Module").lastBody
 	
 	if cart.has_meta('held') and not cart.get_meta('held'):

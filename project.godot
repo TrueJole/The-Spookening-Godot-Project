@@ -17,7 +17,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [debug]
 
 settings/stdout/print_fps=true
-gdscript/warnings/unassigned_variable_op_assign=0
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/inferred_declaration=2
 shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.501961, 1)
 
 [display]
@@ -101,6 +102,7 @@ sneak={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 textures/default_filters/anisotropic_filtering_level=3
 environment/ssao/fadeout_from=40.0

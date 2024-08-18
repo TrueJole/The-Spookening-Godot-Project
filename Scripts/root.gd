@@ -1,5 +1,5 @@
 extends Node
 
 
-func on_scene_loaded():
+func on_scene_loaded() -> void:
 	pass

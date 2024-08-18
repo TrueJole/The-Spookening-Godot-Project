@@ -10,7 +10,7 @@ size = Vector3(0.0995941, 3.50031, 0.200317)
 [sub_resource type="BoxShape3D" id="BoxShape3D_evqdw"]
 size = Vector3(1.99207, 1.4967, 0.204254)
 
-[node name="DoppelTürRahmen" instance=ExtResource("1_7bj6v")]
+[node name="DoppelTürRahmenOhneLeiste" instance=ExtResource("1_7bj6v")]
 
 [node name="Wand 1 * 4_001" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.1)

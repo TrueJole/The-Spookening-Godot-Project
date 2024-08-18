@@ -1,19 +1,19 @@
 extends Node3D
 
 @export var locked: bool
-@onready var door := $Tür
+@onready var door: RigidBody3D = $Tür
 
-@onready var activator := $"Activation Module"
+@onready var activator: Area3D = $"Activation Module"
 var fireValue: float = 200
-@onready var fire_particles = $FireParticles
-@onready var occluder := $"Tür/OccluderInstance3D"
-@onready var movingFire := $FireParticles/Anker/MovingFireLight
-@onready var player := $"/root/root/World/Player"
-@onready var anker := $FireParticles/Anker
+@onready var fire_particles: GPUParticles3D = $FireParticles
+@onready var occluder: OccluderInstance3D = $"Tür/OccluderInstance3D"
+@onready var movingFire: OmniLight3D = $FireParticles/Anker/MovingFireLight
+@onready var player: CharacterBody3D = $"/root/root/World/Player"
+@onready var anker: Node3D = $FireParticles/Anker
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	locked = true
 	movingFire.position = Vector3(-0.05, 0.56, -0.3)
 	fire_particles.show()
@@ -21,7 +21,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	if locked:
 		if to_global(anker.position).distance_to(player.global_position) < to_global(anker.position+Vector3(0, 0, 0.2)).distance_to(player.global_position):
 			movingFire.position = Vector3(0, 0, 0)
@@ -51,7 +51,7 @@ func _physics_process(_delta):
 
 
 
-func _on_activation_module_activated():
+func _on_activation_module_activated() -> void:
 	if fireValue > 0:
 		fireValue -= 1
 	print_debug('recieved', fireValue)

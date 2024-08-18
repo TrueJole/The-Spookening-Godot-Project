@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bojnrmisw0ied" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürrahmenOhneLeiste.tscn" id="1_yq3v4"]
 [ext_resource type="PackedScene" uid="uid://bg2gy4st6tkbd" path="res://Szenen/Tür.tscn" id="2_310d8"]
 
-[node name="Node3D" type="Node3D"]
+[node name="DoppelTürOhneLeiste" type="Node3D"]
 
 [node name="DoppelTürRahmen" parent="." instance=ExtResource("1_yq3v4")]
 
