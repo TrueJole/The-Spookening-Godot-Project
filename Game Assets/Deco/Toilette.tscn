@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6posi0dghjba" path="res://Assets/Toilette.glb" id="1_a2ujm"]
 [ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_53nqw"]
-[ext_resource type="Script" path="res://Game Assets/Deco/Toilette.gd" id="3_0afn1"]
+[ext_resource type="Script" path="res://Scripts/Toilette.gd" id="3_0afn1"]
 [ext_resource type="AudioStream" uid="uid://bthaaup5uo5v3" path="res://Resources/Sounds/Spülung.wav" id="4_kppq8"]
 [ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="5_q206b"]
 

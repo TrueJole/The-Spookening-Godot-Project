@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_2klpb"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="26_fuqor"]
 [ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürOhneLeiste.tscn" id="27_ede4f"]
-[ext_resource type="Script" path="res://Szenen/ShowOnStart.gd" id="27_wedxd"]
+[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="27_wedxd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
 
@@ -4880,8 +4880,6 @@ script = ExtResource("27_wedxd")
 monitoring = false
 audio_bus_override = true
 audio_bus_name = &"Flur"
-reverb_bus_name = &"Flur"
-reverb_bus_amount = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53076, 1.69937, -2.51584)

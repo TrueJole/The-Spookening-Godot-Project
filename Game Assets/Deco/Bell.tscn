@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhcpkhuhd5bjt"]
 
 [ext_resource type="PackedScene" uid="uid://2nt1xea36woc" path="res://Assets/Bell.glb" id="1_28mvm"]
-[ext_resource type="Script" path="res://Game Assets/Deco/Bell.gd" id="2_itsjy"]
+[ext_resource type="Script" path="res://Scripts/Bell.gd" id="2_itsjy"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="2_wpdxg"]
 [ext_resource type="AudioStream" uid="uid://pt8uxhief0p2" path="res://Resources/Sounds/ding.wav" id="4_ojpie"]
 

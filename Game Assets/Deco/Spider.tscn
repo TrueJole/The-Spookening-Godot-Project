@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7m75ist077sw"]
 
 [ext_resource type="PackedScene" uid="uid://wcikx8oabdfs" path="res://Assets/Spider.glb" id="1_hm1r2"]
-[ext_resource type="Script" path="res://Game Assets/Deco/Spider.gd" id="2_tmidq"]
+[ext_resource type="Script" path="res://Scripts/Spider.gd" id="2_tmidq"]
 
 [sub_resource type="Animation" id="Animation_nu54c"]
 resource_name = "down"

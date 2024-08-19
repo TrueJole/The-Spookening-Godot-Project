@@ -8,6 +8,5 @@ playback_mode = 1
 random_pitch = 1.03
 streams_count = 2
 stream_0/stream = ExtResource("1_6x5fs")
-stream_0/weight = 1.0
 stream_1/stream = ExtResource("2_kt62w")
 stream_1/weight = 2.0

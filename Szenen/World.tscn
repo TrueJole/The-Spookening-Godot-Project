@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
-[ext_resource type="Script" path="res://Szenen/ShowOnStart.gd" id="2_ahk6u"]
+[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="2_ahk6u"]
 [ext_resource type="Material" uid="uid://bcl348u51riw2" path="res://Resources/fog.tres" id="3_es8gc"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]

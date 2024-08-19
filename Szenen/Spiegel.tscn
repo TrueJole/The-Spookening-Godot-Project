@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bethwj4oxo3np"]
 
-[ext_resource type="Script" path="res://Szenen/Spiegel.gd" id="1_eoltf"]
+[ext_resource type="Script" path="res://Scripts/Spiegel.gd" id="1_eoltf"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="2_hpdn5"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="3_6clw1"]
 
