@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0qbing1uirni"]
+
+[ext_resource type="PackedScene" uid="uid://byb8h88x7tvxq" path="res://Assets/Coin.glb" id="1_uc7ll"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_6l34g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_icsal"]
+height = 0.00993927
+radius = 0.0263449
+
+[node name="Coin" instance=ExtResource("1_uc7ll")]
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+metadata/itemid = "coin"
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.0222248, 0, 0, 0, 0.00251029, 0, 0, 0, 0.0222248, 0, 0.00242443, 0)
+lod_bias = 2.0
+surface_material_override/0 = ExtResource("2_6l34g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("CylinderShape3D_icsal")

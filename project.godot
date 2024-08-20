@@ -14,6 +14,10 @@ config/name="The Humboldt Project"
 run/main_scene="res://Szenen/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[autoload]
+
+Global="*res://temp_stop.gd"
+
 [debug]
 
 settings/stdout/print_fps=true

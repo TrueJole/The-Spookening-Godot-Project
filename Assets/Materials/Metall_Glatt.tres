@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bj118p6up2n7j"]
+
+[resource]
+metallic = 1.0
+roughness = 0.42
+uv1_scale = Vector3(3.87, 3.87, 3.87)

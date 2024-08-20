@@ -27,7 +27,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not Global.stop:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(event.relative.y * SENSITIVITY)
 		#testX += (event.relative.y * SENSITIVITY)
@@ -38,50 +38,43 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 
 func _physics_process(delta: float) -> void:
-	
-	walkTimer -= delta
-	
-	if Input.is_action_just_pressed("sneak"):
-		animationPlayer.play('Sneak')
+	if not Global.stop:
+		walkTimer -= delta
 		
-	if Input.is_action_just_released("sneak"):
-		animationPlayer.play_backwards('Sneak')
-	
-	if is_on_floor() and not previouslyOnFloor:
-		walkSound()
-	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= GRAVITY * delta
+		if Input.is_action_just_pressed("sneak"):
+			animationPlayer.play('Sneak')
+			
+		if Input.is_action_just_released("sneak"):
+			animationPlayer.play_backwards('Sneak')
+		
+		if is_on_floor() and not previouslyOnFloor:
+			walkSound()
+		
+		if not is_on_floor():
+			velocity.y -= GRAVITY * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		walkSound()
-
-	
-	if Input.is_action_just_pressed("toggleLamp"):
-		lampOn = !lampOn
-		print_debug(lampOn)
-		if lampOn:
-			lamp.show()
-		else:
-			lamp.hide()
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir:Vector2 = Input.get_vector("left", "right", "forward", "backward")
-	var direction:Vector3 = (head.transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
-	if direction:
-		if walkTimer <= 0 and is_on_floor() and abs(velocity.length()) > 0.1:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 			walkSound()
 
-			
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = 0
-		velocity.z = 0
-	previouslyOnFloor = is_on_floor()
-	move_and_slide()
-	
+		
+		if Input.is_action_just_pressed("toggleLamp"):
+			lampOn = !lampOn
+			print_debug(lampOn)
+			if lampOn:
+				lamp.show()
+			else:
+				lamp.hide()
+
+		var input_dir:Vector2 = Input.get_vector("left", "right", "forward", "backward")
+		var direction:Vector3 = (head.transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
+		if direction:
+			if walkTimer <= 0 and is_on_floor() and abs(velocity.length()) > 0.1:
+				walkSound()
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = 0
+			velocity.z = 0
+		previouslyOnFloor = is_on_floor()
+		move_and_slide()

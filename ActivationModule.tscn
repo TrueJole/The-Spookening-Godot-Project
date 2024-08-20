@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://burmik51o82fn"]
+
+[ext_resource type="Script" path="res://Scripts/Activation_Module.gd" id="1_jj5dx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiae4"]
+size = Vector3(0.254089, 0.248871, 0.347137)
+
+[node name="Activation Module" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.877395, 0.846614, 0)
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("1_jj5dx")
+activators = Array[String](["key1"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00290447, 0.0192053, 0)
+shape = SubResource("BoxShape3D_iiae4")

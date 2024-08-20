@@ -1,0 +1,149 @@
+[gd_scene load_steps=18 format=3 uid="uid://c8ti7ovxqvpgh"]
+
+[ext_resource type="PackedScene" uid="uid://daouxihd2xppr" path="res://Assets/AutomatApplied.glb" id="1_crbfg"]
+[ext_resource type="Script" path="res://Scripts/automat.gd" id="2_87r2q"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_k3y3r"]
+[ext_resource type="Material" uid="uid://bd7gy6guff6jw" path="res://Assets/Materials/Glas.tres" id="3_lor8m"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_1wla6"]
+[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://ActivationModule.tscn" id="4_15gl3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6q0h"]
+albedo_color = Color(0.320668, 0.320668, 0.320668, 1)
+metallic = 0.22
+roughness = 0.58
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcdug"]
+albedo_color = Color(0.551754, 0.599677, 0.581404, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjhh8"]
+albedo_color = Color(0.699957, 0.741107, 0.725272, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0kjs"]
+albedo_color = Color(0.261892, 0.261892, 0.261892, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcps4"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fyym"]
+size = Vector3(1.29681, 1.41611, 0.695953)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmm8x"]
+size = Vector3(0.686523, 0.457031, 0.164917)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sg2hw"]
+size = Vector3(1.29794, 0.156418, 0.0109329)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l72j"]
+size = Vector3(0.402023, 0.671896, 0.698168)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ji117"]
+size = Vector3(0.23336, 0.672384, 0.698168)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3dlr"]
+size = Vector3(1.2083, 0.300303, 0.698168)
+
+[node name="AutomatApplied" instance=ExtResource("1_crbfg")]
+script = ExtResource("2_87r2q")
+
+[node name="Circle" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_k3y3r")
+
+[node name="Plane" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_lor8m")
+surface_material_override/1 = SubResource("StandardMaterial3D_b6q0h")
+surface_material_override/2 = SubResource("StandardMaterial3D_qcdug")
+surface_material_override/3 = SubResource("StandardMaterial3D_xjhh8")
+surface_material_override/4 = SubResource("StandardMaterial3D_o0kjs")
+surface_material_override/5 = SubResource("StandardMaterial3D_pcps4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000452042, 1.37651, 0.219711)
+shape = SubResource("BoxShape3D_0fyym")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.80662, 0.59107, 0, -0.59107, 0.80662, -0.0829715, 0.426912, 0.36339)
+shape = SubResource("BoxShape3D_mmm8x")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000112534, 0.590468, 0.56031)
+shape = SubResource("BoxShape3D_sg2hw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448072, 0.332068, 0.216693)
+shape = SubResource("BoxShape3D_3l72j")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.534501, 0.332312, 0.216693)
+shape = SubResource("BoxShape3D_ji117")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362745, 0.146272, 0.216693)
+shape = SubResource("BoxShape3D_r3dlr")
+
+[node name="Marker3D" type="Marker3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0942836, 0.518186, 0.487195)
+
+[node name="Activation Module" parent="." index="4" instance=ExtResource("4_15gl3")]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.504958, 1.17018, 0.550386)
+activators = Array[String](["coin"])
+
+[node name="CollisionShape3D" parent="Activation Module" index="0"]
+transform = Transform3D(1, -1.13389e-07, -3.46034e-12, 1.13389e-07, 1, -7.49401e-15, 6.13909e-12, -1.53405e-13, 1, -0.0282004, -0.0238414, 0.0110902)
+
+[node name="Interactive Component" parent="." index="5" instance=ExtResource("4_1wla6")]
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -7.86968e-08, -2.40163e-12, 7.86968e-08, 1, -5.2458e-15, 4.02878e-12, -8.49459e-14, 1, -0.366741, -1.15972, -0.492436)
+
+[node name="Control" type="Control" parent="." index="6"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList" type="ItemList" parent="Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 814.0
+offset_top = 278.0
+offset_right = -807.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/guide_color = Color(0.878431, 0.878431, 0.878431, 0)
+theme_override_font_sizes/font_size = 84
+auto_height = true
+item_count = 12
+max_columns = 3
+same_column_width = true
+fixed_column_width = 88
+icon_mode = 0
+item_0/text = "1"
+item_1/text = "2"
+item_2/text = "3"
+item_3/text = "4"
+item_4/text = "5"
+item_5/text = "6"
+item_6/text = "7"
+item_7/text = "8"
+item_8/text = "9"
+item_9/text = "#"
+item_10/text = "0"
+item_11/text = "*"
+
+[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+[connection signal="item_clicked" from="Control/ItemList" to="." method="_on_item_list_item_clicked"]
+
+[editable path="Activation Module"]
+[editable path="Interactive Component"]

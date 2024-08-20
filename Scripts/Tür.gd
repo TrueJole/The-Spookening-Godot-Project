@@ -2,7 +2,9 @@ extends Node3D
 
 @export var locked: bool
 @onready var door: RigidBody3D = $"Tür"
+
 @onready var activator: Area3D = $"Activation Module"
+
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var occluder: OccluderInstance3D = $"Tür/OccluderInstance3D"
 var closed: bool
@@ -22,6 +24,7 @@ func _physics_process(_delta: float) -> void:
 		door.set_collision_layer_value ( 1, true )
 		door.rotation.y = 0
 		door.freeze = true
+		
 		closed = true
 	else:
 		#close the door if it is nearly closed
@@ -51,13 +54,13 @@ func _physics_process(_delta: float) -> void:
 			closed = false
 			#door.angular_velocity = Vector3(0,0,0)
 		#print_debug(door.rotation.y)
-		door.set_collision_layer_value ( 1, false )	
+		door.set_collision_layer_value ( 1, false )
 		door.freeze = false
 
 
 
 
-func _on_activation_module_activated() -> void:
+func _on_activation_module_activated(body: Node3D) -> void:
 	locked = false
 	emit_signal("opened")
 	print_debug('recieved')

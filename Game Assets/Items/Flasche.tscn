@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0cdlo64cvhxo"]
+
+[ext_resource type="PackedScene" uid="uid://cu7d2md1407kc" path="res://Assets/Flasche.glb" id="1_e6fqe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rqf7b"]
+height = 0.146886
+radius = 0.0281647
+
+[node name="Flasche" instance=ExtResource("1_e6fqe")]
+collision_layer = 2
+collision_mask = 3
+mass = 0.6
+metadata/itemid = "bottle"
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.0581699, 0, 0, 0, 0.0581699, 0, 0, 0, 0.0581699, 0.00028306, 0.106515, 0.000236511)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0752327, 0)
+shape = SubResource("CylinderShape3D_rqf7b")

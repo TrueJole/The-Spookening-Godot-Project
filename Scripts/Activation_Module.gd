@@ -1,6 +1,6 @@
 extends Area3D
 
-signal activated
+signal activated(body: Node3D)
 
 @export var activators:Array[String]
 var lastBody: Node3D
@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 						body.activated(self)
 					if get_parent().has_method('activated'):
 						get_parent().activated()
-					activated.emit()
+					activated.emit(body)
 	if has_overlapping_areas():
 		for area: Area3D in get_overlapping_areas():
 			if area.has_meta('itemid'):
@@ -29,5 +29,5 @@ func _physics_process(_delta: float) -> void:
 					#print_debug(body)
 					if get_parent().has_method('activated'):
 						get_parent().activated()
-					activated.emit()
+					activated.emit(area)
 					

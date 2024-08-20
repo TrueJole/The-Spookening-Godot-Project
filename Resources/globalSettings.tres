@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://wrd82t5lbmnb"]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -15,6 +15,6 @@ shadowPower = 12
 showFPS = true
 fullscreen = true
 fpsMode = 1
-scale3D = 0.7
+scale3D = 0.75
 resolutionX = 1920
 resolutionY = 1080
