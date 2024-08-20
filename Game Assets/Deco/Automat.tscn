@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8ti7ovxqvpgh"]
+[gd_scene load_steps=20 format=3 uid="uid://c8ti7ovxqvpgh"]
 
 [ext_resource type="PackedScene" uid="uid://daouxihd2xppr" path="res://Assets/AutomatApplied.glb" id="1_crbfg"]
 [ext_resource type="Script" path="res://Scripts/automat.gd" id="2_87r2q"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_k3y3r"]
 [ext_resource type="Material" uid="uid://bd7gy6guff6jw" path="res://Assets/Materials/Glas.tres" id="3_lor8m"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_1wla6"]
-[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://ActivationModule.tscn" id="4_15gl3"]
+[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_15gl3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6q0h"]
 albedo_color = Color(0.320668, 0.320668, 0.320668, 1)
@@ -44,13 +44,22 @@ size = Vector3(0.23336, 0.672384, 0.698168)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3dlr"]
 size = Vector3(1.2083, 0.300303, 0.698168)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qs3h"]
+size = Vector3(0.064598, 0.0910454, 0.0890464)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujmya"]
+size = Vector3(0.0914688, 0.16066, 0.135147)
+
 [node name="AutomatApplied" instance=ExtResource("1_crbfg")]
 script = ExtResource("2_87r2q")
 
-[node name="Circle" parent="." index="0"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464832, 1.84631, 0.451971)
+
+[node name="Circle" parent="." index="1"]
 surface_material_override/0 = ExtResource("2_k3y3r")
 
-[node name="Plane" parent="." index="1"]
+[node name="Plane" parent="." index="2"]
 surface_material_override/0 = ExtResource("3_lor8m")
 surface_material_override/1 = SubResource("StandardMaterial3D_b6q0h")
 surface_material_override/2 = SubResource("StandardMaterial3D_qcdug")
@@ -58,7 +67,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_xjhh8")
 surface_material_override/4 = SubResource("StandardMaterial3D_o0kjs")
 surface_material_override/5 = SubResource("StandardMaterial3D_pcps4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000452042, 1.37651, 0.219711)
@@ -84,22 +93,24 @@ shape = SubResource("BoxShape3D_ji117")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362745, 0.146272, 0.216693)
 shape = SubResource("BoxShape3D_r3dlr")
 
-[node name="Marker3D" type="Marker3D" parent="." index="3"]
+[node name="Marker3D" type="Marker3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0942836, 0.518186, 0.487195)
 
-[node name="Activation Module" parent="." index="4" instance=ExtResource("4_15gl3")]
+[node name="Activation Module" parent="." index="5" instance=ExtResource("4_15gl3")]
 transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.504958, 1.17018, 0.550386)
 activators = Array[String](["coin"])
 
 [node name="CollisionShape3D" parent="Activation Module" index="0"]
-transform = Transform3D(1, -1.13389e-07, -3.46034e-12, 1.13389e-07, 1, -7.49401e-15, 6.13909e-12, -1.53405e-13, 1, -0.0282004, -0.0238414, 0.0110902)
+transform = Transform3D(1, -2.54018e-07, -7.75202e-12, 2.54018e-07, 1, -1.65146e-14, 1.06297e-11, -3.34635e-13, 1, -0.00606424, -0.0231254, 0.0102271)
+shape = SubResource("BoxShape3D_8qs3h")
 
-[node name="Interactive Component" parent="." index="5" instance=ExtResource("4_1wla6")]
+[node name="Interactive Component" parent="." index="6" instance=ExtResource("4_1wla6")]
 
 [node name="CollisionShape3D" parent="Interactive Component" index="0"]
-transform = Transform3D(1, -7.86968e-08, -2.40163e-12, 7.86968e-08, 1, -5.2458e-15, 4.02878e-12, -8.49459e-14, 1, -0.366741, -1.15972, -0.492436)
+transform = Transform3D(1, -4.23752e-08, -1.29319e-12, 4.23752e-08, 1, -2.92821e-15, 1.80478e-12, -6.10623e-14, 1, -0.33849, -1.15946, -0.49235)
+shape = SubResource("BoxShape3D_ujmya")
 
-[node name="Control" type="Control" parent="." index="6"]
+[node name="Control" type="Control" parent="." index="7"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

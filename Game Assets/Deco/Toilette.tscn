@@ -169,6 +169,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237339, -0.293023)
 stream = ExtResource("4_kppq8")
 unit_size = 3.0
 max_distance = 15.0
+bus = &"Räume"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="6"]
 transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -0.00679975, 0.191187, -0.276593)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="1_n6dha"]
 [ext_resource type="PackedScene" uid="uid://0qh3g0vam3hw" path="res://Game Assets/Parts/Schloss.tscn" id="2_42esw"]
 [ext_resource type="Script" path="res://Scripts/Schloss.gd" id="3_rnuga"]
-[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://ActivationModule.tscn" id="4_m5vtd"]
+[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_m5vtd"]
 
 [node name="TürMitSchloss" instance=ExtResource("1_n6dha")]
 locked = true

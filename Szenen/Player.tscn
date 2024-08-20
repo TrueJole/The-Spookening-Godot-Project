@@ -219,6 +219,7 @@ stream = SubResource("AudioStreamRandomizer_sxqim")
 volume_db = -5.0
 unit_size = 3.0
 pitch_scale = 1.1
+bus = &"Räume"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.38727, 0, 0, 0, 1, 0, 0.503566, 0)

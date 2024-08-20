@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhysn0ra71600"]
+
+[ext_resource type="PackedScene" uid="uid://bat17ns0fe82e" path="res://Assets/ZahlenSchloss.glb" id="1_v774v"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_8rpbg"]
+[ext_resource type="Script" path="res://Game Assets/Parts/zahlenschloss.gd" id="2_ybtrv"]
+[ext_resource type="Material" uid="uid://1ffi8n27ury7" path="res://Assets/Materials/Metall_Rau.tres" id="3_3fug0"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_vgmmg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klps4"]
+albedo_color = Color(0.00342182, 0.137691, 0.292412, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_7fdy2"]
+font_names = PackedStringArray("MathJax_Typewriter")
+multichannel_signed_distance_field = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xk5b"]
+size = Vector3(0.159992, 0.246529, 0.0807038)
+
+[node name="ZahlenSchloss" instance=ExtResource("1_v774v")]
+script = ExtResource("2_ybtrv")
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_8rpbg")
+
+[node name="NurbsPath" parent="." index="1"]
+material_override = ExtResource("3_3fug0")
+
+[node name="Cylinder_001" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_klps4")
+
+[node name="Control" type="Control" parent="." index="3"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="LineEdit" type="LineEdit" parent="Control" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -41.0
+offset_right = 100.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = SubResource("SystemFont_7fdy2")
+theme_override_font_sizes/font_size = 80
+placeholder_text = "____"
+alignment = 3
+max_length = 4
+
+[node name="Interactive Component" parent="." index="4" instance=ExtResource("4_vgmmg")]
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -6.40284e-08, -1.95399e-12, 6.40284e-08, 1, -4.31599e-15, 3.12639e-12, -9.31755e-14, 1, 0.196508, 0.166782, 0.0165464)
+shape = SubResource("BoxShape3D_5xk5b")
+
+[connection signal="text_changed" from="Control/LineEdit" to="." method="_on_line_edit_text_changed"]
+
+[editable path="Interactive Component"]

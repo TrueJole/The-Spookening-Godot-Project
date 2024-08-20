@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="12_s4p5m"]
 [ext_resource type="PackedScene" uid="uid://dts1pgqy8xlwp" path="res://Game Assets/Deco/TV.tscn" id="13_10fv6"]
 [ext_resource type="PackedScene" uid="uid://bvipxvc0fsh1l" path="res://Game Assets/Items/Buch.tscn" id="14_0l2p2"]
-[ext_resource type="PackedScene" uid="uid://oy2xrhos26y7" path="res://Game Assets/Items/Donut.tscn" id="15_us87p"]
+[ext_resource type="PackedScene" uid="uid://buhgn4nby2tml" path="res://Game Assets/Items/Donut.tscn" id="15_us87p"]
 [ext_resource type="PackedScene" uid="uid://bync8snl5bq20" path="res://Game Assets/Deco/MülleimerKlein.tscn" id="16_15lwx"]
 [ext_resource type="PackedScene" uid="uid://dpo0io7glisbf" path="res://Game Assets/Deco/Schrank.tscn" id="17_0fjf0"]
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Items/Schlüssel.tscn" id="18_kj346"]

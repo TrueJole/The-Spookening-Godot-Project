@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbucs8rscs3df"]
+
+[ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="1_qgb1j"]
+[ext_resource type="PackedScene" uid="uid://bhysn0ra71600" path="res://Game Assets/Parts/Zahlenschloss.tscn" id="2_v834m"]
+
+[node name="TürMitLeiste" instance=ExtResource("1_qgb1j")]
+
+[node name="ZahlenSchloss" parent="." index="5" instance=ExtResource("2_v834m")]
+transform = Transform3D(-3.19889e-08, 0, 0.731822, 0, 0.731822, 0, -0.731822, 0, -3.19889e-08, 0.871416, 0.80731, 0.0817301)

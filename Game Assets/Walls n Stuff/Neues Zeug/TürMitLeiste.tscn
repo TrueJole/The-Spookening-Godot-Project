@@ -43,4 +43,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408491, 0.935784, 0)
 stream = ExtResource("7_3gejw")
 volume_db = -1.0
 unit_size = 1.0
+bus = &"Räume"
 area_mask = 0

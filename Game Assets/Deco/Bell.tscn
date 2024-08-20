@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhcpkhuhd5bjt"]
+[gd_scene load_steps=10 format=3 uid="uid://dhcpkhuhd5bjt"]
 
 [ext_resource type="PackedScene" uid="uid://2nt1xea36woc" path="res://Assets/Bell.glb" id="1_28mvm"]
 [ext_resource type="Script" path="res://Scripts/Bell.gd" id="2_itsjy"]
@@ -18,6 +18,9 @@ roughness = 0.2
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mudmo"]
 height = 0.0435222
 radius = 0.0565862
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrkie"]
+size = Vector3(0.141682, 0.0882721, 0.144058)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xpt2u"]
 random_pitch = 1.25
@@ -43,7 +46,8 @@ shape = SubResource("CylinderShape3D_mudmo")
 transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00105086, 0.0498392, 0.0175802)
 
 [node name="CollisionShape3D" parent="Interactive Component" index="0"]
-transform = Transform3D(1, -1.50641e-07, -4.59721e-12, 1.50641e-07, 1, -9.86711e-15, 7.48202e-12, -1.75443e-13, 1, 0.0163257, -0.0185753, 0.00284273)
+transform = Transform3D(1, -2.19094e-07, -6.68621e-12, 2.19094e-07, 1, -1.42664e-14, 9.57101e-12, -2.66218e-13, 1, 0.0192153, 0.0060295, -0.000811711)
+shape = SubResource("BoxShape3D_rrkie")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0303279, 0)

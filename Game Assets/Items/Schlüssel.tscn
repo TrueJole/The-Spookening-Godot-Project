@@ -123,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000521808, 0.0261357, -0.08
 shape = SubResource("BoxShape3D_jr3o5")
 
 [node name="BézierCurve" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.85895e-13, -1.83368e-08, -0.0138299, -0.0141858, -1.83368e-08, 6.91739e-22, -5.13525e-08, 0.00506542, -5.00641e-08, 0.00149138, 0.0307321, -0.07597)
+transform = Transform3D(1.85895e-13, -1.83368e-08, -0.0138299, -0.0141858, -1.83368e-08, 8.24347e-19, -5.13525e-08, 0.00506542, -5.00641e-08, 0.00149138, 0.0307321, -0.07597)
 mesh = SubResource("ArrayMesh_x81lk")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_peylw")
