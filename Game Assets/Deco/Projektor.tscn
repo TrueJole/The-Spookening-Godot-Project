@@ -22,8 +22,8 @@ roughness = 0.4
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eafa"]
 size = Vector3(0.256823, 0.0784298, 0.25869)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_of25y"]
-size = Vector3(0.0384175, 0.0566459, 0.173759)
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpsm5"]
+size = Vector3(0.166522, 0.0566459, 0.0373362)
 
 [node name="Projektor" instance=ExtResource("1_oxmsp")]
 script = ExtResource("2_fj0hs")
@@ -65,7 +65,7 @@ script = ExtResource("2_origj")
 activators = Array[String](["cart"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Activation Module" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00293645, 0.0591266, -0.0037498)
-shape = SubResource("BoxShape3D_of25y")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00331131, 0.0591266, 0.000179579)
+shape = SubResource("BoxShape3D_hpsm5")
 
 [connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]

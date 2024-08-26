@@ -10,8 +10,7 @@ func _process(_delta: float) -> void:
 	if loaded != null:
 		projector.show()
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
-		loaded.rotation = Vector3(0,deg_to_rad(180),0)
-
+		loaded.rotation = get_node('Activation Module').rotation + Vector3(0, deg_to_rad(90), 0)
 		#var texture: Texture2D = loaded.get_meta('data')
 		#projector.light_projector = texture
 		#print_debug('applied: ', texture)
@@ -31,4 +30,4 @@ func activated() -> void:
 		
 			print_debug('Projector used')
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0.05,0)
-		loaded.rotation = Vector3(0,deg_to_rad(180),0)
+		loaded.rotation = get_node('Activation Module').rotation + Vector3(0, deg_to_rad(90), 0)

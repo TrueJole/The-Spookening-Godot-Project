@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8ti7ovxqvpgh"]
+[gd_scene load_steps=21 format=3 uid="uid://c8ti7ovxqvpgh"]
 
 [ext_resource type="PackedScene" uid="uid://daouxihd2xppr" path="res://Assets/AutomatApplied.glb" id="1_crbfg"]
 [ext_resource type="Script" path="res://Scripts/automat.gd" id="2_87r2q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://bd7gy6guff6jw" path="res://Assets/Materials/Glas.tres" id="3_lor8m"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_1wla6"]
 [ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_15gl3"]
+[ext_resource type="Script" path="res://Scripts/flicker.gd" id="7_45hna"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6q0h"]
 albedo_color = Color(0.320668, 0.320668, 0.320668, 1)
@@ -151,6 +152,25 @@ item_8/text = "9"
 item_9/text = "#"
 item_10/text = "0"
 item_11/text = "*"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, -0.216815, 0.976213, 0, -0.976213, -0.216815, -0.108578, 1.99842, 0.44488)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 12.0
+distance_fade_shadow = 5.0
+distance_fade_length = 3.0
+spot_range = 3.0
+spot_attenuation = 2.0
+spot_angle = 28.3702
+script = ExtResource("7_45hna")
+baseTime = 5
+randomTime = 4
+lowerFlicks = 1
+upperFlicks = 2
+outTime = 0.1
+onTime = 0.1
 
 [connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]
 [connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]

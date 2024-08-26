@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=17 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g3gao"]
 [ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor_Punkt.png" id="4_8u4cr"]
+[ext_resource type="Script" path="res://Scripts/flicker.gd" id="4_g71aj"]
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
@@ -148,6 +149,14 @@ spot_range = 15.0
 spot_attenuation = 0.25
 spot_angle = 25.26
 spot_angle_attenuation = 6.23484
+script = ExtResource("4_g71aj")
+baseTime = 5
+randomTime = 1
+lowerFlicks = 1
+upperFlicks = 2
+outTime = 0.1
+onTime = 0.2
+showIfHidden = null
 
 [node name="Testlampe" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, -5.10653e-36, 5.84118e-29, 5.10653e-36, 1, 0, -5.84118e-29, 0, 1, 0, 0, -0.158891)
