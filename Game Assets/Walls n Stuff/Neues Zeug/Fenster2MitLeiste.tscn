@@ -21,17 +21,14 @@ viewport_path = NodePath(".")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvg3w"]
 resource_local_to_scene = true
 transparency = 1
-albedo_color = Color(0.505882, 0.505882, 0.505882, 0.835294)
+albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
 albedo_texture = SubResource("ViewportTexture_ce5u6")
 roughness = 0.0
-normal_enabled = true
 normal_scale = -1.8
 normal_texture = SubResource("ViewportTexture_fmn44")
 backlight_texture = SubResource("ViewportTexture_o6jsn")
-uv1_scale = Vector3(0.48, 0.48, 0.48)
-uv1_offset = Vector3(1.295, 0, 0)
+uv1_scale = Vector3(1.335, 1.335, 1.335)
 uv1_triplanar = true
-uv2_scale = Vector3(3.095, 3.095, 3.095)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ac0m"]
 size = Vector3(1.99963, 0.813965, 0.33783)

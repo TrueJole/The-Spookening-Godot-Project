@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://dvkdatb4gggmb"]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -11,7 +11,7 @@ ssil = false
 giQuality = 2
 msaa = true
 exposure = 1.00795
-shadowPower = 14
+shadowPower = 12
 showFPS = true
 fullscreen = true
 fpsMode = 1

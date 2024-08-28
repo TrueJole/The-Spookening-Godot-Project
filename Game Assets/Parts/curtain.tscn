@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dii4s26xwk2dj"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3tkko2g6hvma" path="res://Resources/cloth.res" id="1_d06ol"]
+
+[node name="SoftBody3D" type="SoftBody3D"]
+transform = Transform3D(-1, -0.000453805, -2.96068e-09, 0.000453805, -1, 2.37647e-08, -2.97147e-09, 2.37634e-08, 1, 0, 1.14631, -0.122106)
+cast_shadow = 0
+lod_bias = 128.0
+gi_mode = 0
+mesh = ExtResource("1_d06ol")
+collision_layer = 8
+collision_mask = 3
+total_mass = 9.01
+linear_stiffness = 0.39
+damping_coefficient = 0.53
+ray_pickable = false
+pinned_points = [96, 92, 80, 75, 1, 70, 84, 88]
+attachments/0/point_index = 96
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 92
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+attachments/2/point_index = 80
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
+attachments/3/point_index = 75
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
+attachments/4/point_index = 1
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
+attachments/5/point_index = 70
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
+attachments/6/point_index = 84
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
+attachments/7/point_index = 88
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)

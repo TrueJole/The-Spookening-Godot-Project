@@ -176,7 +176,7 @@ transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -0.00679975
 emitting = false
 amount = 40
 lifetime = 2.0
-visibility_aabb = AABB(-0.213621, -0.252036, -0.209259, 0.431146, 0.445894, 0.427604)
+visibility_aabb = AABB(-0.223785, -0.216986, -0.19893, 0.44904, 0.416019, 0.423808)
 process_material = SubResource("ParticleProcessMaterial_gpk6l")
 draw_pass_1 = SubResource("QuadMesh_jq1hk")
 

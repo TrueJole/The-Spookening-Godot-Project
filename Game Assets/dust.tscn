@@ -1,0 +1,82 @@
+[gd_scene load_steps=15 format=3 uid="uid://yc0orxhwm7cs"]
+
+[ext_resource type="Texture2D" uid="uid://thho8ugju2ji" path="res://Assets/Materials/Textures/dust.png" id="1_dpoda"]
+
+[sub_resource type="Curve" id="Curve_hsadi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.233221, 0.455474), 0.0, 0.0, 0, 0, Vector2(0.753356, 0.437766), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_0fa3b"]
+curve = SubResource("Curve_hsadi")
+
+[sub_resource type="Curve" id="Curve_8ajcb"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.481544, 0.845054), 0.0, 0.0, 0, 0, Vector2(0.961409, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_yk5mx"]
+curve_x = SubResource("Curve_8ajcb")
+curve_y = SubResource("Curve_8ajcb")
+curve_z = SubResource("Curve_8ajcb")
+
+[sub_resource type="Curve" id="Curve_ut7gx"]
+_data = [Vector2(0, -0.018219), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2e3w7"]
+curve = SubResource("Curve_ut7gx")
+
+[sub_resource type="Curve" id="Curve_cifqr"]
+min_value = -1.0
+_data = [Vector2(0.0151007, -1), 0.0, 0.0, 0, 0, Vector2(0.994966, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6ho44"]
+curve = SubResource("Curve_cifqr")
+
+[sub_resource type="Curve" id="Curve_6hrj4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.253356, 0.127873), -0.199134, -0.199134, 0, 0, Vector2(0.498322, 0.0570407), 0.251287, 0.251287, 0, 0, Vector2(0.736577, 0.176571), 0.018581, 0.018581, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_2ngvu"]
+curve = SubResource("Curve_6hrj4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p587u"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+directional_velocity_min = -0.500016
+directional_velocity_max = 0.499984
+directional_velocity_curve = SubResource("CurveXYZTexture_yk5mx")
+radial_velocity_min = -1.00002
+radial_velocity_max = 0.999978
+radial_velocity_curve = SubResource("CurveTexture_6ho44")
+velocity_limit_curve = SubResource("CurveTexture_2ngvu")
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_0fa3b")
+hue_variation_curve = SubResource("CurveTexture_2e3w7")
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.407
+turbulence_initial_displacement_min = 1.49012e-06
+turbulence_initial_displacement_max = 1.49012e-06
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shhgd"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_dpoda")
+
+[sub_resource type="QuadMesh" id="QuadMesh_huffv"]
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_shhgd")
+size = Vector2(0.05, 0.05)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+cast_shadow = 0
+visibility_range_end = 6.0
+visibility_range_end_margin = 1.0
+amount = 25
+lifetime = 20.0
+visibility_aabb = AABB(-1.36062, -1.43276, -1.58302, 2.75579, 2.81777, 2.98395)
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_p587u")
+draw_pass_1 = SubResource("QuadMesh_huffv")

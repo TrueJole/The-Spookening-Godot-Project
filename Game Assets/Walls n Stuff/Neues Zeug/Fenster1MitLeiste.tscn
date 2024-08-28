@@ -1,30 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceq51lpi3uuda"]
+[gd_scene load_steps=11 format=3 uid="uid://ceq51lpi3uuda"]
 
 [ext_resource type="PackedScene" uid="uid://b82oi3qhdn60x" path="res://Assets/FensterTief.glb" id="1_y70jd"]
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_5jdq6"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="4_p8ckn"]
 [ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="5_31gv8"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="5_l7yag"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_87bgk"]
-viewport_path = NodePath(".")
+[ext_resource type="PackedScene" uid="uid://dii4s26xwk2dj" path="res://Game Assets/Parts/curtain.tscn" id="6_qiwxw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tewds"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_87bgk"]
+viewport_path = NodePath(".")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gjjn"]
 resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
+albedo_texture = SubResource("ViewportTexture_tewds")
 roughness = 0.0
-normal_enabled = true
 normal_scale = 0.63
-normal_texture = SubResource("ViewportTexture_tewds")
 backlight_texture = SubResource("ViewportTexture_87bgk")
-uv1_scale = Vector3(0.22, 0.22, 0.22)
-uv1_offset = Vector3(1.295, 0, 0)
+uv1_scale = Vector3(0.655, 0.655, 0.655)
 uv1_triplanar = true
-uv2_scale = Vector3(3.095, 3.095, 3.095)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckwq1"]
 size = Vector3(1, 3.48732, 0.21051)
@@ -44,3 +42,6 @@ surface_material_override/3 = ExtResource("5_l7yag")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.497193, 1.75121, 0.00106812)
 shape = SubResource("BoxShape3D_ckwq1")
+
+[node name="SoftBody3D" parent="." index="3" instance=ExtResource("6_qiwxw")]
+transform = Transform3D(4.07399e-08, 2.37832e-08, 1, 0.000453805, -1, 2.37647e-08, 1, 0.000453805, -4.07507e-08, -0.537158, 2.48465, -0.139326)

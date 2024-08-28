@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://57eflvwsg5er" path="res://Assets/Materials/Textures/Holz.png" id="1_xc2r6"]
 
 [resource]
+albedo_color = Color(0.698467, 0.698467, 0.698467, 1)
 albedo_texture = ExtResource("1_xc2r6")
-metallic = 1.0
-roughness = 0.82
+roughness = 0.46
 uv1_scale = Vector3(4.28, 4.28, 4.28)

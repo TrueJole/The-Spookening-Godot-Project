@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvkhlvy7ssp4k"]
+[gd_scene load_steps=6 format=3 uid="uid://dvkhlvy7ssp4k"]
 
 [ext_resource type="Material" uid="uid://djft0boyot2uv" path="res://Assets/Materials/Tischbein_Grün.tres" id="1_gwqov"]
 [ext_resource type="PackedScene" uid="uid://ssgyo8y0a5de" path="res://Assets/Tisch.glb" id="1_uwqg7"]
 [ext_resource type="Material" uid="uid://ch1drv0vxjee4" path="res://Assets/Materials/Holz.tres" id="2_ibx3l"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_wds2s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aeliv"]
+albedo_color = Color(0.331285, 0.331285, 0.331285, 1)
+roughness = 0.49
 
 [node name="Tisch" instance=ExtResource("1_uwqg7")]
 
@@ -12,3 +16,4 @@ visibility_range_end = 30.0
 surface_material_override/0 = ExtResource("2_wds2s")
 surface_material_override/1 = ExtResource("1_gwqov")
 surface_material_override/2 = ExtResource("2_ibx3l")
+surface_material_override/3 = SubResource("StandardMaterial3D_aeliv")

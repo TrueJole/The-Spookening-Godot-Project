@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=40 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
@@ -31,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://b0qbing1uirni" path="res://Game Assets/Items/Coin.tscn" id="29_qrmea"]
 [ext_resource type="PackedScene" uid="uid://whngmggv7mwp" path="res://Game Assets/Deco/RollStuhl.tscn" id="30_acve0"]
 [ext_resource type="PackedScene" uid="uid://br7uh0304gqut" path="res://Game Assets/Deco/Cardboard Box.tscn" id="31_1octf"]
+[ext_resource type="Material" uid="uid://dobgsic4cnrcx" path="res://Assets/Materials/Grass.tres" id="32_a5fjm"]
+[ext_resource type="PackedScene" uid="uid://c7tpedlqcvlsh" path="res://Game Assets/Deco/LightSwitch.tscn" id="33_01cn5"]
+[ext_resource type="PackedScene" uid="uid://yc0orxhwm7cs" path="res://Game Assets/dust.tscn" id="34_cpmlr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
 
@@ -39,6 +42,10 @@ size = Vector3(42.8994, 3.45605, 3.09821)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1s6jn"]
 size = Vector3(3.08014, 3.43896, 2.99811)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cd1es"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a2kbk"]
 
 [node name="keller" type="Node3D"]
 
@@ -5436,5 +5443,49 @@ transform = Transform3D(-1.1, 0, 9.6165e-08, 0, 1.1, 0, -9.6165e-08, 0, -1.1, 16
 
 [node name="RollStuhl2" parent="." instance=ExtResource("30_acve0")]
 transform = Transform3D(-0.958402, 0, -0.285421, 0, 1, 0, 0.285421, 0, -0.958402, 17.5453, -0.000500202, -11.0175)
+
+[node name="Gras" type="MeshInstance3D" parent="."]
+transform = Transform3D(27.8407, 0, 0, 0, 0.999999, 0, 0, 0, 9.16541, -17.8581, 0.772323, -19.1095)
+material_override = ExtResource("32_a5fjm")
+mesh = SubResource("PlaneMesh_cd1es")
+
+[node name="Gras2" type="MeshInstance3D" parent="."]
+transform = Transform3D(27.8407, 0, 0, 0, 0.999999, 0, 0, 0, 9.16541, -1.11617, 0.772323, 14.1876)
+material_override = ExtResource("32_a5fjm")
+mesh = SubResource("PlaneMesh_a2kbk")
+
+[node name="Gras3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.21696e-06, 0, -9.16541, 0, 0.999999, 0, 27.8407, 0, -4.00633e-07, 28.2362, 0.772323, 0.308963)
+mesh = SubResource("PlaneMesh_a2kbk")
+surface_material_override/0 = ExtResource("32_a5fjm")
+
+[node name="Gras4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.21696e-06, 0, -9.16541, 0, 0.999999, 0, 27.8407, 0, -4.00633e-07, -43.1989, 0.772323, 0.308963)
+material_override = ExtResource("32_a5fjm")
+mesh = SubResource("PlaneMesh_a2kbk")
+
+[node name="Gras5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-27.8407, 0, 8.01266e-07, 0, 0.999999, 0, -2.43391e-06, 0, -9.16541, -28.2617, 0.772323, 17.2242)
+material_override = ExtResource("32_a5fjm")
+mesh = SubResource("PlaneMesh_a2kbk")
+
+[node name="Gras6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-27.8407, 0, 8.01266e-07, 0, 0.999999, 0, -2.43391e-06, 0, -9.16541, 13.6018, 0.772323, -22.2)
+material_override = ExtResource("32_a5fjm")
+mesh = SubResource("PlaneMesh_a2kbk")
+
+[node name="LightSwitch" parent="." instance=ExtResource("33_01cn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1027, 1.0151, -4.10028)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00536, 1.73574, -7.23509)
+size = Vector3(0.140137, 4.40396, 6.76311)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00617, 1.73574, -7.23509)
+size = Vector3(0.140137, 4.40396, 6.76311)
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("34_cpmlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0281811, 1.44337, -7.32549)
 
 [editable path="TürMitSchloss"]

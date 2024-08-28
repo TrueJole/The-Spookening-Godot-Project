@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2mrvfo08hjkm"]
+
+[ext_resource type="PackedScene" uid="uid://dii4s26xwk2dj" path="res://Game Assets/Parts/curtain.tscn" id="1_gk758"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4u6wb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_x0ggj"]
+sky_material = SubResource("ProceduralSkyMaterial_4u6wb")
+
+[sub_resource type="Environment" id="Environment_wm4jj"]
+background_mode = 2
+sky = SubResource("Sky_x0ggj")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-7.74365e-08, 1, 0, -1.77154, -4.37114e-08, 0, 0, 0, 1, 0, 1.99893, 0.080182)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.14384e-08, 0.126585, -0.991956, 9.94597e-08, 0.991956, 0.126585, 1, -9.34141e-08, -5.36951e-08, -1.65529, 0.839096, 0.225539)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wm4jj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(4.15599e-08, 0.465444, 0.885077, 0.950781, 0.274255, -0.144225, -0.309865, 0.841514, -0.442535, 0, 0, 1.12032)
+visible = false
+shadow_enabled = true
+
+[node name="SoftBody3D" parent="." instance=ExtResource("1_gk758")]
