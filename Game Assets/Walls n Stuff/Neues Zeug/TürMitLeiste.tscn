@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0493126, 0, 0.035)
 collision_mask = 6
 metadata/door = true
 
-[node name="HingeJoint3D" type="JoltHingeJoint3D" parent="." index="3"]
+[node name="JoltHingeJoint3D" type="JoltHingeJoint3D" parent="." index="3"]
 limit_enabled = true
 limit_upper = 1.5708
 limit_lower = -1.5708

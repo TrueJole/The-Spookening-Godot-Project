@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 
-const SPEED: float = 2.5
+const SNEAKSPEED: float = 1
+const SPEED: float = 2
+const SPRINTSPEED: float = 3
+
 const JUMP_VELOCITY: float = 4
 const GRAVITY: float = 9.81
 const SENSITIVITY: float = 0.005
@@ -15,12 +18,15 @@ var lampOn: bool = false
 var previouslyOnFloor:bool
 #var testX = 0
 
+enum states {SNEAKING = 1, WALKING = 2, SPRINTING = 3}
+var state: int
+
 @export var walkTime: float
 var walkTimer: float
 
 func walkSound() -> void:
 	stepAudio.play()
-	walkTimer = walkTime
+	walkTimer = walkTime * (1 + 2/state)
 
 func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
@@ -41,11 +47,21 @@ func _physics_process(delta: float) -> void:
 	if not Global.stop:
 		walkTimer -= delta
 		
+		if Input.is_action_pressed("sprint"):
+			state = states.SPRINTING
+		elif Input.is_action_pressed("sneak"):
+			state = states.SNEAKING
+		else:
+			state = states.WALKING
+		
 		if Input.is_action_just_pressed("sneak"):
 			animationPlayer.play('Sneak')
+			state = states.SNEAKING
 			
 		if Input.is_action_just_released("sneak"):
 			animationPlayer.play_backwards('Sneak')
+			state = states.WALKING
+		
 		
 		if is_on_floor() and not previouslyOnFloor:
 			walkSound()
@@ -68,11 +84,15 @@ func _physics_process(delta: float) -> void:
 
 		var input_dir:Vector2 = Input.get_vector("left", "right", "forward", "backward")
 		var direction:Vector3 = (head.transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
+		
+		
 		if direction:
 			if walkTimer <= 0 and is_on_floor() and abs(velocity.length()) > 0.1:
 				walkSound()
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+				
+			
+			velocity.x = direction.x * state
+			velocity.z = direction.z * state
 		else:
 			velocity.x = 0
 			velocity.z = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=42 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
@@ -34,6 +34,8 @@
 [ext_resource type="Material" uid="uid://dobgsic4cnrcx" path="res://Assets/Materials/Grass.tres" id="32_a5fjm"]
 [ext_resource type="PackedScene" uid="uid://c7tpedlqcvlsh" path="res://Game Assets/Deco/LightSwitch.tscn" id="33_01cn5"]
 [ext_resource type="PackedScene" uid="uid://yc0orxhwm7cs" path="res://Game Assets/dust.tscn" id="34_cpmlr"]
+[ext_resource type="PackedScene" uid="uid://dii4s26xwk2dj" path="res://Game Assets/Parts/curtain.tscn" id="35_q73ba"]
+[ext_resource type="PackedScene" uid="uid://bv8b67855mwjt" path="res://Game Assets/Deco/Pinboard.tscn" id="36_r0783"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
 
@@ -48,6 +50,27 @@ size = Vector3(3.08014, 3.43896, 2.99811)
 [sub_resource type="PlaneMesh" id="PlaneMesh_a2kbk"]
 
 [node name="keller" type="Node3D"]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.47111, 0, 0, 0, 0.997893, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
+visible = false
+mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
+ShowOnStart = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(53.3859, 0, 0, 0, 1, 0, 0, 0, 15.2951, -7.55212, 3.60561, -2.61707)
+visible = false
+mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
+ShowOnStart = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.36786, 0, 0, 0, 1, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
+visible = false
+mesh = SubResource("BoxMesh_r5vns")
+script = ExtResource("27_wedxd")
+ShowOnStart = true
 
 [node name="FloorTile" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -4872,27 +4895,6 @@ metadata/itemid = "key1"
 [node name="Node3D" parent="." instance=ExtResource("27_ede4f")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74668, 5)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.47111, 0, 0, 0, 0.997893, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(53.3859, 0, 0, 0, 1, 0, 0, 0, 15.2951, -7.55212, 3.60561, -2.61707)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.36786, 0, 0, 0, 1, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
-
 [node name="AudioArea3D" type="Area3D" parent="."]
 monitoring = false
 audio_bus_override = true
@@ -5487,5 +5489,14 @@ size = Vector3(0.140137, 4.40396, 6.76311)
 
 [node name="GPUParticles3D" parent="." instance=ExtResource("34_cpmlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0281811, 1.44337, -7.32549)
+
+[node name="SoftBody3D" parent="." instance=ExtResource("35_q73ba")]
+transform = Transform3D(4.66829e-08, -2.37436e-08, -1, 0.000453805, -1, 2.37647e-08, -1, -0.000453805, -4.66721e-08, -16.9409, 2.16621, -9.83224)
+
+[node name="SoftBody3D2" parent="." instance=ExtResource("35_q73ba")]
+transform = Transform3D(4.66829e-08, -2.37436e-08, -1, 0.000453805, -1, 2.37647e-08, -1, -0.000453805, -4.66721e-08, -10.8547, 2.16621, -9.83224)
+
+[node name="Pin Board" parent="." instance=ExtResource("36_r0783")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90118, -0.000507355, 1.91414)
 
 [editable path="TürMitSchloss"]

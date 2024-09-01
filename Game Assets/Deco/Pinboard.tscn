@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv8b67855mwjt"]
+
+[ext_resource type="PackedScene" uid="uid://guqf1smfukxq" path="res://Assets/Pin Board.glb" id="1_6gknl"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_1apu3"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_h52u3"]
+[ext_resource type="Material" uid="uid://ch1drv0vxjee4" path="res://Assets/Materials/Holz.tres" id="4_yiu8a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yd1m6"]
+size = Vector3(0.0583496, 0.535645, 1.4278)
+
+[node name="Pin Board" instance=ExtResource("1_6gknl")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1apu3")
+surface_material_override/1 = ExtResource("3_h52u3")
+
+[node name="Cube" parent="." index="1"]
+collision_layer = 0
+collision_mask = 6
+mass = 5.0
+angular_damp = 1.0
+
+[node name="Cube" parent="Cube" index="0"]
+surface_material_override/0 = ExtResource("4_yiu8a")
+
+[node name="CollisionShape3D" parent="Cube" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000635136, 0.00537109, -0.00253296)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="2"]
+collision_layer = 2
+collision_mask = 0
+mass = 5.0
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00134277, 0.936543, -0.000166174)
+shape = SubResource("BoxShape3D_yd1m6")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560478, 0)
+collision_layer = 2
+collision_mask = 0
+mass = 5.0
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00134277, 0.936543, -0.000166174)
+shape = SubResource("BoxShape3D_yd1m6")
+
+[node name="JoltGeneric6DOFJoint3D" type="JoltGeneric6DOFJoint3D" parent="." index="4"]
+node_a = NodePath("../Cube")
+node_b = NodePath("../RigidBody3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.956108, 0)
+
+[node name="JoltGeneric6DOFJoint3D2" type="JoltGeneric6DOFJoint3D" parent="." index="5"]
+node_a = NodePath("../Cube")
+node_b = NodePath("../RigidBody3D2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41002, 0)
+
+[node name="HingeJoint3D" type="JoltHingeJoint3D" parent="." index="6"]
+limit_spring_enabled = true
+limit_spring_frequency = 10.0
+limit_spring_damping = 5.0
+node_b = NodePath("../Cube")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21071, -0.723965)

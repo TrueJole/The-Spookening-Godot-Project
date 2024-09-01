@@ -1,7 +1,7 @@
 @tool
 extends EditorScript
 
-const VoxelGIs: Array[String] = ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
+const VoxelGIs: Array[String] = ["res://Szenen/World.tscn"]#, "res://Szenen/OptionsMenu.tscn"]
 const Occluders: Array[String] = ["res://Szenen/World.tscn"]
 var originalScene: NodePath 
 # Called when the script is executed (usin>g File -> Run in Script Editor).
@@ -11,7 +11,7 @@ func _run() -> void:
 	for x:String in VoxelGIs:
 		EditorInterface.open_scene_from_path(x)
 		var Voxel:VoxelGI = EditorInterface.get_edited_scene_root().get_node("%VoxelGI")
-		Voxel.subdiv = VoxelGI.SUBDIV_512
+		Voxel.subdiv = VoxelGI.SUBDIV_256
 		Voxel.bake()
 		Voxel.subdiv = VoxelGI.SUBDIV_64
 		print_debug('Baked ', x)

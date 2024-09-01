@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://bjlwqncpbmr3e"]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -10,7 +10,7 @@ GI = "voxelGI"
 ssil = false
 giQuality = 2
 msaa = true
-exposure = 1.00795
+exposure = 1.70069
 shadowPower = 12
 showFPS = true
 fullscreen = true

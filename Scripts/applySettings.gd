@@ -9,7 +9,7 @@ extends Node3D
 func _ready() -> void:
 	
 	WEnvironment.ssao_enabled = Settings.ssao
-	volFog.visible = Settings.volumetricFog
+	#volFog.visible = Settings.volumetricFog
 	WEnvironment.ssil_enabled = Settings.ssil
 	WEnvironment.tonemap_exposure = Settings.exposure
 	
