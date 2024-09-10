@@ -16,7 +16,8 @@ func _process(_delta: float) -> void:
 	if loading:
 		var progress: Array[float]
 		ResourceLoader.load_threaded_get_status(nextScene, progress)
-		loadingBar.value = progress[0] * 100
+		print(min(progress[0] * 100, 99))
+		loadingBar.value = min(progress[0] * 100, 99)
 		if progress[0] == 1:
 			
 			
@@ -26,15 +27,17 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_parent().get_node('OptionsMenu').queue_free()
-	loadingBar.show()
-	ResourceLoader.load_threaded_request(nextScene)
-	loading = true
+	if not loading:
+		get_parent().get_node('OptionsMenu').queue_free()
+		loadingBar.show()
+		ResourceLoader.load_threaded_request(nextScene, "", true)
+		loading = true
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 
 func _on_options_button_pressed() -> void:
-	hide()
-	get_parent().get_node('OptionsMenu').show()
+	if not loading:
+		hide()
+		get_parent().get_node('OptionsMenu').show()

@@ -52,22 +52,19 @@ size = Vector3(3.08014, 3.43896, 2.99811)
 [node name="keller" type="Node3D"]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.47111, 0, 0, 0, 0.997893, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
-visible = false
+transform = Transform3D(9.47111, 0, 0, 0, 1.30863, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(53.3859, 0, 0, 0, 1, 0, 0, 0, 15.2951, -7.55212, 3.60561, -2.61707)
-visible = false
+transform = Transform3D(53.3859, 0, 0, 0, 1.31139, 0, 0, 0, 15.3506, -7.55212, 3.60561, -2.61707)
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.36786, 0, 0, 0, 1, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
-visible = false
+transform = Transform3D(5.36786, 0, 0, 0, 1.31139, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true

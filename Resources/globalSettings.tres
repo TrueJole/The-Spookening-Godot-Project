@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://bjlwqncpbmr3e"]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://cqp3tslrjyggv"]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -8,13 +8,13 @@ ssao = true
 volumetricFog = true
 GI = "voxelGI"
 ssil = false
-giQuality = 2
+giQuality = 3
 msaa = true
-exposure = 1.70069
+exposure = 1.30455
 shadowPower = 12
 showFPS = true
 fullscreen = true
 fpsMode = 1
-scale3D = 0.75
+scale3D = 0.8
 resolutionX = 1920
 resolutionY = 1080

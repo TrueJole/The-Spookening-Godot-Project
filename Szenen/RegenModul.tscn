@@ -1,13 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwqbqv31lsyhy"]
+[gd_scene load_steps=2 format=3 uid="uid://dwqbqv31lsyhy"]
 
-[ext_resource type="Shader" path="res://Scripts/RegenGlas.gdshader" id="1_r1vy3"]
-[ext_resource type="Texture2D" uid="uid://d8j4p1l5f73" path="res://Assets/Materials/Textures/City-At-Night-Desktop-Wallpaper.jpg" id="2_2wnpu"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlx7j"]
-shader = ExtResource("1_r1vy3")
-shader_parameter/frequency = 0.0
-shader_parameter/size = 0.015
-shader_parameter/iChannel0 = ExtResource("2_2wnpu")
+[ext_resource type="Material" uid="uid://p5vaohu5mm5c" path="res://Resources/RegenModul.tres" id="1_v78mv"]
 
 [node name="SubViewport" type="SubViewport"]
 disable_3d = true
@@ -18,7 +11,7 @@ size = Vector2i(1920, 1920)
 [node name="ColorRect" type="ColorRect" parent="."]
 texture_filter = 3
 texture_repeat = 3
-material = SubResource("ShaderMaterial_qlx7j")
+material = ExtResource("1_v78mv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

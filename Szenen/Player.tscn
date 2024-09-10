@@ -141,14 +141,14 @@ script = ExtResource("3_g3gao")
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
 light_color = Color(0.979436, 0.95764, 0.859597, 1)
-light_energy = 0.08
+light_energy = 0.1
 light_indirect_energy = 3.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 spot_range = 40.0
 spot_attenuation = 0.0
-spot_angle = 30.0
-spot_angle_attenuation = 11.2383
+spot_angle = 40.0
+spot_angle_attenuation = 8.22691
 script = ExtResource("4_g71aj")
 baseTime = 8
 randomTime = 2
