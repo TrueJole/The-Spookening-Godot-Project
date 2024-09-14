@@ -7,8 +7,8 @@
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
 [ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
-[ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="9_58dls"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
+[ext_resource type="PackedScene" uid="uid://cfqy3n888iblk" path="res://Szenen/Etage1.tscn" id="10_jqhs4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_olk4t"]
 
@@ -26,6 +26,7 @@ script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 23.9638, 45.0162)
+visible = false
 layers = 3
 light_color = Color(0.727311, 0.857878, 1, 1)
 light_energy = 0.03
@@ -39,42 +40,41 @@ script = ExtResource("2_ahk6u")
 ShowOnStart = true
 
 [node name="Test" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.246576, 0.674486, -0.695894, 3.04222e-08, 0.718066, 0.695975, 0.969123, -0.171611, 0.177058, -28.9301, 3.28692, -8.80292)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.9301, 12.3274, -8.80292)
 visible = false
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966273
+editor_only = true
+directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.47822, 1.85767, 1.508)
-visible = false
 size = Vector3(52.9077, 10.99, 15)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")
 
 [node name="FogVolume2" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.467, 1.85767, 10.197)
-visible = false
 size = Vector3(5.56363, 10.99, 3.78821)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")
 
 [node name="FogVolume3" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5282, 1.85767, -7.53865)
-visible = false
 size = Vector3(9.13051, 10.99, 3.19508)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 1.98414, 1.38876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 3.30332, 1.38876)
 layers = 1023
 subdiv = 0
-size = Vector3(53.7896, 4.61121, 21.7017)
+size = Vector3(53.7896, 7.24957, 21.7017)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
@@ -94,10 +94,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_m7i5n")
 
-[node name="keller" parent="." instance=ExtResource("9_oo8js")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
-
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.59365, 0.587801, 1.93763)
 
-[node name="RainRenderer" parent="." instance=ExtResource("9_58dls")]
+[node name="keller" parent="." instance=ExtResource("9_oo8js")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="Etage1" parent="." instance=ExtResource("10_jqhs4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 4)

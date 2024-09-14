@@ -2,6 +2,6 @@
 
 [resource]
 density = 0.4
-albedo = Color(0.0525936, 0.0525936, 0.0525936, 1)
+albedo = Color(0.0959006, 0.145515, 0.119908, 1)
 height_falloff = 1.27456e-05
 edge_fade = 1e-05

@@ -3,24 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://b82oi3qhdn60x" path="res://Assets/FensterTief.glb" id="1_y70jd"]
 [ext_resource type="Script" path="res://Game Assets/Walls n Stuff/Neues Zeug/fensterRegen.gd" id="2_2t1wg"]
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_5jdq6"]
+[ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="3_8svyq"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="4_p8ckn"]
 [ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="5_31gv8"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="5_l7yag"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n5ive"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_esrya"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4i3jy"]
-viewport_path = NodePath(".")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhcxn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ey6o"]
 resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
-albedo_texture = SubResource("ViewportTexture_n5ive")
+albedo_texture = SubResource("ViewportTexture_esrya")
 roughness = 0.0
 normal_scale = 0.63
-backlight_texture = SubResource("ViewportTexture_4i3jy")
 uv1_scale = Vector3(0.655, 0.655, 0.655)
 uv1_triplanar = true
 
@@ -30,15 +27,18 @@ size = Vector3(1, 3.48732, 0.21051)
 [node name="Fenster1MitLeiste" instance=ExtResource("1_y70jd")]
 script = ExtResource("2_2t1wg")
 
-[node name="Cube" parent="." index="0"]
+[node name="AudioStreamPlayer3D" parent="." index="0" instance=ExtResource("3_8svyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49289, 1.87801, 2.38419e-07)
+
+[node name="Cube" parent="." index="1"]
 surface_material_override/0 = ExtResource("2_5jdq6")
-surface_material_override/1 = SubResource("StandardMaterial3D_rhcxn")
+surface_material_override/1 = SubResource("StandardMaterial3D_5ey6o")
 surface_material_override/2 = ExtResource("4_p8ckn")
 surface_material_override/3 = ExtResource("5_l7yag")
 
-[node name="SubViewport" parent="." index="1" instance=ExtResource("5_31gv8")]
+[node name="SubViewport" parent="." index="2" instance=ExtResource("5_31gv8")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.497193, 1.75121, 0.00106812)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8sx33xq2lf6e"]
+
+[ext_resource type="Texture2D" uid="uid://bq31458uyjhel" path="res://Assets/Materials/Textures/blut.png" id="1_p6ipm"]
+
+[node name="Decal" type="Decal"]
+texture_albedo = ExtResource("1_p6ipm")
+modulate = Color(0.666667, 0, 0.14902, 1)

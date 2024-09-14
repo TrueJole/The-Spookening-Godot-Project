@@ -1,10 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfwram6fhkpnf"]
+[gd_scene load_steps=13 format=3 uid="uid://cfwram6fhkpnf"]
 
 [ext_resource type="PackedScene" uid="uid://ti1ty0c7y8lq" path="res://Assets/Fenster2_3.glb" id="1_rlp5q"]
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_8yjs1"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="2_jj1du"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="2_kc8p8"]
 [ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="5_dk2uk"]
+[ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="6_mmtec"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uonvc"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53tli"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
+albedo_texture = SubResource("ViewportTexture_uonvc")
+roughness = 0.0
+normal_scale = 0.63
+uv1_scale = Vector3(1.455, 1.455, 1.455)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ac0m"]
 size = Vector3(1.99963, 0.813965, 0.33783)
@@ -25,6 +39,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 surface_material_override/0 = ExtResource("2_kc8p8")
 surface_material_override/1 = ExtResource("2_8yjs1")
 surface_material_override/2 = ExtResource("2_jj1du")
+surface_material_override/3 = ExtResource("2_jj1du")
+surface_material_override/4 = SubResource("StandardMaterial3D_53tli")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
@@ -50,3 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211835, 1.60734, 0.0347769
 shape = SubResource("BoxShape3D_durd0")
 
 [node name="SubViewport" parent="." index="2" instance=ExtResource("5_dk2uk")]
+
+[node name="AudioStreamPlayer3D" parent="." index="3" instance=ExtResource("6_mmtec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01254, 1.60829, -0.0190652)

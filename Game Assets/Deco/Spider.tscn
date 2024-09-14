@@ -32,6 +32,7 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6winu"]
 albedo_color = Color(0.234958, 0.234958, 0.234958, 1)
+anisotropy = 0.67
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdyqi"]
 roughness = 0.35

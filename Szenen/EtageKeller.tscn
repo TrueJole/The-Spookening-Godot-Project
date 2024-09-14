@@ -1,5 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=41 format=3 uid="uid://dquwqhphaufcb"]
 
+[ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_8bosx"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
 [ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="3_dwef7"]
@@ -26,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_2klpb"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="26_fuqor"]
 [ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürOhneLeiste.tscn" id="27_ede4f"]
-[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="27_wedxd"]
 [ext_resource type="PackedScene" uid="uid://c8ti7ovxqvpgh" path="res://Game Assets/Deco/Automat.tscn" id="28_nqd4h"]
 [ext_resource type="PackedScene" uid="uid://b0qbing1uirni" path="res://Game Assets/Items/Coin.tscn" id="29_qrmea"]
 [ext_resource type="PackedScene" uid="uid://whngmggv7mwp" path="res://Game Assets/Deco/RollStuhl.tscn" id="30_acve0"]
@@ -36,8 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://yc0orxhwm7cs" path="res://Game Assets/dust.tscn" id="34_cpmlr"]
 [ext_resource type="PackedScene" uid="uid://dii4s26xwk2dj" path="res://Game Assets/Parts/curtain.tscn" id="35_q73ba"]
 [ext_resource type="PackedScene" uid="uid://bv8b67855mwjt" path="res://Game Assets/Deco/Pinboard.tscn" id="36_r0783"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_r5vns"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qykwn"]
 size = Vector3(42.8994, 3.45605, 3.09821)
@@ -51,26 +49,7 @@ size = Vector3(3.08014, 3.43896, 2.99811)
 
 [node name="keller" type="Node3D"]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.47111, 0, 0, 0, 1.30863, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(53.3859, 0, 0, 0, 1.31139, 0, 0, 0, 15.3506, -7.55212, 3.60561, -2.61707)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.36786, 0, 0, 0, 1.31139, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
-visible = false
-mesh = SubResource("BoxMesh_r5vns")
-script = ExtResource("27_wedxd")
-ShowOnStart = true
+[node name="Dach" parent="." instance=ExtResource("1_8bosx")]
 
 [node name="FloorTile" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -83,12 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="FloorTile4" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
-
-[node name="FloorTile5" parent="." instance=ExtResource("1_b6a5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="FloorTile6" parent="." instance=ExtResource("1_b6a5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
 
 [node name="FloorTile7" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
@@ -1829,20 +1802,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -3)
 [node name="FloorTile464" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -3)
 
-[node name="FloorTile465" parent="." instance=ExtResource("1_b6a5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
-
 [node name="FloorTile466" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -2)
 
-[node name="FloorTile467" parent="." instance=ExtResource("1_b6a5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -4)
-
 [node name="FloorTile468" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -4)
-
-[node name="FloorTile469" parent="." instance=ExtResource("1_b6a5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -3)
 
 [node name="FloorTile594" parent="." instance=ExtResource("1_b6a5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
@@ -2163,18 +2127,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 0, 
 
 [node name="WandInnenOhneLeiste7" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0, -1)
-
-[node name="WandInnenOhneLeiste8" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -1)
-
-[node name="WandInnenOhneLeiste9" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, -1)
-
-[node name="WandInnenOhneLeiste10" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, -1)
-
-[node name="WandInnenOhneLeiste11" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9, 0, -1)
 
 [node name="WandInnenOhneLeiste12" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -1)
@@ -3125,15 +3077,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -
 [node name="WandInnen55" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -10)
 
-[node name="WandInnen70" parent="." instance=ExtResource("5_d3iwj")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -11)
-
-[node name="WandInnen72" parent="." instance=ExtResource("5_d3iwj")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -12)
-
-[node name="WandInnen74" parent="." instance=ExtResource("5_d3iwj")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -13)
-
 [node name="WandInnen53" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 15, 0, -7)
 
@@ -3397,15 +3340,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0,
 
 [node name="WandInnenOhneLeiste82" parent="." instance=ExtResource("6_2jhgi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -6)
-
-[node name="WandInnenOhneLeiste52" parent="." instance=ExtResource("6_2jhgi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -11)
-
-[node name="WandInnenOhneLeiste55" parent="." instance=ExtResource("6_2jhgi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -12)
-
-[node name="WandInnenOhneLeiste53" parent="." instance=ExtResource("6_2jhgi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -10)
 
 [node name="WandInnen76" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, -11)

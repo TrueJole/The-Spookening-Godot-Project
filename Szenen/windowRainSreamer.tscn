@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d11gncwect4m6"]
+
+[ext_resource type="AudioStream" uid="uid://fbur487u5tb6" path="res://Resources/Sounds/windowRain.wav" id="1_m2l4p"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_m2l4p")
+attenuation_model = 1
+unit_size = 3.0
+max_db = -1.886
+autoplay = true
+max_distance = 7.0

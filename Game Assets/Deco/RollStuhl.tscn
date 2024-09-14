@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_h0npb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhb3g"]
-albedo_color = Color(0, 0.288107, 0.723762, 1)
+albedo_color = Color(0.181542, 0.181542, 0.181542, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8t7q2"]
 size = Vector3(0.329117, 0.0275879, 0.312988)

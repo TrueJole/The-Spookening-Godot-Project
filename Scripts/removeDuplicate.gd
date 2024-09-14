@@ -13,4 +13,4 @@ func _run() -> void:
 				print(scene.name, ' - ', scene2.name)
 				duplicates.append(scene)
 				duplicates.append(scene2)
-				get_scene().remove_child(scene)
+				#get_scene().remove_child(scene)

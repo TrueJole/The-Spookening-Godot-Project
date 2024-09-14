@@ -130,9 +130,11 @@ size = Vector2(0.175, 0.175)
 
 [node name="Cube_003" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313263, 0.722084, -0.442737)
+visibility_range_end = 20.0
 surface_material_override/0 = ExtResource("2_53nqw")
 
 [node name="Sphere" parent="." index="1"]
+visibility_range_end = 30.0
 surface_material_override/0 = ExtResource("2_53nqw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]

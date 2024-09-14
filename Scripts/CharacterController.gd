@@ -26,13 +26,13 @@ var walkTimer: float
 
 func walkSound() -> void:
 	stepAudio.play()
-	walkTimer = walkTime * (1 + 2/state)
+	walkTimer = walkTime * (1 + 2.0/state)
 
 func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not Global.stop:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(event.relative.y * SENSITIVITY)
