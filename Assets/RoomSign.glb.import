@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnrd6q3gkvwyo"
-path="res://.godot/imported/Tür.glb-c1428dd04c737049217bf11a3fdac803.scn"
+uid="uid://c8tmk2amrds7m"
+path="res://.godot/imported/RoomSign.glb-1d662cea7b8e7b53fdc1df3b7e2e8c6f.scn"
 
 [deps]
 
-source_file="res://Assets/Tür.glb"
-dest_files=["res://.godot/imported/Tür.glb-c1428dd04c737049217bf11a3fdac803.scn"]
+source_file="res://Assets/RoomSign.glb"
+dest_files=["res://.godot/imported/RoomSign.glb-1d662cea7b8e7b53fdc1df3b7e2e8c6f.scn"]
 
 [params]
 
-nodes/root_type="RigidBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

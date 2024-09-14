@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=13 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="2_ahk6u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
 [ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
+[ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="9_58dls"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_olk4t"]
@@ -98,3 +99,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.59365, 0.587801, 1.93763)
+
+[node name="RainRenderer" parent="." instance=ExtResource("9_58dls")]

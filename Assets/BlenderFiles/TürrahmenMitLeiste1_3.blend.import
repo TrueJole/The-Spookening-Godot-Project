@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://k5883idfx3a4"
-path="res://.godot/imported/T__rrahmenOhneLeiste.blend-a9a64b77e2a4375661879a34810dc493.scn"
+uid="uid://3bwiqun7bpku"
+path="res://.godot/imported/TürrahmenMitLeiste1_3.blend-cd1ddab24fca6cf293f4f5b513cd0ea9.scn"
 
 [deps]
 
-source_file="res://Assets/BlenderFiles/T__rrahmenOhneLeiste.blend"
-dest_files=["res://.godot/imported/T__rrahmenOhneLeiste.blend-a9a64b77e2a4375661879a34810dc493.scn"]
+source_file="res://Assets/BlenderFiles/TürrahmenMitLeiste1_3.blend"
+dest_files=["res://.godot/imported/TürrahmenMitLeiste1_3.blend-cd1ddab24fca6cf293f4f5b513cd0ea9.scn"]
 
 [params]
 

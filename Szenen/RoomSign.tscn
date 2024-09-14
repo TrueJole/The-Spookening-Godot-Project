@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://caytbnji6x8du"]
+
+[ext_resource type="PackedScene" uid="uid://c8tmk2amrds7m" path="res://Assets/RoomSign.glb" id="1_y4w2t"]
+[ext_resource type="Script" path="res://Szenen/room_sign.gd" id="2_p0721"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joxde"]
+albedo_color = Color(0.61165, 0.61165, 0.61165, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5pe1"]
+
+[sub_resource type="SystemFont" id="SystemFont_nimqc"]
+
+[node name="RoomSign" instance=ExtResource("1_y4w2t")]
+script = ExtResource("2_p0721")
+roomNumber = "asdassdasad"
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_joxde")
+surface_material_override/1 = SubResource("StandardMaterial3D_y5pe1")
+
+[node name="Label3D" type="Label3D" parent="." index="1"]
+transform = Transform3D(-2.16775e-09, 0, 0.0495924, 0, 0.0495924, 0, -0.0495924, 0, -2.16775e-09, 0.00524119, 0, 0)
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+font = SubResource("SystemFont_nimqc")
+font_size = 177
+outline_size = 0

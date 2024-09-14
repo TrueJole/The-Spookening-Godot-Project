@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3bwiqun7bpku"
-path="res://.godot/imported/T__rrahmenMitLeiste1_3.blend-d1a18f47f6082b9d683bd1a3a12ac100.scn"
+uid="uid://cu1gevtfpejvn"
+path="res://.godot/imported/RoomSign.blend-4080fce7386d407da967ccf94e101110.scn"
 
 [deps]
 
-source_file="res://Assets/BlenderFiles/T__rrahmenMitLeiste1_3.blend"
-dest_files=["res://.godot/imported/T__rrahmenMitLeiste1_3.blend-d1a18f47f6082b9d683bd1a3a12ac100.scn"]
+source_file="res://Assets/BlenderFiles/RoomSign.blend"
+dest_files=["res://.godot/imported/RoomSign.blend-4080fce7386d407da967ccf94e101110.scn"]
 
 [params]
 

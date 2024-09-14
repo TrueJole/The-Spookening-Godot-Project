@@ -53,18 +53,21 @@ size = Vector3(3.08014, 3.43896, 2.99811)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.47111, 0, 0, 0, 1.30863, 0, 0, 0, 7.58055, 14.4691, 3.60561, -9.61299)
+visible = false
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(53.3859, 0, 0, 0, 1.31139, 0, 0, 0, 15.3506, -7.55212, 3.60561, -2.61707)
+visible = false
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.36786, 0, 0, 0, 1.31139, 0, 0, 0, 7.14112, -31.5265, 3.60561, 4.57368)
+visible = false
 mesh = SubResource("BoxMesh_r5vns")
 script = ExtResource("27_wedxd")
 ShowOnStart = true
@@ -4123,9 +4126,6 @@ transform = Transform3D(-1, 0, 8.7423e-08, 0, 1, 0, -8.7423e-08, 0, -1, -33, 0, 
 [node name="WandInnen175" parent="." instance=ExtResource("5_d3iwj")]
 transform = Transform3D(-1, 0, 8.7423e-08, 0, 1, 0, -8.7423e-08, 0, -1, -31, 0, -4)
 
-[node name="WandInnen168" parent="." instance=ExtResource("5_d3iwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
 [node name="WandInnenOhneLeiste335" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -26, 0, -6)
 
@@ -4893,6 +4893,7 @@ metadata/itemid = "key1"
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74668, 5)
 
 [node name="AudioArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038871, 0, 0)
 monitoring = false
 audio_bus_override = true
 audio_bus_name = &"Flur"

@@ -1,25 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceq51lpi3uuda"]
+[gd_scene load_steps=11 format=3 uid="uid://ceq51lpi3uuda"]
 
 [ext_resource type="PackedScene" uid="uid://b82oi3qhdn60x" path="res://Assets/FensterTief.glb" id="1_y70jd"]
+[ext_resource type="Script" path="res://Game Assets/Walls n Stuff/Neues Zeug/fensterRegen.gd" id="2_2t1wg"]
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_5jdq6"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="4_p8ckn"]
 [ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="5_31gv8"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="5_l7yag"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tewds"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n5ive"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_87bgk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4i3jy"]
 viewport_path = NodePath(".")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gjjn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhcxn"]
 resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
-albedo_texture = SubResource("ViewportTexture_tewds")
+albedo_texture = SubResource("ViewportTexture_n5ive")
 roughness = 0.0
 normal_scale = 0.63
-backlight_texture = SubResource("ViewportTexture_87bgk")
+backlight_texture = SubResource("ViewportTexture_4i3jy")
 uv1_scale = Vector3(0.655, 0.655, 0.655)
 uv1_triplanar = true
 
@@ -27,10 +28,11 @@ uv1_triplanar = true
 size = Vector3(1, 3.48732, 0.21051)
 
 [node name="Fenster1MitLeiste" instance=ExtResource("1_y70jd")]
+script = ExtResource("2_2t1wg")
 
 [node name="Cube" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_5jdq6")
-surface_material_override/1 = SubResource("StandardMaterial3D_3gjjn")
+surface_material_override/1 = SubResource("StandardMaterial3D_rhcxn")
 surface_material_override/2 = ExtResource("4_p8ckn")
 surface_material_override/3 = ExtResource("5_l7yag")
 
