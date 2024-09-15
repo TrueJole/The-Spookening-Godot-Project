@@ -11,7 +11,7 @@ func _run() -> void:
 	for x:String in VoxelGIs:
 		EditorInterface.open_scene_from_path(x)
 		var Voxel:VoxelGI = EditorInterface.get_edited_scene_root().get_node("%VoxelGI")
-		Voxel.subdiv = VoxelGI.SUBDIV_256
+		Voxel.subdiv = VoxelGI.SUBDIV_512
 		Voxel.bake()
 		Voxel.subdiv = VoxelGI.SUBDIV_64
 		print_debug('Baked ', x)

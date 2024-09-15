@@ -3,6 +3,7 @@ extends Resource
 
 @export var ssao: bool
 @export var volumetricFog: bool
+@export var SSR: bool
 @export var GI: String
 @export var ssil: bool
 @export var giQuality: int
