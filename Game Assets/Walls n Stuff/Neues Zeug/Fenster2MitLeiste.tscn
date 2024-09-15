@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_8yjs1"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="2_jj1du"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="2_kc8p8"]
-[ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="5_dk2uk"]
+[ext_resource type="Script" path="res://Scripts/fensterRegen.gd" id="2_qkksi"]
 [ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="6_mmtec"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uonvc"]
@@ -33,6 +33,7 @@ size = Vector3(1.91028, 0.0276489, 0.230774)
 size = Vector3(0.0430908, 1.59082, 0.333008)
 
 [node name="Fenster2_3" instance=ExtResource("1_rlp5q")]
+script = ExtResource("2_qkksi")
 
 [node name="Wand 2 * 4" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
@@ -65,7 +66,5 @@ shape = SubResource("BoxShape3D_durd0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211835, 1.60734, 0.0347769)
 shape = SubResource("BoxShape3D_durd0")
 
-[node name="SubViewport" parent="." index="2" instance=ExtResource("5_dk2uk")]
-
-[node name="AudioStreamPlayer3D" parent="." index="3" instance=ExtResource("6_mmtec")]
+[node name="AudioStreamPlayer3D" parent="." index="2" instance=ExtResource("6_mmtec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01254, 1.60829, -0.0190652)

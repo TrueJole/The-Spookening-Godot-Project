@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Global="*res://Scripts/temp_stop.gd"
+Root="*res://Scripts/root.gd"
 
 [debug]
 
