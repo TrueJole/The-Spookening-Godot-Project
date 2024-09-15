@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 			var selectedObject:Area3D = areas[0]
 			
 			if selectedObject.has_method('on_interacted'):
-				print_debug(selectedObject)
+				#print_debug(selectedObject)
 				selectedObject.on_interacted()
 	
 			

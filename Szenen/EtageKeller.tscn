@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=42 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_8bosx"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://yc0orxhwm7cs" path="res://Game Assets/dust.tscn" id="34_cpmlr"]
 [ext_resource type="PackedScene" uid="uid://dii4s26xwk2dj" path="res://Game Assets/Parts/curtain.tscn" id="35_q73ba"]
 [ext_resource type="PackedScene" uid="uid://bv8b67855mwjt" path="res://Game Assets/Deco/Pinboard.tscn" id="36_r0783"]
+[ext_resource type="PackedScene" uid="uid://b0bcql0yqaq6a" path="res://Game Assets/Deco/Waschbecken.tscn" id="37_aa61j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qykwn"]
 size = Vector3(42.8994, 3.45605, 3.09821)
@@ -4625,22 +4626,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5175, -0.000500225, 3.70567)
 
 [node name="Toilette2" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5175, -0.000500225, 2.70567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5175, -0.000500225, 2.77268)
 
 [node name="Toilette3" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5175, -0.000500225, 3.70567)
-
-[node name="Toilette5" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5175, -0.000500225, 4.70567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5175, -0.000500225, 3.56099)
 
 [node name="Toilette6" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.4786, -0.000500225, 3.25905)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.4786, -0.000500225, 3.14207)
 
 [node name="Toilette10" parent="." instance=ExtResource("9_015ec")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.47461, -0.000500225, 3.86194)
 
 [node name="Toilette7" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.4786, -0.000500225, 2.25905)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.4786, -0.000500225, 2.24649)
 
 [node name="Toilette4" parent="." instance=ExtResource("9_015ec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5175, -0.000500225, 2.70567)
@@ -4853,10 +4851,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9365, -0.000499845, -2.42
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2136, -0.000500083, -2.64711)
 
 [node name="Toilette8" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.6647, 0, 1.53465)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -20.5266, 0, 1.53465)
+
+[node name="Toilette11" parent="." instance=ExtResource("9_015ec")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -20.5266, 0, 1.53465)
 
 [node name="Toilette9" parent="." instance=ExtResource("9_015ec")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21.7173, 0, 1.53465)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.4745, 0, 1.00202)
 
 [node name="KreideTafel2" parent="." instance=ExtResource("10_q7lvb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.92845, -0.0435569, -8.35719)
@@ -5430,5 +5431,26 @@ transform = Transform3D(4.66829e-08, -2.37436e-08, -1, 0.000453805, -1, 2.37647e
 
 [node name="Pin Board" parent="." instance=ExtResource("36_r0783")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90118, -0.000507355, 1.91414)
+
+[node name="Waschbecken" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.104, 0, 0)
+
+[node name="Waschbecken2" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.104, 0, 1.05723)
+
+[node name="Waschbecken3" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.8974, 0, 0.0527825)
+
+[node name="Waschbecken5" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25.8974, 0, 4.19082)
+
+[node name="Waschbecken6" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25.8974, 0, 0.697914)
+
+[node name="Waschbecken7" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25.8974, 0, -0.219414)
+
+[node name="Waschbecken4" parent="." instance=ExtResource("37_aa61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1045, 0, 0.0527825)
 
 [editable path="TürMitSchloss"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=16 format=3 uid="uid://b0bcql0yqaq6a"]
+
+[ext_resource type="PackedScene" uid="uid://clc3d0abndh62" path="res://Assets/Waschbecken.glb" id="1_5c8un"]
+[ext_resource type="Script" path="res://Game Assets/Deco/waschbecken.gd" id="2_5uc4g"]
+[ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_20yhj"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="3_8yyts"]
+[ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="4_pikvt"]
+[ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="5_e2tdj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bbvfm"]
+size = Vector3(0.0353799, 0.0311927, 0.0375791)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kokj"]
+transparency = 1
+albedo_texture = ExtResource("5_e2tdj")
+
+[sub_resource type="Curve" id="Curve_obmfj"]
+_data = [Vector2(0, 0.107732), 0.0, 0.0, 0, 0, Vector2(0.113636, 0.177714), 0.0, 0.0, 0, 0, Vector2(0.886364, 0.331674), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_70bs4"]
+curve = SubResource("Curve_obmfj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4r2wt"]
+direction = Vector3(0, -1, 0)
+spread = 0.349
+initial_velocity_min = 0.39
+initial_velocity_max = 0.47
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_70bs4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nv3nd"]
+size = Vector2(0.13, 0.13)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_joi2d"]
+size = Vector3(0.0888672, 0.1577, 0.442223)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2p2y"]
+size = Vector3(0.142822, 0.0312195, 0.328708)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pk6eg"]
+size = Vector3(0.0567932, 0.026825, 0.171962)
+
+[node name="Waschbecken" instance=ExtResource("1_5c8un")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104, 0, 0)
+script = ExtResource("2_5uc4g")
+
+[node name="NurbsCurve" parent="." index="0"]
+material_override = ExtResource("2_20yhj")
+lod_bias = 0.3
+visibility_range_end = 35.0
+
+[node name="Cylinder" parent="." index="1"]
+material_override = ExtResource("3_8yyts")
+lod_bias = 0.5
+visibility_range_end = 25.0
+
+[node name="Interactive Component" type="Area3D" parent="." index="2"]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00366557, 0.267687, 0.196364)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("4_pikvt")
+metadata/Interactable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -1.01747e-07, -3.10507e-12, 1.01747e-07, 1, -6.73073e-15, 2.33058e-12, -1.15186e-13, 1, 0.196453, -0.502878, 0.0322668)
+shape = SubResource("BoxShape3D_bbvfm")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.136715, 0.755237, 0)
+material_override = SubResource("StandardMaterial3D_3kokj")
+emitting = false
+amount = 39
+lifetime = 0.4
+visibility_aabb = AABB(-0.13, -0.31565, -0.13, 0.26, 0.44565, 0.26)
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_4r2wt")
+draw_pass_1 = SubResource("QuadMesh_nv3nd")
+
+[node name="Timer" type="Timer" parent="." index="4"]
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0317383, 0.609947, 0.0103493)
+shape = SubResource("BoxShape3D_joi2d")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112168, 0.563727, 0.00398958)
+shape = SubResource("BoxShape3D_q2p2y")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214459, 0.565924, 0.00368329)
+shape = SubResource("BoxShape3D_pk6eg")
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

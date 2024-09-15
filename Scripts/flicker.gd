@@ -23,7 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func flicker() -> void:
 	if visible or showIfHidden:
-		print('flicker')
+		#print('flicker')
 		for x: int in range(randi_range(lowerFlicks, upperFlicks)):
 			hide()
 			await get_tree().create_timer(outTime).timeout
