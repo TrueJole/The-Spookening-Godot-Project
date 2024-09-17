@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3 uid="uid://dn7c3ttk3n667"]
+[gd_resource type="Resource" script_class="GlobalSettings" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://Scripts/GlobalSettings.gd" id="1_4j7up"]
 
@@ -6,11 +6,11 @@
 script = ExtResource("1_4j7up")
 ssao = true
 volumetricFog = true
-ssr = false
+ssr = true
 GI = "voxelGI"
 ssil = false
 giQuality = 2
-msaa = false
+msaa = true
 exposure = 1.30455
 shadowPower = 12
 showFPS = true

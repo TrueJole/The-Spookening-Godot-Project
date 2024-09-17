@@ -3715,12 +3715,6 @@ transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 2, 0, 
 [node name="WandInnenOhneLeiste437" parent="." instance=ExtResource("6_5ak6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
 
-[node name="WandInnenOhneLeiste438" parent="." instance=ExtResource("6_5ak6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75391, 5)
-
-[node name="WandInnenOhneLeiste439" parent="." instance=ExtResource("6_5ak6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.75391, 5)
-
 [node name="WandInnenOhneLeiste138" parent="." instance=ExtResource("6_5ak6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5)
 
