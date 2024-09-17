@@ -14,6 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if loaded != null:
+		sub_viewport.render_target_update_mode = SubViewport.UPDATE_WHEN_PARENT_VISIBLE
 		loaded.global_position = get_node('Activation Module').global_position + Vector3(0,0,0)
 		loaded.rotation = Vector3(deg_to_rad(270),deg_to_rad(180),deg_to_rad(180))
 
@@ -22,6 +23,7 @@ func _process(_delta: float) -> void:
 		#print_debug('applied: ', texture)
 		loaded = null
 	else:
+		sub_viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 		video_stream_player.stop()
 		pass
 		#projector.light_projector = null

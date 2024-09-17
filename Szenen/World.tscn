@@ -27,7 +27,7 @@ top_level = true
 script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 23.9638, 45.0162)
+transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 30.6542, 27.7205)
 visible = false
 layers = 3
 light_color = Color(0.727311, 0.857878, 1, 1)
@@ -55,18 +55,21 @@ environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.47822, 1.85767, 1.508)
+visible = false
 size = Vector3(52.9077, 10.99, 15)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")
 
 [node name="FogVolume2" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.467, 1.85767, 10.197)
+visible = false
 size = Vector3(5.56363, 10.99, 3.78821)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")
 
 [node name="FogVolume3" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5282, 1.85767, -7.53865)
+visible = false
 size = Vector3(9.13051, 10.99, 3.19508)
 material = ExtResource("3_es8gc")
 script = ExtResource("2_ahk6u")

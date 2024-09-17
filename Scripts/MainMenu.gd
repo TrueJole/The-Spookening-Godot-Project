@@ -32,7 +32,7 @@ func _on_start_button_pressed() -> void:
 		get_parent().get_node('OptionsMenu').queue_free()
 		loadingBar.show()
 		print(ResourceLoader.get_dependencies(nextScene))
-		ResourceLoader.load_threaded_request(nextScene, "", false, 3)
+		ResourceLoader.load_threaded_request(nextScene, "", true)
 		loading = true
 
 func _on_exit_button_pressed() -> void:

@@ -11,6 +11,7 @@ func _ready() -> void:
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton").button_pressed = Settings.ssao
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSIL").button_pressed = Settings.ssil
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSRToggleButton").button_pressed = Settings.ssr
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/giQualitySlider").value = Settings.giQuality
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton").button_pressed = Settings.msaa
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Settings.exposure
@@ -29,9 +30,11 @@ func applySettings() -> void:
 	_on_fps_slider_value_changed(Settings.fpsMode)
 	#print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
-	subviewport.get_node("FogVolume").visible = Settings.volumetricFog
+	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Settings.volumetricFog
+	#subviewport.get_node("FogVolume").visible = Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
 	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
+	subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Settings.ssr
 	
 	if Settings.msaa == true:
 		subviewport.msaa_3d = subviewport.MSAA_2X
@@ -152,4 +155,9 @@ func _on_fps_slider_value_changed(value: int) -> void:
 func _on_scale_slider_value_changed(value: float) -> void:
 	Settings.scale3D = snappedf(value, 0.01)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
+	applySettings()
+
+
+func _on_ssr_toggle_button_toggled(toggled_on: bool) -> void:
+	Settings.ssr = toggled_on
 	applySettings()

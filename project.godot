@@ -39,6 +39,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray()
 
+[filesystem]
+
+import/blender/enabled=false
+
 [importer_defaults]
 
 texture={
@@ -140,6 +144,7 @@ jolt_3d/volumetric_fog/volume_size=128
 
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+shader_compiler/shader_cache/strip_debug=true
 textures/default_filters/anisotropic_filtering_level=3
 environment/ssao/fadeout_from=40.0
 environment/ssao/fadeout_to=64.0
@@ -148,6 +153,7 @@ global_illumination/sdfgi/probe_ray_count=2
 environment/volumetric_fog/volume_size=128
 environment/volumetric_fog/volume_depth=128
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
+anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
 textures/volumetric_fog/use_filter=1
