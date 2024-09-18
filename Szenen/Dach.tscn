@@ -25,5 +25,5 @@ transform = Transform3D(16.9979, 0, 0, 0, 0.616702, 0, 0, 0, 7.87466, 10.546, 3.
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.36786, 0, 0, 0, 0.616702, 0, 0, 0, 7.14112, -31.5265, 3.1807, 4.57368)
+transform = Transform3D(6.43015, 0, 0, 0, 0.616702, 0, 0, 0, 7.14112, -31.0792, 3.1807, 4.57368)
 mesh = SubResource("BoxMesh_perbj")

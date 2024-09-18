@@ -1451,6 +1451,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 3)
 [node name="FloorTile785" parent="." instance=ExtResource("2_c4gfw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 4)
 
+[node name="FloorTile831" parent="." instance=ExtResource("2_c4gfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 5)
+
+[node name="FloorTile832" parent="." instance=ExtResource("2_c4gfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 6)
+
+[node name="FloorTile833" parent="." instance=ExtResource("2_c4gfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 7)
+
 [node name="FloorTile786" parent="." instance=ExtResource("2_c4gfw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -1)
 
@@ -2750,9 +2759,6 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0
 [node name="WandInnenOhneLeiste394" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -26, 0, 5)
 
-[node name="WandInnenOhneLeiste396" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, -28, 0, 5)
-
 [node name="WandInnenOhneLeiste239" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, 1)
 
@@ -3497,20 +3503,17 @@ transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, -20, 0
 [node name="WandInnenOhneLeiste298" parent="." instance=ExtResource("6_vxfns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 5)
 
-[node name="WandInnenOhneLeiste397" parent="." instance=ExtResource("6_vxfns")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 5)
-
 [node name="WandInnenOhneLeiste399" parent="." instance=ExtResource("6_vxfns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 5)
 
 [node name="WandInnenOhneLeiste414" parent="." instance=ExtResource("6_vxfns")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 8)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 8)
 
 [node name="WandInnenOhneLeiste415" parent="." instance=ExtResource("6_vxfns")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 7)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 7)
 
 [node name="WandInnenOhneLeiste416" parent="." instance=ExtResource("6_vxfns")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 6)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 6)
 
 [node name="WandInnenOhneLeiste418" parent="." instance=ExtResource("6_vxfns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 8)
@@ -3672,40 +3675,46 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -27, 0, 
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -30, 0, -4)
 
 [node name="WandInnenOhneLeiste362" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, -4)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, -4)
 
 [node name="WandInnenOhneLeiste367" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, -3)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, -3)
 
 [node name="WandInnenOhneLeiste368" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, -1)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, -1)
 
 [node name="WandInnenOhneLeiste369" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 0)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 0)
 
 [node name="WandInnenOhneLeiste443" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 1)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 1)
 
 [node name="WandInnenOhneLeiste444" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 2)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 2)
 
 [node name="WandInnenOhneLeiste445" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 3)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 3)
 
 [node name="WandInnenOhneLeiste446" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 4)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 4)
 
 [node name="WandInnenOhneLeiste447" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 5)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 5)
 
 [node name="WandInnenOhneLeiste448" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 6)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 6)
 
 [node name="WandInnenOhneLeiste449" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29, 0, 7)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -28, 0, 7)
 
 [node name="WandInnenOhneLeiste450" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -29, 0, 8)
+
+[node name="WandInnenOhneLeiste463" parent="." instance=ExtResource("6_vxfns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 8)
+
+[node name="WandInnenOhneLeiste464" parent="." instance=ExtResource("4_u6h2q")]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -28, 0, 8)
 
 [node name="WandInnenOhneLeiste451" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -30, 0, 8)
@@ -3732,37 +3741,31 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -34, 0, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34, 0, -3)
 
 [node name="WandInnenOhneLeiste377" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, -3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, -3)
 
 [node name="WandInnenOhneLeiste378" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -27, 0, -1)
 
 [node name="WandInnenOhneLeiste383" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 0)
 
 [node name="WandInnenOhneLeiste385" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 1)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 1)
 
 [node name="WandInnenOhneLeiste387" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 2)
 
 [node name="WandInnenOhneLeiste389" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 3)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 3)
 
 [node name="WandInnenOhneLeiste391" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 4)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 4)
 
 [node name="WandInnenOhneLeiste393" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, 5)
 
 [node name="WandInnenOhneLeiste379" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26, 0, -1)
-
-[node name="WandInnenOhneLeiste380" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -28, 0, -1)
-
-[node name="WandInnenOhneLeiste381" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, -1)
 
 [node name="WandInnenOhneLeiste307" parent="." instance=ExtResource("4_u6h2q")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -26, 0, -4)
@@ -3966,7 +3969,7 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -34, 0, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18, 0, -10)
 
 [node name="WandInnenOhneLeiste417" parent="." instance=ExtResource("4_u6h2q")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, -2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28, 0, -2)
 
 [node name="WandInnenOhneLeiste421" parent="." instance=ExtResource("6_vxfns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 8)
@@ -4098,7 +4101,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 5)
 
 [node name="TürMitLeiste6" parent="." instance=ExtResource("9_5k2xr")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29, 0, -2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28, 0, -2)
 
 [node name="TürMitLeiste14" parent="." instance=ExtResource("9_5k2xr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -27, 0, -4)
@@ -4194,6 +4197,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, -9)
 
 [node name="Fenster2_23" parent="." instance=ExtResource("8_4pcf8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, -11)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -11)
 
 [editable path="Dach"]

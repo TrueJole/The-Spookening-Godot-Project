@@ -22,3 +22,4 @@ text = "FPS:"
 script = ExtResource("4_johsw")
 
 [node name="SubViewport" parent="." instance=ExtResource("4_0247n")]
+size = Vector2i(1920, 1920)
