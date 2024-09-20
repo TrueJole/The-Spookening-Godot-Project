@@ -17,7 +17,7 @@ func _run() -> void:
 		print_debug('Baked ', x)
 		
 	
-	EditorInterface.save_all_scenes()
+	#EditorInterface.save_all_scenes()
 	if originalScene != null:
 		EditorInterface.open_scene_from_path(originalScene)
 	print_debug('Done!')

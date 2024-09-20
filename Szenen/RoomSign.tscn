@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://caytbnji6x8du"]
 
 [ext_resource type="PackedScene" uid="uid://c8tmk2amrds7m" path="res://Assets/RoomSign.glb" id="1_y4w2t"]
-[ext_resource type="Script" path="res://Szenen/room_sign.gd" id="2_p0721"]
+[ext_resource type="Script" path="res://Scripts/room_sign.gd" id="2_p0721"]
 [ext_resource type="Texture2D" uid="uid://dn6ml5njsuw8n" path="res://Assets/Materials/Textures/roomsign.png" id="3_ru7aw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joxde"]
@@ -16,8 +16,6 @@ subpixel_positioning = 0
 [node name="RoomSign" instance=ExtResource("1_y4w2t")]
 script = ExtResource("2_p0721")
 roomNumber = "RTest"
-textUp = null
-textLow = null
 
 [node name="Cube" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_joxde")
@@ -27,7 +25,6 @@ surface_material_override/1 = SubResource("StandardMaterial3D_y5pe1")
 transform = Transform3D(-2.32964e-09, 0, 0.0532959, 0, 0.0532959, 0, -0.0532959, 0, -2.32964e-09, 0.00511086, 0.0270016, -0.00196192)
 double_sided = false
 modulate = Color(0, 0, 0, 1)
-text = "R201"
 font = SubResource("SystemFont_nimqc")
 font_size = 177
 outline_size = 0

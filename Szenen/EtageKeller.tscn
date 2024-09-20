@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://yc0orxhwm7cs" path="res://Game Assets/dust.tscn" id="34_cpmlr"]
 [ext_resource type="PackedScene" uid="uid://bv8b67855mwjt" path="res://Game Assets/Deco/Pinboard.tscn" id="36_r0783"]
 [ext_resource type="PackedScene" uid="uid://b0bcql0yqaq6a" path="res://Game Assets/Deco/Waschbecken.tscn" id="37_aa61j"]
-[ext_resource type="Script" path="res://Szenen/waterArea.gd" id="38_06ocx"]
+[ext_resource type="Script" path="res://Scripts/waterArea.gd" id="38_06ocx"]
 [ext_resource type="PackedScene" uid="uid://crguvbqvdpj3j" path="res://Game Assets/Deco/RoundLamp.tscn" id="38_w0h68"]
 [ext_resource type="PackedScene" uid="uid://dpu18816c5uef" path="res://Game Assets/bubbles.tscn" id="39_hhxit"]
 [ext_resource type="PackedScene" uid="uid://0x0n2tbj7juo" path="res://Game Assets/Deco/barrier.tscn" id="40_slydo"]
@@ -5584,8 +5584,8 @@ spot_angle = 41.6685
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.711931, 9.33469, 0.169207)
-light_color = Color(8.66354e-07, 0.563211, 0.581028, 1)
-light_energy = 0.08
+light_color = Color(0.674685, 0.8332, 0.949317, 1)
+light_energy = 0.05
 light_indirect_energy = 1.2
 spot_range = 12.7889
 spot_attenuation = 0.0

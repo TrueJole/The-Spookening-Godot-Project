@@ -18,6 +18,9 @@ var lampOn: bool = false
 var previouslyOnFloor:bool
 #var testX = 0
 
+@onready var waterOverlay: ColorRect = $Head/Camera3D/WaterOverlay
+
+
 var swimming: bool = false
 
 enum states {SNEAKING = 1, WALKING = 2, SPRINTING = 3}
@@ -69,6 +72,8 @@ func _physics_process(delta: float) -> void:
 		
 		if is_on_floor() and not previouslyOnFloor:
 			walkSound()
+		
+		waterOverlay.visible = swimming
 		
 		if not is_on_floor():
 			if swimming:

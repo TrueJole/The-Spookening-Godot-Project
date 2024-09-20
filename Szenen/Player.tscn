@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=21 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor_Punkt.png" id="4_8u4cr"]
 [ext_resource type="Script" path="res://Scripts/flicker.gd" id="4_g71aj"]
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
+[ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
+[ext_resource type="Shader" path="res://Scripts/water1.gdshader" id="7_gow2f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
 size = Vector3(0.0181231, 0.0143356, 2.07825)
@@ -18,25 +20,30 @@ disable_fog = true
 disable_receive_shadows = true
 fixed_size = true
 
-[sub_resource type="Shader" id="Shader_gq81y"]
-code = "shader_type canvas_item;
-
-uniform float alpha = 1.0;
-uniform float inner_radius = 0.0;
-uniform float outer_radius = 1.0;
-
-void fragment() {
-	float x = abs(UV.r-.5)*2.0;
-	float y = abs(UV.g-.5)*2.0;
-	float q = 1.0-(1.0-sqrt(x*x+y*y)/outer_radius)/(1.0-inner_radius);
-	COLOR = vec4(0, 0, 0, q*alpha);
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pqy3d"]
-shader = SubResource("Shader_gq81y")
-shader_parameter/alpha = 0.8
-shader_parameter/inner_radius = 0.7
+shader = ExtResource("6_6q5m7")
+shader_parameter/alpha = 0.77
+shader_parameter/inner_radius = 0.78
 shader_parameter/outer_radius = 1.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ultr"]
+frequency = 0.019
+domain_warp_enabled = true
+domain_warp_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1s1jb"]
+seamless = true
+noise = SubResource("FastNoiseLite_3ultr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cscfw"]
+shader = ExtResource("7_gow2f")
+shader_parameter/strength = 40.0
+shader_parameter/uv_scaling = 0.05
+shader_parameter/movement_direction = Vector2(1, 0)
+shader_parameter/movement_speed = 0.03
+shader_parameter/blue_filter = 1.0
+shader_parameter/color_addition = Color(0.637687, 0.831399, 1, 1)
+shader_parameter/NOISE_TEXTURE = SubResource("NoiseTexture2D_1s1jb")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.822
@@ -141,7 +148,7 @@ script = ExtResource("3_g3gao")
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
 light_color = Color(0.979436, 0.95764, 0.859597, 1)
-light_energy = 0.1
+light_energy = 0.15
 light_indirect_energy = 3.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
@@ -207,8 +214,20 @@ scale = Vector2(0.989519, 1)
 texture = ExtResource("4_8u4cr")
 expand_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Head/Camera3D"]
+[node name="VignetteOverlay" type="ColorRect" parent="Head/Camera3D"]
 material = SubResource("ShaderMaterial_pqy3d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="WaterOverlay" type="ColorRect" parent="Head/Camera3D"]
+visible = false
+material = SubResource("ShaderMaterial_cscfw")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
