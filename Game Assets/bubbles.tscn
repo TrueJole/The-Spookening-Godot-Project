@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpu18816c5uef"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4mf5"]
+roughness = 0.23
+emission_enabled = true
+emission = Color(0.536691, 0.678758, 0.727766, 1)
+emission_energy_multiplier = 0.48
+
+[sub_resource type="Curve" id="Curve_a5sue"]
+_data = [Vector2(0.00344352, 0), 0.0, 0.0, 0, 0, Vector2(0.0902204, 0.88628), 0.0, 0.0, 0, 0, Vector2(0.524105, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ggfsn"]
+curve = SubResource("Curve_a5sue")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cxrwr"]
+direction = Vector3(0, 1, 0)
+spread = 24.07
+flatness = 0.049
+initial_velocity_max = 1.0
+gravity = Vector3(0, 2, 0)
+attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_ggfsn")
+turbulence_enabled = true
+turbulence_noise_speed = Vector3(0, 10, 0)
+turbulence_noise_speed_random = 3.02
+turbulence_influence_min = 0.01
+turbulence_influence_max = 0.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_h3u3r"]
+radius = 0.02
+height = 0.04
+radial_segments = 17
+rings = 17
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_k4mf5")
+amount = 6
+lifetime = 2.0
+explosiveness = 0.5
+fract_delta = false
+visibility_aabb = AABB(-0.371686, -0.0333013, -0.354383, 0.736714, 4.23225, 0.92453)
+process_material = SubResource("ParticleProcessMaterial_cxrwr")
+draw_pass_1 = SubResource("SphereMesh_h3u3r")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfwram6fhkpnf"]
+[gd_scene load_steps=15 format=3 uid="uid://cfwram6fhkpnf"]
 
 [ext_resource type="PackedScene" uid="uid://ti1ty0c7y8lq" path="res://Assets/Fenster2_3.glb" id="1_rlp5q"]
 [ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_8yjs1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="2_kc8p8"]
 [ext_resource type="Script" path="res://Scripts/fensterRegen.gd" id="2_qkksi"]
 [ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="6_mmtec"]
+[ext_resource type="AudioStream" uid="uid://fbur487u5tb6" path="res://Resources/Sounds/windowRain.wav" id="7_1ji3w"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uonvc"]
 viewport_path = NodePath("SubViewport")
@@ -30,6 +31,11 @@ size = Vector3(1.91028, 0.0276489, 0.230774)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_durd0"]
 size = Vector3(0.0430908, 1.59082, 0.333008)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_h47sg"]
+fade_time = 0.0
+stream_count = 1
+stream_0 = ExtResource("7_1ji3w")
 
 [node name="Fenster2_3" instance=ExtResource("1_rlp5q")]
 script = ExtResource("2_qkksi")
@@ -68,3 +74,4 @@ shape = SubResource("BoxShape3D_durd0")
 
 [node name="AudioStreamPlayer3D" parent="." index="2" instance=ExtResource("6_mmtec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01254, 1.60829, -0.0190652)
+stream = SubResource("AudioStreamPlaylist_h47sg")

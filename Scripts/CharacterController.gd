@@ -6,7 +6,7 @@ const SPEED: float = 2
 const SPRINTSPEED: float = 3
 
 const JUMP_VELOCITY: float = 4
-const GRAVITY: float = 9.81
+var GRAVITY: float = 9.81
 const SENSITIVITY: float = 0.005
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -18,6 +18,8 @@ var lampOn: bool = false
 var previouslyOnFloor:bool
 #var testX = 0
 
+var swimming: bool = false
+
 enum states {SNEAKING = 1, WALKING = 2, SPRINTING = 3}
 var state: int
 
@@ -27,6 +29,8 @@ var walkTimer: float
 func walkSound() -> void:
 	stepAudio.play()
 	walkTimer = walkTime * (1 + 2.0/state)
+
+	
 
 func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
@@ -67,7 +71,10 @@ func _physics_process(delta: float) -> void:
 			walkSound()
 		
 		if not is_on_floor():
-			velocity.y -= GRAVITY * delta
+			if swimming:
+				velocity.y -= GRAVITY * delta * 0.33
+			else:
+				velocity.y -= GRAVITY * delta
 
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY

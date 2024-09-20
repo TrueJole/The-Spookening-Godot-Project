@@ -100,7 +100,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 shape = SubResource("SphereShape3D_m7i5n")
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.59365, 0.587801, 1.93763)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.13178, 0.587801, 1.93763)
 
 [node name="keller" parent="." instance=ExtResource("9_oo8js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)

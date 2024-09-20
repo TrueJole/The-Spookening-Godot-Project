@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://b5r5mfvdymb7"]
+[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://b5r5mfvdymb7"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_gxp74"]
 resource_name = "Reverb"
@@ -10,6 +10,23 @@ resource_name = "Reverb"
 predelay_msec = 50.0
 room_size = 0.1
 damping = 0.1
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_tx53g"]
+resource_name = "PitchShift"
+pitch_scale = 0.5
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_knty7"]
+resource_name = "Delay"
+tap2_active = false
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_0vxkk"]
+resource_name = "Chorus"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ex41u"]
+resource_name = "Reverb"
+room_size = 0.47
+damping = 0.23
+wet = 0.33
 
 [resource]
 bus/1/name = &"Flur"
@@ -28,3 +45,17 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_ihx36")
 bus/2/effect/0/enabled = true
+bus/3/name = &"Water"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -0.0727253
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectPitchShift_tx53g")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectDelay_knty7")
+bus/3/effect/1/enabled = false
+bus/3/effect/2/effect = SubResource("AudioEffectChorus_0vxkk")
+bus/3/effect/2/enabled = true
+bus/3/effect/3/effect = SubResource("AudioEffectReverb_ex41u")
+bus/3/effect/3/enabled = true

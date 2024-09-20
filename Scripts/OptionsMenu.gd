@@ -1,52 +1,50 @@
 extends Control
 
-var Settings: Resource
 @onready var subviewport: SubViewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	Settings = load('res://Resources/globalSettings.tres')
+func _ready() -> void: 
 	#Settings.resolutionX = 1920
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton").button_pressed = Settings.ssao
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton").button_pressed = Settings.volumetricFog
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSIL").button_pressed = Settings.ssil
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSRToggleButton").button_pressed = Settings.ssr
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/giQualitySlider").value = Settings.giQuality
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton").button_pressed = Settings.msaa
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Settings.exposure
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Settings.shadowPower
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Settings.showFPS
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Settings.fullscreen
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Settings.fpsMode
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleSlider").value = Settings.scale3D
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
-	_on_gi_quality_slider_value_changed(Settings.giQuality)
-	_on_fps_slider_value_changed(Settings.fpsMode)
+	print(Root.Settings)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton").button_pressed = Root.Settings.ssao
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton").button_pressed = Root.Settings.volumetricFog
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSIL").button_pressed = Root.Settings.ssil
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/SSRToggleButton").button_pressed = Root.Settings.ssr
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/giQualitySlider").value = Root.Settings.giQuality
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/MSAAToggleButton").button_pressed = Root.Settings.msaa
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessSlider").value = Root.Settings.exposure
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Root.Settings.exposure).pad_decimals(2)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/shadowSlider").value = Root.Settings.shadowPower
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsToggleButton").button_pressed = Root.Settings.showFPS
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fullScreenToggleButton").button_pressed = Root.Settings.fullscreen
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Root.Settings.fpsMode
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleSlider").value = Root.Settings.scale3D
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Root.Settings.scale3D*100) + "%"
+	_on_gi_quality_slider_value_changed(Root.Settings.giQuality)
+	_on_fps_slider_value_changed(Root.Settings.fpsMode)
 	applySettings()
 
 func applySettings() -> void:
-	_on_fps_slider_value_changed(Settings.fpsMode)
+	_on_fps_slider_value_changed(Root.Settings.fpsMode)
 	#print_debug(2**Settings.shadowPower)
-	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Settings.ssao
-	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Settings.volumetricFog
+	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
+	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
 	#subviewport.get_node("FogVolume").visible = Settings.volumetricFog
-	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Settings.ssil
-	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Settings.exposure
-	subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Settings.ssr
+	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil
+	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Root.Settings.exposure
+	subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Root.Settings.ssr
 	
-	if Settings.msaa == true:
+	if Root.Settings.msaa == true:
 		subviewport.msaa_3d = subviewport.MSAA_2X
 	else:
 		subviewport.msaa_3d = subviewport.MSAA_DISABLED
 
-	RenderingServer.directional_shadow_atlas_set_size(2**Settings.shadowPower, true)
-	subviewport.positional_shadow_atlas_size = 2**(Settings.shadowPower-2)
+	RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
+	subviewport.positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_64
-	match Settings.giQuality:
+	match Root.Settings.giQuality:
 		0:
 			subviewport.get_node("VoxelGI").visible = false
 		1:
@@ -60,34 +58,38 @@ func applySettings() -> void:
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
 	
-	get_tree().root.scaling_3d_scale = Settings.scale3D
-	subviewport.scaling_3d_scale = Settings.scale3D
+	get_tree().root.scaling_3d_scale = Root.Settings.scale3D
+	subviewport.scaling_3d_scale = Root.Settings.scale3D
+	var file: FileAccess = FileAccess.open('user://settings.dat', FileAccess.WRITE)
+	file.store_var(Root.Settings, true) 
+	print('Saved ', Root.Settings)
+	
 	#print_debug(get_tree().root.scaling_3d_scale)
 
 func _on_back_button_pressed() -> void:
-	ResourceSaver.save(Settings)
+	#ResourceSaver.save(Settings)
 	hide()
 	get_parent().get_node('MainMenu').show()
 	
 
 
 func _on_ssao_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.ssao = toggled_on
+	Root.Settings.ssao = toggled_on
 	applySettings()
 
 
 func _on_vol_fog_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.volumetricFog = toggled_on
+	Root.Settings.volumetricFog = toggled_on
 	applySettings()
 
 
 func _on_ssil_toggled(toggled_on: bool) -> void:
-	Settings.ssil = toggled_on
+	Root.Settings.ssil = toggled_on
 	applySettings()
 
 func _on_gi_quality_slider_value_changed(value: int) -> void:
-	Settings.giQuality = value
-	match Settings.giQuality:
+	Root.Settings.giQuality = value
+	match Root.Settings.giQuality:
 		0:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/GILabel").text = 'Aus'
 		1:
@@ -99,25 +101,25 @@ func _on_gi_quality_slider_value_changed(value: int) -> void:
 	applySettings()
 
 func _on_msaa_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.msaa = toggled_on
+	Root.Settings.msaa = toggled_on
 	applySettings()
 
 func _on_brightness_slider_value_changed(value: float) -> void:
-	Settings.exposure = value
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Settings.exposure).pad_decimals(2)
+	Root.Settings.exposure = value
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/brightnessLabel").text = 'Helligkeit: ' + str(Root.Settings.exposure).pad_decimals(2)
 	applySettings()
 
 func _on_shadow_slider_value_changed(value: int) -> void:
-	Settings.shadowPower = value
+	Root.Settings.shadowPower = value
 	applySettings()
 
 
 func _on_fps_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.showFPS = toggled_on
+	Root.Settings.showFPS = toggled_on
 
 
 func _on_full_screen_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.fullscreen = toggled_on
+	Root.Settings.fullscreen = toggled_on
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
@@ -126,9 +128,9 @@ func _on_full_screen_toggle_button_toggled(toggled_on: bool) -> void:
 
 func _on_fps_slider_value_changed(value: int) -> void:
 	#print_debug(value)
-	Settings.fpsMode = value
+	Root.Settings.fpsMode = value
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
-	match Settings.fpsMode:
+	match Root.Settings.fpsMode:
 		1:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
 			Engine.max_fps = 0
@@ -153,11 +155,11 @@ func _on_fps_slider_value_changed(value: int) -> void:
 
 
 func _on_scale_slider_value_changed(value: float) -> void:
-	Settings.scale3D = snappedf(value, 0.01)
-	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Settings.scale3D*100) + "%"
+	Root.Settings.scale3D = snappedf(value, 0.01)
+	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Root.Settings.scale3D*100) + "%"
 	applySettings()
 
 
 func _on_ssr_toggle_button_toggled(toggled_on: bool) -> void:
-	Settings.ssr = toggled_on
+	Root.Settings.ssr = toggled_on
 	applySettings()
