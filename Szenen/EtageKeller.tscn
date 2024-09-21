@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=48 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_kqcbx"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://crguvbqvdpj3j" path="res://Game Assets/Deco/RoundLamp.tscn" id="38_w0h68"]
 [ext_resource type="PackedScene" uid="uid://dpu18816c5uef" path="res://Game Assets/bubbles.tscn" id="39_hhxit"]
 [ext_resource type="PackedScene" uid="uid://0x0n2tbj7juo" path="res://Game Assets/Deco/barrier.tscn" id="40_slydo"]
+[ext_resource type="PackedScene" uid="uid://hqdw62q04d3n" path="res://Game Assets/Laser.tscn" id="41_5qm17"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_novj0"]
 
@@ -2932,6 +2933,7 @@ transform = Transform3D(1, 0, -1.77636e-13, 0, 1, 0, 1.77636e-13, 0, 1, 7, 0, -1
 
 [node name="WandInnenOhneLeiste79" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1, 0, -4)
+metadata/mirror = false
 
 [node name="WandInnenOhneLeiste107" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -2, 0, -4)
@@ -5614,6 +5616,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0025, 0.0329976, -8.80988
 
 [node name="Node3D3" parent="." instance=ExtResource("40_slydo")]
 transform = Transform3D(-0.764736, 0, -8.74228e-08, 0, 1.677, 0, 6.68554e-08, 0, -1, 0.932152, 1.63643, 1.43101)
+
+[node name="Node3D4" parent="." instance=ExtResource("41_5qm17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976331, 0.588828, -2.07021)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

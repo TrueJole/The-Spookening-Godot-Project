@@ -41,7 +41,7 @@ height = 0.4
 radial_segments = 18
 rings = 18
 
-[node name="Node3D" type="StaticBody3D"]
+[node name="Barriere" type="StaticBody3D"]
 script = ExtResource("1_nrbmp")
 
 [node name="Marker3D" type="Marker3D" parent="."]

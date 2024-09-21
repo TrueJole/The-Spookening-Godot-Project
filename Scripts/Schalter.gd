@@ -2,6 +2,7 @@ extends Node3D
 @export var state: bool
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 #@onready var base := $Cube
+signal changed(state: bool)
 
 # Dieser Teil wird nur einmal am Anfang des Spiels aufgerufen
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _on_interactive_component_pressed() -> void:
 		# Status ändern
 		state = not state
 		print_debug('changed', state)
-		
+		changed.emit(state)
 		# Animation abspielen (ja, ich musste auch animieren :/ )
 		if state:
 			animationPlayer.play("down")

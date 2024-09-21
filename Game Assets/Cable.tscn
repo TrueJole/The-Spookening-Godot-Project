@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxdrxj2blnjwu"]
+
+[sub_resource type="Curve3D" id="Curve3D_lqmme"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.849605, 0.00205361, -5.23741, 0, 0, 0, 0, 0, 0, 22.7844, 0.00346204, -3.74958, 0, 0, 0, 0, 0, 0, 25.0777, 0.000694605, -0.21384, 0, 0, 0, 0, 0, 0, 9.33903, 0.000862079, 2.34849, 0, 0, 0, 0, 0, 0, 0.849605, 0.00205361, -5.23741),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="CablePath" type="Path3D"]
+curve = SubResource("Curve3D_lqmme")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+polygon = PackedVector2Array(0, 0, 0.160864, 0.251442, 0.351117, 0.336154, 0.545537, 0.335459, 0.785784, 0.256997, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 1
+path_interval = 0.1
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true

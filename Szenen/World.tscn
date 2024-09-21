@@ -88,8 +88,9 @@ bake_mask = 4294967293
 bake_simplification_distance = 0.05
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92409, 1.51325)
+transform = Transform3D(2.38498, 0, 0, 0, 2.38498, 0, 0, 0, 2.38498, 0, 0.92409, 1.51325)
 collision_layer = 2
+metadata/mirror = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.287157, 0, 0, 0, 0.287157, 0, 0, 0, 0.287157, 0, 0, 0)
