@@ -66,10 +66,12 @@ func applySettings() -> void:
 	
 	#print_debug(get_tree().root.scaling_3d_scale)
 
+signal done
 func _on_back_button_pressed() -> void:
 	#ResourceSaver.save(Settings)
 	hide()
-	get_parent().get_node('MainMenu').show()
+	done.emit()
+	#get_parent().get_node('MainMenu').show()
 	
 
 

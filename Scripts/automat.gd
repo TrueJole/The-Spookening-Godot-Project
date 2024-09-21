@@ -17,14 +17,14 @@ func _process(delta: float) -> void:
 
 
 func _on_interactive_component_pressed() -> void:
-	if not entering and coins > 0:
-		Global.stop = true
+	if coins > 0:
+		get_tree().paused = true
 		item_list.show()
 		item_list.grab_focus()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		input = ""
-		entering = true
-		set_process(false)
+		#entering = true
+		#set_process(false)
 
 
 func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
@@ -47,7 +47,7 @@ func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_i
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		item_list.hide()
 		set_process(true)
-		Global.stop = false
+		get_tree().paused = false
 		await get_tree().create_timer(1).timeout  
 		entering = false
 

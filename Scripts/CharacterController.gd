@@ -8,6 +8,10 @@ const SPRINTSPEED: float = 3
 const JUMP_VELOCITY: float = 4
 var GRAVITY: float = 9.81
 const SENSITIVITY: float = 0.005
+const JOY_SENSITIVITY: float = 0.02
+
+@onready var pause_menu: Control = get_node('/root/root/PauseMenu')
+
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
 @onready var head: Marker3D = $Head
@@ -40,7 +44,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and not Global.stop:
+	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(event.relative.y * SENSITIVITY)
 		#testX += (event.relative.y * SENSITIVITY)
@@ -48,65 +52,83 @@ func _input(event: InputEvent) -> void:
 		#camera.rotation.x = min(max(camera.rotation.x, deg_to_rad(-130)), deg_to_rad(130))#clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		#print_debug(min(abs(camera.rotation.x), deg(130)))
 		camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
-		
+	#elif event is InputEventJoypadMotion:
+		#if event.axis == JOY_AXIS_RIGHT_Y:
+			#camera.rotate_x(event.axis_value * SENSITIVITY * 10)
+			#camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
+		#elif event.axis == JOY_AXIS_RIGHT_X: 
+			#head.rotate_y(-event.axis_value * SENSITIVITY * 10)
+			#camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
+			#
 
+			
 func _physics_process(delta: float) -> void:
-	if not Global.stop:
-		walkTimer -= delta
+	camera.rotate_x(-Input.get_axis("joyDown", "joyUp") * JOY_SENSITIVITY * delta * 100)
+	head.rotate_y(-Input.get_axis("joyLeft", "joyRight") * JOY_SENSITIVITY * delta * 100)
+	
+	walkTimer -= delta
+	
+	if Input.is_action_pressed("sprint"):
+		state = states.SPRINTING
+	elif Input.is_action_pressed("sneak"):
+		state = states.SNEAKING
+	else:
+		state = states.WALKING
+	
+	if Input.is_action_just_pressed("pauseMenu"):
+		pause_menu.showMenu()
 		
-		if Input.is_action_pressed("sprint"):
-			state = states.SPRINTING
-		elif Input.is_action_pressed("sneak"):
-			state = states.SNEAKING
+		#var temp: Control = PAUSE_MENU.instantiate()
+		#temp.process_mode = Node.PROCESS_MODE_ALWAYS
+		#add_child(temp)
+		
+	
+	if Input.is_action_just_pressed("sneak"):
+		animationPlayer.play('Sneak')
+		state = states.SNEAKING
+		
+	if Input.is_action_just_released("sneak"):
+		animationPlayer.play_backwards('Sneak')
+		state = states.WALKING
+	
+	
+	if is_on_floor() and not previouslyOnFloor:
+		walkSound()
+	
+	waterOverlay.visible = swimming
+	
+	if not is_on_floor():
+		if swimming:
+			velocity.y -= GRAVITY * delta * 0.33
 		else:
-			state = states.WALKING
-		
-		if Input.is_action_just_pressed("sneak"):
-			animationPlayer.play('Sneak')
-			state = states.SNEAKING
-			
-		if Input.is_action_just_released("sneak"):
-			animationPlayer.play_backwards('Sneak')
-			state = states.WALKING
-		
-		
-		if is_on_floor() and not previouslyOnFloor:
-			walkSound()
-		
-		waterOverlay.visible = swimming
-		
-		if not is_on_floor():
-			if swimming:
-				velocity.y -= GRAVITY * delta * 0.33
-			else:
-				velocity.y -= GRAVITY * delta
+			velocity.y -= GRAVITY * delta
 
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			walkSound()
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		walkSound()
 
-		
-		if Input.is_action_just_pressed("toggleLamp"):
-			lampOn = !lampOn
-			print_debug(lampOn)
-			if lampOn:
-				lamp.show()
-			else:
-				lamp.hide()
-
-		var input_dir:Vector2 = Input.get_vector("left", "right", "forward", "backward")
-		var direction:Vector3 = (head.transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
-		
-		
-		if direction:
-			if walkTimer <= 0 and is_on_floor() and abs(velocity.length()) > 0.1:
-				walkSound()
-				
-			
-			velocity.x = direction.x * state
-			velocity.z = direction.z * state
+	
+	if Input.is_action_just_pressed("toggleLamp"):
+		lampOn = !lampOn
+		print_debug(lampOn)
+		if lampOn:
+			lamp.show()
 		else:
-			velocity.x = 0
-			velocity.z = 0
-		previouslyOnFloor = is_on_floor()
-		move_and_slide()
+			lamp.hide()
+
+	var input_dir:Vector2 = Input.get_vector("left", "right", "forward", "backward")
+	var direction:Vector3 = (head.transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
+	
+	
+	if direction:
+		if walkTimer <= 0 and is_on_floor() and abs(velocity.length()) > 0.1:
+			walkSound()
+			
+		
+		velocity.x = direction.x * state
+		velocity.z = direction.z * state
+	else:
+		velocity.x = 0
+		velocity.z = 0
+	previouslyOnFloor = is_on_floor()
+	move_and_slide()

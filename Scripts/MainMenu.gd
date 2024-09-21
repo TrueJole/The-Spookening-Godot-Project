@@ -2,6 +2,7 @@ extends Control
 
 @onready var loadingBar: ProgressBar = $CenterContainer/VBoxContainer/ProgressBar
 @export var nextScene: String = "res://Szenen/World.tscn"
+@onready var center_container: CenterContainer = $CenterContainer
 
 var loading: bool = false
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +30,7 @@ func _process(_delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	if not loading:
-		get_parent().get_node('OptionsMenu').queue_free()
+		get_node('OptionsMenu').queue_free()
 		loadingBar.show()
 		print(ResourceLoader.get_dependencies(nextScene))
 		ResourceLoader.load_threaded_request(nextScene, "", true)
@@ -41,5 +42,10 @@ func _on_exit_button_pressed() -> void:
 
 func _on_options_button_pressed() -> void:
 	if not loading:
-		hide()
-		get_parent().get_node('OptionsMenu').show()
+		center_container.hide()
+		get_node('OptionsMenu').show()
+
+
+func _on_options_menu_done() -> void:
+	center_container.show()
+	get_node('OptionsMenu').hide()

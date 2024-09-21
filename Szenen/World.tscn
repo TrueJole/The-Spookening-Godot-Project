@@ -27,6 +27,7 @@ top_level = true
 script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 30.6542, 27.7205)
 visible = false
 layers = 3
@@ -51,6 +52,7 @@ editor_only = true
 directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 3
 environment = ExtResource("5_p615n")
 
 [node name="FogVolume" type="FogVolume" parent="."]
@@ -76,6 +78,7 @@ script = ExtResource("2_ahk6u")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 6.8229, 1.38876)
 layers = 1023
 subdiv = 0
@@ -83,6 +86,7 @@ size = Vector3(53.7896, 14.2887, 21.7017)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+process_mode = 3
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
 bake_simplification_distance = 0.05

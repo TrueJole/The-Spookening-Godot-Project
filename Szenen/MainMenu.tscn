@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccdcruw7mockq"]
+[gd_scene load_steps=5 format=3 uid="uid://ccdcruw7mockq"]
 
 [ext_resource type="Theme" uid="uid://dj3kv5o4ggit" path="res://Resources/MenuTheme.res" id="1_emt5w"]
 [ext_resource type="Texture2D" uid="uid://le45t6vap2xc" path="res://Assets/Materials/Textures/icon.svg" id="1_k0fv6"]
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_na64g"]
+[ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="3_54e1v"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,6 +16,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_emt5w")
 script = ExtResource("1_na64g")
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_54e1v")]
+visible = false
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -67,6 +72,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 20
 step = 0.0
 
+[connection signal="done" from="OptionsMenu" to="." method="_on_options_menu_done"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
