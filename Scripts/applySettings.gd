@@ -32,6 +32,7 @@ func _ready() -> void:
 	match Root.Settings.giQuality:
 		0:
 			bakedVoxelGI.visible = false
+			RenderingServer.gi_set_use_half_resolution(true)
 		1:
 			bakedVoxelGI.visible = true
 			RenderingServer.gi_set_use_half_resolution(true)

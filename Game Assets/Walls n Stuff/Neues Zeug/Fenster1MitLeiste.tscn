@@ -23,7 +23,7 @@ albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
 albedo_texture = SubResource("ViewportTexture_esrya")
 roughness = 0.0
 normal_scale = 0.63
-uv1_scale = Vector3(0.655, 0.655, 0.655)
+uv1_scale = Vector3(3, 3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckwq1"]
 size = Vector3(1, 3.48732, 0.21051)

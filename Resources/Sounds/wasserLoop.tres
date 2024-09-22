@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamPlaylist" load_steps=2 format=3 uid="uid://ljliqcwebtbb"]
+
+[ext_resource type="AudioStream" uid="uid://kq5hv2ri58qq" path="res://Resources/Sounds/WasserLaufend.wav" id="1_w42kc"]
+
+[resource]
+stream_count = 1
+stream_0 = ExtResource("1_w42kc")

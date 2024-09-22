@@ -79,10 +79,10 @@ script = ExtResource("2_ahk6u")
 [node name="VoxelGI" type="VoxelGI" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 6.8229, 1.38876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35586, 6.88734, 1.38876)
 layers = 1023
 subdiv = 0
-size = Vector3(53.7896, 14.2887, 21.7017)
+size = Vector3(53.7896, 14.1598, 21.7017)
 data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
@@ -105,7 +105,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 shape = SubResource("SphereShape3D_m7i5n")
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.13178, 0.587801, 1.93763)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.330626, 2.25142, 8.35353)
 
 [node name="keller" parent="." instance=ExtResource("9_oo8js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)

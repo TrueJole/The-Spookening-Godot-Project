@@ -93,5 +93,13 @@ shape = SubResource("BoxShape3D_q2p2y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214459, 0.565924, 0.00368329)
 shape = SubResource("BoxShape3D_pk6eg")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="8"]
+attenuation_model = 1
+volume_db = -1.0
+unit_size = 2.5
+max_db = 0.0
+max_distance = 15.0
+bus = &"Räume"
+
 [connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

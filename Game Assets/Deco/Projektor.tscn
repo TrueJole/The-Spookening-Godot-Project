@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://df87isk1ee1nq"]
+[gd_scene load_steps=10 format=3 uid="uid://df87isk1ee1nq"]
 
 [ext_resource type="PackedScene" uid="uid://8tcknjjs31rh" path="res://Assets/Projektor.glb" id="1_oxmsp"]
 [ext_resource type="Script" path="res://Scripts/Projektor.gd" id="2_fj0hs"]
 [ext_resource type="Script" path="res://Scripts/Activation_Module.gd" id="2_origj"]
+[ext_resource type="AudioStream" uid="uid://fbur487u5tb6" path="res://Resources/Sounds/windowRain.wav" id="4_77p5f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhiu"]
 albedo_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -67,5 +68,9 @@ activators = Array[String](["cart"])
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Activation Module" index="0"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00331131, 0.0591266, 0.000179579)
 shape = SubResource("BoxShape3D_hpsm5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("4_77p5f")
+unit_size = 8.0
 
 [connection signal="activated" from="Activation Module" to="Activation Module" method="_on_activated"]

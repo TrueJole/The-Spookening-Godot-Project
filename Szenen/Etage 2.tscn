@@ -57,7 +57,6 @@ _data = {
 
 [node name="Dach" parent="." instance=ExtResource("1_ud6v4")]
 transform = Transform3D(1, 0, 0, 0, 0.24097, 0, 0, 0, 1, 0, 2.649, 0)
-visible = false
 
 [node name="FloorTile3" parent="." instance=ExtResource("1_sdbuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)

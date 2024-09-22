@@ -27,7 +27,6 @@ shape = SubResource("ConcavePolygonShape3D_50dwj")
 
 [node name="Tür" parent="." index="2" instance=ExtResource("3_xtmaj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0493126, 0, 0.035)
-collision_mask = 6
 metadata/door = true
 
 [node name="JoltHingeJoint3D" type="JoltHingeJoint3D" parent="." index="3"]

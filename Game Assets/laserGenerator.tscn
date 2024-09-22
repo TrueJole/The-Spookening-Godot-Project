@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://tmst487vp4ut"]
+
+[ext_resource type="PackedScene" uid="uid://c2gsimpsttscn" path="res://Assets/LaserGenerator.glb" id="1_thfot"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_8u6ar"]
+[ext_resource type="PackedScene" uid="uid://hqdw62q04d3n" path="res://Game Assets/Laser.tscn" id="3_1r28b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkbep"]
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 3.0
+
+[node name="LaserGenerator" instance=ExtResource("1_thfot")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_8u6ar")
+
+[node name="Cylinder" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_8u6ar")
+surface_material_override/1 = SubResource("StandardMaterial3D_qkbep")
+
+[node name="Laser" parent="." index="2" instance=ExtResource("3_1r28b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.170121, 0, -0.000339203)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.14558, 0, 0.000169247)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.5
+light_indirect_energy = 2.0
+spot_range = 5.73231
+spot_angle = 33.8892

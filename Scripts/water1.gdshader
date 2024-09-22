@@ -17,7 +17,7 @@ void fragment() {
 	COLOR.b *= blue_filter;
 	COLOR.rgb *= color_addition.rgb;
 	//COLOR.rgb *= 5.0;
-	
+
 }
 
 //void light() {

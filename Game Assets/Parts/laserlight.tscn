@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsjifprd23k56"]
+
+[node name="Laserlight" type="OmniLight3D"]
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.01
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+distance_fade_enabled = true
+distance_fade_begin = 15.0
+distance_fade_length = 1.0
+omni_range = 0.5
+omni_attenuation = 2.0

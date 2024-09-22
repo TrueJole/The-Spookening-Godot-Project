@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://thho8ugju2ji"
-path.s3tc="res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.s3tc.ctex"
-path.etc2="res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.etc2.ctex"
+path="res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Textures/dust.png"
-dest_files=["res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.s3tc.ctex", "res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.etc2.ctex"]
+dest_files=["res://.godot/imported/dust.png-4f046efa61c580921e38836efbb10922.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

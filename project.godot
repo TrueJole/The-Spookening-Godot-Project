@@ -25,6 +25,10 @@ gdscript/warnings/untyped_declaration=2
 gdscript/warnings/inferred_declaration=2
 shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.501961, 1)
 
+[debug_draw_3d]
+
+settings/3d/volumetric_defaults/thickness=0.03
+
 [display]
 
 window/size/viewport_width=1920
@@ -62,6 +66,18 @@ texture={
 "process/size_limit": 0,
 "roughness/mode": 0,
 "roughness/src_normal": ""
+}
+wav={
+"compress/mode": 2,
+"edit/loop_begin": 0,
+"edit/loop_end": -1,
+"edit/loop_mode": 0,
+"edit/normalize": false,
+"edit/trim": false,
+"force/8_bit": false,
+"force/max_rate": false,
+"force/max_rate_hz": 44100,
+"force/mono": true
 }
 
 [input]
@@ -169,6 +185,7 @@ jolt_3d/volumetric_fog/volume_size=128
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=1
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
 shader_compiler/shader_cache/strip_debug=true

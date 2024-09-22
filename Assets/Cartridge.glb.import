@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Cartridge.glb-6f6624e47e33f170b599da2f2a46694
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
