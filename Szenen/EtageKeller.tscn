@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=52 format=3 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_kqcbx"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://crguvbqvdpj3j" path="res://Game Assets/Deco/RoundLamp.tscn" id="38_w0h68"]
 [ext_resource type="PackedScene" uid="uid://dpu18816c5uef" path="res://Game Assets/bubbles.tscn" id="39_hhxit"]
 [ext_resource type="PackedScene" uid="uid://0x0n2tbj7juo" path="res://Game Assets/Deco/barrier.tscn" id="40_slydo"]
+[ext_resource type="PackedScene" uid="uid://dic8quco8vht3" path="res://Game Assets/Deco/Kissen.tscn" id="41_a8wxw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_novj0"]
 
@@ -56,9 +57,23 @@ size = Vector3(3.08014, 3.43896, 2.99811)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wrja8"]
 size = Vector3(7.892, 12, 6.7742)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o20ax"]
+albedo_color = Color(0.303088, 0.121125, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yh5pg"]
+bounce = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_da2jb"]
+size = Vector3(1.27881, 0.54895, 1.36365)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m33gh"]
+albedo_color = Color(0.0909668, 0.2218, 0.265137, 1)
+
 [node name="keller" type="Node3D"]
 
 [node name="Dach" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.002, 0)
+visible = false
 script = ExtResource("1_kqcbx")
 ShowOnStart = true
 
@@ -4952,9 +4967,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.00
 [node name="Tisch22" parent="." instance=ExtResource("11_860vg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.4434, 0, -5.63921)
 
-[node name="Tisch23" parent="." instance=ExtResource("11_860vg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.4434, 0, -9.78631)
-
 [node name="Tisch24" parent="." instance=ExtResource("11_860vg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.4434, 0, -7.75956)
 
@@ -5065,12 +5077,6 @@ transform = Transform3D(-4.80825e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.80825e-08, 
 
 [node name="Stuhl46" parent="." instance=ExtResource("12_s4p5m")]
 transform = Transform3D(-4.80825e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.80825e-08, -15.4854, -0.000500202, -8.78578)
-
-[node name="Stuhl47" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(-4.80825e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.80825e-08, -17.3791, -0.000500202, -9.39987)
-
-[node name="Stuhl48" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(0.0967702, 0, -1.09574, 0, 1.1, 0, 1.09574, 0, 0.0967702, -17.3791, -0.000500202, -8.78578)
 
 [node name="Stuhl37" parent="." instance=ExtResource("12_s4p5m")]
 transform = Transform3D(-4.80825e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.80825e-08, -14.5089, -0.000500202, -7.36308)
@@ -5616,7 +5622,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0025, 0.0329976, -8.80988
 [node name="Node3D3" parent="." instance=ExtResource("40_slydo")]
 transform = Transform3D(-0.764736, 0, -8.74228e-08, 0, 1.677, 0, 6.68554e-08, 0, -1, 0.932152, 1.63643, 1.43101)
 
+[node name="kissen" parent="." instance=ExtResource("41_a8wxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3841, 0.0644347, -8.70258)
+
+[node name="kissen2" parent="." instance=ExtResource("41_a8wxw")]
+transform = Transform3D(0.83145, 0, -0.555599, 0, 1, 0, 0.555599, 0, 0.83145, -16.6681, 0.0644348, -8.89857)
+
+[node name="kissen5" parent="." instance=ExtResource("41_a8wxw")]
+transform = Transform3D(0.928932, 0, 0.370249, 0, 1, 0, -0.370249, 0, 0.928932, -17.2251, 0.0644348, -9.36863)
+
+[node name="Cylinder" parent="kissen5" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_o20ax")
+
+[node name="kissen3" parent="." instance=ExtResource("41_a8wxw")]
+transform = Transform3D(-0.995052, 0, -0.0993546, 0, 1, 0, 0.0993546, 0, -0.995052, -16.7387, 0.144577, -9.19392)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0695301, 0, 0.99758, 0, 1, 0, -0.99758, 0, 0.0695301, -17.4104, 0.144577, -8.98948)
+physics_material_override = SubResource("PhysicsMaterial_yh5pg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.993863, 0, 0.110619, 0, 1, 0, -0.110619, 0, 0.993863, 0.217297, -0.268966, 0.250271)
+shape = SubResource("BoxShape3D_da2jb")
+
+[node name="kissen4" parent="." instance=ExtResource("41_a8wxw")]
+transform = Transform3D(0.0695301, 0, 0.99758, 0, 1, 0, -0.99758, 0, 0.0695301, -17.4104, 0.144577, -8.98948)
+
+[node name="Cylinder" parent="kissen4" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_m33gh")
+
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
 
 [editable path="TürMitSchloss"]
+[editable path="kissen5"]
+[editable path="kissen4"]

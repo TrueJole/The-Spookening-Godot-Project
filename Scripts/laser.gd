@@ -1,7 +1,7 @@
 extends Node3D
 const MAX_LENGTH: int = 1000
 const LIMIT: int = 10
-const LIGHT_LIMIT: int = 3
+const LIGHT_LIMIT: int = 5
 var laserCount: int
 
 const LASERLIGHT: PackedScene = preload("res://Game Assets/Parts/laserlight.tscn")
