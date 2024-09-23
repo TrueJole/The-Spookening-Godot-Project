@@ -10,7 +10,7 @@ func _ready() -> void:
 	#REGEN_GLAS.setup_local_to_scene()
 	#var temp: ViewportTexture = ViewportTexture.new()
 	#temp.setup_local_to_scene()
-	print(self.get_path_to(Root.rain))
+	#print(self.get_path_to(Root.rain))
 	#temp.set_viewport_path_in_scene(self.get_path_to(Root.rain))
 	#REGEN_GLAS.resource_local_to_scene = true
 	#temp.resource_local_to_scene = true

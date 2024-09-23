@@ -1,67 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck7hnjvn3hwmp"]
+[gd_scene load_steps=4 format=3 uid="uid://ck7hnjvn3hwmp"]
 
 [ext_resource type="Script" path="res://PauseMenu.gd" id="1_8cv53"]
+[ext_resource type="Theme" uid="uid://dj3kv5o4ggit" path="res://Resources/MenuTheme.res" id="1_q86bv"]
 [ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="2_nt2gg"]
 
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-z_index = 999
+script = ExtResource("1_8cv53")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q86bv")
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -50.5
+offset_right = 58.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_8cv53")
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="OptionsMenu" parent="." instance=ExtResource("2_nt2gg")]
-visible = false
-z_index = 2
-layout_mode = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
 process_mode = 3
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Weiter"
 metadata/_edit_use_anchors_ = true
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Optionen"
 metadata/_edit_use_anchors_ = true
 
-[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Spiel beenden"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="done" from="OptionsMenu" to="." method="_on_options_menu_done"]
-[connection signal="button_up" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
-[connection signal="button_up" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_up"]
-[connection signal="button_up" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]
+[node name="OptionsMenu" parent="Control" instance=ExtResource("2_nt2gg")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_up" from="Control/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="button_up" from="Control/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_up"]
+[connection signal="button_up" from="Control/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="done" from="Control/OptionsMenu" to="." method="_on_options_menu_done"]

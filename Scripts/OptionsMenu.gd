@@ -20,6 +20,7 @@ func _ready() -> void:
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsSlider").value = Root.Settings.fpsMode
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleSlider").value = Root.Settings.scale3D
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Root.Settings.scale3D*100) + "%"
+	$PanelContainer/HBoxContainer/VBoxContainer/mouseSlider.value = Root.Settings.mousesens
 	_on_gi_quality_slider_value_changed(Root.Settings.giQuality)
 	_on_fps_slider_value_changed(Root.Settings.fpsMode)
 	applySettings()
@@ -38,6 +39,10 @@ func applySettings() -> void:
 		subviewport.msaa_3d = subviewport.MSAA_2X
 	else:
 		subviewport.msaa_3d = subviewport.MSAA_DISABLED
+		
+		
+	$PanelContainer/HBoxContainer/VBoxContainer/mouseLabel.text = 'Mausempfindlichkeit: ' + str(Root.Settings.mousesens * 1000)
+
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
 	subviewport.positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
@@ -62,7 +67,7 @@ func applySettings() -> void:
 	subviewport.scaling_3d_scale = Root.Settings.scale3D
 	var file: FileAccess = FileAccess.open('user://settings.dat', FileAccess.WRITE)
 	file.store_var(Root.Settings, true) 
-	print('Saved ', Root.Settings)
+	#print('Saved ', Root.Settings)
 	
 	#print_debug(get_tree().root.scaling_3d_scale)
 
@@ -152,10 +157,6 @@ func _on_fps_slider_value_changed(value: int) -> void:
 	
 
 
-
-
-
-
 func _on_scale_slider_value_changed(value: float) -> void:
 	Root.Settings.scale3D = snappedf(value, 0.01)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Root.Settings.scale3D*100) + "%"
@@ -164,4 +165,9 @@ func _on_scale_slider_value_changed(value: float) -> void:
 
 func _on_ssr_toggle_button_toggled(toggled_on: bool) -> void:
 	Root.Settings.ssr = toggled_on
+	applySettings()
+
+
+func _on_mouse_slider_value_changed(value: float) -> void:
+	Root.Settings.mousesens = value
 	applySettings()

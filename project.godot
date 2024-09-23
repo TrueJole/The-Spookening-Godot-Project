@@ -46,6 +46,10 @@ enabled=PackedStringArray()
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="res://Resources/MenuTheme.res"
+
 [importer_defaults]
 
 texture={

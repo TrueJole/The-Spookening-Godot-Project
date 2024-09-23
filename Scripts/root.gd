@@ -31,6 +31,7 @@ func default_settings() -> void:
 	Settings.fullscreen = true
 	Settings.fpsMode = 1
 	Settings.scale3D = 1
+	Settings.mousesens = 0.002
 
 func _init() -> void:
 	#DirAccess.remove_absolute('user://settings.tres')

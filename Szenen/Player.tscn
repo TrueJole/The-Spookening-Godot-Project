@@ -121,7 +121,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
-process_mode = 1
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.477683, 0)
 collision_layer = 4
 collision_priority = 1100.0
@@ -143,6 +142,7 @@ transform = Transform3D(-2, 1.74846e-07, 1.42109e-14, 1.74846e-07, 2, 1.74846e-0
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 unique_name_in_owner = true
+process_mode = 3
 transform = Transform3D(-1.43833, 1.25743e-07, 0, 1.25743e-07, 1.43833, 1.25743e-07, 0, 1.25743e-07, -1.43833, 0, 0.2, -0.219)
 rotation_order = 0
 attributes = ExtResource("2_ijyeg")
@@ -153,13 +153,13 @@ script = ExtResource("3_g3gao")
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
 light_color = Color(0.979436, 0.95764, 0.859597, 1)
-light_energy = 0.15
+light_energy = 0.4
 light_indirect_energy = 3.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
-spot_range = 40.0
-spot_attenuation = 0.0
-spot_angle = 40.0
+spot_range = 20.0
+spot_attenuation = 0.7
+spot_angle = 43.2677
 spot_angle_attenuation = 8.22691
 script = ExtResource("4_g71aj")
 baseTime = 8
@@ -217,6 +217,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.989519, 1)
+mouse_filter = 2
 texture = ExtResource("4_8u4cr")
 expand_mode = 2
 

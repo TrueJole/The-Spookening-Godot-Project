@@ -13,7 +13,7 @@ extends Resource
 @export var showFPS: bool = false
 @export var fullscreen: bool = true
 @export var fpsMode: int = 1
-
+@export var mousesens: float = 0.002
 @export var scale3D: float = 1
 #@export var resolutionX: int
 #@export var resolutionY: int

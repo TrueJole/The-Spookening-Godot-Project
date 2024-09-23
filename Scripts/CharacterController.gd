@@ -10,7 +10,8 @@ var GRAVITY: float = 9.81
 const SENSITIVITY: float = 0.005
 const JOY_SENSITIVITY: float = 0.02
 
-@onready var pause_menu: Control = get_node('/root/root/PauseMenu')
+@onready var pause_menu1: CanvasLayer = get_node('/root/root/PauseMenu')
+@onready var pause_menu2: CanvasLayer = $PauseMenu
 
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -41,12 +42,13 @@ func walkSound() -> void:
 
 func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
+	print('VSYNC MODE', DisplayServer.window_get_vsync_mode(DisplayServer.get_window_list()[0]))
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_x(event.relative.y * SENSITIVITY)
+		head.rotate_y(-event.relative.x * Root.Settings.mousesens)
+		camera.rotate_x(event.relative.y * Root.Settings.mousesens)
 		#testX += (event.relative.y * SENSITIVITY)
 		#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(130), deg_to_rad(-130))
 		#camera.rotation.x = min(max(camera.rotation.x, deg_to_rad(-130)), deg_to_rad(130))#clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
@@ -76,7 +78,8 @@ func _physics_process(delta: float) -> void:
 		state = states.WALKING
 	
 	if Input.is_action_just_pressed("pauseMenu"):
-		pause_menu.showMenu()
+		pause_menu1.showMenu()
+		#pass
 		
 		#var temp: Control = PAUSE_MENU.instantiate()
 		#temp.process_mode = Node.PROCESS_MODE_ALWAYS
