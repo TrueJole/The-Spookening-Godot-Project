@@ -4,7 +4,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
-	#Settings.resolutionX = 1920
 	print(Root.Settings)
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/ssaoToggleButton").button_pressed = Root.Settings.ssao
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/volFogToggleButton").button_pressed = Root.Settings.volumetricFog
@@ -27,10 +26,8 @@ func _ready() -> void:
 
 func applySettings() -> void:
 	_on_fps_slider_value_changed(Root.Settings.fpsMode)
-	#print_debug(2**Settings.shadowPower)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
 	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
-	#subviewport.get_node("FogVolume").visible = Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil
 	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Root.Settings.exposure
 	subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Root.Settings.ssr
@@ -67,16 +64,12 @@ func applySettings() -> void:
 	subviewport.scaling_3d_scale = Root.Settings.scale3D
 	var file: FileAccess = FileAccess.open('user://settings.dat', FileAccess.WRITE)
 	file.store_var(Root.Settings, true) 
-	#print('Saved ', Root.Settings)
-	
-	#print_debug(get_tree().root.scaling_3d_scale)
+
 
 signal done
 func _on_back_button_pressed() -> void:
-	#ResourceSaver.save(Settings)
 	hide()
 	done.emit()
-	#get_parent().get_node('MainMenu').show()
 	
 
 

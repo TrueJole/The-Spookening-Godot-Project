@@ -28,12 +28,9 @@ top_level = true
 script = ExtResource("1_c6mct")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("2_av35f")]
-light_energy = 0.05
 
 [node name="DirectionalLight3D2" parent="." instance=ExtResource("2_av35f")]
 transform = Transform3D(-1, -3.81864e-08, 7.86418e-08, 0, 0.899558, 0.436802, -8.74227e-08, 0.436802, -0.899558, 5.25206, 30.6542, -48.2795)
-light_color = Color(0.80203, 0.833045, 0.994718, 1)
-light_energy = 0.05
 
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.9301, 12.3274, -8.80292)
@@ -98,7 +95,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 shape = SubResource("SphereShape3D_m7i5n")
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.330626, 2.25142, 8.35353)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.330626, 2.25142, 1.30739)
 
 [node name="keller" parent="." instance=ExtResource("9_oo8js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)

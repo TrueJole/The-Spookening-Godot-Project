@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=4 uid="uid://cfqy3n888iblk"]
+[gd_scene load_steps=40 format=4 uid="uid://cfqy3n888iblk"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_8e773"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_pc36m"]
 [ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="2_yve43"]
 [ext_resource type="PackedScene" uid="uid://x3oxxt77x24d" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnen.tscn" id="3_3s5xb"]
+[ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="3_cfcxk"]
 [ext_resource type="PackedScene" uid="uid://cf6we7nmx02og" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandAußenNeu.tscn" id="4_mor3f"]
 [ext_resource type="PackedScene" uid="uid://ceq51lpi3uuda" path="res://Game Assets/Walls n Stuff/Neues Zeug/Fenster1MitLeiste.tscn" id="5_0ufsf"]
 [ext_resource type="PackedScene" uid="uid://cfwram6fhkpnf" path="res://Game Assets/Walls n Stuff/Neues Zeug/Fenster2MitLeiste.tscn" id="6_ksih1"]
@@ -20,10 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="18_bergi"]
 [ext_resource type="PackedScene" uid="uid://0x0n2tbj7juo" path="res://Game Assets/Deco/barrier.tscn" id="19_5vb5a"]
 [ext_resource type="PackedScene" uid="uid://tmst487vp4ut" path="res://Game Assets/laserGenerator.tscn" id="20_kgn8y"]
-[ext_resource type="PackedScene" uid="uid://cfxjjcqbhnqkb" path="res://Game Assets/LaserReciever.tscn" id="21_msvfi"]
+[ext_resource type="PackedScene" uid="uid://b8n7bd3xafjq4" path="res://Game Assets/LaserReceiver.tscn" id="21_msvfi"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="22_vh1u4"]
+[ext_resource type="Script" path="res://Szenen/laser_rätsel.gd" id="23_xg1pu"]
+[ext_resource type="AudioStream" uid="uid://cdemxddumls7i" path="res://Resources/Sounds/PuzzleSolvedJingle.wav" id="24_801o6"]
+[ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_isr6i"]
+[ext_resource type="PackedScene" uid="uid://n60msnckcy2l" path="res://Game Assets/Decals/KreuzDecal.tscn" id="27_sg8ja"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_35uaj"]
+material = ExtResource("3_cfcxk")
+size = Vector2(1, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vg6vr"]
 height = 0.75
@@ -90,6 +99,7 @@ points = PackedVector3Array(1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1,
 
 [node name="Dach" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.24097, 0, 0, 0, 1, 0, 2.64908, 0)
+visible = false
 script = ExtResource("1_pc36m")
 ShowOnStart = true
 
@@ -986,6 +996,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -8)
 
 [node name="FloorTile368" parent="." instance=ExtResource("1_8e773")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -10)
+
+[node name="FloorTileLOCH" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorTileLOCH"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, 0.5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_35uaj")
 
 [node name="FloorTile281" parent="." instance=ExtResource("1_8e773")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -10)
@@ -2222,9 +2240,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -9)
 
 [node name="FloorTile423" parent="." instance=ExtResource("1_8e773")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -9)
-
-[node name="FloorTile424" parent="." instance=ExtResource("1_8e773")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9)
 
 [node name="FloorTile441" parent="." instance=ExtResource("1_8e773")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
@@ -4222,9 +4237,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0
 [node name="TürMitLeiste3" parent="." instance=ExtResource("9_87817")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11, 0, -4)
 
-[node name="TürMitLeiste4" parent="." instance=ExtResource("9_87817")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0, -4)
-
 [node name="TürMitLeiste5" parent="." instance=ExtResource("9_87817")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 0, -4)
 
@@ -4486,9 +4498,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.766
 [node name="Tisch23" parent="." instance=ExtResource("12_b8bbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.79504, 0, -5.63168)
 
-[node name="Tisch24" parent="." instance=ExtResource("12_b8bbg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.42236, 0, -8.29729)
-
 [node name="Tisch25" parent="." instance=ExtResource("12_b8bbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.19782, 0, -9.80285)
 
@@ -4497,9 +4506,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.422
 
 [node name="Tisch27" parent="." instance=ExtResource("12_b8bbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.17623, 0, -8.28892)
-
-[node name="Tisch28" parent="." instance=ExtResource("12_b8bbg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.42236, 0, -9.80285)
 
 [node name="Tisch29" parent="." instance=ExtResource("12_b8bbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.19782, 0, -5.63168)
@@ -4599,18 +4605,6 @@ transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.616
 
 [node name="Stuhl45" parent="." instance=ExtResource("13_0sdwn")]
 transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -7.60237, 1.03391, -7.24479)
-
-[node name="Stuhl46" parent="." instance=ExtResource("13_0sdwn")]
-transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -8.8328, 1.03391, -7.91187)
-
-[node name="Stuhl47" parent="." instance=ExtResource("13_0sdwn")]
-transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -8.8328, 1.03391, -7.24125)
-
-[node name="Stuhl48" parent="." instance=ExtResource("13_0sdwn")]
-transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -8.8328, 1.03391, -9.38488)
-
-[node name="Stuhl49" parent="." instance=ExtResource("13_0sdwn")]
-transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -8.8328, 1.03391, -8.71426)
 
 [node name="Stuhl50" parent="." instance=ExtResource("13_0sdwn")]
 transform = Transform3D(4.80826e-08, 9.6165e-08, -1.1, -4.2035e-15, -1.1, -9.6165e-08, -1.1, 8.40701e-15, -4.80826e-08, -8.8328, 1.03391, -5.26932)
@@ -5006,7 +5000,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.5, 0
 [node name="LaserGenerator2" parent="." instance=ExtResource("20_kgn8y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.5, 0.339, 4.763)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("21_msvfi")]
+[node name="LaserReceiver" parent="." instance=ExtResource("21_msvfi")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6, 0.410783, 0.5)
 
 [node name="Cylinder" type="RigidBody3D" parent="."]
@@ -5027,6 +5021,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47655, 0.5, 1.98752)
 collision_layer = 2
 collision_mask = 3
 metadata/mirror = true
+metadata/equipable = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0, -0.000335693)
@@ -5037,8 +5032,68 @@ transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
 mesh = SubResource("BoxMesh_j3nft")
 surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
 
+[node name="Cube2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5991, 0.333204, -12.4957)
+collision_layer = 2
+collision_mask = 3
+metadata/mirror = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0, -0.000335693)
+shape = SubResource("BoxShape3D_h7l5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube2"]
+transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
+mesh = SubResource("BoxMesh_j3nft")
+surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
+
+[node name="Cube3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1359, 0.333204, -12.4957)
+collision_layer = 2
+collision_mask = 3
+metadata/mirror = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0, -0.000335693)
+shape = SubResource("BoxShape3D_h7l5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube3"]
+transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
+mesh = SubResource("BoxMesh_j3nft")
+surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
+
+[node name="Cube4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7313, 0.333204, -12.4957)
+collision_layer = 2
+collision_mask = 3
+metadata/mirror = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0, -0.000335693)
+shape = SubResource("BoxShape3D_h7l5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube4"]
+transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
+mesh = SubResource("BoxMesh_j3nft")
+surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
+
+[node name="Cube5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4751, 0.333204, -12.4957)
+collision_layer = 2
+collision_mask = 3
+metadata/mirror = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0, -0.000335693)
+shape = SubResource("BoxShape3D_h7l5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube5"]
+transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
+mesh = SubResource("BoxMesh_j3nft")
+surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
+
 [node name="Slope" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.338323, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0223, 0.338323, -12.4999)
 collision_layer = 2
 collision_mask = 3
 metadata/mirror = true
@@ -5056,7 +5111,7 @@ transform = Transform3D(-1.45559e-08, 0, -0.333, 0, 0.333, 0, 0.333, 0, -1.45559
 shape = SubResource("ConvexPolygonShape3D_sxk3g")
 
 [node name="Slope2" type="RigidBody3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 14, 0.338, -10)
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 18.022, 0.338, -12.5)
 collision_layer = 2
 collision_mask = 3
 metadata/mirror = true
@@ -5073,11 +5128,31 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xqb3b")
 transform = Transform3D(-1.45559e-08, 0, -0.333, 0, 0.333, 0, 0.333, 0, -1.45559e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_sxk3g")
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("21_msvfi")]
+[node name="LaserReceiver2" parent="." instance=ExtResource("21_msvfi")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6, 0.410783, 3.5)
 
 [node name="LaserGenerator3" parent="." instance=ExtResource("20_kgn8y")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 17.6916, 3.20461, -9.67199)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 17.692, 3.205, -10)
 
-[node name="StaticBody3D3" parent="." instance=ExtResource("21_msvfi")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.7197, 3.32622, -9.27801)
+[node name="LaserRätsel" type="Node3D" parent="." node_paths=PackedStringArray("receiver")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2366, 0.407614, -4.2769)
+script = ExtResource("23_xg1pu")
+receiver = [NodePath("../LaserReceiver"), NodePath("../LaserReceiver2"), NodePath("../LaserReceiver3")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="LaserRätsel"]
+stream = ExtResource("24_801o6")
+unit_size = 5.0
+
+[node name="LaserReceiver3" parent="." instance=ExtResource("21_msvfi")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.0803, 3.27796, -10)
+
+[node name="TürMitSchloss" parent="." instance=ExtResource("25_isr6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
+
+[node name="Activation Module" parent="TürMitSchloss" index="6"]
+activators = Array[String](["key_etage1"])
+
+[node name="KreuzDecal" parent="." instance=ExtResource("27_sg8ja")]
+transform = Transform3D(0.465647, 0, 0, 0, 0.465647, 0, 0, 0, 0.465647, -8.57312, 1.19209e-07, -8.47542)
+
+[editable path="TürMitSchloss"]

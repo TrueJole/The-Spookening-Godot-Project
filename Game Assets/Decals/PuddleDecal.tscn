@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c00tov321n30q"]
+
+[ext_resource type="Texture2D" uid="uid://dww762nvf7gyg" path="res://Assets/Materials/Textures/puddle.png" id="1_6y1n8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_tgjyh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jywo"]
+transparency = 2
+alpha_scissor_threshold = 0.001
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.256549, 0.682516, 1, 1)
+albedo_texture = ExtResource("1_6y1n8")
+albedo_texture_msdf = true
+roughness = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_tgjyh")
+surface_material_override/0 = SubResource("StandardMaterial3D_6jywo")

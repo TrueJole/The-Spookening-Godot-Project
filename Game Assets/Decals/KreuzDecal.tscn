@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n60msnckcy2l"]
+
+[ext_resource type="Texture2D" uid="uid://cuy5febewf453" path="res://Assets/Materials/Textures/cross.png" id="1_v62hq"]
+
+[node name="KreuzDecal" type="Decal"]
+texture_albedo = ExtResource("1_v62hq")

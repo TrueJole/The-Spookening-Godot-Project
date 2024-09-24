@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://05exlf4p7ho3"]
+
+[ext_resource type="FontFile" uid="uid://dxgfl2w0ls0jr" path="res://Resources/Chalkduster.ttf" id="1_lg0yl"]
+
+[node name="Label3D" type="Label3D"]
+text = "6 *  -> Donut"
+font = ExtResource("1_lg0yl")
+outline_size = 0

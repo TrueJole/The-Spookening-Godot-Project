@@ -20,7 +20,6 @@ Root="*res://Scripts/root.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
 gdscript/warnings/untyped_declaration=2
 gdscript/warnings/inferred_declaration=2
 shapes/navigation/geometry_edge_disabled_color=Color(0.501961, 0.501961, 0.501961, 1)

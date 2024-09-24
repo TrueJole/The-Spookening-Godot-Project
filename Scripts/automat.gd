@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var item_list: ItemList = $Control/ItemList
+@onready var item_list: ItemList = $Control/Control/CenterContainer/ItemList
 @onready var marker_3d: Marker3D = $Marker3D
 var entering: bool = false
 var input: String
@@ -18,9 +18,10 @@ func _process(delta: float) -> void:
 
 func _on_interactive_component_pressed() -> void:
 	if coins > 0:
-		get_tree().paused = true
 		item_list.show()
-		item_list.grab_focus()
+		#get_tree().paused = true
+		
+		#item_list.grab_focus()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		input = ""
 		#entering = true
@@ -28,6 +29,7 @@ func _on_interactive_component_pressed() -> void:
 
 
 func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	print(input)
 	input += item_list.get_item_text(index)
 	var path: String = ''
 	match input:
@@ -37,6 +39,8 @@ func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_i
 			path = "res://Game Assets/Items/Donut.tscn"
 		"22": 
 			path = "res://Game Assets/Items/Flasche.tscn"
+		"33": 
+			path = "res://Game Assets/Items/feuerlöscher.tscn"
 		_ when len(input) >= 2: 
 			path = "res://Game Assets/Items/Coin.tscn"
 	if path:

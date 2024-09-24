@@ -37,6 +37,7 @@ func _on_start_button_pressed() -> void:
 		loading = true
 
 func _on_exit_button_pressed() -> void:
+	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 
 

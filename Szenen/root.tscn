@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dju6cwg4tmum2"]
+[gd_scene load_steps=4 format=3 uid="uid://dju6cwg4tmum2"]
 
 [ext_resource type="PackedScene" uid="uid://ccdcruw7mockq" path="res://Szenen/MainMenu.tscn" id="1_0odwc"]
 [ext_resource type="PackedScene" uid="uid://dwqbqv31lsyhy" path="res://Szenen/RegenModul.tscn" id="4_0247n"]
 [ext_resource type="Script" path="res://Scripts/FPSCounter.gd" id="4_johsw"]
-[ext_resource type="PackedScene" uid="uid://ck7hnjvn3hwmp" path="res://Szenen/PauseMenu.tscn" id="4_uvuon"]
 
 [node name="root" type="Node"]
 
@@ -22,6 +21,3 @@ script = ExtResource("4_johsw")
 
 [node name="SubViewport" parent="." instance=ExtResource("4_0247n")]
 size = Vector2i(1920, 1920)
-
-[node name="PauseMenu" parent="." instance=ExtResource("4_uvuon")]
-visible = false

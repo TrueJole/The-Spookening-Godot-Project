@@ -10,8 +10,9 @@ var GRAVITY: float = 9.81
 const SENSITIVITY: float = 0.005
 const JOY_SENSITIVITY: float = 0.02
 
-@onready var pause_menu1: CanvasLayer = get_node('/root/root/PauseMenu')
-@onready var pause_menu2: CanvasLayer = $PauseMenu
+#@onready var pause_menu1: CanvasLayer = get_node('/root/root/PauseMenu')
+#@onready var pause_menu2: CanvasLayer = $PauseMenu
+const PAUSE_MENU: PackedScene = preload("res://Szenen/PauseMenu.tscn")
 
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -78,7 +79,10 @@ func _physics_process(delta: float) -> void:
 		state = states.WALKING
 	
 	if Input.is_action_just_pressed("pauseMenu"):
-		pause_menu1.showMenu()
+		var temp: CanvasLayer = PAUSE_MENU.instantiate()
+		add_child(temp)
+		temp.showMenu()
+		#pause_menu2.showMenu()
 		#pass
 		
 		#var temp: Control = PAUSE_MENU.instantiate()

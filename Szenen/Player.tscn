@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=18 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
@@ -7,8 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/flicker.gd" id="4_g71aj"]
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
 [ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
-[ext_resource type="Shader" path="res://Scripts/water1.gdshader" id="7_gow2f"]
-[ext_resource type="PackedScene" uid="uid://ck7hnjvn3hwmp" path="res://Szenen/PauseMenu.tscn" id="9_sbfnx"]
+[ext_resource type="Material" uid="uid://ddcmnt44ha8gd" path="res://Scripts/WaterShader.tres" id="7_vpvg2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
 size = Vector3(0.0181231, 0.0143356, 2.07825)
@@ -26,25 +25,6 @@ shader = ExtResource("6_6q5m7")
 shader_parameter/alpha = 0.77
 shader_parameter/inner_radius = 0.78
 shader_parameter/outer_radius = 1.5
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ultr"]
-frequency = 0.019
-domain_warp_enabled = true
-domain_warp_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1s1jb"]
-seamless = true
-noise = SubResource("FastNoiseLite_3ultr")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cscfw"]
-shader = ExtResource("7_gow2f")
-shader_parameter/strength = 40.0
-shader_parameter/uv_scaling = 0.05
-shader_parameter/movement_direction = Vector2(1, 0)
-shader_parameter/movement_speed = 0.03
-shader_parameter/blue_filter = 1.0
-shader_parameter/color_addition = Color(0.637687, 0.831399, 1, 1)
-shader_parameter/NOISE_TEXTURE = SubResource("NoiseTexture2D_1s1jb")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.822
@@ -129,9 +109,6 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_c8kcr")
 walkTime = 0.4
-
-[node name="PauseMenu" parent="." instance=ExtResource("9_sbfnx")]
-visible = false
 
 [node name="Head" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.43804, 0)
@@ -234,8 +211,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 
 [node name="WaterOverlay" type="ColorRect" parent="Head/Camera3D"]
-visible = false
-material = SubResource("ShaderMaterial_cscfw")
+material = ExtResource("7_vpvg2")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

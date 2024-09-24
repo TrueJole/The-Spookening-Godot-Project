@@ -21,8 +21,9 @@ func _on_resume_button_button_up() -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#$CanvasLayer.hide()
+	
 	hide()
-
+	queue_free()
 		
 
 func _on_exit_button_button_up() -> void:
