@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxi2me5stma5t"]
+
+[ext_resource type="PackedScene" uid="uid://cnih1rervd0jh" path="res://Assets/NormalerTisch.glb" id="1_tts0t"]
+[ext_resource type="Material" uid="uid://dfthlh5kssp1l" path="res://Assets/Materials/HolzGlanzlos.tres" id="2_h38pa"]
+
+[node name="NormalerTisch" instance=ExtResource("1_tts0t")]
+
+[node name="Cube_003" parent="." index="0"]
+material_override = ExtResource("2_h38pa")

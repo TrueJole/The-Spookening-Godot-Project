@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://b0bcql0yqaq6a"]
 
 [ext_resource type="PackedScene" uid="uid://clc3d0abndh62" path="res://Assets/Waschbecken.glb" id="1_5c8un"]
-[ext_resource type="Script" path="res://Game Assets/Deco/waschbecken.gd" id="2_5uc4g"]
+[ext_resource type="Script" path="res://Scripts/waschbecken.gd" id="2_5uc4g"]
 [ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_20yhj"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="3_8yyts"]
 [ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="4_pikvt"]

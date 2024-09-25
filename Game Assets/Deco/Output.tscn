@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://io2aeiisytsn"]
+
+[ext_resource type="PackedScene" uid="uid://cbelwvr0dasdd" path="res://Assets/Output.glb" id="1_gsswc"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_m3gtj"]
+[ext_resource type="Script" path="res://Game Assets/Deco/output.gd" id="2_o1on1"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_va0x3"]
+[ext_resource type="Material" uid="uid://bxdste0qk5r8k" path="res://Assets/Materials/RedLightOff.tres" id="4_q1hxk"]
+[ext_resource type="Material" uid="uid://cao3ij6ej2y6f" path="res://Assets/Materials/GreenLightOff.tres" id="5_4maxq"]
+
+[node name="Output" instance=ExtResource("1_gsswc")]
+script = ExtResource("2_o1on1")
+
+[node name="Circle" parent="." index="0"]
+lod_bias = 10.0
+surface_material_override/0 = ExtResource("2_m3gtj")
+surface_material_override/1 = ExtResource("3_va0x3")
+surface_material_override/2 = ExtResource("4_q1hxk")
+surface_material_override/3 = ExtResource("5_4maxq")
+surface_material_override/4 = ExtResource("3_va0x3")

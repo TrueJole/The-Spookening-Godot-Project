@@ -10,6 +10,7 @@ func laser(startpoint: Vector3, direction: Vector3) -> void:
 	laserCount += 1
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(startpoint,startpoint + (direction * MAX_LENGTH))
+	query.exclude = [get_node('/root/Root/World/Player')] 
 	var result: Dictionary = space_state.intersect_ray(query)
 	
 	if result:

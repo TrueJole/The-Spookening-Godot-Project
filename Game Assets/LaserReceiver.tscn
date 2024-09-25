@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8n7bd3xafjq4"]
+[gd_scene load_steps=6 format=3 uid="uid://b8n7bd3xafjq4"]
 
 [ext_resource type="PackedScene" uid="uid://ckxp7654maycx" path="res://Assets/LaserReceiver.glb" id="1_28xof"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_0solr"]
-[ext_resource type="Material" uid="uid://brlqxy2qq0fet" path="res://Assets/Materials/RedLight.tres" id="3_sbmxx"]
+[ext_resource type="Script" path="res://Scripts/laser_receiver.gd" id="2_qfb0q"]
+[ext_resource type="Material" uid="uid://brlqxy2qq0fet" path="res://Assets/Materials/RedLightOn.tres" id="3_sbmxx"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_im3bq"]
 height = 0.0509013
 radius = 0.241334
 
 [node name="LaserReceiver" instance=ExtResource("1_28xof")]
+script = ExtResource("2_qfb0q")
 
 [node name="Cylinder" parent="." index="0"]
 transform = Transform3D(0.240356, 0, 0, 0, 4.65661e-10, 0.240356, 0, -0.0245209, 3.72529e-09, 0, 0, 0)

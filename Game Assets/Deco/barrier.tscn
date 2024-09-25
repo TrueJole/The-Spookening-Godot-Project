@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://0x0n2tbj7juo"]
 
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="1_6asky"]
-[ext_resource type="Script" path="res://Game Assets/Deco/barrier.gd" id="1_nrbmp"]
+[ext_resource type="Script" path="res://Scripts/barrier.gd" id="1_nrbmp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5kvqk"]
 

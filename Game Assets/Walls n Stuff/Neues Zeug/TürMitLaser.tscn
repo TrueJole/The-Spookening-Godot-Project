@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://xq15jihkiev3"]
+
+[ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="1_tdwcw"]
+[ext_resource type="PackedScene" uid="uid://tmst487vp4ut" path="res://Game Assets/laserGenerator.tscn" id="2_3pfqp"]
+[ext_resource type="Script" path="res://Scripts/LaserTür.gd" id="2_8bkm8"]
+
+[node name="TürMitLeiste" instance=ExtResource("1_tdwcw")]
+script = ExtResource("2_8bkm8")
+
+[node name="Lasers" type="Node" parent="." index="5"]
+
+[node name="LaserGenerator" parent="Lasers" index="0" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.135513, 2.01162, 0.0999997)
+
+[node name="LaserGenerator2" parent="Lasers" index="1" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.316763, 2.01162, 0.0999997)
+
+[node name="LaserGenerator3" parent="Lasers" index="2" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.498085, 2.01162, 0.0999997)
+
+[node name="LaserGenerator5" parent="Lasers" index="3" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.684263, 2.01162, 0.0999997)
+
+[node name="LaserGenerator4" parent="Lasers" index="4" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.853026, 2.01162, 0.0999997)

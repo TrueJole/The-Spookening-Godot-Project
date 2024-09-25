@@ -1,8 +1,8 @@
 extends StaticBody3D
 class_name LaserReceiver
 
-const GREEN_LIGHT: StandardMaterial3D = preload("res://Assets/Materials/GreenLight.tres")
-const RED_LIGHT: StandardMaterial3D = preload("res://Assets/Materials/RedLight.tres")
+const GREEN_LIGHT: StandardMaterial3D = preload("res://Assets/Materials/GreenLightOn.tres")
+const RED_LIGHT: StandardMaterial3D = preload("res://Assets/Materials/RedLightOff.tres")
 
 var receiving: bool = false
 var activated: bool
