@@ -1,7 +1,6 @@
 extends Control
 
 @onready var subviewport: SubViewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
 	print(Root.Settings)
@@ -116,6 +115,7 @@ func _on_shadow_slider_value_changed(value: int) -> void:
 
 func _on_fps_toggle_button_toggled(toggled_on: bool) -> void:
 	Root.Settings.showFPS = toggled_on
+	applySettings()
 
 
 func _on_full_screen_toggle_button_toggled(toggled_on: bool) -> void:

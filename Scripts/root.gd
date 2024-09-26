@@ -1,7 +1,7 @@
 extends Node
 
-@export var rain: SubViewport
-@export var rainTexture: ViewportTexture
+@export var rain: SubViewport = SubViewport.new()
+@export var rainTexture: ViewportTexture = ViewportTexture.new()
 @export var Settings: Resource = SettingsClass.new()
 
 
@@ -9,10 +9,6 @@ func _ready() -> void:
 	rain = get_node("/root/root/SubViewport")
 	rainTexture = rain.get_texture()
 	print('Rain: ', rain)
-
-func _process(delta: float) -> void:
-	#print('Rain: ', rain)
-	pass
 
 func on_scene_loaded() -> void:
 	pass

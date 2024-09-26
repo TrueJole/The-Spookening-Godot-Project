@@ -33,7 +33,7 @@ func basicDoorFunc() -> void:
 			occluder.hide()
 			audioPlayer.pitch_scale = clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,2)
 			#audioPlayer.pitch_scale = door.angular_velocity.y
-			if absf(door.angular_velocity.y) > 0.02 and not audioPlayer.playing and randi_range(0,(60/clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,5))) == 0:
+			if absf(door.angular_velocity.y) > 0.02 and not audioPlayer.playing and randi_range(0,round(60/clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,5))) == 0:
 				audioPlayer.stream = screachSound
 				audioPlayer.pitch_scale = clampf(lerpf(0.6, 2, door.angular_velocity.y),0.6,2)
 				audioPlayer.play()

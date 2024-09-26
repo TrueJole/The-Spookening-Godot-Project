@@ -10,7 +10,7 @@ func laser(startpoint: Vector3, direction: Vector3) -> void:
 	laserCount += 1
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(startpoint,startpoint + (direction * MAX_LENGTH))
-	query.exclude = [get_node('/root/Root/World/Player')] 
+	query.exclude = [get_node('/root/root/World/Player')] 
 	var result: Dictionary = space_state.intersect_ray(query)
 	
 	if result:
@@ -33,20 +33,9 @@ func laser(startpoint: Vector3, direction: Vector3) -> void:
 		if light:
 			light.queue_free()
 		
-		
-	
-	
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	pass # Replace with function body.
-	#DebugDraw3D.draw_line(line_begin, line_end, Color(1, 1, 0))
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#rotation.y += (delta* 0.8)
-	#print(get_global_transform().basis.x)
+func _process(_delta: float) -> void:
 	laserCount = 0
 	laser(global_position, get_global_transform().basis.x)
 	

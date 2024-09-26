@@ -15,12 +15,6 @@ func _ready() -> void:
 	water.amount_ratio = 0
 	water.emitting = true
 
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_interactive_component_pressed() -> void:
 	water.amount_ratio = 1
