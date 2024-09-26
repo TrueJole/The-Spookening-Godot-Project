@@ -8,17 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="6_mmtec"]
 [ext_resource type="AudioStream" uid="uid://fbur487u5tb6" path="res://Resources/Sounds/windowRain.wav" id="7_1ji3w"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uonvc"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_0sxu6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53tli"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6j2d"]
 resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
-albedo_texture = SubResource("ViewportTexture_uonvc")
+albedo_texture = SubResource("ViewportTexture_0sxu6")
 roughness = 0.0
 normal_scale = 0.63
-uv1_scale = Vector3(1.455, 1.455, 1.455)
+uv1_scale = Vector3(0.655, 0.655, 0.655)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ac0m"]
 size = Vector3(1.99963, 0.813965, 0.33783)
@@ -40,14 +39,12 @@ stream_0 = ExtResource("7_1ji3w")
 [node name="Fenster2_3" instance=ExtResource("1_rlp5q")]
 script = ExtResource("2_qkksi")
 
-[node name="Wand 2 * 4" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-visibility_range_end = 40.0
+[node name="Mesh" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_kc8p8")
 surface_material_override/1 = ExtResource("2_8yjs1")
 surface_material_override/2 = ExtResource("2_jj1du")
 surface_material_override/3 = ExtResource("2_jj1du")
-surface_material_override/4 = SubResource("StandardMaterial3D_53tli")
+surface_material_override/4 = SubResource("StandardMaterial3D_w6j2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)

@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxi2me5stma5t"]
+[gd_scene load_steps=4 format=3 uid="uid://bxi2me5stma5t"]
 
 [ext_resource type="PackedScene" uid="uid://cnih1rervd0jh" path="res://Assets/NormalerTisch.glb" id="1_tts0t"]
 [ext_resource type="Material" uid="uid://dfthlh5kssp1l" path="res://Assets/Materials/HolzGlanzlos.tres" id="2_h38pa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sj6lw"]
+size = Vector3(0.732727, 0.0621872, 1.38904)
 
 [node name="NormalerTisch" instance=ExtResource("1_tts0t")]
 
 [node name="Cube_003" parent="." index="0"]
 material_override = ExtResource("2_h38pa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00289917, 0.592243, 0.0182495)
+shape = SubResource("BoxShape3D_sj6lw")

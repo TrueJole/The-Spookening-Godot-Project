@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://cfqy3n888iblk"]
+[gd_scene load_steps=42 format=4 uid="uid://cfqy3n888iblk"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_8e773"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_pc36m"]
@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://cdemxddumls7i" path="res://Resources/Sounds/PuzzleSolvedJingle.wav" id="24_801o6"]
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="25_isr6i"]
 [ext_resource type="PackedScene" uid="uid://n60msnckcy2l" path="res://Game Assets/Decals/KreuzDecal.tscn" id="27_sg8ja"]
+[ext_resource type="PackedScene" uid="uid://bxi2me5stma5t" path="res://Game Assets/Deco/NormalerTisch.tscn" id="28_6xtmx"]
+[ext_resource type="PackedScene" uid="uid://io2aeiisytsn" path="res://Game Assets/Deco/Output.tscn" id="29_v6j4f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
 
@@ -4991,6 +4993,9 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -28.537, -0.000500679, 
 [node name="VersperrteTür" parent="." instance=ExtResource("18_bergi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19, 0, -4)
 
+[node name="VersperrteTür2" parent="." instance=ExtResource("18_bergi")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -28, 0, -1)
+
 [node name="Node3D" parent="." instance=ExtResource("19_5vb5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.828422, 2.22962, 2.39737)
 
@@ -5154,5 +5159,17 @@ activators = Array[String](["key_etage1"])
 
 [node name="KreuzDecal" parent="." instance=ExtResource("27_sg8ja")]
 transform = Transform3D(0.465647, 0, 0, 0, 0.465647, 0, 0, 0, 0.465647, -8.57312, 1.19209e-07, -8.47542)
+
+[node name="NormalerTisch" parent="." instance=ExtResource("28_6xtmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4977, -0.000500202, -6.19987)
+
+[node name="NormalerTisch2" parent="." instance=ExtResource("28_6xtmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4977, -0.000500202, -4.8051)
+
+[node name="NormalerTisch3" parent="." instance=ExtResource("28_6xtmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4977, -0.000500202, -3.41099)
+
+[node name="Output" parent="." instance=ExtResource("29_v6j4f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.8544, 0.622837, -4.42748)
 
 [editable path="TürMitSchloss"]

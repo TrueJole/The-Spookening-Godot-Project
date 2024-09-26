@@ -1,8 +1,9 @@
 extends Node3D
 
 @export var receiver: Array[LaserReceiver]
-const SCHLÜSSEL: PackedScene = preload("res://Game Assets/Items/Schlüssel.tscn")
+#const SCHLÜSSEL: PackedScene = preload("res://Game Assets/Items/Schlüssel.tscn")
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@export var output: StaticBody3D
 
 var solved: bool = false
 
@@ -19,9 +20,8 @@ func _physics_process(_delta: float) -> void:
 				return
 		
 		## Spawn key
-		var temp: RigidBody3D = SCHLÜSSEL.instantiate()
-		temp.set_meta('itemid', 'key_etage1')
-		add_child(temp)
+		output.dispenseDefault()
+		output.activated = true
 		## Play doodle
 		audio_stream_player_3d.play()
 		## lock puzzle
