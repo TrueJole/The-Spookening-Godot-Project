@@ -71,12 +71,12 @@ size = Vector3(1.27881, 0.54895, 1.36365)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m33gh"]
 albedo_color = Color(0.0909668, 0.2218, 0.265137, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lm1rg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ds1ax"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1dpe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31qm6"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lm1rg")
+albedo_texture = SubResource("ViewportTexture_ds1ax")
 
 [node name="keller" type="Node3D"]
 
@@ -5666,7 +5666,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_m33gh")
 [node name="WaterEntrance" parent="." instance=ExtResource("42_3oeec")]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -20.4602, 0.766229, -3.90267)
 visible = false
-surface_material_override/0 = SubResource("StandardMaterial3D_b1dpe")
+surface_material_override/0 = SubResource("StandardMaterial3D_31qm6")
 
 [node name="AutomatApplied2" parent="." instance=ExtResource("28_nqd4h")]
 transform = Transform3D(0.814987, 0, 0, 0, 0.814987, 0, 0, 0, 0.814987, -18.7585, -0.000500202, -3.7891)

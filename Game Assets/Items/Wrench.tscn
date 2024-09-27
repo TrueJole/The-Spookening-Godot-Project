@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8epy301lceay"]
+
+[ext_resource type="PackedScene" uid="uid://bb4glparp2yku" path="res://Assets/wrench.glb" id="1_qj1fm"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_18g2y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bkf5"]
+size = Vector3(0.259949, 1, 0.0537109)
+
+[node name="wrench" instance=ExtResource("1_qj1fm")]
+collision_layer = 2
+collision_mask = 3
+metadata/itemid = "wrench"
+
+[node name="Cube_001" parent="." index="0"]
+transform = Transform3D(-0.105, 0, 1.58546e-08, 0, 0.105, 0, -1.58546e-08, 0, -0.105, -0.0261276, 0.000201032, 0.091274)
+material_override = ExtResource("2_18g2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643921, 0, -0.00341797)
+shape = SubResource("BoxShape3D_6bkf5")
