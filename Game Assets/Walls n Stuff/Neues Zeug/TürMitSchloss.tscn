@@ -13,6 +13,10 @@ script = ExtResource("2_ypjms")
 transform = Transform3D(-3.27271e-08, 0, 0.748709, 0, 0.748709, 0, -0.748709, 0, -3.27271e-08, 0.87597, 0.804895, 0.0509075)
 script = ExtResource("3_rnuga")
 
+[node name="Schloss2" parent="Schloss" index="2" instance=ExtResource("2_42esw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.148352, 0, 0)
+script = ExtResource("3_rnuga")
+
 [node name="Activation Module" parent="." index="6" instance=ExtResource("4_m5vtd")]
 
 [connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]

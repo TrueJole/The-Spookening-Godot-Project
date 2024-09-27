@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://csmpo0diji4tx"]
+
+[ext_resource type="PackedScene" uid="uid://47iu1chnoxb3" path="res://Assets/GlassBall.glb" id="1_dkx3p"]
+[ext_resource type="Script" path="res://Game Assets/Deco/glass_ball.gd" id="2_tk2ec"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_y8gdw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cr0"]
+transparency = 1
+albedo_color = Color(0.678431, 0.678431, 0.678431, 0.984314)
+roughness = 0.0
+backlight_enabled = true
+backlight = Color(0.255659, 0.255659, 0.255659, 1)
+refraction_enabled = true
+refraction_scale = 0.02
+
+[sub_resource type="SystemFont" id="SystemFont_7mk8j"]
+font_names = PackedStringArray("Segoe Script")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[node name="GlassBall" instance=ExtResource("1_dkx3p")]
+script = ExtResource("2_tk2ec")
+
+[node name="Cone" parent="." index="0"]
+material_override = ExtResource("2_y8gdw")
+
+[node name="Sphere" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w4cr0")
+
+[node name="MagicText" type="Label3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11177, -0.000433832)
+visible = false
+ignore_occlusion_culling = true
+billboard = 1
+shaded = true
+double_sided = false
+alpha_cut = 1
+alpha_scissor_threshold = 0.307
+outline_modulate = Color(1, 1, 1, 0)
+text = "MagicText"
+font = SubResource("SystemFont_7mk8j")
+font_size = 7
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14238, 0)
+light_color = Color(0.995506, 0.416323, 0.634331, 1)
+light_energy = 0.6
+light_volumetric_fog_energy = 0.0
+omni_range = 2.0

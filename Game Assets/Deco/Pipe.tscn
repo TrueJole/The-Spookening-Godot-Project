@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvtaj4ro404jr"]
+
+[ext_resource type="PackedScene" uid="uid://dxkrxfp103tjy" path="res://Assets/Pipe.glb" id="1_d0hgq"]
+[ext_resource type="Material" uid="uid://c8n1i4okw40dn" path="res://Assets/Materials/Bronze.tres" id="2_e6d55"]
+[ext_resource type="Script" path="res://Game Assets/Deco/pipe.gd" id="2_igjbq"]
+[ext_resource type="Material" uid="uid://cut5rvh8j6xmx" path="res://Assets/Materials/Bronze2.tres" id="3_yjjyi"]
+[ext_resource type="PackedScene" uid="uid://bo8a5ug8mk15h" path="res://Game Assets/Parts/Screw.tscn" id="4_if12i"]
+[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="5_xdjte"]
+
+[sub_resource type="Animation" id="Animation_lmo52"]
+resource_name = "Open"
+length = 1.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Screw")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.5, 0.5, 0.5, -0.5, 1.5, 1, -1.54543e-08, 0.707107, 0.707107, 1.54543e-08)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:activated")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_otncg"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Screw")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.5, 0.5, 0.5, -0.5)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:activated")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmqjk"]
+_data = {
+"Open": SubResource("Animation_lmo52"),
+"RESET": SubResource("Animation_otncg")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgu78"]
+size = Vector3(0.116344, 0.127589, 0.152035)
+
+[node name="Pipe" instance=ExtResource("1_d0hgq")]
+script = ExtResource("2_igjbq")
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e6d55")
+surface_material_override/1 = ExtResource("3_yjjyi")
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(0.0920459, 0, 0, 0, 0.0236671, 0, 0, 0, 0.0920459, 0.000735223, -0.0435783, 9.29981e-05)
+surface_material_override/0 = ExtResource("3_yjjyi")
+
+[node name="Screw" parent="." index="2" instance=ExtResource("4_if12i")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.318601, 1.49906, 0.0704551)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_fmqjk")
+}
+
+[node name="Activation Module" parent="." index="4" instance=ExtResource("5_xdjte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.319374, 1.48809, 0)
+activators = Array[String](["wrench"])
+
+[node name="CollisionShape3D" parent="Activation Module" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00123936, 0.0118968, 0.114477)
+shape = SubResource("BoxShape3D_vgu78")
+
+[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]
+
+[editable path="Activation Module"]

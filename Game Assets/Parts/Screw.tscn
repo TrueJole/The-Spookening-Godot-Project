@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo8a5ug8mk15h"]
+
+[ext_resource type="PackedScene" uid="uid://ci8x3aa2xjmsm" path="res://Assets/Screw.glb" id="1_yxrcl"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_frlwv"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="3_4uig6"]
+
+[node name="Screw" instance=ExtResource("1_yxrcl")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.0296274, 0, 0, 0, 0.0296274, 0, 0, 0, 0.0296274, 0, 0.0650434, 0)
+surface_material_override/0 = ExtResource("2_frlwv")
+surface_material_override/1 = ExtResource("3_4uig6")

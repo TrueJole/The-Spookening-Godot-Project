@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cor2hd4ex3ebi"]
+
+[ext_resource type="PackedScene" uid="uid://dy6eksvquhuqo" path="res://Assets/Candle.glb" id="1_esykc"]
+[ext_resource type="Script" path="res://Game Assets/Deco/candle.gd" id="2_13j6l"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="2_k3pau"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx5yj"]
+albedo_color = Color(0.217101, 0.217101, 0.217101, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui7yw"]
+albedo_color = Color(0.836427, 0.760408, 0.621422, 1)
+roughness = 0.49
+subsurf_scatter_strength = 0.16
+subsurf_scatter_transmittance_enabled = true
+subsurf_scatter_transmittance_boost = 1.0
+backlight_enabled = true
+backlight = Color(0.733886, 0.480272, 0.133308, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_greb4"]
+size = Vector3(0.0269775, 0.35083, 0.0266113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c13bn"]
+size = Vector3(0.0224609, 0.324768, 0.0292969)
+
+[node name="Candle" instance=ExtResource("1_esykc")]
+script = ExtResource("2_13j6l")
+
+[node name="BézierCurve" parent="." index="0"]
+transform = Transform3D(6.25239e-10, 0.0104898, 0, -0.0104898, 6.25239e-10, 0, 0, 0, 0.0104898, 0, 0.32805, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_lx5yj")
+surface_material_override/1 = SubResource("StandardMaterial3D_ui7yw")
+
+[node name="Interactive Component" parent="." index="1" instance=ExtResource("2_k3pau")]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00366557, 0.428667, 0.196364)
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -7.4273e-08, -2.26663e-12, 7.4273e-08, 1, -4.96825e-15, 3.75877e-12, -8.5279e-14, 1, 0.193096, 0.259424, 0.0052394)
+shape = SubResource("BoxShape3D_greb4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16098, 0)
+shape = SubResource("BoxShape3D_c13bn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.369299, 0)
+visible = false
+light_color = Color(0.998648, 0.665801, 0, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 0.0
+omni_range = 1.79109
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+
+[editable path="Interactive Component"]

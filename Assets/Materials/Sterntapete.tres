@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cvoc6emcrny5b"]
+
+[ext_resource type="Texture2D" uid="uid://bkkp4utmexr20" path="res://Assets/Materials/Textures/sterntapete.png" id="1_6s2kn"]
+
+[resource]
+albedo_texture = ExtResource("1_6s2kn")
+uv1_triplanar = true

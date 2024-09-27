@@ -4,17 +4,18 @@
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_18g2y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6bkf5"]
-size = Vector3(0.259949, 1, 0.0537109)
+size = Vector3(0.259949, 0.00708008, 0.0537109)
 
 [node name="wrench" instance=ExtResource("1_qj1fm")]
+transform = Transform3D(1.08911, 0, 0, 0, 1.08911, 0, 0, 0, 1.08911, 0, 0, 0)
 collision_layer = 2
 collision_mask = 3
 metadata/itemid = "wrench"
 
 [node name="Cube_001" parent="." index="0"]
 transform = Transform3D(-0.105, 0, 1.58546e-08, 0, 0.105, 0, -1.58546e-08, 0, -0.105, -0.0261276, 0.000201032, 0.091274)
-material_override = ExtResource("2_18g2y")
+surface_material_override/0 = ExtResource("2_18g2y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643921, 0, -0.00341797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643921, 0.00268555, -0.00341797)
 shape = SubResource("BoxShape3D_6bkf5")

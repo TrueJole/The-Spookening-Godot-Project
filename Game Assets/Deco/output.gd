@@ -18,7 +18,7 @@ func dispenseDefault() -> void:
 	temp.set_meta("itemid", defaultItemID)
 	add_child(temp)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if activated:
 		mesh.set_surface_override_material(2, RED_LIGHT_OFF)
 		mesh.set_surface_override_material(3, GREEN_LIGHT_ON)
