@@ -4,9 +4,9 @@ extends EditorScript
 const VoxelGIs: Array[String] = ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
 const Occluders: Array[String] = ["res://Szenen/World.tscn"]
 var originalScene: NodePath 
-# Called when the script is executed (usin>g File -> Run in Script Editor).
+# Called when the script is executed (using File -> Run in Script Editor).
 func _run() -> void:
-	print('test')
+	print('Started Baking...')
 	if get_scene() != null:
 		var originalScene: NodePath = get_scene().get_path()
 	for x:String in VoxelGIs:
