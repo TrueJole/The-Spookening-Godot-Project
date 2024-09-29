@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=84 format=4 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
 [ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_kqcbx"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://csmpo0diji4tx" path="res://Game Assets/Deco/GlassBall.tscn" id="45_u466q"]
 [ext_resource type="PackedScene" uid="uid://cor2hd4ex3ebi" path="res://Game Assets/Deco/Candle.tscn" id="46_mxhem"]
 [ext_resource type="PackedScene" uid="uid://bxi2me5stma5t" path="res://Game Assets/Deco/NormalerTisch.tscn" id="47_psxk0"]
+[ext_resource type="Texture2D" uid="uid://bbhr2f73uubik" path="res://Assets/Materials/Textures/pentagram.png" id="50_niori"]
 [ext_resource type="PackedScene" uid="uid://b6yrkx1tp30d5" path="res://Game Assets/Walls n Stuff/Neues Zeug/BrennendeTür.tscn" id="50_x87n7"]
 [ext_resource type="Script" path="res://Scripts/fensterRegen.gd" id="51_j2738"]
 [ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="52_csnfa"]
@@ -297,6 +298,7 @@ stream_0 = ExtResource("55_lfrt1")
 
 [node name="Dach" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.002, 0)
+visible = false
 script = ExtResource("1_kqcbx")
 ShowOnStart = true
 
@@ -2478,7 +2480,6 @@ locked = null
 
 [node name="TürMitLeiste10" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, -4)
-locked = null
 
 [node name="TürMitLeiste14" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -15, 0, -1)
@@ -5958,12 +5959,13 @@ transform = Transform3D(-0.416773, 0, -0.909011, 0, 1, 0, 0.909011, 0, -0.416773
 
 [node name="TürMitSchloss2" parent="." instance=ExtResource("25_2klpb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -4)
+locked = true
 
 [node name="Activation Module" parent="TürMitSchloss2" index="6"]
 activators = Array[String](["key_etagekeller"])
 
 [node name="GlassBall" parent="." instance=ExtResource("45_u466q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56297, -0.000500202, 2.27409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63631, -0.000500202, 1.59847)
 activated = true
 
 [node name="Candle2" parent="." instance=ExtResource("46_mxhem")]
@@ -6019,6 +6021,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50245, -0.000500202, 2.704
 
 [node name="NormalerTisch8" parent="." instance=ExtResource("47_psxk0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50245, -0.000500202, -0.106511)
+
+[node name="Pentagram" type="Sprite3D" parent="."]
+transform = Transform3D(0.350186, 0, 0, 0, 4.75592e-08, 0.350186, 0, -0.362676, 4.59214e-08, -5.718, 0.002, 1.497)
+double_sided = false
+texture = ExtResource("50_niori")
 
 [node name="BrennendeTür" parent="." instance=ExtResource("50_x87n7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
