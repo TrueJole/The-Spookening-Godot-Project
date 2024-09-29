@@ -11,7 +11,7 @@ signal opened
 func _on_activation_module_activated(_body: Node3D) -> void:
 	locked = false
 	schloss.hide()
-	emit_signal("opened")
+	opened.emit()
 	print_debug('recieved')
 
 func _physics_process(_delta: float) -> void:

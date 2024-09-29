@@ -14,9 +14,10 @@ const RED_LIGHT_ON: Material = preload("res://Assets/Materials/RedLightOn.tres")
 
 func dispenseDefault() -> void:
 	var temp: Node3D = default.instantiate()
-	temp.global_position = spawnpoint.global_position
+	
 	temp.set_meta("itemid", defaultItemID)
 	add_child(temp)
+	temp.global_position = spawnpoint.global_position
 
 func _process(_delta: float) -> void:
 	if activated:

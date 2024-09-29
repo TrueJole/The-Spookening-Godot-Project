@@ -17,7 +17,7 @@ light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 distance_fade_enabled = true
-omni_range = 4.67726
+omni_range = 4.82082
 omni_attenuation = 1.7411
 
 [node name="Cylinder" parent="." index="1"]

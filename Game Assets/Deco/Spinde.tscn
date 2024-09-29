@@ -50,13 +50,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="Node3D" type="Node3D"]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+[node name="Spind" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000868917, -0.0399714, 0.00278599)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193643, 1.12609, -0.0807668)
-collision_layer = 2
-collision_mask = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100372, 1.16761, -0.0807668)
+collision_mask = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0207842, -1.12609, 0)
@@ -69,12 +68,13 @@ mesh = SubResource("ArrayMesh_u2ldn")
 skeleton = NodePath("")
 
 [node name="Schrank2" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -1.126, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -1.126, -0.0137866)
 visibility_range_end = 40.0
 mesh = SubResource("ArrayMesh_v3p4x")
 skeleton = NodePath("")
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("1_h2hqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019, 1.126, 0.298)
 
 [node name="StaticBody3D5" parent="." instance=ExtResource("1_h2hqw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192354, 0.865337, 0.297549)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=19 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
@@ -29,6 +29,9 @@ shader_parameter/outer_radius = 1.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a570a"]
 height = 2.822
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4bphk"]
+height = 1.50172
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sxqim"]
 playback_mode = 2
 random_pitch = 1.2
@@ -39,60 +42,72 @@ stream_0/stream = ExtResource("5_lpcba")
 
 [sub_resource type="Animation" id="Animation_6uapy"]
 length = 0.001
-tracks/0/type = "scale_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("CollisionShape3D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5)
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D:shape")
+tracks/1/path = NodePath("CollisionShape3DSneak:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("CapsuleShape3D_a570a")]
+"values": [true]
 }
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 1.43804, 0)
 
 [sub_resource type="Animation" id="Animation_hunwj"]
 resource_name = "Sneak"
 length = 0.5
-tracks/0/type = "scale_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 2
+tracks/0/path = NodePath("CollisionShape3D:disabled")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.3, 0.5)
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 2
+tracks/1/path = NodePath("CollisionShape3DSneak:disabled")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0.233333, 0.266667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.477683, 0.283516]
+"update": 1,
+"values": [true, false]
 }
-tracks/2/type = "value"
+tracks/2/type = "position_3d"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("CollisionShape3D:shape")
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [SubResource("CapsuleShape3D_a570a"), SubResource("CapsuleShape3D_a570a")]
-}
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 1.43804, 0, 0.5, 1, 0, 0.454237, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epkto"]
 _data = {
@@ -224,6 +239,10 @@ mouse_filter = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482022, 0)
 shape = SubResource("CapsuleShape3D_a570a")
+
+[node name="CollisionShape3DSneak" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4bphk")
+disabled = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.379436, 0)
