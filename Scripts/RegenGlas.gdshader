@@ -4,6 +4,8 @@ shader_type canvas_item;
 #define iTime TIME
 #define fragColor COLOR
 
+//uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest, source_color;
+//uniform vec4 color_addition: source_color;
 uniform sampler2D iChannel0;
 uniform float frequency : hint_range(-10.0, 4.0, 0.1) = 0.0;
 uniform float size : hint_range(0.001, 0.05, 0.001) = 0.015;
@@ -59,7 +61,9 @@ void fragment()
              //fragColor = vec4(v * 0.5 + 0.5, 1.0);  // show normals
 
             // Poor man's refraction (no visual need to do more)
+			//vec4 text = texture(screen_texture, POINT_COORD) * color_addition;
             fragColor = texture(iChannel0, u - v.xy * .3);
+			//fragColor += color_addition;
         }
     }
 

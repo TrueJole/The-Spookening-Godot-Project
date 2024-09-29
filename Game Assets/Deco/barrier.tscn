@@ -1,17 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://0x0n2tbj7juo"]
+[gd_scene load_steps=10 format=3 uid="uid://0x0n2tbj7juo"]
 
-[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="1_6asky"]
 [ext_resource type="Script" path="res://Scripts/barrier.gd" id="1_nrbmp"]
+[ext_resource type="PackedScene" uid="uid://2oq2o7t5vir3" path="res://Game Assets/Deco/Buzzer.tscn" id="2_gew4d"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5kvqk"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_rp1fj"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_plck5"]
 size = Vector3(2.48845, 3.12141, 0.496094)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vywjy"]
-size = Vector3(0.112625, 0.28693, 0.294136)
 
 [sub_resource type="Curve" id="Curve_cg55i"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.532369, 1), 0.0, 0.0, 0, 0, Vector2(0.840909, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -52,22 +47,9 @@ layers = 2
 mesh = SubResource("BoxMesh_5kvqk")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Marker3D"]
-transform = Transform3D(0.287558, 0, 0, 0, 0.254332, 0, 0, 0, 0.243612, 0, 0, 0.246855)
-layers = 2
-mesh = SubResource("BoxMesh_rp1fj")
-skeleton = NodePath("../..")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157394, 0.653049, -0.000976562)
 shape = SubResource("BoxShape3D_plck5")
-
-[node name="Interactive Component" parent="." instance=ExtResource("1_6asky")]
-transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, -0.274621, 0.510216, 0.443434)
-
-[node name="CollisionShape3D" parent="Interactive Component" index="0"]
-transform = Transform3D(1, -2.49129e-08, -7.60281e-13, 2.49129e-08, 1, -1.80411e-15, 0, -2.68258e-14, 1, 0.119636, 0.509902, -0.271032)
-shape = SubResource("BoxShape3D_vywjy")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0372628, 0.214098)
@@ -79,6 +61,7 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_hiew8")
 draw_pass_1 = SubResource("SphereMesh_ample")
 
-[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+[node name="buzzer" parent="." instance=ExtResource("2_gew4d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00716409, 0.0109931, 0.26788)
 
-[editable path="Interactive Component"]
+[connection signal="pressed" from="buzzer" to="." method="_on_buzzer_pressed"]

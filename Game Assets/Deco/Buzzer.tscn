@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://2oq2o7t5vir3"]
+
+[ext_resource type="PackedScene" uid="uid://4tmsunvmc1ur" path="res://Assets/buzzer.glb" id="1_6gvxs"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_8iwog"]
+[ext_resource type="Script" path="res://Game Assets/Deco/buzzer.gd" id="2_cv8tn"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="3_suxfm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qme7"]
+albedo_color = Color(0.774331, 0, 0.0864125, 1)
+roughness = 0.44
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qbi6l"]
+size = Vector3(0.173167, 0.102913, 0.171166)
+
+[sub_resource type="Animation" id="Animation_bwyl7"]
+resource_name = "pressed"
+length = 0.3
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sphere")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0446692, 0, 0.147851, 1, 0, 0.0331761, 0, 0.3, 1, 0, 0.0446692, 0)
+
+[sub_resource type="Animation" id="Animation_i1f50"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sphere")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0446692, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jgf4"]
+_data = {
+"RESET": SubResource("Animation_i1f50"),
+"pressed": SubResource("Animation_bwyl7")
+}
+
+[node name="buzzer" instance=ExtResource("1_6gvxs")]
+script = ExtResource("2_cv8tn")
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8iwog")
+
+[node name="Sphere" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5qme7")
+
+[node name="Interactive Component" parent="." index="2" instance=ExtResource("3_suxfm")]
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -5.3551e-08, -1.63425e-12, 5.3551e-08, 1, -3.63598e-15, 2.49401e-12, -5.66491e-14, 1, 0.195672, 0.21612, 0.00317128)
+shape = SubResource("BoxShape3D_qbi6l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_3jgf4")
+}
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+
+[editable path="Interactive Component"]

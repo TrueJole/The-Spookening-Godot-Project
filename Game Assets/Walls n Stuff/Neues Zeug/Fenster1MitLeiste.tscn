@@ -14,15 +14,16 @@ stream_count = 1
 stream_0 = ExtResource("4_77yqn")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_kbftp"]
+viewport_path = NodePath(".")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jspb6"]
 resource_local_to_scene = true
 transparency = 1
-albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
+albedo_color = Color(1, 1, 1, 0.286275)
 albedo_texture = SubResource("ViewportTexture_kbftp")
 roughness = 0.0
 normal_scale = 0.63
-uv1_scale = Vector3(0.655, 0.655, 0.655)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckwq1"]
 size = Vector3(1, 3.48732, 0.21051)

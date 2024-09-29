@@ -17,7 +17,7 @@ albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
 albedo_texture = SubResource("ViewportTexture_7ge1p")
 roughness = 0.0
 normal_scale = 0.63
-uv1_scale = Vector3(0.655, 0.655, 0.655)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ac0m"]
 size = Vector3(1.99963, 0.813965, 0.33783)
