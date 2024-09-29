@@ -23,14 +23,18 @@ script = ExtResource("2_tk2ec")
 
 [node name="Cone" parent="." index="0"]
 material_override = ExtResource("2_y8gdw")
+visibility_range_end = 20.0
 
 [node name="Sphere" parent="." index="1"]
+lod_bias = 0.9
 surface_material_override/0 = SubResource("StandardMaterial3D_w4cr0")
 
 [node name="MagicText" type="Label3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11177, -0.000433832)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000722051, 0.11177, 0.0160088)
 ignore_occlusion_culling = true
+visibility_range_end = 1.0
+visibility_range_end_margin = 2.0
+visibility_range_fade_mode = 1
 billboard = 1
 shaded = true
 double_sided = false
@@ -46,4 +50,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14238, 0)
 light_color = Color(0.995506, 0.416323, 0.634331, 1)
 light_energy = 0.6
 light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_length = 0.0
 omni_range = 2.0
