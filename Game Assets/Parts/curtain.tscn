@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dii4s26xwk2dj"]
+[gd_scene load_steps=3 format=3 uid="uid://dii4s26xwk2dj"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3tkko2g6hvma" path="res://Resources/cloth.res" id="1_d06ol"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5cg8"]
+albedo_color = Color(0.252659, 0.32302, 0.664734, 1)
+backlight_enabled = true
+backlight = Color(0.531713, 0.531713, 0.531713, 1)
+
 [node name="SoftBody3D" type="SoftBody3D"]
 transform = Transform3D(-1, -0.000453805, -2.96068e-09, 0.000453805, -1, 2.37647e-08, -2.97147e-09, 2.37634e-08, 1, 0, 1.14631, -0.122106)
+material_override = SubResource("StandardMaterial3D_b5cg8")
 cast_shadow = 0
 lod_bias = 128.0
-gi_mode = 0
 mesh = ExtResource("1_d06ol")
 collision_layer = 8
 collision_mask = 3

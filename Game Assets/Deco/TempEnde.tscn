@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c8yc1kp3ps17j"]
+
+[node name="TempEnde" type="Label3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.480132, 0)
+billboard = 2
+text = "Dies ist das temporäre Ende.
+Danke fürs spielen.
+Mehr folgt später"

@@ -18,42 +18,48 @@ func _process(_delta: float) -> void:
 
 func _on_interactive_component_pressed() -> void:
 	if coins > 0:
+		get_tree().paused = true
 		item_list.show()
-		#get_tree().paused = true
+		
 		
 		#item_list.grab_focus()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		input = ""
+		if not get_tree().paused:
+			input = ""
 		#entering = true
 		#set_process(false)
 
 
-func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	print(input)
+func _on_item_list_item_clicked(index: int, _at_position: Vector2, _mouse_button_index: int) -> void:
+	
 	input += item_list.get_item_text(index)
+	print(input)
 	var path: String = ''
+	var itemid: String
 	match input:
-		"77":
-			path = "res://Game Assets/Items/Schlüssel.tscn"
 		"11":
 			path = "res://Game Assets/Items/Donut.tscn"
 		"22": 
 			path = "res://Game Assets/Items/Flasche.tscn"
-		"33": 
-			path = "res://Game Assets/Items/feuerlöscher.tscn"
-		_ when len(input) >= 2: 
+		"#1899#":
+			path = "res://Game Assets/Items/Schlüssel.tscn"
+			itemid = 'Key_EtageKeller'
+		_ when len(input) >= 2 and (input not in "#1899#"): 
 			path = "res://Game Assets/Items/Coin.tscn"
 	if path:
 		coins -= 1
 		var temp: Node3D = load(path).instantiate()
+		if itemid:
+			temp.set_meta('itemid', itemid)
 		add_sibling(temp)
 		temp.global_position = marker_3d.global_position
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		item_list.hide()
-		set_process(true)
+		#set_process(true)
 		get_tree().paused = false
 		await get_tree().create_timer(1).timeout  
 		entering = false
+		input = ''
 
 		
 

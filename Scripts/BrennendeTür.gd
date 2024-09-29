@@ -14,8 +14,12 @@ var fireValue: float = 200
 func _ready() -> void:
 	movingFire.position = Vector3(-0.05, 0.56, -0.3)
 	fire_particles.show()
+	
 	#connect(get_node("Activation Module").get_signal_list().activated, _on_activation_module_activated())
 
+func basicDoorFunc() -> void:
+	super()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -35,7 +39,8 @@ func _physics_process(_delta: float) -> void:
 
 
 
-func _on_activation_module_activated() -> void:
+func _on_activation_module_activated(_body: Node3D) -> void:
 	if fireValue > 0:
 		fireValue -= 1
+	print('löschen')
 	#print_debug('recieved', fireValue)

@@ -198,7 +198,6 @@ environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
 global_illumination/sdfgi/probe_ray_count=2
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
-anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
 textures/volumetric_fog/use_filter=1

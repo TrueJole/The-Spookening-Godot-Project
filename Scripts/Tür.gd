@@ -1,6 +1,7 @@
+class_name Tür
 extends Node3D
 
-class_name Tür
+
 
 @onready var door: RigidBody3D = $"Tür"
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
@@ -9,8 +10,8 @@ class_name Tür
 @export var locked: bool
 var closed: bool
 
-var closeSound: Resource = preload("res://Resources/Sounds/DoorClosedRandom.tres")
-var screachSound: Resource = preload("res://Resources/Sounds/DoorClosingRandom.tres")
+var closeSound: Resource = load("res://Resources/Sounds/DoorClosedRandom.tres")
+var screachSound: Resource = load("res://Resources/Sounds/DoorClosingRandom.tres")
 
 func basicDoorFunc() -> void:
 	if locked:

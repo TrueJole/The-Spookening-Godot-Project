@@ -88,6 +88,7 @@ metadata/mirror = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.287157, 0, 0, 0, 0.287157, 0, 0, 0, 0.287157, 0, 0, 0)
+layers = 2
 mesh = SubResource("SphereMesh_olk4t")
 surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 
@@ -95,7 +96,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
 shape = SubResource("SphereShape3D_m7i5n")
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.330626, 2.25142, 1.30739)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.886827, 2.23731, 9.71822)
 
 [node name="keller" parent="." instance=ExtResource("9_oo8js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)

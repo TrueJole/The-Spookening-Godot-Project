@@ -6,7 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cr0"]
 transparency = 1
-albedo_color = Color(0.678431, 0.678431, 0.678431, 0.984314)
+albedo_color = Color(0.678431, 0.678431, 0.678431, 0.34902)
 roughness = 0.0
 backlight_enabled = true
 backlight = Color(0.255659, 0.255659, 0.255659, 1)
@@ -15,7 +15,6 @@ refraction_scale = 0.02
 
 [sub_resource type="SystemFont" id="SystemFont_7mk8j"]
 font_names = PackedStringArray("Segoe Script")
-subpixel_positioning = 0
 multichannel_signed_distance_field = true
 
 [node name="GlassBall" instance=ExtResource("1_dkx3p")]
@@ -32,16 +31,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_w4cr0")
 [node name="MagicText" type="Label3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000722051, 0.11177, 0.0160088)
 ignore_occlusion_culling = true
-visibility_range_end = 1.0
-visibility_range_end_margin = 2.0
-visibility_range_fade_mode = 1
+visibility_range_end = 2.0
 billboard = 1
-shaded = true
 double_sided = false
 alpha_cut = 1
-alpha_scissor_threshold = 0.307
 outline_modulate = Color(1, 1, 1, 0)
-text = "MagicText"
+text = "#1899#"
 font = SubResource("SystemFont_7mk8j")
 font_size = 7
 

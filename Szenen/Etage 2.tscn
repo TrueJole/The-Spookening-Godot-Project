@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dl4e1l3f1unj3"]
+[gd_scene load_steps=22 format=3 uid="uid://dl4e1l3f1unj3"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_sdbuv"]
 [ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_ud6v4"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://whngmggv7mwp" path="res://Game Assets/Deco/RollStuhl.tscn" id="15_n2520"]
 [ext_resource type="PackedScene" uid="uid://dal27bo6xe78" path="res://Game Assets/Deco/Monitor.tscn" id="16_hbkfe"]
 [ext_resource type="PackedScene" uid="uid://dhcpkhuhd5bjt" path="res://Game Assets/Deco/Bell.tscn" id="17_f7yx2"]
+[ext_resource type="PackedScene" uid="uid://c8yc1kp3ps17j" path="res://Game Assets/Deco/TempEnde.tscn" id="18_udug2"]
 
 [sub_resource type="Animation" id="Animation_dmr0k"]
 length = 0.001
@@ -4403,3 +4404,6 @@ transform = Transform3D(0.96422, 0, -0.265102, 0, 1, 0, 0.265102, 0, 0.96422, -7
 
 [node name="Bell" parent="." instance=ExtResource("17_f7yx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22258, 0.606677, -5.82066)
+
+[node name="TempEnde" parent="." instance=ExtResource("18_udug2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6064, 0.479633, -2.81725)

@@ -115,6 +115,7 @@ shape = SubResource("BoxShape3D_ujmya")
 
 [node name="Control" type="CanvasLayer" parent="." index="7"]
 process_mode = 3
+layer = 4
 
 [node name="Control" type="Control" parent="Control" index="0"]
 process_mode = 3

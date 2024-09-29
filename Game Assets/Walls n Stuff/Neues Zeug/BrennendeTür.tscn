@@ -1,7 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://b6yrkx1tp30d5"]
+[gd_scene load_steps=30 format=3 uid="uid://b6yrkx1tp30d5"]
 
 [ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="1_buea5"]
-[ext_resource type="Script" path="res://Scripts/BrennendeTürNeu.gd" id="2_4lnjn"]
+[ext_resource type="Script" path="res://Scripts/BrennendeTür.gd" id="2_s4sin"]
+[ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="3_3uyqp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1h6e"]
+size = Vector3(0.931198, 1.80793, 0.635063)
 
 [sub_resource type="Curve" id="Curve_n63ac"]
 bake_resolution = 1000
@@ -136,9 +140,17 @@ radial_segments = 10
 rings = 10
 
 [node name="BrennendeTür" instance=ExtResource("1_buea5")]
-script = ExtResource("2_4lnjn")
+script = ExtResource("2_s4sin")
+locked = true
 
-[node name="FireParticles" type="GPUParticles3D" parent="." index="5"]
+[node name="Activation Module" parent="." index="5" instance=ExtResource("3_3uyqp")]
+activators = Array[String](["foam"])
+
+[node name="CollisionShape3D" parent="Activation Module" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364454, 0.0877725, 0.0143776)
+shape = SubResource("BoxShape3D_w1h6e")
+
+[node name="FireParticles" type="GPUParticles3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
 cast_shadow = 0
 lod_bias = 0.1
@@ -156,14 +168,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111855, 0.584904, -0.11252
 light_color = Color(0.890196, 0.509804, 0, 1)
 light_energy = 1.294
 light_indirect_energy = 2.56
+light_volumetric_fog_energy = 0.0
 light_size = 0.202
 light_specular = 0.0
+light_bake_mode = 0
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 30.0
 distance_fade_shadow = 10.0
 omni_range = 2.11834
-omni_attenuation = 0.5
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FireParticles" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197911, 0.584917, 0.00976014)
@@ -178,3 +191,7 @@ visibility_aabb = AABB(-0.974976, -0.329475, -0.717944, 1.89685, 2.67504, 2.0316
 trail_lifetime = 4.85
 process_material = SubResource("ParticleProcessMaterial_pic4a")
 draw_pass_1 = SubResource("SphereMesh_u1f2o")
+
+[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]
+
+[editable path="Activation Module"]
