@@ -12,6 +12,16 @@ roughness = 0.44
 [sub_resource type="BoxShape3D" id="BoxShape3D_qbi6l"]
 size = Vector3(0.173167, 0.102913, 0.171166)
 
+[sub_resource type="Animation" id="Animation_i1f50"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sphere")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0446692, 0)
+
 [sub_resource type="Animation" id="Animation_bwyl7"]
 resource_name = "pressed"
 length = 0.3
@@ -23,16 +33,6 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0446692, 0, 0.147851, 1, 0, 0.0331761, 0, 0.3, 1, 0, 0.0446692, 0)
 
-[sub_resource type="Animation" id="Animation_i1f50"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sphere")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0446692, 0)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3jgf4"]
 _data = {
 "RESET": SubResource("Animation_i1f50"),
@@ -43,9 +43,12 @@ _data = {
 script = ExtResource("2_cv8tn")
 
 [node name="Cylinder" parent="." index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("2_8iwog")
 
 [node name="Sphere" parent="." index="1"]
+transform = Transform3D(0.0852148, 0, 0, 0, 0.0513832, 0, 0, 0, 0.0852148, 0, 0.0446692, 0)
+layers = 2
 surface_material_override/0 = SubResource("StandardMaterial3D_5qme7")
 
 [node name="Interactive Component" parent="." index="2" instance=ExtResource("3_suxfm")]

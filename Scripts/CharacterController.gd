@@ -43,7 +43,8 @@ func walkSound() -> void:
 
 func _ready() -> void:
 	#print_debug(node_path.get_as_property_path())
-	print('VSYNC MODE', DisplayServer.window_get_vsync_mode(DisplayServer.get_window_list()[0]))
+	print('VSYNC MODE ', DisplayServer.window_get_vsync_mode(DisplayServer.get_window_list()[0]), ' - ', Engine.max_fps)
+	print('3D Scale ', get_tree().root.scaling_3d_scale)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:

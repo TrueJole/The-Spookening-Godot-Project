@@ -6,14 +6,13 @@
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 0.899558, 0.436802, 0, -0.436802, 0.899558, 5.25206, 30.6542, 27.7205)
 layers = 3
-light_color = Color(0.727311, 0.857878, 1, 1)
+light_color = Color(0.749356, 0.869242, 1, 1)
 light_energy = 0.04
-light_indirect_energy = 1.3
+light_indirect_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 0.5
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 30.0
-sky_mode = 1
 script = ExtResource("1_e7v5j")
 ShowOnStart = true

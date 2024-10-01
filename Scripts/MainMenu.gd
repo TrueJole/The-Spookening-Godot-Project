@@ -1,7 +1,7 @@
 extends Control
 
 @onready var loadingBar: ProgressBar = $CenterContainer/VBoxContainer/ProgressBar
-@export var nextScene: String = "res://Szenen/World.tscn"
+@export var nextScene: String = "res://Szenen/World.tscn" #"res://Szenen/Screenshot.tscn"#
 @onready var center_container: CenterContainer = $CenterContainer
 
 var loading: bool = false

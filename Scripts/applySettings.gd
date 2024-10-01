@@ -21,15 +21,15 @@ func _ready() -> void:
 	##FIXME Einstellung wird nicht geändert
 	#
 	#
-	#if Root.Settings.msaa == true:
-		#RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
-	#else:
-		#RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
+	if Root.Settings.msaa == true:
+		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
+	else:
+		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
 	#
-	#RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
-	#get_viewport().positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
-	#RenderingServer.gi_set_use_half_resolution(false)
-	#RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
+	RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
+	get_viewport().positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
+	RenderingServer.gi_set_use_half_resolution(false)
+	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
 	bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_64
 	match Root.Settings.giQuality:
 		0:
@@ -46,7 +46,7 @@ func _ready() -> void:
 			bakedVoxelGI.subdiv = bakedVoxelGI.SUBDIV_256
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
 	
-	#get_tree().root.scaling_3d_scale = Root.Settings.scale3D
+	get_tree().root.scaling_3d_scale = Root.Settings.scale3D
 	
 	# ENABLE WIREFRAME MODE
 	#get_tree().root.debug_draw = 4

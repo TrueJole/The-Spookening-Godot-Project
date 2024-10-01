@@ -1,21 +1,21 @@
 extends Camera3D
 
-@onready var hand: Area3D = $Hand
-@onready var dot: CSGSphere3D = $Hand/Dot
+@onready var hand: ShapeCast3D = $Hand
+@onready var dot: CSGSphere3D = $Dot
 @onready var equipHand: Node3D = $"../EquippedHand"
 var holding: bool
 var equipped: bool
 var equipReached:bool
 var heldObject: RigidBody3D
 var originalObject: RigidBody3D
-@onready var cursor: TextureRect = $Hand/Cursor
+@onready var cursor: TextureRect = $Cursor
 const CURSOR_KREIS: Resource = preload("res://Assets/Materials/Textures/Cursor_Kreis.png")
 const CURSOR_PUNKT: Resource = preload("res://Assets/Materials/Textures/Cursor_Punkt.png")
 
 	
 func checkHand() -> void:
-	var bodies: Array = hand.get_overlapping_bodies() + hand.get_overlapping_areas()
-	if (not bodies.is_empty()) and (heldObject == null):
+	#var bodies: Array = hand.get_collider()
+	if hand.is_colliding() and (heldObject == null):
 		#print_debug('Kreis')
 		cursor.texture = CURSOR_KREIS
 	else:
@@ -32,23 +32,25 @@ func _physics_process(_delta: float) -> void:
 			heldObject.used()
 	
 	if Input.is_action_pressed("hold"):
-		var areas:Array[Area3D] = hand.get_overlapping_areas()
-		if (not areas.is_empty()) and (heldObject == null):
+		if not hand.is_colliding():
+			return
+		#var areas:Array[Area3D] = hand.get_overlapping_areas()
+		if (hand.get_collider(0) is Area3D) and (heldObject == null):
 			
-			var selectedObject:Area3D = areas[0]
+			var selectedObject:Area3D = hand.get_collider(0)
 			
 			if selectedObject.has_method('on_interacted'):
 				#print_debug(selectedObject)
 				selectedObject.on_interacted()
 	
 			
-		var bodies:Array[Node3D] = hand.get_overlapping_bodies()
+		#var bodies:Array[Node3D] = hand.get_overlapping_bodies()
 		holding = true
 		
-		if (not bodies.is_empty()) and (heldObject == null):
+		if (hand.get_collider(0) is RigidBody3D) and (heldObject == null):
 			
-			heldObject = bodies[0]
-			originalObject = bodies[0].duplicate()
+			heldObject = hand.get_collider(0)
+			originalObject = hand.get_collider(0).duplicate()
 			
 			if heldObject.has_method('on_pickup'):
 				heldObject.on_pickup()

@@ -9,9 +9,6 @@
 [ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
 [ext_resource type="Material" uid="uid://ddcmnt44ha8gd" path="res://Scripts/WaterShader.tres" id="7_vpvg2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g7478"]
-size = Vector3(0.0181231, 0.0143356, 2.07825)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vnpd"]
 no_depth_test = true
 shading_mode = 0
@@ -19,6 +16,10 @@ disable_ambient_light = true
 disable_fog = true
 disable_receive_shadows = true
 fixed_size = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mej0k"]
+height = 1.5
+radius = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pqy3d"]
 shader = ExtResource("6_6q5m7")
@@ -175,18 +176,8 @@ spot_attenuation = 1.23114
 spot_angle = 41.09
 spot_angle_attenuation = 10.556
 
-[node name="Hand" type="Area3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0, 0, 0)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Hand"]
-transform = Transform3D(1, 5.37327e-16, 0, 5.37328e-16, 1, 0, 0, 0, 1, 0.00115776, 0.00135863, -1.07184)
-shape = SubResource("BoxShape3D_g7478")
-
-[node name="Dot" type="CSGSphere3D" parent="Head/Camera3D/Hand"]
-transform = Transform3D(0.01, -4.23173e-16, 0, -4.23173e-16, 0.01, 0, 0, 0, 0.01, 0, -8.34465e-07, -0.829209)
+[node name="Dot" type="CSGSphere3D" parent="Head/Camera3D"]
+transform = Transform3D(0.01, -4.78684e-16, 0, -4.78684e-16, 0.01, 0, 0, 0, 0.01, -1.42109e-14, -8.34465e-07, -0.829209)
 visible = false
 layers = 2
 sorting_offset = 9.22337e+18
@@ -195,7 +186,7 @@ ignore_occlusion_culling = true
 gi_mode = 0
 material = SubResource("StandardMaterial3D_4vnpd")
 
-[node name="Cursor" type="TextureRect" parent="Head/Camera3D/Hand"]
+[node name="Cursor" type="TextureRect" parent="Head/Camera3D"]
 z_index = 99
 anchors_preset = 8
 anchor_left = 0.5
@@ -212,6 +203,12 @@ scale = Vector2(0.989519, 1)
 mouse_filter = 2
 texture = ExtResource("4_8u4cr")
 expand_mode = 2
+
+[node name="Hand" type="ShapeCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, -1.74846e-07, -1.31719e-13, -1.28435e-13, -4.37114e-08, -1, 1.74846e-07, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_mej0k")
+collision_mask = 2
+collide_with_areas = true
 
 [node name="VignetteOverlay" type="ColorRect" parent="Head/Camera3D"]
 z_index = 1

@@ -5153,6 +5153,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.080
 
 [node name="TürMitSchloss" parent="." instance=ExtResource("25_isr6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
+locked = true
 
 [node name="Activation Module" parent="TürMitSchloss" index="6"]
 activators = Array[String](["key_etage1"])

@@ -24,7 +24,29 @@ func _ready() -> void:
 	applySettings()
 
 func applySettings() -> void:
-	_on_fps_slider_value_changed(Root.Settings.fpsMode)
+	
+	
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
+	match Root.Settings.fpsMode:
+		1:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
+			Engine.max_fps = 0
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED, DisplayServer.get_window_list()[0])
+		2:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
+			Engine.max_fps = 30
+		3:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
+			Engine.max_fps = 60
+		4:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'
+			Engine.max_fps = 120
+		5:
+			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
+			Engine.max_fps = 0
+	
+	print(Root.Settings.fpsMode)
+	print(Root.Settings.scale3D)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
 	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil
@@ -129,25 +151,8 @@ func _on_full_screen_toggle_button_toggled(toggled_on: bool) -> void:
 func _on_fps_slider_value_changed(value: int) -> void:
 	#print_debug(value)
 	Root.Settings.fpsMode = value
-	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
-	match Root.Settings.fpsMode:
-		1:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'VSYNC'
-			Engine.max_fps = 0
-			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED, DisplayServer.get_window_list()[0])
-		2:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '30 FPS'
-			Engine.max_fps = 30
-		3:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '60 FPS'
-			Engine.max_fps = 60
-		4:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = '120 FPS'
-			Engine.max_fps = 120
-		5:
-			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
-			Engine.max_fps = 0
 	
+	applySettings()
 
 
 func _on_scale_slider_value_changed(value: float) -> void:
