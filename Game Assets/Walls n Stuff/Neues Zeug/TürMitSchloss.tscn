@@ -7,6 +7,7 @@
 
 [node name="TürMitSchloss" instance=ExtResource("1_n6dha")]
 script = ExtResource("2_ypjms")
+locked = true
 
 [node name="Schloss" parent="." index="5" instance=ExtResource("2_42esw")]
 transform = Transform3D(-3.27271e-08, 0, 0.748709, 0, 0.748709, 0, -0.748709, 0, -3.27271e-08, 0.87597, 0.804895, 0.0509075)

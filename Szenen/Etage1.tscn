@@ -4277,10 +4277,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -1)
 [node name="TürMitLeiste20" parent="." instance=ExtResource("9_87817")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -1)
 
-[node name="TürMitLeiste22" parent="." instance=ExtResource("9_87817")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 5)
-locked = true
-
 [node name="TürMitLeiste21" parent="." instance=ExtResource("9_87817")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -1)
 
@@ -5153,7 +5149,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.080
 
 [node name="TürMitSchloss" parent="." instance=ExtResource("25_isr6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
-locked = true
 
 [node name="Activation Module" parent="TürMitSchloss" index="6"]
 activators = Array[String](["key_etage1"])
@@ -5172,5 +5167,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4977, -0.000500202, -3.410
 
 [node name="Output" parent="." instance=ExtResource("29_v6j4f")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.8544, 0.622837, -4.42748)
+
+[node name="VersperrteTür3" parent="." instance=ExtResource("18_bergi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 5)
 
 [editable path="TürMitSchloss"]

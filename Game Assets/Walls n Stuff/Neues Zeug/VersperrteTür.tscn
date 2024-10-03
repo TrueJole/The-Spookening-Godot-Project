@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://1ffi8n27ury7" path="res://Assets/Materials/Metall_Rau.tres" id="4_sd1to"]
 
 [node name="VersperrteTür" instance=ExtResource("1_kqni4")]
+locked = true
 
 [node name="Tür" parent="." index="2"]
 collision_layer = 0
