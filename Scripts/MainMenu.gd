@@ -1,7 +1,7 @@
 extends Control
 
 @onready var loadingBar: ProgressBar = $CenterContainer/VBoxContainer/ProgressBar
-@export var nextScene: String = "res://Szenen/World.tscn" #"res://Szenen/Screenshot.tscn"#
+@export var nextScene: String = "res://Szenen/World.tscn"  #"res://Szenen/Screenshot.tscn"#
 @onready var center_container: CenterContainer = $CenterContainer
 
 var loading: bool = false
@@ -34,7 +34,7 @@ func _on_start_button_pressed() -> void:
 		get_node('OptionsMenu').queue_free()
 		loadingBar.show()
 		print(ResourceLoader.get_dependencies(nextScene))
-		ResourceLoader.load_threaded_request(nextScene, "", true)
+		ResourceLoader.load_threaded_request(nextScene, "", false)
 		
 
 func _on_exit_button_pressed() -> void:

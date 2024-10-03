@@ -6,5 +6,6 @@ func _process(_delta: float) -> void:
 	if Root.Settings.showFPS:
 		show()
 		text = 'FPS: ' + str(Engine.get_frames_per_second())
+		print_debug(Engine.get_frames_per_second())
 	else:
 		hide()

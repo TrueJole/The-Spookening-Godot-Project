@@ -5,6 +5,7 @@ extends Resource
 @export var volumetricFog: bool = true
 @export var ssr: bool = true
 #@export var GI: String
+@export var hiResRain: bool = true
 @export var ssil: bool = false
 @export var giQuality: int = 1
 @export var msaa: bool = true
