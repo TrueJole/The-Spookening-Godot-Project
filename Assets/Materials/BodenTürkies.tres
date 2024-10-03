@@ -9,4 +9,5 @@ normal_scale = -1.0
 normal_texture = ExtResource("1_pbxpk")
 heightmap_scale = 16.0
 backlight = Color(0.862522, 0.862522, 0.862522, 1)
+uv1_triplanar = true
 proximity_fade_distance = 0.01

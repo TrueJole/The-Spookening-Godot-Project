@@ -81,7 +81,7 @@ data = ExtResource("4_s06mn")
 process_mode = 3
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
-bake_simplification_distance = 0.05
+bake_simplification_distance = 0.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(2.38498, 0, 0, 0, 2.38498, 0, 0, 0, 2.38498, 0, 0.92409, 1.51325)

@@ -32,22 +32,18 @@ func _physics_process(_delta: float) -> void:
 			heldObject.used()
 	
 	if Input.is_action_pressed("hold"):
-		if not hand.is_colliding():
-			return
-		#var areas:Array[Area3D] = hand.get_overlapping_areas()
-		if (hand.get_collider(0) is Area3D) and (heldObject == null):
+		holding = true
+		
+		if hand.is_colliding() and (hand.get_collider(0) is Area3D) and (heldObject == null):
 			
 			var selectedObject:Area3D = hand.get_collider(0)
 			
 			if selectedObject.has_method('on_interacted'):
 				#print_debug(selectedObject)
 				selectedObject.on_interacted()
-	
-			
-		#var bodies:Array[Node3D] = hand.get_overlapping_bodies()
-		holding = true
 		
-		if (hand.get_collider(0) is RigidBody3D) and (heldObject == null):
+		
+		if hand.is_colliding() and (hand.get_collider(0) is RigidBody3D) and (heldObject == null):
 			
 			heldObject = hand.get_collider(0)
 			originalObject = hand.get_collider(0).duplicate()

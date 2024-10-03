@@ -1,6 +1,7 @@
 extends CanvasLayer
 @onready var center_container: CenterContainer = $Control/CenterContainer
-@onready var options_menu: Control = $Control/OptionsMenu
+@onready var options_menu: Control# = $Control/OptionsMenu
+var OPTIONS_MENU: PackedScene = preload("res://Szenen/OptionsMenu.tscn")
 
 func _ready() -> void:
 	pass
@@ -31,8 +32,15 @@ func _on_exit_button_button_up() -> void:
 
 
 func _on_options_button_button_up() -> void:
-	center_container.hide()
-	options_menu.show()
+	if options_menu:
+		center_container.hide()
+		options_menu.show()
+	else:
+		options_menu = OPTIONS_MENU.instantiate()
+		add_child(options_menu)
+		options_menu.connect('done', _on_options_menu_done)
+		center_container.hide()
+		options_menu.show()
 
 func _on_options_menu_done() -> void:
 	center_container.show()

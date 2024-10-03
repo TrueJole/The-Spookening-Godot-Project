@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck7hnjvn3hwmp"]
+[gd_scene load_steps=3 format=3 uid="uid://ck7hnjvn3hwmp"]
 
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_8cv53"]
 [ext_resource type="Theme" uid="uid://dj3kv5o4ggit" path="res://Resources/MenuTheme.res" id="1_q86bv"]
-[ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="2_nt2gg"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -67,11 +66,6 @@ layout_mode = 2
 text = "Spiel beenden"
 metadata/_edit_use_anchors_ = true
 
-[node name="OptionsMenu" parent="Control" instance=ExtResource("2_nt2gg")]
-visible = false
-layout_mode = 1
-
 [connection signal="button_up" from="Control/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="Control/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="Control/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]
-[connection signal="done" from="Control/OptionsMenu" to="." method="_on_options_menu_done"]

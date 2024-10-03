@@ -45,8 +45,8 @@ func applySettings() -> void:
 			get_node("PanelContainer/HBoxContainer/VBoxContainer/fpsLabel").text = 'Unlimitierte FPS'
 			Engine.max_fps = 0
 	
-	print(Root.Settings.fpsMode)
-	print(Root.Settings.scale3D)
+	#print(Root.Settings.fpsMode)
+	#print(Root.Settings.scale3D)
 	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
 	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
 	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil

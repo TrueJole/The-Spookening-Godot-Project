@@ -69,6 +69,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	camera.rotate_x(-Input.get_axis("joyDown", "joyUp") * JOY_SENSITIVITY * delta * 100)
 	head.rotate_y(-Input.get_axis("joyLeft", "joyRight") * JOY_SENSITIVITY * delta * 100)
+	camera.rotation.x = max(abs(camera.rotation.x), deg_to_rad(100)) * (camera.rotation.x / abs(camera.rotation.x))
 	
 	walkTimer -= delta
 	

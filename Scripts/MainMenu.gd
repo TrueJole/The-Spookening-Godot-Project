@@ -30,11 +30,12 @@ func _process(_delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	if not loading:
+		loading = true
 		get_node('OptionsMenu').queue_free()
 		loadingBar.show()
 		print(ResourceLoader.get_dependencies(nextScene))
 		ResourceLoader.load_threaded_request(nextScene, "", true)
-		loading = true
+		
 
 func _on_exit_button_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
@@ -48,5 +49,6 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_options_menu_done() -> void:
-	center_container.show()
-	get_node('OptionsMenu').hide()
+	if not loading:
+		center_container.show()
+		get_node('OptionsMenu').hide()
