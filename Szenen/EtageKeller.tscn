@@ -1,7 +1,7 @@
-[gd_scene load_steps=88 format=4 uid="uid://dquwqhphaufcb"]
+[gd_scene load_steps=90 format=4 uid="uid://dquwqhphaufcb"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_b6a5a"]
-[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_kqcbx"]
+[ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_kqcbx"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="2_a66vn"]
 [ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="3_dwef7"]
 [ext_resource type="PackedScene" uid="uid://x3oxxt77x24d" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnen.tscn" id="5_d3iwj"]
@@ -60,8 +60,11 @@
 [ext_resource type="AudioStream" uid="uid://cdemxddumls7i" path="res://Resources/Sounds/PuzzleSolvedJingle.wav" id="58_1naj5"]
 [ext_resource type="PackedScene" uid="uid://bvar7yqb8fxjl" path="res://Game Assets/Items/feuerlöscher.tscn" id="58_igy0r"]
 [ext_resource type="PackedScene" uid="uid://b8t31041u720e" path="res://Game Assets/Deco/Spinde.tscn" id="60_7d3bn"]
+[ext_resource type="PackedScene" uid="uid://c613lq67yfqfc" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteDoppelTür.tscn" id="61_hj6tn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_novj0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwiqg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7oa6"]
 resource_name = "Innen"
@@ -308,6 +311,10 @@ ShowOnStart = true
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(9.47111, 0, 0, 0, 0.615404, 0, 0, 0, 7.58055, 14.4691, 3.1807, -9.61299)
 mesh = SubResource("BoxMesh_novj0")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Dach"]
+transform = Transform3D(2.57303, 0, 0, 0, 0.615404, 0, 0, 0, 2.29012, 0.0549471, 5.17632, 6.04529)
+mesh = SubResource("BoxMesh_hwiqg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(36.8531, 0, 0, 0, 0.616702, 0, 0, 0, 10.1143, 0.431557, 3.1807, -5.0539)
@@ -2872,16 +2879,16 @@ transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, 0)
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0, -1)
 
 [node name="WandInnenOhneLeiste327" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, -1)
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, -0.49938)
 
 [node name="WandInnenOhneLeiste328" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0, -2)
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0, -1.49938)
 
 [node name="WandInnenOhneLeiste339" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, -3)
+transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, -26, 0, -3.50623)
 
 [node name="WandInnenOhneLeiste340" parent="." instance=ExtResource("3_dwef7")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0, -4)
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -26, 0, -4.50623)
 
 [node name="WandInnenOhneLeiste243" parent="." instance=ExtResource("3_dwef7")]
 transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -26, 0, -1)
@@ -4312,9 +4319,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11, 0
 [node name="TürMitLeiste21" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 0, -4)
 
-[node name="TürMitLeiste26" parent="." instance=ExtResource("5_y7nst")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -27, 0, -1)
-
 [node name="TürMitLeiste29" parent="." instance=ExtResource("5_y7nst")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -28, 0, 5)
 
@@ -5136,24 +5140,11 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -32.52
 [node name="Spider" parent="." instance=ExtResource("23_w83a8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.9317, -0.46497, -2.58637)
 
-[node name="TürMitSchloss" parent="." instance=ExtResource("25_2klpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -4)
-
-[node name="AudioStreamPlayer3D" parent="TürMitSchloss" index="4"]
-area_mask = 1
-
 [node name="VersperrteTür" parent="." instance=ExtResource("26_fuqor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -4)
 
-[node name="Schlüssel2" parent="." instance=ExtResource("18_kj346")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4625, -0.000499986, -3.0537)
-metadata/itemid = "key1"
-
 [node name="Node3D" parent="." instance=ExtResource("27_ede4f")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.75, 5)
-
-[node name="Node3D2" parent="." instance=ExtResource("27_ede4f")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.75, 7)
 
 [node name="AudioArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038871, 0, 0)
@@ -5431,41 +5422,23 @@ transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, 
 [node name="Stuhl64" parent="." instance=ExtResource("12_s4p5m")]
 transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -6.31295, -0.000500202, -6.32215)
 
-[node name="Tisch34" parent="." instance=ExtResource("11_860vg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58428, 0, -5.39126)
-
-[node name="Tisch35" parent="." instance=ExtResource("11_860vg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.13178, 0, -5.45158)
-
-[node name="Stuhl65" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -8.22762, -0.000500202, -4.92575)
-
-[node name="Stuhl66" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -7.53852, -0.000500202, -4.90014)
-
-[node name="Stuhl67" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -7.62369, -0.000500202, -5.84031)
-
-[node name="Stuhl68" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -8.21696, -0.000500202, -5.84436)
-
 [node name="Tisch36" parent="." instance=ExtResource("11_860vg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15187, 0, -7.11663)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15187, 0, -6.13709)
 
 [node name="Tisch37" parent="." instance=ExtResource("11_860vg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.69844, 0, -7.17695)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.69844, 0, -6.19741)
 
 [node name="Stuhl69" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -8.73262, -0.000500202, -6.6511)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -8.73262, -0.000500202, -5.67156)
 
 [node name="Stuhl70" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -8.04353, -0.000500202, -6.6255)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -8.04353, -0.000500202, -5.64596)
 
 [node name="Stuhl71" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -8.12869, -0.000500202, -7.5669)
+transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -8.12869, -0.000500202, -6.58736)
 
 [node name="Stuhl72" parent="." instance=ExtResource("12_s4p5m")]
-transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -8.72196, -0.000500202, -7.56973)
+transform = Transform3D(-1.1, 0, -9.61651e-08, 0, 1.1, 0, 9.61651e-08, 0, -1.1, -8.72196, -0.000500202, -6.59019)
 
 [node name="RollStuhl" parent="." instance=ExtResource("30_acve0")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.4952, -0.000499725, -8.79587)
@@ -5938,7 +5911,6 @@ transform = Transform3D(-0.416773, 0, -0.909011, 0, 1, 0, 0.909011, 0, -0.416773
 
 [node name="TürMitSchloss2" parent="." instance=ExtResource("25_2klpb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -4)
-locked = true
 
 [node name="Activation Module" parent="TürMitSchloss2" index="6"]
 activators = Array[String](["Key_EtageKeller"])
@@ -6168,11 +6140,19 @@ transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, 
 [node name="Barriere" parent="." instance=ExtResource("40_slydo")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.985104, 1.96457, 1.61186)
 
+[node name="TürMitLeiste3" parent="." instance=ExtResource("5_y7nst")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, -4)
+
+[node name="VersperrteTür2" parent="." instance=ExtResource("26_fuqor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -1)
+
+[node name="DoppelTürOhneLeiste" parent="." instance=ExtResource("61_hj6tn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.74919, 7)
+
 [connection signal="body_entered" from="Wasser/Area3D" to="Wasser/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Wasser/Area3D" to="Wasser/Area3D" method="_on_body_exited"]
 
 [editable path="WandInnenOhneLeiste132"]
-[editable path="TürMitSchloss"]
 [editable path="kissen5"]
 [editable path="kissen4"]
 [editable path="TürMitSchloss2"]

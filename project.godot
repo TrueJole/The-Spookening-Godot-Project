@@ -41,6 +41,13 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray()
 
+[file_customization]
+
+folder_colors={
+"res://Tools/": "red",
+"res://addons/": "gray"
+}
+
 [filesystem]
 
 import/blender/enabled=false

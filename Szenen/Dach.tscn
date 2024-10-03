@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://btre2blkv33rc"]
 
-[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_m3a0c"]
+[ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_m3a0c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
 

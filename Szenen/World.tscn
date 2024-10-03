@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=13 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
-[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="2_ahk6u"]
+[ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="2_ahk6u"]
 [ext_resource type="PackedScene" uid="uid://8vnrtoab323g" path="res://Szenen/Moonlight.tscn" id="2_av35f"]
 [ext_resource type="Material" uid="uid://bcl348u51riw2" path="res://Resources/fog.tres" id="3_es8gc"]
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
@@ -13,16 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cfqy3n888iblk" path="res://Szenen/Etage1.tscn" id="10_jqhs4"]
 [ext_resource type="PackedScene" uid="uid://cdjub5aihdnul" path="res://Szenen/Etage 3.tscn" id="11_5s74e"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_olk4t"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnpve"]
-metallic = 1.0
-metallic_specular = 0.0
-roughness = 0.05
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_m7i5n"]
-radius = 0.147653
-
 [node name="World" type="Node3D"]
 top_level = true
 script = ExtResource("1_c6mct")
@@ -32,11 +22,11 @@ script = ExtResource("1_c6mct")
 [node name="DirectionalLight3D2" parent="." instance=ExtResource("2_av35f")]
 transform = Transform3D(-1, -3.81864e-08, 7.86418e-08, 0, 0.899558, 0.436802, -8.74227e-08, 0.436802, -0.899558, 5.25206, 30.6542, -48.2795)
 visible = false
+shadow_enabled = false
 ShowOnStart = false
 
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.9301, 12.3274, -8.80292)
-visible = false
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966273
@@ -81,21 +71,7 @@ data = ExtResource("4_s06mn")
 process_mode = 3
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
-bake_simplification_distance = 0.0
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(2.38498, 0, 0, 0, 2.38498, 0, 0, 0, 2.38498, 0, 0.92409, 1.51325)
-collision_layer = 2
-metadata/mirror = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(0.287157, 0, 0, 0, 0.287157, 0, 0, 0, 0.287157, 0, 0, 0)
-layers = 2
-mesh = SubResource("SphereMesh_olk4t")
-surface_material_override/0 = SubResource("StandardMaterial3D_vnpve")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_m7i5n")
+bake_simplification_distance = 0.05
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.886827, 2.37499, 10.229)

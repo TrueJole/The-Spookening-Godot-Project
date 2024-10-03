@@ -6,8 +6,9 @@ signal changed
 
 func _on_activation_module_activated(_body: Node3D) -> void:
 	#print('received')
-	animation_player.play('Open')
-	changed.emit()
-	activated = true
+	if not activated:
+		animation_player.play('Open')
+		changed.emit()
+		activated = true
 	
 	

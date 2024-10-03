@@ -1,14 +1,13 @@
-[gd_scene load_steps=42 format=4 uid="uid://cfqy3n888iblk"]
+[gd_scene load_steps=43 format=4 uid="uid://cfqy3n888iblk"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_8e773"]
-[ext_resource type="Script" path="res://Scripts/ShowOnStart.gd" id="1_pc36m"]
+[ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_pc36m"]
 [ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="2_yve43"]
 [ext_resource type="PackedScene" uid="uid://x3oxxt77x24d" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnen.tscn" id="3_3s5xb"]
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="3_cfcxk"]
 [ext_resource type="PackedScene" uid="uid://cf6we7nmx02og" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandAußenNeu.tscn" id="4_mor3f"]
 [ext_resource type="PackedScene" uid="uid://ceq51lpi3uuda" path="res://Game Assets/Walls n Stuff/Neues Zeug/Fenster1MitLeiste.tscn" id="5_0ufsf"]
 [ext_resource type="PackedScene" uid="uid://cfwram6fhkpnf" path="res://Game Assets/Walls n Stuff/Neues Zeug/Fenster2MitLeiste.tscn" id="6_ksih1"]
-[ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/Neues Zeug/DoppelTürOhneLeiste.tscn" id="7_x8kov"]
 [ext_resource type="PackedScene" uid="uid://7ac2shnkgiew" path="res://Game Assets/Walls n Stuff/Neues Zeug/Treppe.tscn" id="8_c3cer"]
 [ext_resource type="PackedScene" uid="uid://cnlt4qi4t3cpr" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitLeiste.tscn" id="9_87817"]
 [ext_resource type="PackedScene" uid="uid://d4kahl48axhq" path="res://Game Assets/Deco/KreideTafel.tscn" id="10_mqx4x"]
@@ -29,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://n60msnckcy2l" path="res://Game Assets/Decals/KreuzDecal.tscn" id="27_sg8ja"]
 [ext_resource type="PackedScene" uid="uid://bxi2me5stma5t" path="res://Game Assets/Deco/NormalerTisch.tscn" id="28_6xtmx"]
 [ext_resource type="PackedScene" uid="uid://io2aeiisytsn" path="res://Game Assets/Deco/Output.tscn" id="29_v6j4f"]
+[ext_resource type="PackedScene" uid="uid://bafa7ptmntj0y" path="res://Game Assets/Deco/Mülleimer.tscn" id="30_3drr5"]
+[ext_resource type="PackedScene" uid="uid://c613lq67yfqfc" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteDoppelTür.tscn" id="30_wyud8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
 
@@ -3385,10 +3386,10 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, 3
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 19, 0, 4)
 
 [node name="WandInnen85" parent="." instance=ExtResource("3_3s5xb")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 19.0303, 0, 3.94173)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 19.276, 0, 3.86368)
 
 [node name="WandInnen124" parent="." instance=ExtResource("3_3s5xb")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 18.3232, 0, 4.64884)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 18.5689, 0, 4.57079)
 
 [node name="WandInnenOhneLeiste38" parent="." instance=ExtResource("2_yve43")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, -5)
@@ -4209,9 +4210,6 @@ transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -11, 0, 
 [node name="Fenster2_13" parent="." instance=ExtResource("6_ksih1")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -13, 0, 5)
 
-[node name="DoppelTürOhneLeiste" parent="." instance=ExtResource("7_x8kov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-
 [node name="Fenster2_14" parent="." instance=ExtResource("6_ksih1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, -10)
 
@@ -4422,9 +4420,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 2)
 
 [node name="TürMitLeiste23" parent="." instance=ExtResource("9_87817")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 2)
-
-[node name="DoppelTürOhneLeiste2" parent="." instance=ExtResource("7_x8kov")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34, 0, -2)
 
 [node name="Tisch" parent="." instance=ExtResource("12_b8bbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.848, 0, -5.60424)
@@ -5170,5 +5165,20 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.854
 
 [node name="VersperrteTür3" parent="." instance=ExtResource("18_bergi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 5)
+
+[node name="DoppelTürOhneLeiste" parent="." instance=ExtResource("30_wyud8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="DoppelTürOhneLeiste2" parent="." instance=ExtResource("30_wyud8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34, 0, -2)
+
+[node name="Mülleimer" parent="." instance=ExtResource("30_3drr5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.8896, 0, -5)
+
+[node name="Mülleimer2" parent="." instance=ExtResource("30_3drr5")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -17.1104, 0, -3.88775)
+
+[node name="Mülleimer3" parent="." instance=ExtResource("30_3drr5")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -31.1104, 0, -1.11389)
 
 [editable path="TürMitSchloss"]

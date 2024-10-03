@@ -46,7 +46,7 @@ size = Vector3(0.23336, 0.672384, 0.698168)
 size = Vector3(1.2083, 0.300303, 0.698168)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8qs3h"]
-size = Vector3(0.064598, 0.0910454, 0.0890464)
+size = Vector3(0.111364, 0.12469, 0.132491)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ujmya"]
 size = Vector3(0.0914688, 0.16066, 0.135147)
@@ -104,7 +104,7 @@ transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2
 activators = Array[String](["coin"])
 
 [node name="CollisionShape3D" parent="Activation Module" index="0"]
-transform = Transform3D(1, -2.54018e-07, -7.75202e-12, 2.54018e-07, 1, -1.65146e-14, 1.06297e-11, -3.34635e-13, 1, -0.00606424, -0.0231254, 0.0102271)
+transform = Transform3D(1, -2.53785e-07, -6.94911e-12, 2.53785e-07, 1, -5.49005e-13, 6.79989e-12, 3.52829e-13, 0.999985, -0.0294475, -0.0296267, 0.00860223)
 shape = SubResource("BoxShape3D_8qs3h")
 
 [node name="Interactive Component" parent="." index="6" instance=ExtResource("4_1wla6")]

@@ -41,6 +41,7 @@ script = ExtResource("2_qkksi")
 rainIndex = 4
 
 [node name="Mesh" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 surface_material_override/0 = ExtResource("2_kc8p8")
 surface_material_override/1 = ExtResource("2_8yjs1")
 surface_material_override/2 = ExtResource("2_jj1du")
@@ -51,25 +52,25 @@ surface_material_override/4 = SubResource("StandardMaterial3D_71ery")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00073, 0.407095, 0.0318909)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00073, 0.407095, -0.1)
 shape = SubResource("BoxShape3D_6ac0m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999939, 2.15634, -0.0183868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999939, 2.15634, -0.1)
 shape = SubResource("BoxShape3D_gon6y")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00012, 0.815645, 0.144974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00012, 0.815645, -0.1)
 shape = SubResource("BoxShape3D_r0hpx")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97588, 1.60474, 0.0302277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97588, 1.60474, -0.1)
 shape = SubResource("BoxShape3D_durd0")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211835, 1.60734, 0.0347769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211835, 1.60734, -0.1)
 shape = SubResource("BoxShape3D_durd0")
 
 [node name="AudioStreamPlayer3D" parent="." index="2" instance=ExtResource("6_mmtec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01254, 1.60829, -0.0190652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01254, 1.60829, -0.1)
 stream = SubResource("AudioStreamPlaylist_h47sg")
