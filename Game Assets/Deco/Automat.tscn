@@ -60,6 +60,7 @@ script = ExtResource("2_87r2q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464832, 1.84631, 0.451971)
 
 [node name="Circle" parent="." index="1"]
+lod_bias = 0.3
 surface_material_override/0 = ExtResource("2_k3y3r")
 
 [node name="Plane" parent="." index="2"]

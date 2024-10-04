@@ -30,6 +30,7 @@ defaultItemID = "key_etage1"
 
 [node name="Circle" parent="." index="0"]
 lod_bias = 10.0
+visibility_range_end = 30.0
 surface_material_override/0 = ExtResource("2_m3gtj")
 surface_material_override/1 = ExtResource("3_va0x3")
 surface_material_override/2 = ExtResource("4_q1hxk")

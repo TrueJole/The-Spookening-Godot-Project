@@ -15,8 +15,10 @@ emission_energy_multiplier = 3.0
 
 [node name="Cube" parent="." index="0"]
 material_override = ExtResource("2_8u6ar")
+visibility_range_end = 25.0
 
 [node name="Cylinder" parent="." index="1"]
+visibility_range_begin_margin = 15.0
 surface_material_override/0 = ExtResource("2_8u6ar")
 surface_material_override/1 = SubResource("StandardMaterial3D_qkbep")
 

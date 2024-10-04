@@ -72,8 +72,7 @@ size = Vector2(0.05, 0.05)
 
 [node name="GPUParticles3D" type="GPUParticles3D"]
 cast_shadow = 0
-visibility_range_end = 6.0
-visibility_range_end_margin = 1.0
+visibility_range_end = 10.0
 amount = 25
 lifetime = 20.0
 visibility_aabb = AABB(-1.36062, -1.43276, -1.58302, 2.75579, 2.81777, 2.98395)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4tmsunvmc1ur" path="res://Assets/buzzer.glb" id="1_6gvxs"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_8iwog"]
-[ext_resource type="Script" path="res://Game Assets/Deco/buzzer.gd" id="2_cv8tn"]
+[ext_resource type="Script" path="res://Scripts/buzzer.gd" id="2_cv8tn"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="3_suxfm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qme7"]

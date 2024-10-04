@@ -4,8 +4,8 @@
 [ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_6l34g"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_icsal"]
-height = 0.00993927
-radius = 0.0263449
+height = 0.0155825
+radius = 0.0301148
 
 [node name="Coin" instance=ExtResource("1_uc7ll")]
 collision_layer = 2
@@ -17,6 +17,7 @@ metadata/itemid = "coin"
 transform = Transform3D(0.0222248, 0, 0, 0, 0.00251029, 0, 0, 0, 0.0222248, 0, 0.00242443, 0)
 lod_bias = 5.0
 gi_mode = 0
+visibility_range_begin_margin = 20.0
 surface_material_override/0 = ExtResource("2_6l34g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]

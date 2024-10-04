@@ -52,8 +52,7 @@ shape = SubResource("BoxShape3D_e6jyk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0497588, -1.08349, -0.39118)
 layers = 2
 lod_bias = 0.5
-gi_mode = 0
-visibility_range_end = 30.0
+visibility_range_end = 25.0
 mesh = SubResource("ArrayMesh_fda3f")
 skeleton = NodePath("")
 

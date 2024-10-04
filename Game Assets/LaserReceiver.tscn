@@ -12,6 +12,7 @@ radius = 0.241334
 
 [node name="Cylinder" parent="." index="0"]
 transform = Transform3D(0.240356, 0, 0, 0, 4.65661e-10, 0.240356, 0, -0.0245209, 3.72529e-09, 0, 0, 0)
+visibility_range_end = 30.0
 surface_material_override/0 = ExtResource("2_0solr")
 surface_material_override/1 = ExtResource("3_sbmxx")
 

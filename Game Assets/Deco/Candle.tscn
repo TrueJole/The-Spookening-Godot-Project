@@ -29,6 +29,7 @@ changeable = true
 
 [node name="BézierCurve" parent="." index="0"]
 transform = Transform3D(6.25239e-10, 0.0104898, 0, -0.0104898, 6.25239e-10, 0, 0, 0, 0.0104898, 0, 0.32805, 0)
+visibility_range_end = 20.0
 surface_material_override/0 = SubResource("StandardMaterial3D_lx5yj")
 surface_material_override/1 = SubResource("StandardMaterial3D_ui7yw")
 
@@ -51,7 +52,8 @@ light_energy = 0.1
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 distance_fade_enabled = true
-distance_fade_begin = 20.0
+distance_fade_begin = 10.0
+distance_fade_length = 2.0
 omni_range = 1.79109
 
 [node name="Sprite3D" type="Sprite3D" parent="OmniLight3D" index="0"]

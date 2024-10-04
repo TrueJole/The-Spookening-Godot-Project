@@ -31,9 +31,11 @@ stream_0/stream = ExtResource("4_ojpie")
 script = ExtResource("2_itsjy")
 
 [node name="Cylinder" parent="." index="0"]
+visibility_range_end = 20.0
 surface_material_override/0 = SubResource("StandardMaterial3D_r43tg")
 
 [node name="Cylinder_001" parent="." index="1"]
+visibility_range_end = 20.0
 surface_material_override/0 = SubResource("StandardMaterial3D_13c1l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]

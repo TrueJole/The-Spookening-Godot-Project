@@ -26,6 +26,7 @@ visibility_range_end = 20.0
 
 [node name="Sphere" parent="." index="1"]
 lod_bias = 0.9
+visibility_range_end = 20.0
 surface_material_override/0 = SubResource("StandardMaterial3D_w4cr0")
 
 [node name="MagicText" type="Label3D" parent="." index="2"]

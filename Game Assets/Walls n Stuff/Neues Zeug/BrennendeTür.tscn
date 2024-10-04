@@ -154,7 +154,7 @@ shape = SubResource("BoxShape3D_w1h6e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50608, 0.0788048, 0.11156)
 cast_shadow = 0
 lod_bias = 0.1
-visibility_range_end = 50.0
+visibility_range_end = 25.0
 amount = 50
 explosiveness = 0.17
 visibility_aabb = AABB(-0.491849, -0.273762, -0.630392, 1.09025, 2.36194, 1.10172)
@@ -172,10 +172,10 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.202
 light_specular = 0.0
 light_bake_mode = 0
-shadow_enabled = true
 distance_fade_enabled = true
-distance_fade_begin = 30.0
+distance_fade_begin = 20.0
 distance_fade_shadow = 10.0
+distance_fade_length = 5.0
 omni_range = 2.11834
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FireParticles" index="1"]
