@@ -195,18 +195,20 @@ jolt_3d/volumetric_fog/volume_size=128
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=2
+textures/canvas_textures/default_texture_repeat=2
 textures/vram_compression/import_etc2_astc=true
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 shader_compiler/shader_cache/strip_debug=true
-textures/default_filters/anisotropic_filtering_level=3
 environment/ssao/fadeout_from=40.0
 environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
 global_illumination/sdfgi/probe_ray_count=2
+environment/volumetric_fog/volume_size=32
+environment/volumetric_fog/volume_depth=32
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
-textures/volumetric_fog/use_filter=1
 
 [xr]
 

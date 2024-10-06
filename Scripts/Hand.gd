@@ -1,7 +1,7 @@
 extends Camera3D
 
 @onready var hand: ShapeCast3D = $Hand
-@onready var dot: CSGSphere3D = $Dot
+@onready var dot: Marker3D = $Dot
 @onready var equipHand: Node3D = $"../EquippedHand"
 var holding: bool
 var equipped: bool

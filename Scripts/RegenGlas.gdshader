@@ -1,11 +1,14 @@
 shader_type canvas_item;
 
-#define iResolution 1.0/SCREEN_PIXEL_SIZE
+
+const vec2 test = vec2(1.0/1920.0, 1.0/1920.0);
+#define iResolution 1.0/test
 #define iTime TIME
 #define fragColor COLOR
 
 //uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest, source_color;
 //uniform vec4 color_addition: source_color;
+
 uniform sampler2D iChannel0;
 uniform float frequency : hint_range(-10.0, 4.0, 0.1) = 0.0;
 uniform float size : hint_range(0.001, 0.05, 0.001) = 0.015;

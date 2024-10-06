@@ -2,7 +2,7 @@ extends Node
 
 @export var rain: SubViewport = SubViewport.new()
 @export var rainTexture: ViewportTexture = ViewportTexture.new()
-@export var Settings: Resource = SettingsClass.new()
+@export var Settings: SettingsClass = SettingsClass.new()
 
 
 func _ready() -> void:

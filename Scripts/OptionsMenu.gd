@@ -19,6 +19,7 @@ func _ready() -> void:
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleSlider").value = Root.Settings.scale3D
 	get_node("PanelContainer/HBoxContainer/VBoxContainer/scaleLabel").text = "3D Skalierung: " + str(Root.Settings.scale3D*100) + "%"
 	$PanelContainer/HBoxContainer/VBoxContainer/mouseSlider.value = Root.Settings.mousesens
+	$PanelContainer/HBoxContainer/VBoxContainer/hiResRainToggleButton.button_pressed = Root.Settings.hiResRain
 	##$PanelContainer/HBoxContainer/VBoxContainer/hiResRainToggleButton.button_pressed = Root.Settings.hiResRain
 	_on_gi_quality_slider_value_changed(Root.Settings.giQuality)
 	_on_fps_slider_value_changed(Root.Settings.fpsMode)
@@ -27,9 +28,12 @@ func _ready() -> void:
 func applySettings() -> void:
 	
 	if Root.Settings.hiResRain:
-		$"/root/root/SubViewport".size = Vector2(1920, 1920)
+		#$"/root/root/SubViewport".size_2d_override = Vector2(1920, 1920)
+		$"/root/root/SubViewport".size = Vector2(1080, 1080)
 	else:
-		$"/root/root/SubViewport".size = Vector2(720, 720)
+		#$"/root/root/SubViewport".size_2d_override = Vector2(512, 512)
+		$"/root/root/SubViewport".size = Vector2(256, 256)
+		
 	
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED, DisplayServer.get_window_list()[0])
 	match Root.Settings.fpsMode:
