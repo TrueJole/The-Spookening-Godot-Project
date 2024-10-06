@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccdcruw7mockq"]
+[gd_scene load_steps=8 format=3 uid="uid://ccdcruw7mockq"]
 
 [ext_resource type="Theme" uid="uid://dj3kv5o4ggit" path="res://Resources/MenuTheme.res" id="1_emt5w"]
 [ext_resource type="Texture2D" uid="uid://le45t6vap2xc" path="res://Assets/Materials/Textures/icon.svg" id="1_k0fv6"]
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_na64g"]
 [ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="3_54e1v"]
+[ext_resource type="Texture2D" uid="uid://cuucbbs2ribtd" path="res://Assets/Materials/Textures/twirl_01.png" id="5_18okb"]
+[ext_resource type="Script" path="res://Szenen/rotate.gd" id="6_fikis"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1k1ql"]
+blend_mode = 1
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -71,6 +76,27 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 20
 step = 0.0
+
+[node name="Swirl" type="TextureRect" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_1k1ql")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.816667
+anchor_top = 0.680556
+anchor_right = 0.878529
+anchor_bottom = 0.790533
+offset_top = -6.10352e-05
+offset_right = 393.224
+offset_bottom = 393.224
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.231984, 0.231984)
+pivot_offset = Vector2(266.724, 260.195)
+texture = ExtResource("5_18okb")
+script = ExtResource("6_fikis")
+speed = -15.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="done" from="OptionsMenu" to="." method="_on_options_menu_done"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

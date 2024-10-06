@@ -42,6 +42,7 @@ rainIndex = 4
 
 [node name="Mesh" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+lod_bias = 128.0
 surface_material_override/0 = ExtResource("2_kc8p8")
 surface_material_override/1 = ExtResource("2_8yjs1")
 surface_material_override/2 = ExtResource("2_jj1du")

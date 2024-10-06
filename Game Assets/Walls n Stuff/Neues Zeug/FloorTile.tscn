@@ -17,5 +17,6 @@ shape = SubResource("BoxShape3D_3cpqa")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0843235, 0, 0, 0, 1, 0.5, 0.001, 0.5)
 cast_shadow = 0
+lod_bias = 128.0
 mesh = SubResource("QuadMesh_jtln8")
 surface_material_override/0 = ExtResource("1_vjymb")

@@ -1,0 +1,133 @@
+[gd_scene load_steps=16 format=3 uid="uid://6yoolo6k5jle"]
+
+[ext_resource type="PackedScene" uid="uid://k6ypd2ad3jwi" path="res://Assets/UnkrautEntferner.glb" id="1_x2glg"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_gvypm"]
+[ext_resource type="Script" path="res://Game Assets/Items/unkraut_entferner.gd" id="2_ngoji"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ur2n"]
+albedo_color = Color(0.180309, 0.270865, 0.204043, 1)
+roughness = 0.7
+backlight_enabled = true
+backlight = Color(0.404511, 0.404511, 0.404511, 1)
+
+[sub_resource type="Curve" id="Curve_vw268"]
+min_value = -3.0
+max_value = 3.0
+_data = [Vector2(0.809229, 0.0292711), 0.0, 0.0, 0, 0, Vector2(0.999311, -1.14642), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2ij66"]
+curve = SubResource("Curve_vw268")
+
+[sub_resource type="Curve" id="Curve_onxsr"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.251377, 1.24695), 0.0, 0.0, 0, 0, Vector2(0.748623, 1.36242), 0.0, 0.0, 0, 0, Vector2(0.858815, 3), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_no214"]
+curve = SubResource("Curve_onxsr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2farw"]
+lifetime_randomness = 0.08
+inherit_velocity_ratio = 0.845
+spread = 12.442
+initial_velocity_min = 1.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 0.999998
+linear_accel_curve = SubResource("CurveTexture_2ij66")
+scale_curve = SubResource("CurveTexture_no214")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rs3l0"]
+radius = 0.01
+height = 0.02
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1ojbf"]
+height = 0.278067
+radius = 0.0975791
+
+[sub_resource type="Animation" id="Animation_pmej7"]
+resource_name = "on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cone_001:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.363988)]
+}
+
+[sub_resource type="Animation" id="Animation_otjho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cone_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7phh"]
+_data = {
+"RESET": SubResource("Animation_otjho"),
+"on": SubResource("Animation_pmej7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q30d6"]
+size = Vector3(0.960938, 0.251709, 0.338745)
+
+[node name="UnkrautEntferner" instance=ExtResource("1_x2glg")]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_ngoji")
+metadata/itemid = "spray"
+metadata/equipable = true
+
+[node name="Cone" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gvypm")
+surface_material_override/1 = SubResource("StandardMaterial3D_7ur2n")
+
+[node name="Cone_001" parent="." index="1"]
+transform = Transform3D(0.099904, 0, 0, 0, 0.099904, 0, 0, 0, 0.099904, -0.0515156, 0.252243, 0)
+material_override = ExtResource("2_gvypm")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0662243, 0.267367, -0.000919163)
+emitting = false
+amount = 30
+lifetime = 0.3
+fixed_fps = 60
+interpolate = false
+visibility_aabb = AABB(-0.0163783, -0.113178, -0.108225, 0.484688, 0.225445, 0.222325)
+process_material = SubResource("ParticleProcessMaterial_2farw")
+draw_pass_1 = SubResource("SphereMesh_rs3l0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138493, 0)
+shape = SubResource("CylinderShape3D_1ojbf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_d7phh")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0597595, 0.265385, 0)
+
+[node name="SprayArea" type="Area3D" parent="." index="6"]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SprayArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512505, 0.275482, 0.00579834)
+shape = SubResource("BoxShape3D_q30d6")

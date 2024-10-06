@@ -15,6 +15,7 @@ size = Vector3(1.49181, 0.0332031, 0.56926)
 [node name="Tisch" instance=ExtResource("1_uwqg7")]
 
 [node name="Beine" parent="." index="0"]
+visibility_range_end = 35.0
 surface_material_override/0 = ExtResource("2_wds2s")
 surface_material_override/1 = ExtResource("1_gwqov")
 surface_material_override/2 = ExtResource("2_ibx3l")

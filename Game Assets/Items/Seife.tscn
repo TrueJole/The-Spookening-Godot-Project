@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0b5hw70fw4wo"]
+
+[ext_resource type="PackedScene" uid="uid://cggcjxsc743hq" path="res://Assets/Seife.glb" id="1_73bnx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4ijt"]
+albedo_color = Color(0.461698, 0.706632, 0.716899, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pjtx"]
+size = Vector3(0.131927, 0.0473289, 0.192207)
+
+[node name="Seife" instance=ExtResource("1_73bnx")]
+collision_layer = 2
+collision_mask = 3
+mass = 0.3
+metadata/itemid = "soap"
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.0633772, 0, 0, 0, 0.0237567, 0, 0, 0, 0.0960756, 0, 0.0243186, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_s4ijt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0.024271, 4.19617e-05)
+shape = SubResource("BoxShape3D_7pjtx")

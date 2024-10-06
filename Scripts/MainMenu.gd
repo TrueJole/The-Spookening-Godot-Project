@@ -8,6 +8,7 @@ var loading: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	loadingBar.hide()
+	$Swirl.hide()
 	#RenderingServer.viewport_set_msaa_2d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
 	pass # Replace with function bosdy.
 
@@ -30,6 +31,7 @@ func _process(_delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	if not loading:
+		$Swirl.show()
 		loading = true
 		get_node('OptionsMenu').queue_free()
 		loadingBar.show()

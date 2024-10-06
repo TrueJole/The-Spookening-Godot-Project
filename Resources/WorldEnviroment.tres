@@ -26,7 +26,6 @@ ssr_enabled = true
 ssao_enabled = true
 ssao_radius = 0.2
 ssao_intensity = 1.0
-ssao_light_affect = 0.5
 ssil_radius = 3.12
 ssil_intensity = 0.54
 sdfgi_y_scale = 0

@@ -10,6 +10,7 @@ points = PackedVector3Array(0, 0, 7.45058e-09, 0, 0, 0.1, 0, 3.49996, 7.45058e-0
 
 [node name="Wand 1 * 4" parent="." index="0"]
 material_override = ExtResource("2_vq2cd")
+lod_bias = 128.0
 surface_material_override/0 = ExtResource("2_vq2cd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]

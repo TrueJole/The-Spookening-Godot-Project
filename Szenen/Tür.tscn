@@ -18,6 +18,7 @@ mass = 5.0
 
 [node name="Cube_002" parent="." index="0"]
 layers = 2
+lod_bias = 128.0
 visibility_range_end = 40.0
 surface_material_override/0 = SubResource("StandardMaterial3D_wjdkb")
 surface_material_override/1 = ExtResource("2_qg7et")
@@ -33,11 +34,9 @@ material_override = ExtResource("2_qg7et")
 visibility_range_end = 25.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3252, 2.18387, 0.0279806)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409098, 1.43049, 0.0279806)
 occluder = ExtResource("1_l2yor")
 bake_mask = 4294966274
-bake_simplification_distance = 0.24
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.447152, 1.0025, -0.0269018)

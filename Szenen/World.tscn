@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
-[ext_resource type="PackedScene" uid="uid://dl4e1l3f1unj3" path="res://Szenen/Etage 2.tscn" id="10_1osk6"]
+[ext_resource type="PackedScene" uid="uid://dl4e1l3f1unj3" path="res://Szenen/Etage2.tscn" id="10_1osk6"]
 [ext_resource type="PackedScene" uid="uid://cfqy3n888iblk" path="res://Szenen/Etage1.tscn" id="10_jqhs4"]
-[ext_resource type="PackedScene" uid="uid://cdjub5aihdnul" path="res://Szenen/Etage 3.tscn" id="11_5s74e"]
+[ext_resource type="PackedScene" uid="uid://cdjub5aihdnul" path="res://Szenen/Etage3.tscn" id="11_5s74e"]
 
 [node name="World" type="Node3D"]
 top_level = true
@@ -27,6 +27,7 @@ ShowOnStart = false
 
 [node name="Test" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30.9301, 12.3274, -8.80292)
+visible = false
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294966273
@@ -71,7 +72,7 @@ data = ExtResource("4_s06mn")
 process_mode = 3
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967293
-bake_simplification_distance = 0.05
+bake_simplification_distance = 0.0
 
 [node name="Player" parent="." instance=ExtResource("6_86xrg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.886827, 2.37499, 10.229)

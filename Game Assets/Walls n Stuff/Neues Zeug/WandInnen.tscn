@@ -17,7 +17,7 @@ size = Vector3(1, 0.0959473, 0.0283508)
 
 [node name="Wand 1 * 4" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-lod_bias = 0.4
+lod_bias = 128.0
 surface_material_override/0 = ExtResource("2_knx02")
 surface_material_override/1 = ExtResource("3_63qxm")
 

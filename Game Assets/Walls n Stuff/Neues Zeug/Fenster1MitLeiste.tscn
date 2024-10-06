@@ -37,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49289, 1.87801, 2.38419e-0
 stream = SubResource("AudioStreamPlaylist_h47sg")
 
 [node name="Mesh" parent="." index="1"]
+lod_bias = 128.0
 surface_material_override/0 = ExtResource("2_5jdq6")
 surface_material_override/1 = SubResource("StandardMaterial3D_jspb6")
 surface_material_override/2 = ExtResource("4_p8ckn")

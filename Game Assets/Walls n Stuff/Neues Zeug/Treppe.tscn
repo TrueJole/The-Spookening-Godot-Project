@@ -6,6 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogjgk"]
 albedo_texture = ExtResource("3_hsg66")
+roughness = 0.39
 uv1_scale = Vector3(11.995, 11.995, 11.995)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80b7r"]
@@ -20,6 +21,7 @@ size = Vector3(2.01184, 0.965439, 3.04736)
 [node name="Treppe" instance=ExtResource("1_g0vao")]
 
 [node name="Treppe_005" parent="." index="0"]
+lod_bias = 128.0
 surface_material_override/0 = ExtResource("2_xplfu")
 surface_material_override/1 = SubResource("StandardMaterial3D_ogjgk")
 surface_material_override/2 = ExtResource("2_xplfu")
