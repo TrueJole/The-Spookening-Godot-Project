@@ -187,11 +187,12 @@ joyRight={
 
 [physics]
 
+common/physics_ticks_per_second=30
 common/physics_jitter_fix=0.0
 3d/physics_engine="JoltPhysics3D"
 3d/default_gravity=9.81
 common/physics_interpolation=true
-jolt_3d/volumetric_fog/volume_size=128
+jolt_3d/volumetric_fog/volume_size=64
 
 [rendering]
 
