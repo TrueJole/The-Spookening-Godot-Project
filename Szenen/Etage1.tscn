@@ -5008,6 +5008,7 @@ metadata/mirror = true
 shape = SubResource("CylinderShape3D_vg6vr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder"]
+layers = 2
 mesh = SubResource("CylinderMesh_3hpxh")
 surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
 
@@ -5024,6 +5025,7 @@ shape = SubResource("BoxShape3D_h7l5f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 transform = Transform3D(0.677772, 0, 0, 0, 0.677772, 0, 0, 0, 0.677772, 0, 0, 0)
+layers = 2
 mesh = SubResource("BoxMesh_j3nft")
 surface_material_override/0 = SubResource("StandardMaterial3D_b514t")
 
@@ -5096,6 +5098,7 @@ metadata/equipable = true
 
 [node name="Cube" type="MeshInstance3D" parent="Slope"]
 transform = Transform3D(-1.45559e-08, 0, -0.333, 0, 0.333, 0, 0.333, 0, -1.45559e-08, 0, 0, 0)
+layers = 2
 material_override = ExtResource("22_vh1u4")
 mesh = SubResource("ArrayMesh_bemi6")
 skeleton = NodePath("")
@@ -5114,6 +5117,7 @@ metadata/equipable = true
 
 [node name="Cube" type="MeshInstance3D" parent="Slope2"]
 transform = Transform3D(-1.45559e-08, 0, -0.333, 0, 0.333, 0, 0.333, 0, -1.45559e-08, 0, 0, 0)
+layers = 2
 material_override = ExtResource("22_vh1u4")
 mesh = SubResource("ArrayMesh_bemi6")
 skeleton = NodePath("")

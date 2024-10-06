@@ -18,13 +18,13 @@ func _ready() -> void:
 	pipechanged()
 
 func pipechanged() -> void:
-	if pipe.activated:
-		water.show()
-		$"../Wasser/Area3D/CollisionShape3D".disabled = false
-		print('show Water')
-	else:
-		water.hide()
-		$"../Wasser/Area3D/CollisionShape3D".disabled = true
+	#if pipe.activated:
+	water.show()
+	$"../Wasser/Area3D/CollisionShape3D".disabled = false
+	print('show Water')
+	#else:
+	#	water.hide()
+	#	$"../Wasser/Area3D/CollisionShape3D".disabled = true
 
 func changed() -> void:
 	if not candleLocked:

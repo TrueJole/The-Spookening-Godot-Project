@@ -1,6 +1,6 @@
 extends Camera3D
 
-@onready var hand: ShapeCast3D = $Hand
+@onready var hand: RayCast3D = $Hand
 @onready var dot: Marker3D = $Dot
 @onready var equipHand: Node3D = $"../EquippedHand"
 var holding: bool
@@ -15,7 +15,7 @@ const CURSOR_PUNKT: Resource = preload("res://Assets/Materials/Textures/Cursor_P
 	
 func checkHand() -> void:
 	#var bodies: Array = hand.get_collider()
-	if hand.is_colliding() and (heldObject == null):
+	if hand.is_colliding() and (heldObject == null) and ((hand.get_collider() is Area3D) or (hand.get_collider() is RigidBody3D)):
 		#print_debug('Kreis')
 		cursor.texture = CURSOR_KREIS
 	else:
@@ -34,19 +34,19 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("hold"):
 		holding = true
 		
-		if hand.is_colliding() and (hand.get_collider(0) is Area3D) and (heldObject == null):
+		if hand.is_colliding() and (hand.get_collider() is Area3D) and (heldObject == null):
 			
-			var selectedObject:Area3D = hand.get_collider(0)
+			var selectedObject: Area3D = hand.get_collider()
 			
 			if selectedObject.has_method('on_interacted'):
 				#print_debug(selectedObject)
 				selectedObject.on_interacted()
 		
 		
-		if hand.is_colliding() and (hand.get_collider(0) is RigidBody3D) and (heldObject == null):
+		if hand.is_colliding() and (hand.get_collider() is RigidBody3D) and (heldObject == null):
 			
-			heldObject = hand.get_collider(0)
-			originalObject = hand.get_collider(0).duplicate()
+			heldObject = hand.get_collider()
+			originalObject = hand.get_collider().duplicate()
 			
 			if heldObject.has_method('on_pickup'):
 				heldObject.on_pickup()

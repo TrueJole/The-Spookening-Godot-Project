@@ -10,9 +10,13 @@ size = Vector3(1.92395, 2.08191, 0.273682)
 [node name="DoppelTürOhneLeiste" instance=ExtResource("1_v6axq")]
 
 [node name="Tür" parent="." index="2"]
+collision_layer = 0
+collision_mask = 0
 freeze = true
 
 [node name="Tür2" parent="." index="4"]
+collision_layer = 0
+collision_mask = 0
 freeze = true
 
 [node name="Sperre" parent="." index="5" instance=ExtResource("2_by1en")]

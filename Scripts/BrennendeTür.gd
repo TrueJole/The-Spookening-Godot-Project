@@ -14,7 +14,7 @@ var fireValue: float = 200
 func _ready() -> void:
 	movingFire.position = Vector3(-0.05, 0.56, -0.3)
 	fire_particles.show()
-	
+	$"Activation Module/CollisionShape3D".disabled = true
 	#connect(get_node("Activation Module").get_signal_list().activated, _on_activation_module_activated())
 
 func basicDoorFunc() -> void:
@@ -30,8 +30,10 @@ func _physics_process(_delta: float) -> void:
 			fire_particles.show()
 			fire_particles.amount_ratio = (fireValue-fireValue*0.5)/200
 		elif fireValue <= 0:
+			$"Activation Module/CollisionShape3D".disabled = false
 			fire_particles.hide()
 			locked = false
+			
 	else:
 		fire_particles.hide()
 	
