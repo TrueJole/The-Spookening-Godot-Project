@@ -18,7 +18,7 @@ albedo_texture = ExtResource("5_e2tdj")
 _data = [Vector2(0, 0.107732), 0.0, 0.0, 0, 0, Vector2(0.113636, 0.177714), 0.0, 0.0, 0, 0, Vector2(0.886364, 0.331674), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_70bs4"]
+[sub_resource type="CurveTexture" id="CurveTexture_rusiv"]
 curve = SubResource("Curve_obmfj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4r2wt"]
@@ -27,7 +27,7 @@ spread = 0.349
 initial_velocity_min = 0.39
 initial_velocity_max = 0.47
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_70bs4")
+scale_curve = SubResource("CurveTexture_rusiv")
 
 [sub_resource type="QuadMesh" id="QuadMesh_nv3nd"]
 size = Vector2(0.13, 0.13)
@@ -53,7 +53,7 @@ visibility_range_end = 35.0
 [node name="Cylinder" parent="." index="1"]
 material_override = ExtResource("3_8yyts")
 lod_bias = 0.5
-visibility_range_end = 25.0
+visibility_range_end = 20.0
 
 [node name="Interactive Component" type="Area3D" parent="." index="2"]
 transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0.00366557, 0.267687, 0.196364)
@@ -73,7 +73,7 @@ material_override = SubResource("StandardMaterial3D_3kokj")
 emitting = false
 amount = 39
 lifetime = 0.4
-visibility_aabb = AABB(-0.13, -0.31565, -0.13, 0.26, 0.44565, 0.26)
+visibility_aabb = AABB(-0.131076, -0.311908, -0.131055, 0.262149, 0.440905, 0.262071)
 transform_align = 3
 process_material = SubResource("ParticleProcessMaterial_4r2wt")
 draw_pass_1 = SubResource("QuadMesh_nv3nd")
@@ -94,6 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214459, 0.565924, 0.003683
 shape = SubResource("BoxShape3D_pk6eg")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104321, 0.612348, 0)
 attenuation_model = 1
 volume_db = -1.0
 unit_size = 2.5

@@ -6,11 +6,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h78db"]
 albedo_texture = ExtResource("2_3ut76")
-uv1_scale = Vector3(1.76, 1.76, 1.76)
+uv1_scale = Vector3(1.37, 1.37, 1.37)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acq2i"]
+albedo_color = Color(0.895507, 0.912111, 0.608252, 1)
 albedo_texture = ExtResource("3_82yk6")
-roughness = 0.42
+roughness = 0.93
 uv1_scale = Vector3(0.885, 0.885, 0.885)
 uv1_offset = Vector3(0.045, 0.05, -0.585)
 

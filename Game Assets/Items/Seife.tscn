@@ -1,23 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://0b5hw70fw4wo"]
+[gd_scene load_steps=10 format=3 uid="uid://0b5hw70fw4wo"]
 
 [ext_resource type="PackedScene" uid="uid://cggcjxsc743hq" path="res://Assets/Seife.glb" id="1_73bnx"]
+[ext_resource type="Script" path="res://Game Assets/Items/Seife.gd" id="2_e7srx"]
+[ext_resource type="Texture2D" uid="uid://bsiciawgonygp" path="res://Assets/Materials/Textures/Blase.png" id="3_d0vqi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d23e0"]
+friction = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4ijt"]
 albedo_color = Color(0.461698, 0.706632, 0.716899, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7pjtx"]
-size = Vector3(0.131927, 0.0473289, 0.192207)
+size = Vector3(0.0794792, 0.0375891, 0.117266)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tfl3l"]
+lifetime_randomness = 1.0
+emission_shape_scale = Vector3(0.05, 0.05, 0.05)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ndmk"]
+transparency = 2
+alpha_scissor_threshold = 0.51
+alpha_antialiasing_mode = 0
+shading_mode = 2
+albedo_texture = ExtResource("3_d0vqi")
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yno30"]
+material = SubResource("StandardMaterial3D_7ndmk")
+size = Vector2(0.05, 0.05)
+orientation = 2
 
 [node name="Seife" instance=ExtResource("1_73bnx")]
 collision_layer = 2
 collision_mask = 3
-mass = 0.3
+mass = 0.128
+physics_material_override = SubResource("PhysicsMaterial_d23e0")
+script = ExtResource("2_e7srx")
 metadata/itemid = "soap"
 
 [node name="Cube" parent="." index="0"]
-transform = Transform3D(0.0633772, 0, 0, 0, 0.0237567, 0, 0, 0, 0.0960756, 0, 0.0243186, 0)
+transform = Transform3D(0.035939, 0, 0, 0, 0.0134716, 0, 0, 0, 0.0544811, 0, 0.0243186, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_s4ijt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000259399, 0.024271, 4.19617e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000181288, 0.0249991, 0.000569306)
 shape = SubResource("BoxShape3D_7pjtx")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022, 0)
+emitting = false
+amount = 16
+lifetime = 2.0
+fixed_fps = 20
+visibility_aabb = AABB(-0.05, -0.0500019, -0.05, 0.1, 0.100002, 0.1)
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_tfl3l")
+draw_pass_1 = SubResource("PlaneMesh_yno30")

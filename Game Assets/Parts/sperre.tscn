@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5llasjhghjqc"]
+
+[ext_resource type="PackedScene" uid="uid://b02h8r0fay2g3" path="res://Assets/Sperre.glb" id="1_4b0a6"]
+[ext_resource type="Material" uid="uid://dfthlh5kssp1l" path="res://Assets/Materials/HolzGlanzlos.tres" id="2_iojgu"]
+
+[node name="Sperre" instance=ExtResource("1_4b0a6")]
+
+[node name="Cube_001" parent="." index="0"]
+material_override = ExtResource("2_iojgu")
+
+[node name="Cube_002" parent="." index="1"]
+material_override = ExtResource("2_iojgu")

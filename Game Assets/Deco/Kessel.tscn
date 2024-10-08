@@ -1,9 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cox6vjrgqr8gd"]
+[gd_scene load_steps=21 format=3 uid="uid://cox6vjrgqr8gd"]
 
 [ext_resource type="PackedScene" uid="uid://c4r8hmwdy7m1e" path="res://Assets/Kessel.glb" id="1_w33qi"]
+[ext_resource type="Script" path="res://Game Assets/Deco/Kessel.gd" id="2_7ujqx"]
 [ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_lx05w"]
 [ext_resource type="Material" uid="uid://c8n1i4okw40dn" path="res://Assets/Materials/Bronze.tres" id="3_xss1v"]
 [ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_b5bec"]
+[ext_resource type="Texture2D" uid="uid://bsiciawgonygp" path="res://Assets/Materials/Textures/Blase.png" id="6_deklk"]
+[ext_resource type="PackedScene" uid="uid://6yoolo6k5jle" path="res://Game Assets/Items/UnkrautEntferner.tscn" id="7_4f5hw"]
+[ext_resource type="AudioStream" uid="uid://bthaaup5uo5v3" path="res://Resources/Sounds/Spülung.wav" id="7_hy0n5"]
+[ext_resource type="PackedScene" uid="uid://2oq2o7t5vir3" path="res://Game Assets/Deco/Buzzer.tscn" id="8_xs7rp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xgcaw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r77oq"]
+albedo_color = Color(0.168896, 0.6767, 0.915963, 1)
+roughness = 0.27
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o7esn"]
 size = Vector3(0.840485, 0.106689, 0.838989)
@@ -12,38 +23,142 @@ size = Vector3(0.840485, 0.106689, 0.838989)
 size = Vector3(0.840485, 0.741516, 0.056015)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_huebk"]
-size = Vector3(0.780453, 0.585533, 0.773861)
+size = Vector3(0.780453, 0.457846, 0.773861)
+
+[sub_resource type="Animation" id="Animation_ys4uv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContentMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.575784, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5ingv"]
+resource_name = "fill"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContentMesh:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.076591, 0), Vector3(0, 0.589808, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvf0h"]
+_data = {
+"RESET": SubResource("Animation_ys4uv"),
+"fill": SubResource("Animation_5ingv")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8vig4"]
+lifetime_randomness = 0.7
+emission_shape_scale = Vector3(0.3, 0.1, 0.3)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 30.695
+initial_velocity_min = 0.5
+initial_velocity_max = 0.9
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5t2v"]
+transparency = 2
+alpha_scissor_threshold = 0.476
+alpha_antialiasing_mode = 0
+shading_mode = 2
+albedo_texture = ExtResource("6_deklk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s36qt"]
+material = SubResource("StandardMaterial3D_r5t2v")
+size = Vector2(0.2, 0.2)
+orientation = 2
 
 [node name="Kessel" instance=ExtResource("1_w33qi")]
+script = ExtResource("2_7ujqx")
+item_ids = Array[String](["lemon", "soap", "donut", "coin"])
+colors = Array[Color]([Color(0.723137, 0.803312, 0, 1), Color(0, 0.95855, 0.844559, 1), Color(0.916596, 0.134553, 0.60991, 1), Color(0.930047, 0.863242, 0.091474, 1)])
+failedColor = Color(0.248756, 0.141815, 2.40654e-08, 1)
+baseColor = Color(0.168627, 0.678431, 0.917647, 1)
 
-[node name="Cube" parent="." index="0"]
+[node name="ContentMesh" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(0.378754, 0, 0, 0, 0.378754, 0, 0, 0, 0.378754, 0, 0.575784, 0)
+visible = false
+mesh = SubResource("PlaneMesh_xgcaw")
+surface_material_override/0 = SubResource("StandardMaterial3D_r77oq")
+
+[node name="Cube" parent="." index="1"]
 surface_material_override/0 = ExtResource("2_lx05w")
 surface_material_override/1 = ExtResource("3_xss1v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52588e-05, 0.0352783, 0.00152588)
 shape = SubResource("BoxShape3D_o7esn")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52588e-05, 0.352692, 0.393013)
 shape = SubResource("BoxShape3D_lf1o1")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="3"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52588e-05, 0.352692, -0.391053)
 shape = SubResource("BoxShape3D_lf1o1")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.395218, 0.352692, 0.000640631)
 shape = SubResource("BoxShape3D_lf1o1")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="5"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="6"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.391678, 0.352692, 0.000640631)
 shape = SubResource("BoxShape3D_lf1o1")
 
-[node name="Activation Module" parent="." index="6" instance=ExtResource("4_b5bec")]
+[node name="Activation Module" parent="." index="7" instance=ExtResource("4_b5bec")]
+activators = Array[String](["lemon"])
 
 [node name="CollisionShape3D" parent="Activation Module" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.871637, -0.534031, -0.00560433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.871637, -0.597875, -0.00560433)
 shape = SubResource("BoxShape3D_huebk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+libraries = {
+"": SubResource("AnimationLibrary_mvf0h")
+}
+
+[node name="BubbleParticles" type="GPUParticles3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5362, 0)
+emitting = false
+amount = 40
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.5
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_8vig4")
+draw_pass_1 = SubResource("PlaneMesh_s36qt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="10"]
+stream = ExtResource("7_hy0n5")
+attenuation_model = 1
+unit_size = 3.0
+max_distance = 20.0
+
+[node name="UnkrautEntferner" parent="." index="11" instance=ExtResource("7_4f5hw")]
+visible = false
+
+[node name="buzzer" parent="." index="12" instance=ExtResource("8_xs7rp")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.411707, 0.471556, -0.00082323)
+
+[connection signal="activated" from="Activation Module" to="." method="_on_activation_module_activated"]
+[connection signal="pressed" from="buzzer" to="." method="_on_buzzer_pressed"]
 
 [editable path="Activation Module"]

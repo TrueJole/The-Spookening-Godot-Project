@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://bupcmyphaom6s"]
+
+[ext_resource type="PackedScene" uid="uid://cl1h54i0irns0" path="res://Assets/Wasserhahn.glb" id="1_0ws0e"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_au18q"]
+[ext_resource type="Script" path="res://Game Assets/Deco/wasserhahn.gd" id="2_kpipo"]
+[ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="3_xs3jd"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_gbpdv"]
+[ext_resource type="AudioStream" uid="uid://kq5hv2ri58qq" path="res://Resources/Sounds/WasserLaufend.wav" id="5_cklsq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3j3r"]
+transparency = 1
+albedo_texture = ExtResource("3_xs3jd")
+
+[sub_resource type="Curve" id="Curve_he01b"]
+_data = [Vector2(0, 0.107732), 0.0, 0.0, 0, 0, Vector2(0.113636, 0.177714), 0.0, 0.0, 0, 0, Vector2(0.886364, 0.331674), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_70bs4"]
+curve = SubResource("Curve_he01b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jdqap"]
+direction = Vector3(0, -1, 0)
+spread = 0.349
+initial_velocity_min = 0.39
+initial_velocity_max = 0.47
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_70bs4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_grw2q"]
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqhn5"]
+size = Vector3(0.102497, 0.0796546, 0.141209)
+
+[node name="Wasserhahn" instance=ExtResource("1_0ws0e")]
+script = ExtResource("2_kpipo")
+
+[node name="Cylinder_001" parent="." index="0"]
+material_override = ExtResource("2_au18q")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.000693738, 0.759312, 0.165628)
+material_override = SubResource("StandardMaterial3D_x3j3r")
+emitting = false
+amount = 60
+lifetime = 1.43
+visibility_aabb = AABB(-0.203514, -0.86367, -0.203852, 0.407204, 1.06367, 0.407703)
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_jdqap")
+draw_pass_1 = SubResource("QuadMesh_grw2q")
+
+[node name="Interactive Component" parent="." index="2" instance=ExtResource("4_gbpdv")]
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, -4.16767e-08, -1.27187e-12, 4.16767e-08, 1, -2.8727e-15, 1.76925e-12, -5.75512e-14, 1, 0.195619, -0.52391, 0.000848199)
+shape = SubResource("BoxShape3D_uqhn5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00129578, 0.754308, 0.163813)
+stream = ExtResource("5_cklsq")
+attenuation_model = 1
+volume_db = -1.0
+unit_size = 2.5
+max_db = 0.0
+max_distance = 15.0
+bus = &"Räume"
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+
+[editable path="Interactive Component"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbhplk556y4jk"]
+
+[ext_resource type="PackedScene" uid="uid://4q4aiqsier3" path="res://Assets/Dyson.glb" id="1_jk32b"]
+[ext_resource type="Material" uid="uid://1ffi8n27ury7" path="res://Assets/Materials/Metall_Rau.tres" id="2_c2se2"]
+
+[node name="Dyson" instance=ExtResource("1_jk32b")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_c2se2")

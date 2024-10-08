@@ -15,7 +15,6 @@ script = ExtResource("2_0q2dv")
 
 [node name="Wand 1 * 4" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-lod_bias = 0.3
 surface_material_override/0 = ExtResource("3_m25vv")
 surface_material_override/1 = ExtResource("4_8bi3r")
 

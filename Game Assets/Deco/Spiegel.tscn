@@ -21,8 +21,10 @@ surface_material_override/1 = SubResource("StandardMaterial3D_2j8fh")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00138283)
-update_mode = 1
-max_distance = 2.0
+visible = false
+intensity = 0.2
+max_distance = 13.0
 size = Vector3(0.62, 0.79, 0.24)
 box_projection = true
+enable_shadows = true
 ambient_mode = 0

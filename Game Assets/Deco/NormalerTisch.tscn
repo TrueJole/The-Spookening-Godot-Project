@@ -10,6 +10,7 @@ size = Vector3(0.732727, 0.0621872, 1.38904)
 
 [node name="Cube_003" parent="." index="0"]
 material_override = ExtResource("2_h38pa")
+visibility_range_end = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00289917, 0.592243, 0.0182495)
