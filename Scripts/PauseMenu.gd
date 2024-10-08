@@ -3,11 +3,10 @@ extends CanvasLayer
 @onready var options_menu: Control# = $Control/OptionsMenu
 var OPTIONS_MENU: PackedScene = preload("res://Szenen/OptionsMenu.tscn")
 
-func _ready() -> void:
-	pass
-	
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed('pauseMenu'):
+		_on_resume_button_button_up()
 
-	
 func showMenu() -> void:
 	show()
 	#$CanvasLayer.show()

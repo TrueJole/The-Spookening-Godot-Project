@@ -204,6 +204,7 @@ shader_compiler/shader_cache/strip_debug=true
 environment/ssao/fadeout_from=40.0
 environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
+occlusion_culling/occlusion_rays_per_thread=1024
 global_illumination/sdfgi/probe_ray_count=2
 environment/volumetric_fog/volume_size=32
 environment/volumetric_fog/volume_depth=32

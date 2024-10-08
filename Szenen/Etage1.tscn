@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=4 uid="uid://cfqy3n888iblk"]
+[gd_scene load_steps=44 format=4 uid="uid://cfqy3n888iblk"]
 
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="1_8e773"]
 [ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_pc36m"]
+[ext_resource type="ArrayOccluder3D" uid="uid://rwtsa20njo8k" path="res://Resources/Etage1.occ" id="2_7c84a"]
 [ext_resource type="PackedScene" uid="uid://qowiyimm6qw6" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnenOhneLeiste.tscn" id="2_yve43"]
 [ext_resource type="PackedScene" uid="uid://x3oxxt77x24d" path="res://Game Assets/Walls n Stuff/Neues Zeug/WandInnen.tscn" id="3_3s5xb"]
 [ext_resource type="Material" uid="uid://bpserrf1dnkpv" path="res://Assets/Materials/BodenTürkies.tres" id="3_cfcxk"]
@@ -105,28 +106,39 @@ transform = Transform3D(1, 0, 0, 0, 0.24097, 0, 0, 0, 1, 0, 2.64908, 0)
 script = ExtResource("1_pc36m")
 ShowOnStart = true
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Dach"]
+transform = Transform3D(1, 0, 0, 0, 4.14989, 0, 0, 0, 1, -9.93481, 3.32351, -2.52112)
+layers = 4
+occluder = ExtResource("2_7c84a")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(9.47111, 0, 0, 0, 0.615404, 0, 0, 0, 7.58055, 14.4691, 3.1807, -9.61299)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(36.8531, 0, 0, 0, 0.616702, 0, 0, 0, 10.1143, 0.503803, 3.1807, -5.0539)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(8.0371, 0, 0, 0, 0.616702, 0, 0, 0, 10.1143, -30.0156, 3.1807, -5.0539)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(32.3919, 0, 0, 0, 0.616702, 0, 0, 0, 9.21143, -18.2732, 3.181, 0.554)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(16.9979, 0, 0, 0, 0.616702, 0, 0, 0, 7.87466, 10.546, 3.1807, 1.12008)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Dach"]
 transform = Transform3D(6.43015, 0, 0, 0, 0.616702, 0, 0, 0, 7.14112, -31.0792, 3.1807, 4.57368)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="FloorTile3" parent="." instance=ExtResource("1_8e773")]
@@ -5144,7 +5156,7 @@ stream = ExtResource("24_801o6")
 unit_size = 5.0
 
 [node name="LaserReceiver3" parent="." instance=ExtResource("21_msvfi")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.0803, 3.27796, -10)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.0803, 3.22784, -10)
 
 [node name="TürMitSchloss" parent="." instance=ExtResource("25_isr6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)

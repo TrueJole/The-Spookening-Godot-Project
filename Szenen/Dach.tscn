@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://btre2blkv33rc"]
+[gd_scene load_steps=4 format=3 uid="uid://btre2blkv33rc"]
 
 [ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_m3a0c"]
+[ext_resource type="ArrayOccluder3D" uid="uid://by16qv2wpq2af" path="res://Resources/Dach.occ" id="2_fwdrh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
 
@@ -10,20 +11,29 @@ ShowOnStart = true
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.47111, 0, 0, 0, 0.615404, 0, 0, 0, 7.58055, 14.4691, 3.1807, -9.61299)
+layers = 5
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(53.3859, 0, 0, 0, 0.616702, 0, 0, 0, 10.1143, -7.55212, 3.1807, -5.0539)
+layers = 5
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(32.3919, 0, 0, 0, 0.616702, 0, 0, 0, 7.87466, -18.2398, 3.1807, 1.12008)
+layers = 5
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(16.9979, 0, 0, 0, 0.616702, 0, 0, 0, 7.87466, 10.546, 3.1807, 1.12008)
+layers = 5
 mesh = SubResource("BoxMesh_perbj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.43015, 0, 0, 0, 0.616702, 0, 0, 0, 7.14112, -31.0792, 3.1807, 4.57368)
+layers = 4
 mesh = SubResource("BoxMesh_perbj")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+layers = 4
+occluder = ExtResource("2_fwdrh")
