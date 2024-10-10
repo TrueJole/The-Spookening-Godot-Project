@@ -10,6 +10,7 @@ radius = 0.0564779
 collision_layer = 2
 collision_mask = 3
 mass = 0.2
+metadata/itemid = "donut"
 
 [node name="Torus" parent="." index="0"]
 transform = Transform3D(0.058356, 0, -0.0102897, 0, 0.0592563, 0, 0.0102897, 0, 0.058356, 0, 0.0225007, 0)

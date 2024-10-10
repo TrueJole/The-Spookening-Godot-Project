@@ -16,7 +16,7 @@ size = Vector3(0.0794792, 0.0375891, 0.117266)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tfl3l"]
 lifetime_randomness = 1.0
 emission_shape_scale = Vector3(0.05, 0.05, 0.05)
-gravity = Vector3(0, 0, 0)
+gravity = Vector3(0, -0.01, 0)
 scale_min = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ndmk"]
@@ -42,6 +42,7 @@ metadata/itemid = "soap"
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(0.035939, 0, 0, 0, 0.0134716, 0, 0, 0, 0.0544811, 0, 0.0243186, 0)
+gi_mode = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_s4ijt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
@@ -50,7 +51,6 @@ shape = SubResource("BoxShape3D_7pjtx")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022, 0)
-emitting = false
 amount = 16
 lifetime = 2.0
 fixed_fps = 20

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dl4e1l3f1unj3"]
+[gd_scene load_steps=32 format=3 uid="uid://dl4e1l3f1unj3"]
 
 [ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_m6fo4"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="2_a3swf"]
@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://dbhplk556y4jk" path="res://Game Assets/Deco/Dyson.tscn" id="23_k4ego"]
 [ext_resource type="PackedScene" uid="uid://cox6vjrgqr8gd" path="res://Game Assets/Deco/Kessel.tscn" id="24_e3rgw"]
 [ext_resource type="PackedScene" uid="uid://bupcmyphaom6s" path="res://Game Assets/Deco/Wasserhahn.tscn" id="25_i6crw"]
+[ext_resource type="PackedScene" uid="uid://c1vg03iowb0o6" path="res://Game Assets/Items/Zitrone.tscn" id="26_dnh0w"]
+[ext_resource type="PackedScene" uid="uid://b0qbing1uirni" path="res://Game Assets/Items/Coin.tscn" id="27_k61yn"]
+[ext_resource type="PackedScene" uid="uid://bvipxvc0fsh1l" path="res://Game Assets/Items/Buch.tscn" id="28_bf8pb"]
 
 [sub_resource type="Animation" id="Animation_dmr0k"]
 length = 0.001
@@ -4732,5 +4735,21 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25, 0
 [node name="Kessel" parent="." instance=ExtResource("24_e3rgw")]
 transform = Transform3D(0.670983, 0, -0.741472, 0, 1, 0, 0.741472, 0, 0.670983, 14.3678, 0.000499487, 2.98183)
 
-[node name="Wasserhahn" parent="." instance=ExtResource("25_i6crw")]
+[node name="Wasserhahn" parent="." node_paths=PackedStringArray("kessel") instance=ExtResource("25_i6crw")]
 transform = Transform3D(0.785479, 0, -0.618888, 0, 1, 0, 0.618888, 0, 0.785479, 14.7586, 0.183946, 2.68794)
+kessel = NodePath("../Kessel")
+
+[node name="Zitrone" parent="." instance=ExtResource("26_dnh0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9141, 0.000499964, 1.9562)
+
+[node name="Seife4" parent="." instance=ExtResource("21_lhayl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1258, 0.000499964, 2.23444)
+
+[node name="Coin" parent="." instance=ExtResource("27_k61yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0111, 0.000499964, 3.46806)
+
+[node name="donut2" parent="." instance=ExtResource("22_k4oe4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2922, 0.000499845, 1.76116)
+
+[node name="Buch" parent="." instance=ExtResource("28_bf8pb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9739, 0.000499964, 2.71744)

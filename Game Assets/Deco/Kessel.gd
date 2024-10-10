@@ -12,16 +12,17 @@ extends StaticBody3D
 
 const SPÜLUNG: Resource = preload("res://Resources/Sounds/Spülung.wav")
 const PUZZLE_SOLVED_JINGLE: Resource  = preload("res://Resources/Sounds/PuzzleSolvedJingle.wav")
-
+const UNKRAUT_ENTFERNER: PackedScene = preload("res://Game Assets/Items/UnkrautEntferner.tscn")
 
 var done: bool
 var filled: bool
-var failed: bool
+var failed: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setColor(baseColor)
 	fulfilled.resize(item_ids.size())
+	fulfilled.fill(false)
 
 func setColor(c: Color) -> void:
 	var temp: BaseMaterial3D = content_mesh.get_surface_override_material(0)
@@ -31,7 +32,9 @@ func setColor(c: Color) -> void:
 
 func fill() -> void:
 	setColor(baseColor)
+	print_debug('Filling, before ', filled)
 	if not filled:
+		content_mesh.show()
 		animation_player.play('fill')
 		filled = true
 		
@@ -40,28 +43,35 @@ func clear() -> void:
 	if filled:
 		animation_player.play_backwards('fill')
 		filled = false
-		fulfilled.clear()
+		fulfilled.fill(false)
+		failed = false
 		$AudioStreamPlayer3D.stream = SPÜLUNG
 		$AudioStreamPlayer3D.play()
 
 
 func _on_activation_module_activated(body: Node3D) -> void:
-	if not done and not failed and filled and body.has_meta('item_id') and body.get_meta('item_id') in item_ids:
+	print_debug(not done, not failed, filled, body.has_meta('itemid'), body.get_meta('itemid') in item_ids)
+	if not done and not failed and filled and body.has_meta('itemid') and body.get_meta('itemid') in item_ids:
+		
 		$BubbleParticles.emitting = true
-		setColor(colors[item_ids.find(body.get_meta('item_id'))])
-		fulfilled[item_ids.find(body.get_meta('item_id'))] = true
+		setColor(colors[item_ids.find(body.get_meta('itemid'))])
+		fulfilled[item_ids.find(body.get_meta('itemid'))] = true
 		body.queue_free()
-	elif not done and not failed and filled:
+	elif not done and filled:
+		print_debug('Failed ', body)
 		failed = true
 		setColor(failedColor)
 		body.queue_free()
 		
 	if not done and not failed and fulfilled.find(false) == -1:
+		print_debug('Done')
 		$BubbleParticles.amount = 100
 		$BubbleParticles.emitting = true
 		done = true
 		content_mesh.hide()
-		$UnkrautEntferner.show()
+		var temp: RigidBody3D = UNKRAUT_ENTFERNER.instantiate()
+		add_child(temp)
+		temp.global_position = $Marker3D.global_position
 		$AudioStreamPlayer3D.stream = PUZZLE_SOLVED_JINGLE
 		$AudioStreamPlayer3D.play()
 

@@ -2,6 +2,7 @@ extends Area3D
 
 signal activated(body: Node3D)
 
+@export var all_item_ids: bool
 @export var activators:Array[String]
 var lastBody: Node3D
 
@@ -14,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 			
 			if body.has_meta('itemid'):
 				#print_debug(body.get_meta('itemid'))
-				if body.get_meta('itemid') in activators:
+				if all_item_ids or body.get_meta('itemid') in activators:
 					#print_debug(body)
 					lastBody = body
 					if body.has_method('activated'):

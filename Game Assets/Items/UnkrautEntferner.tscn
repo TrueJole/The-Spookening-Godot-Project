@@ -29,7 +29,7 @@ curve = SubResource("Curve_onxsr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2farw"]
 lifetime_randomness = 0.08
-inherit_velocity_ratio = 0.845
+inherit_velocity_ratio = 1.0
 spread = 12.442
 initial_velocity_min = 1.5
 initial_velocity_max = 1.5
@@ -47,22 +47,6 @@ height = 0.02
 height = 0.278067
 radius = 0.0975791
 
-[sub_resource type="Animation" id="Animation_pmej7"]
-resource_name = "on"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cone_001:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.363988)]
-}
-
 [sub_resource type="Animation" id="Animation_otjho"]
 length = 0.001
 tracks/0/type = "value"
@@ -76,6 +60,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pmej7"]
+resource_name = "on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cone_001:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(1.52316e-08, -1.5708, 0.355925)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d7phh"]
@@ -95,15 +95,16 @@ metadata/itemid = "spray"
 metadata/equipable = true
 
 [node name="Cone" parent="." index="0"]
+transform = Transform3D(-4.36694e-09, 0, -0.099904, 0, 0.099904, 0, 0.099904, 0, -4.36694e-09, -0.0296128, 0.0998312, 0.0300482)
 surface_material_override/0 = ExtResource("2_gvypm")
 surface_material_override/1 = SubResource("StandardMaterial3D_7ur2n")
 
 [node name="Cone_001" parent="." index="1"]
-transform = Transform3D(0.099904, 0, 0, 0, 0.099904, 0, 0, 0, 0.099904, -0.0515156, 0.252243, 0)
+transform = Transform3D(0.099904, 0, 0, 0, 0.099904, 0, 0, 0, 0.099904, -0.0296128, 0.252243, -0.0222092)
 material_override = ExtResource("2_gvypm")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0662243, 0.267367, -0.000919163)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -0.0286936, 0.267367, -0.0369179)
 emitting = false
 amount = 30
 lifetime = 0.3
@@ -114,7 +115,7 @@ process_material = SubResource("ParticleProcessMaterial_2farw")
 draw_pass_1 = SubResource("SphereMesh_rs3l0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138493, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0296128, 0.138493, 0.0293064)
 shape = SubResource("CylinderShape3D_1ojbf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
@@ -123,9 +124,10 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0597595, 0.265385, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0296128, 0.265385, -0.0304531)
 
 [node name="SprayArea" type="Area3D" parent="." index="6"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0296128, 0, 0.0293064)
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SprayArea" index="0"]
