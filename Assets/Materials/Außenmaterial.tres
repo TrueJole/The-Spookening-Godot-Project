@@ -1,4 +1,11 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://j8ljvqowqkw4"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://j8ljvqowqkw4"]
+
+[ext_resource type="Texture2D" uid="uid://ld6wledegbr1" path="res://Assets/Materials/Textures/Bricks025_4K_Color.jpg" id="1_6q02s"]
+[ext_resource type="Texture2D" uid="uid://dc5sv1t4mg76o" path="res://Assets/Materials/Textures/Bricks025_4K_NormalGL.jpg" id="2_ergi3"]
 
 [resource]
-albedo_color = Color(0.286275, 0, 0.0196078, 1)
+albedo_texture = ExtResource("1_6q02s")
+normal_enabled = true
+normal_scale = 0.4
+normal_texture = ExtResource("2_ergi3")
+uv1_world_triplanar = true

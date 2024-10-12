@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfgy8w160wqhn"]
+
+[ext_resource type="PackedScene" uid="uid://1ehggmk7yida" path="res://Assets/ChemieTisch.glb" id="1_66fxb"]
+[ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="2_0yjdp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80xj7"]
+resource_name = "Graue Leiste"
+albedo_color = Color(0.765415, 0.765415, 0.765415, 1)
+roughness = 0.65
+
+[node name="ChemieTisch" instance=ExtResource("1_66fxb")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0yjdp")
+surface_material_override/1 = SubResource("StandardMaterial3D_80xj7")
+surface_material_override/2 = SubResource("StandardMaterial3D_80xj7")

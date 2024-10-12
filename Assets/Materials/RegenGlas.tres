@@ -7,4 +7,3 @@ albedo_color = Color(0.505882, 0.505882, 0.505882, 0.215686)
 roughness = 0.0
 normal_scale = 0.63
 uv1_scale = Vector3(0.655, 0.655, 0.655)
-uv1_triplanar = true

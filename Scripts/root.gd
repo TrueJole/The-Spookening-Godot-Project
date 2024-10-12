@@ -17,12 +17,12 @@ func default_settings() -> void:
 	print('applied default settings')
 	Settings.ssao = true
 	Settings.volumetricFog = true
-	Settings.ssr = true
+	Settings.ssr = false
 	Settings.ssil = false
 	Settings.giQuality = 1
-	Settings.msaa = true
+	Settings.msaa = false
 	Settings.exposure = 1
-	Settings.shadowPower = 12
+	Settings.shadowPower = 9
 	Settings.showFPS = false
 	Settings.fullscreen = true
 	Settings.fpsMode = 1

@@ -22,6 +22,7 @@ func checkHand() -> void:
 	else:
 		#print_debug('Punkt')
 		cursor.texture = CURSOR_PUNKT
+		GlobalDebug.info.aim = null
 		
 	
 func _physics_process(_delta: float) -> void:

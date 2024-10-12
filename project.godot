@@ -33,6 +33,7 @@ settings/3d/volumetric_defaults/thickness=0.03
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/dpi/allow_hidpi=false
@@ -67,7 +68,7 @@ texture={
 "compress/mode": 2,
 "compress/normal_map": 0,
 "detect_3d/compress_to": 0,
-"mipmaps/generate": false,
+"mipmaps/generate": true,
 "mipmaps/limit": -1,
 "process/fix_alpha_border": true,
 "process/hdr_as_srgb": false,
@@ -193,7 +194,7 @@ common/physics_jitter_fix=0.0
 3d/physics_engine="JoltPhysics3D"
 3d/default_gravity=9.81
 common/physics_interpolation=true
-jolt_3d/volumetric_fog/volume_size=64
+jolt_3d/solver/position_iterations=4
 
 [rendering]
 
@@ -205,10 +206,9 @@ shader_compiler/shader_cache/strip_debug=true
 environment/ssao/fadeout_from=40.0
 environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
-occlusion_culling/occlusion_rays_per_thread=1024
 global_illumination/sdfgi/probe_ray_count=2
-environment/volumetric_fog/volume_size=32
-environment/volumetric_fog/volume_depth=32
+environment/volumetric_fog/volume_size=16
+environment/volumetric_fog/volume_depth=16
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true

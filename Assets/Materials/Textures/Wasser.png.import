@@ -3,25 +3,27 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnu58dwbpyu2x"
-path="res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.ctex"
+path.s3tc="res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.s3tc.ctex"
+path.etc2="res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Textures/Wasser.png"
-dest_files=["res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.ctex"]
+dest_files=["res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.s3tc.ctex", "res://.godot/imported/Wasser.png-8fc46aba5adb1ccfe9fca88bc9dc7ab8.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -49,5 +49,5 @@ func _ready() -> void:
 	get_tree().root.scaling_3d_scale = Root.Settings.scale3D
 	
 	# ENABLE WIREFRAME MODE #4 - Wireframe
-	get_tree().root.debug_draw = 19#24#4
+	#get_tree().root.debug_draw = 19#24#4
 	

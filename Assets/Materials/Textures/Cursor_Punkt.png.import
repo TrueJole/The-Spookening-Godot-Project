@@ -17,7 +17,7 @@ dest_files=["res://.godot/imported/Cursor_Punkt.png-49dd2d7d56a67d3af4fb543ef1f7
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

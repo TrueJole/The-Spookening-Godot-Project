@@ -8,11 +8,11 @@
 [node name="DebugInfo" type="Label" parent="."]
 process_mode = 3
 z_index = 99
-offset_left = 1561.0
+offset_left = 1494.0
 offset_top = 6.0
 offset_right = 1907.0
 offset_bottom = 501.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "DEBUGINFO"
 
 [node name="SubViewport" parent="." instance=ExtResource("4_0247n")]

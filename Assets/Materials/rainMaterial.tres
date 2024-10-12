@@ -11,4 +11,3 @@ roughness = 0.0
 normal_scale = 0.63
 backlight_texture = SubResource("ViewportTexture_87bgk")
 uv1_scale = Vector3(0.655, 0.655, 0.655)
-uv1_triplanar = true
