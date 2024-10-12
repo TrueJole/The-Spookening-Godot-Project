@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Root="*res://Scripts/root.gd"
+GlobalDebug="*res://Scripts/global_debug.gd"
 
 [debug]
 
