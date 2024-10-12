@@ -206,12 +206,13 @@ shader_compiler/shader_cache/strip_debug=true
 environment/ssao/fadeout_from=40.0
 environment/ssao/fadeout_to=64.0
 environment/ssil/quality=1
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+environment/screen_space_reflection/roughness_quality=0
 global_illumination/sdfgi/probe_ray_count=2
 environment/volumetric_fog/volume_size=16
 environment/volumetric_fog/volume_depth=16
 environment/defaults/default_clear_color=Color(0.109804, 0.109804, 0.109804, 1)
 anti_aliasing/quality/use_debanding=true
-occlusion_culling/use_occlusion_culling=true
 
 [xr]
 
