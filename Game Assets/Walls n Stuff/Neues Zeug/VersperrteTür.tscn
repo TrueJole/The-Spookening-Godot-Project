@@ -20,7 +20,7 @@ freeze = true
 visible = false
 
 [node name="Sperre" parent="." index="5" instance=ExtResource("2_374a0")]
-transform = Transform3D(-3.614e-08, 0, -0.826787, 0, 0.826787, 0, 0.826787, 0, -3.614e-08, 0.492261, 0.107085, -0.0682267)
+transform = Transform3D(-3.20398e-08, 0, -0.642181, 0, 0.732986, 0, 0.732986, 0, -2.80706e-08, 0.492261, 0.197967, -0.0840748)
 
 [node name="Cube_001" parent="Sperre" index="0"]
 material_override = ExtResource("3_1s86e")
@@ -31,7 +31,7 @@ material_override = ExtResource("3_1s86e")
 lod_bias = 10.0
 
 [node name="Sperre2" parent="." index="6" instance=ExtResource("2_374a0")]
-transform = Transform3D(1.0842e-07, 0, 0.826787, 0, 0.826787, 0, -0.826787, 0, 1.0842e-07, 0.492261, 0.107085, 0.0764959)
+transform = Transform3D(9.61195e-08, 0, 0.642181, 0, 0.732986, 0, -0.732986, 0, 8.42118e-08, 0.492261, 0.197967, 0.0857465)
 
 [node name="Cube_001" parent="Sperre2" index="0"]
 material_override = ExtResource("3_1s86e")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://beg7d3p40qesk"]
+
+[ext_resource type="PackedScene" uid="uid://w3xddw8iuahn" path="res://Assets/Klemmbrett.glb" id="1_xl7u2"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_rnvew"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2aa27"]
+albedo_color = Color(0.270743, 0.0192012, 1.20327e-08, 1)
+roughness = 0.76
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wth8a"]
+albedo_color = Color(0.905145, 0.892001, 0.831518, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvavu"]
+size = Vector3(0.394897, 0.0112877, 0.287842)
+
+[node name="KlemmBrett" instance=ExtResource("1_xl7u2")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 3
+mass = 0.438
+metadata/Equipable = true
+
+[node name="Cube" parent="." index="0"]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_2aa27")
+surface_material_override/1 = ExtResource("2_rnvew")
+
+[node name="Plane" parent="." index="1"]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_wth8a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00274658, 0.00787926, -0.00012207)
+shape = SubResource("BoxShape3D_tvavu")
+disabled = true
+
+[node name="Label3D" type="Label3D" parent="." index="3"]
+visible = false
+text = "sdfsadssssffff"

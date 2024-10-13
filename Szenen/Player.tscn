@@ -212,6 +212,7 @@ hit_from_inside = true
 collide_with_areas = true
 
 [node name="VignetteOverlay" type="ColorRect" parent="Head/Camera3D"]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_pqy3d")
 anchors_preset = 15
