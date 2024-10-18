@@ -12,6 +12,7 @@ light_indirect_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 0.5
+directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 15.0
