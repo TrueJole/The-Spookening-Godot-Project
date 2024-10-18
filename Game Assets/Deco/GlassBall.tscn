@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://csmpo0diji4tx"]
 
 [ext_resource type="PackedScene" uid="uid://47iu1chnoxb3" path="res://Assets/GlassBall.glb" id="1_dkx3p"]
-[ext_resource type="Script" path="res://Game Assets/Deco/glass_ball.gd" id="2_tk2ec"]
+[ext_resource type="Script" path="res://glass_ball.gd" id="2_tk2ec"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_y8gdw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cr0"]

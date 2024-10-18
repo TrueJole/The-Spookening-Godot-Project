@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wcikx8oabdfs" path="res://Assets/Spider.glb" id="1_hm1r2"]
 [ext_resource type="Script" path="res://Scripts/Spider.gd" id="2_tmidq"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_qnop6"]
 
 [sub_resource type="Animation" id="Animation_nu54c"]
 resource_name = "down"
@@ -30,12 +31,8 @@ _data = {
 "up": SubResource("Animation_236x8")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6winu"]
-albedo_color = Color(0.234958, 0.234958, 0.234958, 1)
-anisotropy = 0.67
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdyqi"]
-roughness = 0.35
+roughness = 0.0
 
 [node name="Spider" instance=ExtResource("1_hm1r2")]
 script = ExtResource("2_tmidq")
@@ -48,5 +45,5 @@ libraries = {
 [node name="Cylinder" parent="." index="1"]
 transform = Transform3D(-0.00169486, 0, 0, 0, 2.54642, 0, 0, 0, -0.00169486, 0, 5.5, 0)
 cast_shadow = 0
-surface_material_override/0 = SubResource("StandardMaterial3D_6winu")
+surface_material_override/0 = ExtResource("3_qnop6")
 surface_material_override/1 = SubResource("StandardMaterial3D_mdyqi")

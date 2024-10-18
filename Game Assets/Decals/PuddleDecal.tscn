@@ -8,10 +8,10 @@
 transparency = 2
 alpha_scissor_threshold = 0.001
 alpha_antialiasing_mode = 0
-albedo_color = Color(0.256549, 0.682516, 1, 1)
+albedo_color = Color(0.164706, 0.403922, 0.968627, 1)
 albedo_texture = ExtResource("1_6y1n8")
 albedo_texture_msdf = true
-roughness = 0.0
+roughness = 0.13
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -2.98023e-08, 1, 0, -1, -2.98023e-08, 0, 0, 0)

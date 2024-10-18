@@ -1,10 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dal27bo6xe78"]
 
 [ext_resource type="PackedScene" uid="uid://151c4ehbfc2g" path="res://Assets/Monitor.glb" id="1_v03a1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0nnd"]
-albedo_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
-roughness = 0.51
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_pmgqk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khhsb"]
 resource_local_to_scene = true
@@ -17,7 +14,7 @@ size = Vector3(0.03, 0.27, 0.460825)
 [node name="Monitor" instance=ExtResource("1_v03a1")]
 
 [node name="Cube" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_p0nnd")
+surface_material_override/0 = ExtResource("2_pmgqk")
 surface_material_override/1 = SubResource("StandardMaterial3D_khhsb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]

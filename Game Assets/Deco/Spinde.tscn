@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://b8t31041u720e"]
+[gd_scene load_steps=8 format=4 uid="uid://b8t31041u720e"]
 
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="1_3lyog"]
 [ext_resource type="PackedScene" uid="uid://ocmkg3nnjppx" path="res://Szenen/SpindTür.tscn" id="1_h2hqw"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_meidf"]
@@ -72,6 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -1.126, -0.0137866)
 visibility_range_end = 40.0
 mesh = SubResource("ArrayMesh_v3p4x")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_3lyog")
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("1_h2hqw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019, 1.126, 0.298)

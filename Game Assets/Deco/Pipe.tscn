@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxkrxfp103tjy" path="res://Assets/Pipe.glb" id="1_d0hgq"]
 [ext_resource type="Material" uid="uid://c8n1i4okw40dn" path="res://Assets/Materials/Bronze.tres" id="2_e6d55"]
-[ext_resource type="Script" path="res://Game Assets/Deco/pipe.gd" id="2_igjbq"]
+[ext_resource type="Script" path="res://pipe.gd" id="2_igjbq"]
 [ext_resource type="Material" uid="uid://cut5rvh8j6xmx" path="res://Assets/Materials/Bronze2.tres" id="3_yjjyi"]
 [ext_resource type="PackedScene" uid="uid://bo8a5ug8mk15h" path="res://Game Assets/Parts/Screw.tscn" id="4_if12i"]
 [ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="5_xdjte"]

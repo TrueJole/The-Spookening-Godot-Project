@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cox6vjrgqr8gd"]
 
 [ext_resource type="PackedScene" uid="uid://c4r8hmwdy7m1e" path="res://Assets/Kessel.glb" id="1_w33qi"]
-[ext_resource type="Script" path="res://Game Assets/Deco/Kessel.gd" id="2_7ujqx"]
+[ext_resource type="Script" path="res://Kessel.gd" id="2_7ujqx"]
 [ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_lx05w"]
 [ext_resource type="Material" uid="uid://c8n1i4okw40dn" path="res://Assets/Materials/Bronze.tres" id="3_xss1v"]
 [ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_b5bec"]

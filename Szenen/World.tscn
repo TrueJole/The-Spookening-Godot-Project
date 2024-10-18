@@ -70,6 +70,7 @@ data = ExtResource("4_s06mn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 process_mode = 3
+visible = false
 occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967289
 bake_simplification_distance = 0.0

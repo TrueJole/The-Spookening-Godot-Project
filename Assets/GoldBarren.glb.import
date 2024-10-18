@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/GoldBarren.glb-072803799243404170e0986138b185
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

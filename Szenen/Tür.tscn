@@ -35,6 +35,7 @@ visibility_range_end = 25.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409098, 1.43049, 0.0279806)
+visible = false
 occluder = ExtResource("1_l2yor")
 bake_mask = 4294966274
 

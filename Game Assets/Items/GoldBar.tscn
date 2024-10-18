@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp7dj8vgmbxhm"]
+
+[ext_resource type="PackedScene" uid="uid://dkw3j3nvnts8u" path="res://Assets/GoldBarren.glb" id="1_45ic1"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_xbcf6"]
+
+[node name="GoldBarren" instance=ExtResource("1_45ic1")]
+collision_layer = 2
+collision_mask = 3
+mass = 12.0
+metadata/itemid = "coin"
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_xbcf6")

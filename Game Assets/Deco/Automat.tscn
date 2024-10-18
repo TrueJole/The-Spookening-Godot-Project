@@ -6,12 +6,8 @@
 [ext_resource type="Material" uid="uid://bd7gy6guff6jw" path="res://Assets/Materials/Glas.tres" id="3_lor8m"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_1wla6"]
 [ext_resource type="PackedScene" uid="uid://burmik51o82fn" path="res://Szenen/ActivationModule.tscn" id="4_15gl3"]
+[ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="5_shs40"]
 [ext_resource type="Script" path="res://Scripts/flicker.gd" id="7_45hna"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6q0h"]
-albedo_color = Color(0.320668, 0.320668, 0.320668, 1)
-metallic = 0.22
-roughness = 0.58
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcdug"]
 albedo_color = Color(0.551754, 0.599677, 0.581404, 1)
@@ -65,7 +61,7 @@ surface_material_override/0 = ExtResource("2_k3y3r")
 
 [node name="Plane" parent="." index="2"]
 surface_material_override/0 = ExtResource("3_lor8m")
-surface_material_override/1 = SubResource("StandardMaterial3D_b6q0h")
+surface_material_override/1 = ExtResource("5_shs40")
 surface_material_override/2 = SubResource("StandardMaterial3D_qcdug")
 surface_material_override/3 = SubResource("StandardMaterial3D_xjhh8")
 surface_material_override/4 = SubResource("StandardMaterial3D_o0kjs")

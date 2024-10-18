@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bync8snl5bq20"]
 
 [ext_resource type="PackedScene" uid="uid://c8tp8mr5suotu" path="res://Assets/MülleimerKlein.glb" id="1_les3p"]
-[ext_resource type="Material" uid="uid://c68mqmtwwwsba" path="res://Assets/Materials/KreideTafelRand.tres" id="2_1vuyq"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_egxsp"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_i7mig"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pf8v"]
@@ -18,7 +18,7 @@ radius = 0.13111
 lod_bias = 0.1
 visibility_range_end = 40.0
 surface_material_override/0 = SubResource("StandardMaterial3D_4pf8v")
-surface_material_override/1 = ExtResource("2_1vuyq")
+surface_material_override/1 = ExtResource("2_egxsp")
 surface_material_override/2 = ExtResource("3_i7mig")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]

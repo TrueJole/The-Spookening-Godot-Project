@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=22 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
 [ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
 [ext_resource type="Material" uid="uid://ddcmnt44ha8gd" path="res://Scripts/WaterShader.tres" id="7_vpvg2"]
+[ext_resource type="ArrayOccluder3D" uid="uid://slwbee55xuu7" path="res://Resources/Player.occ" id="10_knmw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pqy3d"]
 shader = ExtResource("6_6q5m7")
@@ -112,7 +113,7 @@ _data = {
 [sub_resource type="SphereMesh" id="SphereMesh_u7hyg"]
 flip_faces = true
 radius = 29.0
-height = 28.0
+height = 26.0
 radial_segments = 20
 rings = 7
 
@@ -275,7 +276,14 @@ mesh = SubResource("PlaneMesh_8de6o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.00142)
 layers = 2
 cast_shadow = 0
+lod_bias = 128.0
 ignore_occlusion_culling = true
 gi_mode = 0
 mesh = SubResource("SphereMesh_u7hyg")
 surface_material_override/0 = SubResource("StandardMaterial3D_6us4x")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+visible = false
+layers = 4
+occluder = ExtResource("10_knmw4")
+bake_simplification_distance = 0.0
