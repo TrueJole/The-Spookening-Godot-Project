@@ -41,11 +41,13 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/optiscene/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://Game Assets/": "green",
+"res://Scripts/": "purple",
 "res://Tools/": "red",
 "res://addons/": "gray"
 }
