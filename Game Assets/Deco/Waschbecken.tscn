@@ -101,6 +101,7 @@ unit_size = 2.5
 max_db = 0.0
 max_distance = 15.0
 bus = &"Räume"
+area_mask = 8
 
 [connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

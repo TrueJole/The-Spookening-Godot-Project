@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_na64g"]
 [ext_resource type="PackedScene" uid="uid://bo2fcaed2jk31" path="res://Szenen/OptionsMenu.tscn" id="3_54e1v"]
 [ext_resource type="Texture2D" uid="uid://cuucbbs2ribtd" path="res://Assets/Materials/Textures/twirl_01.png" id="5_18okb"]
-[ext_resource type="Script" path="res://Szenen/rotate.gd" id="6_fikis"]
+[ext_resource type="Script" path="res://Scripts/rotate.gd" id="6_fikis"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1k1ql"]
 blend_mode = 1

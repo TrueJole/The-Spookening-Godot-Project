@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbelwvr0dasdd" path="res://Assets/Output.glb" id="1_gsswc"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_m3gtj"]
-[ext_resource type="Script" path="res://output.gd" id="2_o1on1"]
+[ext_resource type="Script" path="res://Scripts/output.gd" id="2_o1on1"]
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Items/Schlüssel.tscn" id="3_dtteo"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_va0x3"]
 [ext_resource type="Material" uid="uid://bxdste0qk5r8k" path="res://Assets/Materials/RedLightOff.tres" id="4_q1hxk"]

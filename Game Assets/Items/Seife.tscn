@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://0b5hw70fw4wo"]
 
 [ext_resource type="PackedScene" uid="uid://cggcjxsc743hq" path="res://Assets/Seife.glb" id="1_73bnx"]
-[ext_resource type="Script" path="res://Game Assets/Items/Seife.gd" id="2_e7srx"]
+[ext_resource type="Script" path="res://Scripts/Seife.gd" id="2_e7srx"]
 [ext_resource type="Texture2D" uid="uid://bsiciawgonygp" path="res://Assets/Materials/Textures/Blase.png" id="3_d0vqi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d23e0"]

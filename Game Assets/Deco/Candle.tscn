@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cor2hd4ex3ebi"]
 
 [ext_resource type="PackedScene" uid="uid://dy6eksvquhuqo" path="res://Assets/Candle.glb" id="1_esykc"]
-[ext_resource type="Script" path="res://candle.gd" id="2_13j6l"]
+[ext_resource type="Script" path="res://Scripts/candle.gd" id="2_13j6l"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="2_k3pau"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="3_4tm1i"]
 [ext_resource type="Texture2D" uid="uid://c8n365y3y5ym1" path="res://Assets/Materials/Textures/candlelight.png" id="4_vndip"]

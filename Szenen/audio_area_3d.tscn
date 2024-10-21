@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cddt8mq7bfi8w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qykwn"]
+size = Vector3(42.8994, 3.45605, 3.09821)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1s6jn"]
+size = Vector3(3.08014, 3.43896, 2.99811)
+
+[node name="AudioArea3D" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038871, 0, 0)
+monitoring = false
+audio_bus_override = true
+audio_bus_name = &"Flur"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53076, 1.69937, -2.51584)
+shape = SubResource("BoxShape3D_qykwn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5163, 1.70786, -5.53339)
+shape = SubResource("BoxShape3D_1s6jn")

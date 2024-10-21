@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://k6ypd2ad3jwi" path="res://Assets/UnkrautEntferner.glb" id="1_x2glg"]
 [ext_resource type="Material" uid="uid://bvbuv05k6fwtc" path="res://Assets/Materials/UhrenSchwarz.tres" id="2_gvypm"]
-[ext_resource type="Script" path="res://Game Assets/Items/unkraut_entferner.gd" id="2_ngoji"]
+[ext_resource type="Script" path="res://Scripts/unkraut_entferner.gd" id="2_ngoji"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ur2n"]
 albedo_color = Color(0.180309, 0.270865, 0.204043, 1)
@@ -125,6 +125,8 @@ libraries = {
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0296128, 0.265385, -0.0304531)
+bus = &"Räume"
+area_mask = 8
 
 [node name="SprayArea" type="Area3D" parent="." index="6"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0296128, 0, 0.0293064)

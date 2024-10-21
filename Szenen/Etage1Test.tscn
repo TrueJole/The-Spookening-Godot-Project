@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://tmst487vp4ut" path="res://Game Assets/laserGenerator.tscn" id="21_f1e8d"]
 [ext_resource type="PackedScene" uid="uid://b8n7bd3xafjq4" path="res://Game Assets/LaserReceiver.tscn" id="22_wn1v8"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="23_ton0n"]
-[ext_resource type="Script" path="res://Szenen/laser_rätsel.gd" id="24_rbx35"]
+[ext_resource type="Script" path="res://Scripts/laser_rätsel.gd" id="24_rbx35"]
 [ext_resource type="AudioStream" uid="uid://cdemxddumls7i" path="res://Resources/Sounds/PuzzleSolvedJingle.wav" id="25_tg6di"]
 [ext_resource type="PackedScene" uid="uid://7fk542mc5wfb" path="res://Game Assets/Walls n Stuff/Neues Zeug/TürMitSchloss.tscn" id="26_0mm8d"]
 [ext_resource type="PackedScene" uid="uid://n60msnckcy2l" path="res://Game Assets/Decals/KreuzDecal.tscn" id="27_hmv61"]

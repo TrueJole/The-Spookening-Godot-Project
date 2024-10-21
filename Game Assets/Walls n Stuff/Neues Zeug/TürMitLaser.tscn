@@ -23,3 +23,18 @@ transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.3
 
 [node name="LaserGenerator4" parent="Lasers" index="4" instance=ExtResource("2_3pfqp")]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.853026, 2.01162, 0.0999997)
+
+[node name="LaserGenerator6" parent="Lasers" index="5" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.135513, 2.01162, -0.0969891)
+
+[node name="LaserGenerator7" parent="Lasers" index="6" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.316763, 2.01162, -0.0969891)
+
+[node name="LaserGenerator8" parent="Lasers" index="7" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.498085, 2.01162, -0.0969891)
+
+[node name="LaserGenerator9" parent="Lasers" index="8" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.684263, 2.01162, -0.0969891)
+
+[node name="LaserGenerator10" parent="Lasers" index="9" instance=ExtResource("2_3pfqp")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.853026, 2.01162, -0.0969891)

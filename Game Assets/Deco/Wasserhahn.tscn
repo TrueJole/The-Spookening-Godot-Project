@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cl1h54i0irns0" path="res://Assets/Wasserhahn.glb" id="1_0ws0e"]
 [ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_au18q"]
-[ext_resource type="Script" path="res://wasserhahn.gd" id="2_kpipo"]
+[ext_resource type="Script" path="res://Scripts/wasserhahn.gd" id="2_kpipo"]
 [ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="3_xs3jd"]
 [ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_gbpdv"]
 [ext_resource type="AudioStream" uid="uid://kq5hv2ri58qq" path="res://Resources/Sounds/WasserLaufend.wav" id="5_cklsq"]
@@ -64,6 +64,7 @@ unit_size = 2.5
 max_db = 0.0
 max_distance = 15.0
 bus = &"Räume"
+area_mask = 8
 
 [connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
 
