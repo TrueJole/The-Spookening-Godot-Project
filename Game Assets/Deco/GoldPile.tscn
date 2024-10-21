@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvo8tvxoopejg"]
+
+[ext_resource type="PackedScene" uid="uid://c1srhryaka8gg" path="res://Assets/GoldPile.glb" id="1_ir7wl"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_o4fqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1wpa"]
+size = Vector3(0.71804, 0.227966, 0.274902)
+
+[node name="GoldPile" instance=ExtResource("1_ir7wl")]
+
+[node name="Cube_001" parent="." index="0"]
+material_override = ExtResource("2_o4fqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0628395, 0.111481, 0.000732422)
+shape = SubResource("BoxShape3D_e1wpa")

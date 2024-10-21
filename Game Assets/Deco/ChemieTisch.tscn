@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfgy8w160wqhn"]
+[gd_scene load_steps=6 format=3 uid="uid://cfgy8w160wqhn"]
 
 [ext_resource type="PackedScene" uid="uid://1ehggmk7yida" path="res://Assets/ChemieTisch.glb" id="1_66fxb"]
 [ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="2_0yjdp"]
@@ -8,9 +8,27 @@ resource_name = "Graue Leiste"
 albedo_color = Color(0.765415, 0.765415, 0.765415, 1)
 roughness = 0.65
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i57i5"]
+size = Vector3(0.59494, 0.0453796, 1.33521)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrh88"]
+size = Vector3(0.564018, 0.614882, 0.0750122)
+
 [node name="ChemieTisch" instance=ExtResource("1_66fxb")]
 
 [node name="Cube" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_0yjdp")
 surface_material_override/1 = SubResource("StandardMaterial3D_80xj7")
 surface_material_override/2 = SubResource("StandardMaterial3D_80xj7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155792, 0.598986, -0.0186918)
+shape = SubResource("BoxShape3D_i57i5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158501, 0.307887, 0.597051)
+shape = SubResource("BoxShape3D_mrh88")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158501, 0.307887, -0.635697)
+shape = SubResource("BoxShape3D_mrh88")

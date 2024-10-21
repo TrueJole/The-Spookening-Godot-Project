@@ -25,6 +25,7 @@ mass = 0.3
 metadata/itemid = "lemon"
 
 [node name="Sphere" parent="." index="0"]
+lod_bias = 0.1
 surface_material_override/0 = SubResource("StandardMaterial3D_h78db")
 surface_material_override/1 = SubResource("StandardMaterial3D_acq2i")
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1jrac4uephwq"]
+
+[ext_resource type="PackedScene" uid="uid://7au6ifafcgwm" path="res://Assets/Paper.glb" id="1_lym1d"]
+[ext_resource type="Texture2D" uid="uid://rs3agqpi8aap" path="res://Assets/Materials/Textures/Notiz.png" id="2_0cbh5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xa8t0"]
+albedo_texture = ExtResource("2_0cbh5")
+uv1_offset = Vector3(-0.03, 0, 0)
+
+[node name="Paper" instance=ExtResource("1_lym1d")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xa8t0")

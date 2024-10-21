@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	if player.global_position.y > global_position.y - 3:
 		hide()
 	
-	if down and global_position.distance_to(player.global_position) < 3:
+	if down and global_position.distance_to(player.global_position) < 2:
 		animationPlayer.play("up")
 		down = false
 	elif global_position.distance_to(player.global_position) > 6 and not down:

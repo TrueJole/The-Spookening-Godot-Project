@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnbbf6yi6shxd"]
+
+[ext_resource type="PackedScene" uid="uid://qd38x2yfi2tu" path="res://Assets/chain.glb" id="1_lgscj"]
+[ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_myoyl"]
+
+[node name="chain" instance=ExtResource("1_lgscj")]
+
+[node name="Torus_009" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_myoyl")

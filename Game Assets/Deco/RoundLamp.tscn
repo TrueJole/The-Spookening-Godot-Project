@@ -9,16 +9,17 @@ emission_energy_multiplier = 2.0
 
 [node name="RoundLamp" instance=ExtResource("1_d062r")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="0"]
-transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, -1.15463e-14, 3.46714, 0)
+[node name="OmniLight3D" type="SpotLight3D" parent="." index="0"]
+transform = Transform3D(-1, 1.50996e-07, 0, 6.60025e-15, 4.37114e-08, 1, 1.50996e-07, 1, -4.37114e-08, -1.15463e-14, 3.46714, 0)
 light_color = Color(0.989745, 0.999999, 0.945121, 1)
-light_energy = 0.1
+light_energy = 0.3
 light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 1
 distance_fade_enabled = true
-omni_range = 4.82082
-omni_attenuation = 1.7411
+spot_range = 3.141
+spot_attenuation = 0.31
+spot_angle = 33.5355
 
 [node name="Cylinder" parent="." index="1"]
 transform = Transform3D(-0.139657, 2.10875e-08, 0, -2.10875e-08, -0.139657, 0, 0, 0, 0.139657, 0, 3.5, 0)

@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://80hncte18grw"]
+[gd_scene load_steps=4 format=3 uid="uid://80hncte18grw"]
 
-[ext_resource type="PackedScene" uid="uid://bh2tmcpjepleq" path="res://Assets/Inherited Assets/KolbenModel.tscn" id="1_isrp1"]
+[ext_resource type="PackedScene" uid="uid://c460nk5xpib7d" path="res://Assets/Kolben.glb" id="1_20kx4"]
+[ext_resource type="Material" uid="uid://bd7gy6guff6jw" path="res://Assets/Materials/Glas.tres" id="2_ot1oo"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_7axr8"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2bs68"]
 height = 0.228714
 radius = 0.0685476
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="Kolben" instance=ExtResource("1_20kx4")]
 collision_layer = 2
 collision_mask = 3
 mass = 0.2
 
-[node name="Kolben" parent="." instance=ExtResource("1_isrp1")]
+[node name="Cone" parent="." index="0"]
+transform = Transform3D(0.0814916, 0, 0, 0, 0.0814916, 0, 0, 0, 0.0814916, 0, 0.0814471, 0)
+material_override = ExtResource("2_ot1oo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113303, 0)
-shape = SubResource("CylinderShape3D_7axr8")
+shape = SubResource("CylinderShape3D_2bs68")

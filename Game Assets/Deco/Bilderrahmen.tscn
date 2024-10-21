@@ -12,12 +12,11 @@ grow_amount = 0.97
 cull_mode = 1
 albedo_texture = ExtResource("2_edjvi")
 roughness = 0.81
-uv1_scale = Vector3(-1.99, -1.99, -1.99)
-uv1_offset = Vector3(0, -0.02, 0)
 
 [node name="Bilderrahmen" instance=ExtResource("1_d2y48")]
 
 [node name="Cube" parent="." index="0"]
+transform = Transform3D(-1.21577e-08, 0.278135, 0, -0.278135, -1.21577e-08, 0, 0, 0, 0.278135, 0, 0, 0)
 lod_bias = 0.001
 visibility_range_end = 50.0
 surface_material_override/0 = SubResource("StandardMaterial3D_alfbh")

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Kolben.glb-163d6c326b402a0def08d447a97897f5.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

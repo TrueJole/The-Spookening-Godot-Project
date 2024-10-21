@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bnbh7lwk0t0"]
+
+[ext_resource type="PackedScene" uid="uid://dy50enm8h6j0i" path="res://Assets/PlantMonster.glb" id="1_1e2bl"]
+[ext_resource type="Material" uid="uid://dobgsic4cnrcx" path="res://Assets/Materials/Grass.tres" id="2_n18k1"]
+
+[node name="PlantMonster" instance=ExtResource("1_1e2bl")]
+
+[node name="Cone_001" parent="Collection 2" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_004" parent="Collection 2_001" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_002" parent="Collection 2_002" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_005" parent="Collection 2_003" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_006" parent="Collection 2_004" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone" parent="PlantC_001" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_007" parent="PlantC_002" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_003" parent="PlantD" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_008" parent="PlantD_001" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_0012" parent="PlantB" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Cone_0022" parent="PlantA" index="1"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_002" parent="Leaf_001" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_003" parent="Leaf_002" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_004" parent="Leaf_003" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_005" parent="Leaf_004" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_006" parent="Leaf_005" index="0"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane" parent="." index="16"]
+material_override = ExtResource("2_n18k1")
+
+[node name="Plane_001" parent="." index="17"]
+material_override = ExtResource("2_n18k1")
