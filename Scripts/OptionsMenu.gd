@@ -1,6 +1,6 @@
 extends Control
 
-@onready var subviewport: SubViewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
+#@onready var subviewport: SubViewport = $PanelContainer/HBoxContainer/SubViewportContainer/SubViewport
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
 	print(Root.Settings)
@@ -56,44 +56,46 @@ func applySettings() -> void:
 	
 	#print(Root.Settings.fpsMode)
 	#print(Root.Settings.scale3D)
-	subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
-	subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
-	subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil
-	subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Root.Settings.exposure
-	subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Root.Settings.ssr
+	#subviewport.get_node("WorldEnvironment").environment.ssao_enabled = Root.Settings.ssao
+	#subviewport.get_node("WorldEnvironment").environment.volumetric_fog_enabled = Root.Settings.volumetricFog
+	#subviewport.get_node("WorldEnvironment").environment.ssil_enabled = Root.Settings.ssil
+	#subviewport.get_node("WorldEnvironment").environment.tonemap_exposure = Root.Settings.exposure
+	#subviewport.get_node("WorldEnvironment").environment.ssr_enabled = Root.Settings.ssr
 	
 	if Root.Settings.msaa == true:
-		subviewport.msaa_3d = subviewport.MSAA_2X
+		pass
+		#subviewport.msaa_3d = subviewport.MSAA_2X
 	else:
-		subviewport.msaa_3d = subviewport.MSAA_DISABLED
-		"text"
+		#subviewport.msaa_3d = subviewport.MSAA_DISABLED
+		pass
 		
 	$PanelContainer/HBoxContainer/VBoxContainer/mouseLabel.text = 'Mausempfindlichkeit: ' + str(Root.Settings.mousesens * 1000)
 
 
 	RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
-	subviewport.positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
+	#subviewport.positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)
 	RenderingServer.gi_set_use_half_resolution(false)
 	RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_LOW)
-	subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_64
+	#subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_64
 	match Root.Settings.giQuality:
 		0:
-			subviewport.get_node("VoxelGI").visible = false
+			pass
+			#subviewport.get_node("VoxelGI").visible = false
 		1:
-			subviewport.get_node("VoxelGI").visible = true
+			#subviewport.get_node("VoxelGI").visible = true
 			RenderingServer.gi_set_use_half_resolution(true)
 		2:
-			subviewport.get_node("VoxelGI").visible = true
-			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_128
+			pass
+			#subviewport.get_node("VoxelGI").visible = true
+			#subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_128
 		3:
-			subviewport.get_node("VoxelGI").visible = true
+			#subviewport.get_node("VoxelGI").visible = true
 			RenderingServer.voxel_gi_set_quality(RenderingServer.VOXEL_GI_QUALITY_HIGH)
-			subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
+			#subviewport.get_node("VoxelGI").subdiv = subviewport.get_node("VoxelGI").SUBDIV_256
 	
 	get_tree().root.scaling_3d_scale = Root.Settings.scale3D
-	subviewport.scaling_3d_scale = Root.Settings.scale3D
-	var file: FileAccess = FileAccess.open('user://settings.dat', FileAccess.WRITE)
-	file.store_var(Root.Settings, true) 
+	#subviewport.scaling_3d_scale = Root.Settings.scale3D
+	
 
 
 signal done

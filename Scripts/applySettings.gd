@@ -1,30 +1,24 @@
 extends Node3D
 
-#@onready var WEnvironment:Resource =  $WorldEnvironment.environment
+@onready var WEnvironment:Resource =  $WorldEnvironment.environment
 @onready var bakedVoxelGI: VoxelGI = $VoxelGI
-#@onready var volFog: FogVolume = $FogVolume
-#@onready var Settings: GlobalSettings = preload('res://Resources/globalSettings.tres')
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#print(get_parent())
-	#print(self)
-	#assert (1 == 2)
-	#WEnvironment.ssao_enabled = Root.Settings.ssao
-	##volFog.visible = Settings.volumetricFog
+	WEnvironment.ssao_enabled = Root.Settings.ssao
+	WEnvironment.volumetric_fog_enabled = Root.Settings.volumetricFog
+	WEnvironment.ssr_enabled = Root.Settings.ssr
+	WEnvironment.ssao_enabled = Root.Settings.ssao
 	#WEnvironment.ssil_enabled = Root.Settings.ssil
-	#WEnvironment.tonemap_exposure = Root.Settings.exposure
-	#
-	##WEnvironment.sdfgi_enabled = false
-	##bakedVoxelGI.visible = (Settings.GI == 'voxelGI')
-	##WEnvironment.sdfgi_enabled = (Settings.GI == 'sdfgi')
-	##FIXME Einstellung wird nicht geändert
-	#
-	#
+	WEnvironment.tonemap_exposure = Root.Settings.exposure
+
 	if Root.Settings.msaa == true:
 		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_2X)
+		RenderingServer.viewport_set_screen_space_aa(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_SCREEN_SPACE_AA_DISABLED)
 	else:
 		RenderingServer.viewport_set_msaa_3d(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_MSAA_DISABLED)
+		RenderingServer.viewport_set_screen_space_aa(get_tree().get_root().get_viewport_rid(), RenderingServer.VIEWPORT_SCREEN_SPACE_AA_FXAA)
 	#
 	RenderingServer.directional_shadow_atlas_set_size(2**Root.Settings.shadowPower, true)
 	get_viewport().positional_shadow_atlas_size = 2**(Root.Settings.shadowPower-2)

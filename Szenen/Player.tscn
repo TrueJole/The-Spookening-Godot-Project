@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=21 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_g3gao"]
 [ext_resource type="Texture2D" uid="uid://bcauowill6bhy" path="res://Assets/Materials/Textures/Cursor_Punkt.png" id="4_8u4cr"]
 [ext_resource type="Script" path="res://Scripts/flicker.gd" id="4_g71aj"]
-[ext_resource type="Texture2D" uid="uid://bidmxf3t24alu" path="res://Resources/light_03.png" id="4_jolib"]
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
 [ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
 [ext_resource type="Material" uid="uid://ddcmnt44ha8gd" path="res://Scripts/WaterShader.tres" id="7_vpvg2"]
@@ -113,7 +112,7 @@ _data = {
 [sub_resource type="SphereMesh" id="SphereMesh_u7hyg"]
 flip_faces = true
 radius = 29.0
-height = 26.0
+height = 38.568
 radial_segments = 20
 rings = 7
 
@@ -154,18 +153,16 @@ script = ExtResource("3_g3gao")
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 5.37327e-16, 7.10543e-15, 5.37328e-16, 1, -7.10543e-15, 0, 0, 1, 1.42109e-14, 0, -0.0397869)
 light_color = Color(0.93139, 0.983691, 0.99996, 1)
-light_energy = 1.386
-light_indirect_energy = 3.0
+light_energy = 0.3
+light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
-light_projector = ExtResource("4_jolib")
 light_bake_mode = 0
-shadow_enabled = true
 shadow_opacity = 0.0
 shadow_blur = 0.0
 spot_range = 20.0
 spot_attenuation = 0.7
 spot_angle = 42.9255
-spot_angle_attenuation = 3.70725
+spot_angle_attenuation = 2.05673
 script = ExtResource("4_g71aj")
 baseTime = 8
 randomTime = 2

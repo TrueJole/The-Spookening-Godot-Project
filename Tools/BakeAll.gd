@@ -1,7 +1,7 @@
 @tool
 extends EditorScript
 
-const VoxelGIs: Array[String] = ["res://Szenen/World.tscn", "res://Szenen/OptionsMenu.tscn"]
+const VoxelGIs: Array[String] = ["res://Szenen/World.tscn"]#, "res://Szenen/OptionsMenu.tscn"]
 const Occluders: Array[String] = ["res://Szenen/World.tscn"]
 var originalScene: NodePath 
 # Called when the script is executed (using File -> Run in Script Editor).

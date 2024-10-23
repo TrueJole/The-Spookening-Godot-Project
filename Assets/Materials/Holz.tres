@@ -5,5 +5,5 @@
 [resource]
 albedo_color = Color(0.698467, 0.698467, 0.698467, 1)
 albedo_texture = ExtResource("1_xc2r6")
-roughness = 0.46
+roughness = 0.64
 uv1_scale = Vector3(4.28, 4.28, 4.28)

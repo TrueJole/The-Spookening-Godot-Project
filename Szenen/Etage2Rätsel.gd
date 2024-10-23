@@ -26,6 +26,7 @@ func _ready() -> void:
 
 
 func reset() -> void:
+	play_backwards("secretEntrance")
 	print('reset')
 	s1 = false
 	s2 = false

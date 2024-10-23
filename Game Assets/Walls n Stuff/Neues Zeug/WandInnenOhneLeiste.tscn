@@ -7,7 +7,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avtj8"]
 albedo_color = Color(0.915189, 0.915189, 0.915189, 1)
 normal_enabled = true
-normal_scale = 0.2
+normal_scale = 0.3
 normal_texture = ExtResource("3_1asyl")
 uv1_scale = Vector3(5.175, 5.175, 5.175)
 

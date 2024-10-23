@@ -43,3 +43,6 @@ func _on_options_button_button_up() -> void:
 
 func _on_options_menu_done() -> void:
 	center_container.show()
+	$/root/root/World._ready()
+	var file: FileAccess = FileAccess.open('user://settings.dat', FileAccess.WRITE)
+	file.store_var(Root.Settings, true) 
