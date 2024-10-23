@@ -4,8 +4,15 @@ extends Area3D
 @onready var particles: GPUParticles3D = $"../GPUParticles3D"
 @onready var timer: Timer = $Timer
 var spülen:bool
+signal activated
 
-func on_interacted() -> void:
+func _on_timer_timeout() -> void:
+	particles.emitting = false
+	animation_player.play("SpülenZurück")
+	spülen = false
+
+
+func _on_interactive_component_pressed() -> void:
 	if animation_player.current_animation == 'SpülenZurück' or spülen == false:
 		animation_player.play("Spülen")
 	
@@ -14,9 +21,4 @@ func on_interacted() -> void:
 	timer.start()
 	particles.emitting = true
 	spülen = true
-
-
-func _on_timer_timeout() -> void:
-	particles.emitting = false
-	animation_player.play("SpülenZurück")
-	spülen = false
+	activated.emit()

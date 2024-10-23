@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://64cfsukhr3v3"]
+[gd_scene load_steps=19 format=3 uid="uid://64cfsukhr3v3"]
 
 [ext_resource type="PackedScene" uid="uid://6posi0dghjba" path="res://Assets/Toilette.glb" id="1_a2ujm"]
 [ext_resource type="Material" uid="uid://3bggimvvhdjs" path="res://Assets/Materials/Porzellan.tres" id="2_53nqw"]
 [ext_resource type="Script" path="res://Scripts/Toilette.gd" id="3_0afn1"]
 [ext_resource type="AudioStream" uid="uid://bthaaup5uo5v3" path="res://Resources/Sounds/Spülung.wav" id="4_kppq8"]
+[ext_resource type="Script" path="res://Scripts/InteractiveComponent.gd" id="4_kypcr"]
 [ext_resource type="Texture2D" uid="uid://dnu58dwbpyu2x" path="res://Assets/Materials/Textures/Wasser.png" id="5_q206b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynj2r"]
@@ -127,17 +128,21 @@ material = SubResource("StandardMaterial3D_4gq87")
 size = Vector2(0.175, 0.175)
 
 [node name="Toilette" instance=ExtResource("1_a2ujm")]
+script = ExtResource("3_0afn1")
 
-[node name="Cube_003" parent="." index="0"]
+[node name="Timer" type="Timer" parent="." index="0"]
+one_shot = true
+
+[node name="Cube_003" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313263, 0.722084, -0.442737)
 visibility_range_end = 20.0
 surface_material_override/0 = ExtResource("2_53nqw")
 
-[node name="Sphere" parent="." index="1"]
+[node name="Sphere" parent="." index="2"]
 visibility_range_end = 30.0
 surface_material_override/0 = ExtResource("2_53nqw")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0293045, 0.146484, -0.281433)
@@ -147,26 +152,23 @@ shape = SubResource("BoxShape3D_ynj2r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.312956, 0.502703, -0.27832)
 shape = SubResource("BoxShape3D_gw66e")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_w5oe6")
 }
 
-[node name="Interactive Component" type="Area3D" parent="." index="4"]
+[node name="Interactive Component" type="Area3D" parent="." index="5"]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
-script = ExtResource("3_0afn1")
+script = ExtResource("4_kypcr")
 metadata/Interactable = true
 
-[node name="Timer" type="Timer" parent="Interactive Component" index="0"]
-one_shot = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive Component" index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive Component" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317184, 0.739018, -0.448486)
 shape = SubResource("BoxShape3D_tab22")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237339, -0.293023)
 stream = ExtResource("4_kppq8")
 unit_size = 3.0
@@ -174,7 +176,7 @@ max_distance = 15.0
 bus = &"Räume"
 area_mask = 8
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="6"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="7"]
 transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -0.00679975, 0.191187, -0.276593)
 emitting = false
 amount = 40
@@ -183,4 +185,5 @@ visibility_aabb = AABB(-0.223785, -0.216986, -0.19893, 0.44904, 0.416019, 0.4238
 process_material = SubResource("ParticleProcessMaterial_gpk6l")
 draw_pass_1 = SubResource("QuadMesh_jq1hk")
 
-[connection signal="timeout" from="Interactive Component/Timer" to="Interactive Component" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]

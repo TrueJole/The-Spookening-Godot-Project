@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dl4e1l3f1unj3"]
+[gd_scene load_steps=66 format=3 uid="uid://dl4e1l3f1unj3"]
 
 [ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_m6fo4"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="2_a3swf"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bxi2me5stma5t" path="res://Game Assets/Deco/NormalerTisch.tscn" id="18_2m7jc"]
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Items/Schlüssel.tscn" id="18_2pkfl"]
 [ext_resource type="PackedScene" uid="uid://c8yc1kp3ps17j" path="res://Game Assets/Deco/TempEnde.tscn" id="18_r4o85"]
+[ext_resource type="Script" path="res://Szenen/Etage2Rätsel.gd" id="18_xuvl7"]
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="19_ghe1m"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="20_gk5tm"]
 [ext_resource type="PackedScene" uid="uid://0b5hw70fw4wo" path="res://Game Assets/Items/Seife.tscn" id="21_lhayl"]
@@ -117,6 +118,7 @@ uv1_offset = Vector3(0, 0.085, 0)
 
 [node name="Dach" parent="." instance=ExtResource("1_m6fo4")]
 transform = Transform3D(1, 0, 0, 0, 0.24097, 0, 0, 0, 1, 0, 2.649, 0)
+visible = false
 
 [node name="FloorTile3" parent="." instance=ExtResource("2_a3swf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
@@ -4355,11 +4357,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5287, 0, 2.77557)
 [node name="Toilette4" parent="." instance=ExtResource("13_mb2qc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5287, 0, 3.60518)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." node_paths=PackedStringArray("m1", "m2", "m3", "m4")]
 root_node = NodePath("../WandInnenOhneLeiste149")
 libraries = {
 "": SubResource("AnimationLibrary_qf7t5")
 }
+script = ExtResource("18_xuvl7")
+m1 = NodePath("../Waschbecken7")
+m2 = NodePath("../Waschbecken8")
+m3 = NodePath("../Monitor3")
+m4 = NodePath("../Toilette4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimationPlayer"]
 

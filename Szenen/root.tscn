@@ -7,7 +7,7 @@
 
 [node name="DebugInfo" type="Label" parent="."]
 process_mode = 3
-z_index = 99
+z_index = 4096
 offset_left = 1494.0
 offset_top = 6.0
 offset_right = 1907.0

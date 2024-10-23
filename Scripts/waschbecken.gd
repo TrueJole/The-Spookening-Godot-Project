@@ -9,6 +9,7 @@ extends StaticBody3D
 @onready var wasserLoop: Resource = preload("res://Resources/Sounds/wasserLoop.tres")
 @onready var wasserAus: Resource = preload("res://Resources/Sounds/WasserAus.wav")
 
+signal activated
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _on_interactive_component_pressed() -> void:
 	print('Wasser Marsch!')
 	audioStreamPlayer.stream = wasserAn
 	audioStreamPlayer.play()
+	activated.emit()
 	await  audioStreamPlayer.finished
 	
 	audioStreamPlayer.stream = wasserLoop
