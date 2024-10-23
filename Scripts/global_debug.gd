@@ -30,7 +30,7 @@ func calcMinFPS() -> void:
 	fpsArray.clear()
 	timer.start(5)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Root.Settings.showFPS:
 		info.fps = Engine.get_frames_per_second()
 		fpsArray.append(round(1.0 / Performance.get_monitor(Performance.TIME_PROCESS)))
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 		info.memory = str(OS.get_static_memory_usage() / 1000000) + 'MB'
 		info.drawCalls = Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)
 		info.objectsDrawn = Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)
-		info.videoMemory = str(Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1000000) + 'MB'
+		info.videoMemory = str(round(Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1000000)) + 'MB'
 		
 		var temp: String = str(info)
 		temp = temp.replace('{', '')

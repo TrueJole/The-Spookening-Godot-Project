@@ -10,29 +10,55 @@ var s2: bool
 var s3: bool
 var s4: bool
 
+var locked: bool = false 
+
+## 4213
+
+var progress: int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	play_backwards("secretEntrance")
 	m1.connect('activated', update)
 	m2.connect('activated', update)
 	m3.connect('activated', update)
 	m4.connect('activated', update)
 
-signal changed
-func update() -> void:
-	changed.emit()
-	
 
 func reset() -> void:
-	pass
+	print('reset')
+	s1 = false
+	s2 = false
+	s3 = false
+	s4 = false
+	progress = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	update()
-	
-	if not (s1 and s2 and s3 and s4):
-		await changed
-		if s1 and !s2:
-			pass
-	else:
-		pass
+
+signal changed
+func update() -> void:
+	if not locked:
+		changed.emit()
 		
+		if m1.spülen: 
+			s1 = true
+		if m2.spülen: s2 = true
+		if m3.spülen: s3 = true
+		if m4.spülen: 
+			s4 = true
+		
+		if progress == 0 and !s1 and !s2  and !s3 and s4:
+			progress = 1
+		elif progress == 1 and !s1 and s2  and !s3 and s4:
+			progress = 2
+		elif progress == 2 and s1 and s2  and !s3 and s4:
+			progress = 3
+		elif progress == 3 and s1 and s2  and s3 and s4:
+			progress = 4
+			print('Gelöst!')
+			play("secretEntrance")
+			locked = true
+		else:
+			#print('reset')
+			reset()
+	
+	print(progress, s1, s2, s3, s4)

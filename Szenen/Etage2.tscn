@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dl4e1l3f1unj3"]
+[gd_scene load_steps=72 format=4 uid="uid://dl4e1l3f1unj3"]
 
 [ext_resource type="PackedScene" uid="uid://btre2blkv33rc" path="res://Szenen/Dach.tscn" id="1_m6fo4"]
 [ext_resource type="PackedScene" uid="uid://bm7y83q57jaqj" path="res://Game Assets/Walls n Stuff/Neues Zeug/FloorTile.tscn" id="2_a3swf"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://gjyr1kpvo1u7" path="res://Game Assets/Items/Schlüssel.tscn" id="18_2pkfl"]
 [ext_resource type="PackedScene" uid="uid://c8yc1kp3ps17j" path="res://Game Assets/Deco/TempEnde.tscn" id="18_r4o85"]
 [ext_resource type="Script" path="res://Szenen/Etage2Rätsel.gd" id="18_xuvl7"]
+[ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="19_0isbn"]
 [ext_resource type="PackedScene" uid="uid://xobymtoepjql" path="res://Game Assets/Deco/Stuhl.tscn" id="19_ghe1m"]
 [ext_resource type="PackedScene" uid="uid://dy0oak3a8liuu" path="res://Game Assets/Walls n Stuff/Neues Zeug/VersperrteTür.tscn" id="20_gk5tm"]
 [ext_resource type="PackedScene" uid="uid://0b5hw70fw4wo" path="res://Game Assets/Items/Seife.tscn" id="21_lhayl"]
@@ -62,6 +63,13 @@
 
 [sub_resource type="Animation" id="Animation_dmr0k"]
 length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/Node3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_o87s7"]
 resource_name = "secretEntrance"
@@ -75,7 +83,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 5, 1, 0, 0.707107, 0, 0.707107)
 tracks/1/type = "audio"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("../AnimationPlayer/AudioStreamPlayer3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -94,6 +102,74 @@ _data = {
 "RESET": SubResource("Animation_dmr0k"),
 "secretEntrance": SubResource("Animation_o87s7")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcx6v"]
+resource_name = "Innen"
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c28md"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906473, 0.271741, 0.782584, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_js15s"]
+_surfaces = [{
+"aabb": AABB(0, 0, 7.45058e-09, 1, 3.5, 0.1),
+"format": 34896613377,
+"index_count": 45,
+"index_data": PackedByteArray("AgAEAAAABAAKAAYABAACAAoABQAIAAcACAAEAAYACAAFAAQABwABAAUAAQALAAMAAQAHAAsAAwAAAAEAAAAJAAIAAAADAAkACAACAAkACgAIAAYAAgAIAAoA"),
+"name": "Innen",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAAAAfkz//wAA//9+TP//AAD/f/////8AAP9/AAD//wAA")
+}, {
+"aabb": AABB(0, 0, 0.1, 1, 1.04583, 1e-05),
+"format": 34896613377,
+"index_count": 9,
+"index_data": PackedByteArray("BAADAAAAAwABAAIAAwAEAAEA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAA//8AAAAA/////wAAAAD/fwAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fj7sg"]
+resource_name = "WandInnenOhneLeiste_Cube"
+_surfaces = [{
+"aabb": AABB(0, 0, 7.45058e-09, 1, 3.5, 0.1),
+"attribute_data": PackedByteArray("FV///3RQ//8VX7ZtdFAAAAAA///FV///xVf//8VXtm3FVwAAFV/atnRQ//8VX9q2dFAAACRJ///FV9q2JEn//8VX2rYkSQAAJEn/fyRJ/38AAP9/xVf/f5Ik///FV2zbxVdIkg=="),
+"format": 34896613399,
+"index_count": 45,
+"index_data": PackedByteArray("BQAJAAAACQAXAA4ACQAFABcADAATABEAEwAKAA8AEwAMAAoAEAACAAsAAgAYAAcAAgAQABgACAABAAMAAQAVAAYAAQAIABUAEgAEABQAFgASAA0ABAASABYA"),
+"material": SubResource("StandardMaterial3D_vcx6v"),
+"name": "Innen",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("/////wAAVNX/////AADF////AAAAAFTV//8AAAAA/////////////////////1TV/////////////wAA//9U1f//AAD//3b/AAD//wAAVNUAAP//AAA9/wAAAAAAAFTVAAAAAAAALP4AAP///////wAA/////1TVAAD///////8AAAAA//9U1QAAAAD/////AAB+TP////8AAH5M///S2f//fkz///////9+TP//Vdf/f/////////9//////1TV/38AAP//VNVU1aoq37+/f1RVVFX/v/9//3//f1TVqir/v/9/VFVUVbS/aX9U1aoqKf9qwFRVVFUA/v7A/3//f1TVqir/P/9/VFVUVf8//3//f/9/dtrD0v9//3/Xq7BX/3//f1TVqipUVVVV")
+}, {
+"aabb": AABB(0, 0, 0.1, 1, 1.04583, 1e-05),
+"attribute_data": PackedByteArray("68T//wAA/v8AAAAA68QAAHVi//8="),
+"format": 34896613399,
+"index_count": 9,
+"index_data": PackedByteArray("BAADAAAAAwABAAIAAwAEAAEA"),
+"material": SubResource("StandardMaterial3D_c28md"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("//8AAAAAAIAAAAAAAAAAgAAA//8AAACA/////wAAAID/fwAAAAAAgP9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_js15s")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gsusc"]
+points = PackedVector3Array(0, 0, 7.45058e-09, 0, 0, 0.1, 0, 3.49996, 7.45058e-09, 0.999995, 0, 7.45058e-09, 0.999995, 0, 0.1, 0, 3.49996, 0.1, 0.999995, 3.49996, 7.45058e-09, 0.999995, 3.49996, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txhkr"]
 cull_mode = 1
@@ -4285,6 +4361,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.4384
 [node name="Activation Module" parent="TürMitSchloss" index="6"]
 activators = Array[String](["Key_Etage2"])
 
+[node name="Activation Module2" parent="TürMitSchloss" index="7"]
+activators = Array[String](["Key_Etage2"])
+
 [node name="Schlüssel" parent="TürMitSchloss" instance=ExtResource("18_2pkfl")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 17.694, 0.627581, -7.22929)
 metadata/itemid = "Key_Etage2"
@@ -4365,7 +4444,7 @@ libraries = {
 script = ExtResource("18_xuvl7")
 m1 = NodePath("../Waschbecken7")
 m2 = NodePath("../Waschbecken8")
-m3 = NodePath("../Monitor3")
+m3 = NodePath("../Toilette3")
 m4 = NodePath("../Toilette4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimationPlayer"]
@@ -4373,11 +4452,33 @@ m4 = NodePath("../Toilette4")
 [node name="Node3D" type="Node3D" parent="AnimationPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 4)
 
-[node name="WandInnenOhneLeiste" parent="AnimationPlayer/Node3D" instance=ExtResource("6_1nk2n")]
+[node name="WandInnenOhneLeiste" type="Node3D" parent="AnimationPlayer/Node3D"]
 transform = Transform3D(3.13916e-07, 0, 1, 0, 1, 0, -1, 0, 3.13916e-07, 0, 0, 0)
 
-[node name="WandInnenOhneLeiste2" parent="AnimationPlayer/Node3D" instance=ExtResource("6_1nk2n")]
+[node name="Wand 1 * 4" type="MeshInstance3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste"]
+material_override = ExtResource("19_0isbn")
+lod_bias = 128.0
+mesh = SubResource("ArrayMesh_fj7sg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gsusc")
+
+[node name="WandInnenOhneLeiste2" type="Node3D" parent="AnimationPlayer/Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -1)
+
+[node name="Wand 1 * 4" type="MeshInstance3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste2"]
+material_override = ExtResource("19_0isbn")
+lod_bias = 128.0
+mesh = SubResource("ArrayMesh_fj7sg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimationPlayer/Node3D/WandInnenOhneLeiste2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gsusc")
 
 [node name="RollStuhl" parent="." instance=ExtResource("15_ioigq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89461, -0.000499725, -9.01963)
@@ -5254,7 +5355,7 @@ transform = Transform3D(-0.21124, 0, 0.977434, 0, 1, 0, -0.977434, 0, -0.21124, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7628, 0.895421, -4.04975)
 
 [node name="KlemmBrett" parent="." instance=ExtResource("43_ffjee")]
-transform = Transform3D(-0.00729541, -7.77559e-17, 0.999973, -1.06581e-14, 1, 0, -0.999973, -1.06579e-14, -0.00729541, -1.71344, 0.623837, -8.25006)
+transform = Transform3D(-0.00729541, -7.77559e-17, 0.999973, -1.06581e-14, 1, 0, -0.999973, -1.06579e-14, -0.00729541, -1.71344, 0.625265, -8.25006)
 
 [node name="RoundLamp" parent="." instance=ExtResource("44_l736y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64876, -0.145034, -8.22294)
@@ -5462,6 +5563,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64157, 0.000499964, 2.3720
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.01158, 0.000499964, 1.78497)
 
 [editable path="TürMitSchloss"]
+[editable path="TürMitSchloss/Activation Module"]
+[editable path="TürMitSchloss/Activation Module2"]
 [editable path="Bilderrahmen"]
 [editable path="Bilderrahmen2"]
 [editable path="Bilderrahmen3"]

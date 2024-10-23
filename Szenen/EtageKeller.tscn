@@ -5824,6 +5824,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 
 [node name="Activation Module" parent="TürMitSchloss2" index="6"]
 activators = Array[String](["Key_EtageKeller"])
 
+[node name="Activation Module2" parent="TürMitSchloss2" index="7"]
+activators = Array[String](["Key_EtageKeller"])
+
 [node name="GlassBall" parent="." instance=ExtResource("45_u466q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63631, -0.000500202, 1.59847)
 
@@ -6122,5 +6125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -1)
 [editable path="kissen5"]
 [editable path="kissen4"]
 [editable path="TürMitSchloss2"]
+[editable path="TürMitSchloss2/Activation Module"]
+[editable path="TürMitSchloss2/Activation Module2"]
 [editable path="BrennendeTür"]
 [editable path="BrennendeTür/Activation Module"]

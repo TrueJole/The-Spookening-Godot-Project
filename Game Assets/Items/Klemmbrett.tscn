@@ -15,13 +15,13 @@ uv1_offset = Vector3(0.06, -0.11, 0)
 texture_repeat = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tvavu"]
-size = Vector3(0.394897, 0.0112877, 0.287842)
+size = Vector3(0.394897, 0.0281237, 0.287842)
 
 [node name="KlemmBrett" instance=ExtResource("1_xl7u2")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 3
-mass = 0.438
+mass = 0.2
 
 [node name="Cube" parent="." index="0"]
 gi_mode = 0
@@ -33,9 +33,8 @@ gi_mode = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_wth8a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00274658, 0.00787926, -0.00012207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00274658, 0.00950258, -0.00012207)
 shape = SubResource("BoxShape3D_tvavu")
-disabled = true
 
 [node name="Label3D" type="Label3D" parent="." index="3"]
 visible = false

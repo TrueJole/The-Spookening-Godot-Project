@@ -10,6 +10,7 @@ extends StaticBody3D
 @onready var wasserAus: Resource = preload("res://Resources/Sounds/WasserAus.wav")
 
 signal activated
+var spülen: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,13 +19,17 @@ func _ready() -> void:
 
 
 func _on_interactive_component_pressed() -> void:
+	spülen = true
+	if water.amount_ratio == 0:
+		activated.emit()
+	
 	water.amount_ratio = 1
 	timer.wait_time = randf_range(3, 5)
 	timer.start()
-	print('Wasser Marsch!')
+	#print('Wasser Marsch!')
 	audioStreamPlayer.stream = wasserAn
 	audioStreamPlayer.play()
-	activated.emit()
+	
 	await  audioStreamPlayer.finished
 	
 	audioStreamPlayer.stream = wasserLoop
@@ -32,7 +37,8 @@ func _on_interactive_component_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
+	spülen = false
 	water.amount_ratio = 0
 	audioStreamPlayer.stream = wasserAus
 	audioStreamPlayer.play()
-	print('Halt Stop!')
+	#print('Halt Stop!')

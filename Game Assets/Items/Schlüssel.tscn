@@ -23,7 +23,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("BézierCurve:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -93,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00156433, 0.0261357, -0.08
 shape = SubResource("BoxShape3D_jr3o5")
 
 [node name="BézierCurve" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.85895e-13, -1.83368e-08, -0.0138299, -0.0141858, -1.83368e-08, 8.18249e-19, -5.13525e-08, 0.00506542, -5.00641e-08, 0.00149138, 0.0307321, -0.07597)
+transform = Transform3D(1.85895e-13, -1.83368e-08, -0.0138299, -0.0141858, -1.83368e-08, 0, -5.13525e-08, 0.00506542, -5.00641e-08, 0.00149138, 0.0307321, 0.0160227)
 gi_mode = 0
 visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_x81lk")

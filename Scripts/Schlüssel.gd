@@ -7,7 +7,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func activated(origin: Area3D) -> void:
-	print_debug('used key')
+	#print_debug('used key')
 	if not used:
 		#rotation.z = -90
 		

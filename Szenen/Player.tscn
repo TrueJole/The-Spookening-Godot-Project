@@ -129,6 +129,7 @@ collision_priority = 1100.0
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+platform_floor_layers = 4294967289
 script = ExtResource("1_c8kcr")
 walkTime = 0.4
 
