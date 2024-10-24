@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck870md3a4o7k"]
+
+[ext_resource type="PackedScene" uid="uid://dncplm7dwadww" path="res://Assets/Globe.glb" id="1_q4afu"]
+[ext_resource type="Script" path="res://Game Assets/Deco/Globe.gd" id="2_8g44g"]
+[ext_resource type="Material" uid="uid://c8n1i4okw40dn" path="res://Assets/Materials/Bronze.tres" id="2_qg5yd"]
+[ext_resource type="PackedScene" uid="uid://b78p4v3k6a2ov" path="res://Szenen/Interactive Component.tscn" id="4_1c58r"]
+[ext_resource type="Texture2D" uid="uid://0d8jhv5iso84" path="res://Assets/Materials/Textures/GlobeCC0.jpg" id="4_6woxw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vhnv"]
+albedo_texture = ExtResource("4_6woxw")
+roughness = 0.72
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_citka"]
+radius = 0.269049
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tua43"]
+radius = 0.28
+
+[node name="Globe" instance=ExtResource("1_q4afu")]
+collision_mask = 7
+script = ExtResource("2_8g44g")
+CONST_SPEED = 15.0
+CONST_DAMP = 3.0
+
+[node name="Sphere_001" parent="." index="0"]
+material_override = ExtResource("2_qg5yd")
+
+[node name="Sphere" parent="." index="1"]
+transform = Transform3D(0.251371, 0.104121, 0, -0.104121, 0.251371, 0, 0, 0, 0.272082, -0.00327503, 0.37565, 0.00309219)
+rotation_order = 4
+surface_material_override/0 = SubResource("StandardMaterial3D_1vhnv")
+
+[node name="Cone" parent="." index="2"]
+material_override = ExtResource("2_qg5yd")
+
+[node name="Sphere_002" parent="." index="3"]
+material_override = ExtResource("2_qg5yd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00308436, 0.376129, 0)
+shape = SubResource("SphereShape3D_citka")
+
+[node name="Interactive Component" parent="." index="5" instance=ExtResource("4_1c58r")]
+transform = Transform3D(-7.55604e-08, 2.96435e-08, -1, 0.00210181, -0.999998, -2.98023e-08, -0.999998, -0.00210181, 7.54979e-08, 0, 0.376, 0)
+
+[node name="CollisionShape3D" parent="Interactive Component" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_tua43")
+
+[connection signal="pressed" from="Interactive Component" to="." method="_on_interactive_component_pressed"]
+
+[editable path="Interactive Component"]

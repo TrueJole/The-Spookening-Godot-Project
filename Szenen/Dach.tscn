@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://btre2blkv33rc"]
+[gd_scene load_steps=3 format=3 uid="uid://btre2blkv33rc"]
 
 [ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="1_m3a0c"]
-[ext_resource type="ArrayOccluder3D" uid="uid://by16qv2wpq2af" path="res://Resources/Dach.occ" id="2_fwdrh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_perbj"]
 
@@ -33,7 +32,3 @@ mesh = SubResource("BoxMesh_perbj")
 transform = Transform3D(6.43015, 0, 0, 0, 0.616702, 0, 0, 0, 7.14112, -31.0792, 3.1807, 4.57368)
 layers = 4
 mesh = SubResource("BoxMesh_perbj")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-layers = 4
-occluder = ExtResource("2_fwdrh")

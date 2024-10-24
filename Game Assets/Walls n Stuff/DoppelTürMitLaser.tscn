@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://rlr4pkpkcwlh"]
+
+[ext_resource type="PackedScene" uid="uid://cyryukphy50e1" path="res://Game Assets/Walls n Stuff/DoppelTürInnen.tscn" id="1_aigwd"]
+[ext_resource type="Script" path="res://Scripts/doppel_tür_mit_laser.gd" id="2_hc2uw"]
+[ext_resource type="PackedScene" uid="uid://ds3mrcxbybcun" path="res://Game Assets/LaserGeneratorMock.tscn" id="3_horjs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3luus"]
+shading_mode = 0
+albedo_color = Color(0.875848, 0, 0.0869055, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5dxs7"]
+radial_segments = 8
+rings = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlpao"]
+size = Vector3(1.8399, 2.104, 0.199577)
+
+[node name="DoppelTürOhneLeiste" instance=ExtResource("1_aigwd")]
+script = ExtResource("2_hc2uw")
+locked = true
+
+[node name="LaserGenerator19" type="Node3D" parent="." index="5" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.0900111, 2.01162, 0.0999997)
+
+[node name="LaserGenerator20" type="Node3D" parent="." index="6" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.271261, 2.01162, 0.0999997)
+
+[node name="LaserGenerator14" type="Node3D" parent="." index="7" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.452583, 2.01162, 0.0999997)
+
+[node name="LaserGenerator13" type="Node3D" parent="." index="8" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.638761, 2.01162, 0.0999997)
+
+[node name="LaserGenerator12" type="Node3D" parent="." index="9" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.807524, 2.01162, 0.0999997)
+
+[node name="LaserGenerator11" type="Node3D" parent="." index="10" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.807108, 2.01162, 0.0999997)
+
+[node name="LaserGenerator15" type="Node3D" parent="." index="11" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.625858, 2.01162, 0.0999997)
+
+[node name="LaserGenerator16" type="Node3D" parent="." index="12" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.444536, 2.01162, 0.0999997)
+
+[node name="LaserGenerator17" type="Node3D" parent="." index="13" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.258358, 2.01162, 0.0999997)
+
+[node name="LaserGenerator18" type="Node3D" parent="." index="14" instance=ExtResource("3_horjs")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.0895947, 2.01162, 0.0999997)
+
+[node name="Lasers" type="Node3D" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0380301)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lasers" index="0"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, 0.807916, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lasers" index="1"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, 0.640089, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lasers" index="2"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, 0.452661, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lasers" index="3"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, 0.271822, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lasers" index="4"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, 0.0918007, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lasers" index="5"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, -0.0882204, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Lasers" index="6"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, -0.257604, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Lasers" index="7"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, -0.444171, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Lasers" index="8"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, -0.625829, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Lasers" index="9"]
+transform = Transform3D(0.0399976, 0, 0, -1.11022e-16, 0.989787, 0, 0, 0, 0.0399976, -0.808305, 0.918232, 0.0615085)
+material_override = SubResource("StandardMaterial3D_3luus")
+mesh = SubResource("CylinderMesh_5dxs7")
+skeleton = NodePath("../..")
+
+[node name="Barriere" type="StaticBody3D" parent="." index="16"]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriere" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00772095, 1.03115, -0.000370026)
+shape = SubResource("BoxShape3D_hlpao")
+
+[editable path="DoppelTürRahmen"]

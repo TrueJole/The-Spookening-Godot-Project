@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://qowiyimm6qw6"]
+
+[ext_resource type="PackedScene" uid="uid://bwc2upjgx8eju" path="res://Assets/WandInnenOhneLeiste.glb" id="1_g5rjg"]
+[ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_vq2cd"]
+[ext_resource type="Texture2D" uid="uid://cymp0vbcpa0yr" path="res://Assets/Materials/Textures/beige_wall_002_nor_gl_4k.jpg" id="3_1asyl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avtj8"]
+albedo_color = Color(0.915189, 0.915189, 0.915189, 1)
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("3_1asyl")
+uv1_scale = Vector3(5.175, 5.175, 5.175)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0g4ji"]
+size = Vector3(1, 3.5, 0.1)
+
+[node name="WandInnenOhneLeiste" instance=ExtResource("1_g5rjg")]
+
+[node name="Wand 1 * 4" parent="." index="0"]
+lod_bias = 128.0
+surface_material_override/0 = ExtResource("2_vq2cd")
+surface_material_override/1 = SubResource("StandardMaterial3D_avtj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.75, 0.05)
+shape = SubResource("BoxShape3D_0g4ji")

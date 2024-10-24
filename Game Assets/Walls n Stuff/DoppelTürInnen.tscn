@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyryukphy50e1"]
+
+[ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/DoppelTürOhneLeiste.tscn" id="1_62mv5"]
+[ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_g2hhh"]
+
+[node name="DoppelTürOhneLeiste" instance=ExtResource("1_62mv5")]
+
+[node name="Wand 1 * 4_001" parent="DoppelTürRahmen" index="0"]
+surface_material_override/1 = ExtResource("2_g2hhh")
+
+[editable path="DoppelTürRahmen"]

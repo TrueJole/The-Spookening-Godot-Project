@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dy4ptaa6dtvyu"]
+[gd_scene load_steps=20 format=3 uid="uid://dy4ptaa6dtvyu"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="1_c8kcr"]
 [ext_resource type="CameraAttributesPractical" uid="uid://cfllxe7h4a6lo" path="res://Resources/CameraAttributes.tres" id="2_ijyeg"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://dsnp0bl25mc7o" path="res://Resources/Sounds/Step.wav" id="5_lpcba"]
 [ext_resource type="Shader" path="res://Scripts/vignette.gdshader" id="6_6q5m7"]
 [ext_resource type="Material" uid="uid://ddcmnt44ha8gd" path="res://Scripts/WaterShader.tres" id="7_vpvg2"]
-[ext_resource type="ArrayOccluder3D" uid="uid://slwbee55xuu7" path="res://Resources/Player.occ" id="10_knmw4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pqy3d"]
 shader = ExtResource("6_6q5m7")
@@ -205,7 +204,7 @@ expand_mode = 2
 
 [node name="Hand" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(1, -1.74846e-07, -2.52511e-13, -1.28435e-13, -4.37114e-08, -1, 1.74846e-07, 1, -4.37114e-08, 3.50203e-08, 0, -0.400585)
-target_position = Vector3(0, -1.75, 0)
+target_position = Vector3(0, -1.5, 0)
 collision_mask = 3
 hit_from_inside = true
 collide_with_areas = true
@@ -281,9 +280,3 @@ ignore_occlusion_culling = true
 gi_mode = 0
 mesh = SubResource("SphereMesh_u7hyg")
 surface_material_override/0 = SubResource("StandardMaterial3D_6us4x")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-visible = false
-layers = 4
-occluder = ExtResource("10_knmw4")
-bake_simplification_distance = 0.0

@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://qaq83xxd001n"]
 
 [ext_resource type="PackedScene" uid="uid://ccfix1bnu103h" path="res://Assets/Vent.glb" id="1_jdc7f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npnpk"]
-metallic = 1.0
-roughness = 0.53
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="2_uervo"]
 
 [node name="Vent" instance=ExtResource("1_jdc7f")]
 
 [node name="Cylinder" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_npnpk")
+surface_material_override/0 = ExtResource("2_uervo")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148574, 0.14489, 0)
+autoplay = true
+bus = &"Räume"
+area_mask = 8

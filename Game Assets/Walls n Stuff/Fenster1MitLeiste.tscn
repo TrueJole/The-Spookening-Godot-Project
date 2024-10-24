@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceq51lpi3uuda"]
+
+[ext_resource type="PackedScene" uid="uid://b82oi3qhdn60x" path="res://Assets/FensterTief.glb" id="1_y70jd"]
+[ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_5jdq6"]
+[ext_resource type="Script" path="res://Scripts/fensterRegen.gd" id="2_srarw"]
+[ext_resource type="PackedScene" uid="uid://d11gncwect4m6" path="res://Szenen/windowRainSreamer.tscn" id="3_8svyq"]
+[ext_resource type="AudioStream" uid="uid://fbur487u5tb6" path="res://Resources/Sounds/windowRain.wav" id="4_77yqn"]
+[ext_resource type="Material" uid="uid://dxu34ky5g7l1e" path="res://Assets/Materials/Wandleiste.tres" id="4_p8ckn"]
+[ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="5_l7yag"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_h47sg"]
+fade_time = 0.0
+stream_count = 1
+stream_0 = ExtResource("4_77yqn")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kbftp"]
+viewport_path = NodePath(".")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jspb6"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.286275)
+albedo_texture = SubResource("ViewportTexture_kbftp")
+roughness = 0.0
+normal_scale = 0.63
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckwq1"]
+size = Vector3(1, 3.48732, 0.21051)
+
+[node name="Fenster1MitLeiste" instance=ExtResource("1_y70jd")]
+script = ExtResource("2_srarw")
+rainIndex = 1
+
+[node name="AudioStreamPlayer3D" parent="." index="0" instance=ExtResource("3_8svyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49289, 1.87801, 2.38419e-07)
+stream = SubResource("AudioStreamPlaylist_h47sg")
+
+[node name="Mesh" parent="." index="1"]
+lod_bias = 128.0
+surface_material_override/0 = ExtResource("2_5jdq6")
+surface_material_override/1 = SubResource("StandardMaterial3D_jspb6")
+surface_material_override/2 = ExtResource("4_p8ckn")
+surface_material_override/3 = ExtResource("5_l7yag")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.497193, 1.75121, 0.00106812)
+shape = SubResource("BoxShape3D_ckwq1")

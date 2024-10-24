@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c613lq67yfqfc"]
+
+[ext_resource type="PackedScene" uid="uid://eabibpd22klb" path="res://Game Assets/Walls n Stuff/DoppelTürOhneLeiste.tscn" id="1_v6axq"]
+[ext_resource type="PackedScene" uid="uid://b02h8r0fay2g3" path="res://Assets/Sperre.glb" id="2_by1en"]
+[ext_resource type="Material" uid="uid://dfthlh5kssp1l" path="res://Assets/Materials/HolzGlanzlos.tres" id="3_wmi1h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qr704"]
+size = Vector3(1.92395, 2.08191, 0.273682)
+
+[node name="DoppelTürOhneLeiste" instance=ExtResource("1_v6axq")]
+
+[node name="Tür" parent="." index="2"]
+collision_layer = 0
+collision_mask = 0
+freeze = true
+
+[node name="Tür2" parent="." index="4"]
+collision_layer = 0
+collision_mask = 0
+freeze = true
+
+[node name="Sperre" parent="." index="5" instance=ExtResource("2_by1en")]
+transform = Transform3D(-3.44254e-08, 0, 1.1524, 0, 0.787561, 0, -0.787561, 0, -5.03731e-08, 0.0185466, 0.186097, 0.0865342)
+
+[node name="Cube_001" parent="Sperre" index="0"]
+material_override = ExtResource("3_wmi1h")
+
+[node name="Cube_002" parent="Sperre" index="1"]
+material_override = ExtResource("3_wmi1h")
+
+[node name="Sperre2" parent="." index="6" instance=ExtResource("2_by1en")]
+transform = Transform3D(1.03276e-07, 0, -1.1524, 0, 0.787561, 0, 0.787561, 0, 1.51119e-07, 0.0185466, 0.186097, -0.0776058)
+
+[node name="Cube_001" parent="Sperre2" index="0"]
+material_override = ExtResource("3_wmi1h")
+
+[node name="Cube_002" parent="Sperre2" index="1"]
+material_override = ExtResource("3_wmi1h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="7"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00692081, 1.01354, 0.0032959)
+shape = SubResource("BoxShape3D_qr704")
+
+[editable path="DoppelTürRahmen"]
+[editable path="Sperre"]
+[editable path="Sperre2"]

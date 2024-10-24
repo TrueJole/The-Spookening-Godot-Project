@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://t7n75nagkcfl" path="res://Assets/Schloss.glb" id="1_x1ryg"]
 [ext_resource type="Material" uid="uid://b5nr4ugidrnsc" path="res://Assets/Materials/Gold.tres" id="2_cewke"]
 [ext_resource type="Material" uid="uid://d0ui65kebexw" path="res://Assets/Materials/SchlossGrün.tres" id="2_fly7a"]
-[ext_resource type="Material" uid="uid://1ffi8n27ury7" path="res://Assets/Materials/Metall_Rau.tres" id="4_nobyc"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="4_cvjer"]
 
 [node name="Schloss" instance=ExtResource("1_x1ryg")]
 
@@ -13,6 +13,5 @@ gi_mode = 0
 surface_material_override/0 = ExtResource("2_fly7a")
 
 [node name="NurbsPath" parent="." index="1"]
-material_override = ExtResource("4_nobyc")
 gi_mode = 0
-surface_material_override/0 = ExtResource("2_fly7a")
+surface_material_override/0 = ExtResource("4_cvjer")

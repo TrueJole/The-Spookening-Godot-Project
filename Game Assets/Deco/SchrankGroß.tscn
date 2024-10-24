@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bofpn4rubvt68"]
+
+[ext_resource type="PackedScene" uid="uid://ds3y3a4vopsnq" path="res://Assets/SchrankGroß.glb" id="1_8muyk"]
+[ext_resource type="Material" uid="uid://ch1drv0vxjee4" path="res://Assets/Materials/Holz.tres" id="2_uo5x4"]
+[ext_resource type="Material" uid="uid://bj118p6up2n7j" path="res://Assets/Materials/Metall_Glatt.tres" id="3_gjum7"]
+
+[node name="SchrankGroß" instance=ExtResource("1_8muyk")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_uo5x4")
+
+[node name="Cube_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_uo5x4")
+surface_material_override/1 = ExtResource("3_gjum7")
+surface_material_override/2 = ExtResource("3_gjum7")

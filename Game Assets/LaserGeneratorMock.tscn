@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds3mrcxbybcun"]
+
+[ext_resource type="PackedScene" uid="uid://tmst487vp4ut" path="res://Game Assets/laserGenerator.tscn" id="1_qysmn"]
+
+[node name="LaserGeneratorMock" instance=ExtResource("1_qysmn")]
+
+[node name="Laser" parent="." index="2"]
+visible = false
+script = null

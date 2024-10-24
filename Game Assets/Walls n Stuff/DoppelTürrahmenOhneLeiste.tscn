@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bojnrmisw0ied"]
+
+[ext_resource type="PackedScene" uid="uid://ml163ravc4at" path="res://Assets/DoppelTürRahmen.glb" id="1_7bj6v"]
+[ext_resource type="Material" uid="uid://bk3fedv3l0f2d" path="res://Assets/Materials/WandBeige.tres" id="2_5sq50"]
+[ext_resource type="Material" uid="uid://j8ljvqowqkw4" path="res://Assets/Materials/Außenmaterial.tres" id="3_iwjcy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cunyi"]
+size = Vector3(0.0995941, 3.50031, 0.200317)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_evqdw"]
+size = Vector3(1.99207, 1.4967, 0.204254)
+
+[node name="DoppelTürRahmenOhneLeiste" instance=ExtResource("1_7bj6v")]
+
+[node name="Wand 1 * 4_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.1)
+surface_material_override/0 = ExtResource("2_5sq50")
+surface_material_override/1 = ExtResource("3_iwjcy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950844, 1.75015, 0.000305176)
+shape = SubResource("BoxShape3D_cunyi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950604, 1.75015, 0.000305176)
+shape = SubResource("BoxShape3D_cunyi")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000327557, 2.74902, 0.000289917)
+shape = SubResource("BoxShape3D_evqdw")

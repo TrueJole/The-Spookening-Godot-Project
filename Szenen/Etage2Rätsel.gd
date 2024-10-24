@@ -18,7 +18,7 @@ var progress: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	play_backwards("secretEntrance")
+	#play_backwards("secretEntrance")
 	m1.connect('activated', update)
 	m2.connect('activated', update)
 	m3.connect('activated', update)
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 func reset() -> void:
-	play_backwards("secretEntrance")
+	#play_backwards("secretEntrance")
 	print('reset')
 	s1 = false
 	s2 = false

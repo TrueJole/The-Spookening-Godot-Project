@@ -36,6 +36,7 @@ func laser(startpoint: Vector3, direction: Vector3) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
 	laserCount = 0
 	laser(global_position, get_global_transform().basis.x)
 	

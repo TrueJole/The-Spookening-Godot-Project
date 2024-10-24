@@ -51,6 +51,7 @@ shape = SubResource("BoxShape3D_7pjtx")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022, 0)
+top_level = true
 amount = 16
 lifetime = 2.0
 fixed_fps = 20

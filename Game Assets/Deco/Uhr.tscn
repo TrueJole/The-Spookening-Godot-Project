@@ -10,6 +10,7 @@ albedo_texture = ExtResource("1_oc8ay")
 roughness = 0.0
 
 [node name="Uhr" instance=ExtResource("1_vpki3")]
+transform = Transform3D(1.43655, 0, 0, 0, 1.43655, 0, 0, 0, 1.43655, 0, 0, 0)
 
 [node name="Cylinder" parent="." index="0"]
 transform = Transform3D(1.52016e-09, 0.122761, -0.0347772, 5.36605e-09, -0.0347772, -0.122761, -0.127592, -1.99636e-17, -5.57722e-09, -0.0019806, 0, 0)

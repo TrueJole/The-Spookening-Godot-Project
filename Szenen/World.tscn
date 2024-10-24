@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://did6uqnw114lc"]
+[gd_scene load_steps=12 format=3 uid="uid://did6uqnw114lc"]
 
 [ext_resource type="Script" path="res://Scripts/applySettings.gd" id="1_c6mct"]
 [ext_resource type="Script" path="res://Tools/ShowOnStart.gd" id="2_ahk6u"]
@@ -7,7 +7,6 @@
 [ext_resource type="VoxelGIData" uid="uid://biuhfmotqdp8t" path="res://Resources/worldVoxelGI.res" id="4_s06mn"]
 [ext_resource type="Environment" uid="uid://b2qrgn2jq4hxf" path="res://Resources/WorldEnviroment.tres" id="5_p615n"]
 [ext_resource type="PackedScene" uid="uid://dy4ptaa6dtvyu" path="res://Szenen/Player.tscn" id="6_86xrg"]
-[ext_resource type="ArrayOccluder3D" uid="uid://ciyqrpp1ds4tu" path="res://Resources/World.occ" id="6_v1xdd"]
 [ext_resource type="PackedScene" uid="uid://dquwqhphaufcb" path="res://Szenen/EtageKeller.tscn" id="9_oo8js"]
 [ext_resource type="PackedScene" uid="uid://dl4e1l3f1unj3" path="res://Szenen/Etage2.tscn" id="10_1osk6"]
 [ext_resource type="PackedScene" uid="uid://cfqy3n888iblk" path="res://Szenen/Etage1.tscn" id="10_jqhs4"]
@@ -71,7 +70,6 @@ data = ExtResource("4_s06mn")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 process_mode = 3
 visible = false
-occluder = ExtResource("6_v1xdd")
 bake_mask = 4294967289
 bake_simplification_distance = 0.0
 
